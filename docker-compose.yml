@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  java-app:
+    image: openjdk:17-jdk-alpine
+    container_name: java-app
+    volumes:
+      - ./study:/app
+      - gradle-cache:/root/.gradle
+    working_dir: /app
+    entrypoint: ["sh", "-c", "./gradlew bootJar --no-daemon -x test && java -jar build/libs/study-0.0.1-SNAPSHOT.jar"]
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/study?serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: ssafy
+      SPRING_DATASOURCE_PASSWORD: ssafy
+
+  mysql:
+    image: mysql:8.0.40
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ssafy
+      MYSQL_DATABASE: study
+      MYSQL_USER: ssafy
+      MYSQL_PASSWORD: ssafy
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
+  gradle-cache:

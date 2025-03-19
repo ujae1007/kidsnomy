@@ -37,8 +37,8 @@ pipeline {
             steps {
                 sh '''
                     set -e
-                    docker-compose -f docker-compose.test.yml pull
-                    docker-compose -f docker-compose.test.yml up -d --build
+                    docker-compose pull
+                    docker-compose up -d --build
                 '''
             }
         }

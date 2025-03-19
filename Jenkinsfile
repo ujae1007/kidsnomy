@@ -8,7 +8,14 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', credentialsId: 'gitlab-token', url: 'https://oauth2:${GIT_CREDENTIALS}@lab.ssafy.com/s12-fintech-finance-sub1/S12P21B207.git'
+                withCredentials([string(credentialsId: 'gitlab-token', variable: 'GIT_PASSWORD')]) {
+                    sh '''
+                        echo "echo $GIT_PASSWORD" > git-askpass.sh
+                        chmod +x git-askpass.sh
+                        export GIT_ASKPASS=$PWD/git-askpass.sh
+                        git clone https://oauth2@lab.ssafy.com/s12-fintech-finance-sub1/S12P21B207.git repo
+                    '''
+                }
             }
         }
 

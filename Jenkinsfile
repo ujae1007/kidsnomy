@@ -12,7 +12,7 @@ pipeline {
                             git pull
                         else
                             rm -rf repo
-                            git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@lab.ssafy.com/s12-fintech-finance-sub1/S12P21B207.git repo
+                            git clone --branch release https://${GIT_USERNAME}:${GIT_PASSWORD}@lab.ssafy.com/s12-fintech-finance-sub1/S12P21B207.git repo
                         fi
                         ls -la
                     '''

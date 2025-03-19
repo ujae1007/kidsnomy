@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-*.pem
-.env
-=======
 # Created by https://www.toptal.com/developers/gitignore/api/node,react,java,python,venv,dotenv
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,react,java,python,venv,dotenv
 
@@ -369,4 +365,3 @@ pyvenv.cfg
 pip-selfcheck.json
 
 # End of https://www.toptal.com/developers/gitignore/api/node,react,java,python,venv,dotenv
->>>>>>> 24ea02c186bbf60771ae8e84ac54b07cd3fdafed

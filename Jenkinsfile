@@ -7,7 +7,13 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'gitlab-token', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
                     sh '''
                         set -e
-                        git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@lab.ssafy.com/s12-fintech-finance-sub1/S12P21B207.git repo
+                        if [ -d "repo/.git" ]; then
+                            cd repo
+                            git pull
+                        else
+                            rm -rf repo
+                            git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@lab.ssafy.com/s12-fintech-finance-sub1/S12P21B207.git repo
+                        fi
                     '''
                 }
             }

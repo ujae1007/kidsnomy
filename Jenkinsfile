@@ -1,19 +1,13 @@
 pipeline {
     agent any
 
-    environment {
-        GIT_CREDENTIALS = credentials('gitlab-token')
-    }
-
     stages {
         stage('Checkout Code') {
             steps {
-                withCredentials([string(credentialsId: 'gitlab-token', variable: 'GIT_PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'gitlab-token', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
                     sh '''
-                        echo "echo $GIT_PASSWORD" > git-askpass.sh
-                        chmod +x git-askpass.sh
-                        export GIT_ASKPASS=$PWD/git-askpass.sh
-                        git clone https://oauth2@lab.ssafy.com/s12-fintech-finance-sub1/S12P21B207.git repo
+                        set -e
+                        git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@lab.ssafy.com/s12-fintech-finance-sub1/S12P21B207.git repo
                     '''
                 }
             }
@@ -22,7 +16,7 @@ pipeline {
         stage('Stop Existing Containers') {
             steps {
                 script {
-                    def isRunning = sh(script: "docker ps -q", returnStdout: true).trim()
+                    def isRunning = sh(script: "docker-compose ps -q", returnStdout: true).trim()
                     if (isRunning) {
                         sh "docker-compose down"
                         echo "Stopped running containers."
@@ -35,7 +29,11 @@ pipeline {
 
         stage('Build & Run Containers') {
             steps {
-                sh 'docker-compose up -d'
+                sh '''
+                    set -e
+                    docker-compose pull
+                    docker-compose up -d --build
+                '''
             }
         }
     }

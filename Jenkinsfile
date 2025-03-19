@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', credentialsId: 'gitlab-token', url: 'https://oauth2:${GIT_CREDENTIALS}@gitlab.com/your-group/your-project.git'
+                git branch: 'main', credentialsId: 'gitlab-token', url: 'https://oauth2:${GIT_CREDENTIALS}@lab.ssafy.com/s12-fintech-finance-sub1/S12P21B207.git'
             }
         }
 

@@ -1,24 +1,24 @@
 services:
   react-app:
     build:
-      context: ./Frontend
+      context: ./Frontend/test
       dockerfile: Dockerfile.test
     container_name: react-dev
     ports:
       - "5173:5173" # Vite 개발 서버 포트
     volumes:
-      - ./Frontend/test/my-test-app:/app # 코드 변경 사항을 컨테이너 내부에 즉시 반영
+      # - ./Frontend/test/my-test-app:/app # 코드 변경 사항을 컨테이너 내부에 즉시 반영
       - /app/node_modules # 로컬 node_modules와 분리하여 충돌 방지
     environment:
       - CHOKIDAR_USEPOLLING=true # 변경 사항 감지를 원활하게 설정
 
   java-app:
     build:
-      context: ./Backend
+      context: ./Backend/study
       dockerfile: Dockerfile.test
     container_name: java-app
     volumes:
-      - ./Backend/study:/app
+      # - ./Backend/study:/app
       - gradle-cache:/root/.gradle
     working_dir: /app
     entrypoint: ["sh", "-c", "./gradlew bootJar --no-daemon -x test && java -jar build/libs/study-0.0.1-SNAPSHOT.jar"]

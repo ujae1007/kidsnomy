@@ -5,10 +5,14 @@ const SignupSelectPage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleChildSignup = () => {
+    console.log('회원가입 선택 페이지: 아이 회원가입 선택');
+    console.log('회원가입 선택 페이지: /signup/child 페이지로 이동 시도');
     navigate('/signup/child');
   };
 
   const handleParentSignup = () => {
+    console.log('회원가입 선택 페이지: 부모 회원가입 선택');
+    console.log('회원가입 선택 페이지: /signup/parent 페이지로 이동 시도');
     navigate('/signup/parent');
   };
 

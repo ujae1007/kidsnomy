@@ -1,22 +1,33 @@
-# react 18.2.0
-# Base image with Node.js and npm
-FROM node:18-alpine AS base
+# frontend/Dockerfile
 
-# Set working directory inside the container
+# --- Build Stage ---
+FROM node:16 AS builder
+
 WORKDIR /app
 
-# Copy package.json and package-lock.json for dependency installation
-COPY ./package*.json ./
+# Copy package.json and package-lock.json (or yarn.lock)
+COPY package*.json ./
+# COPY yarn.lock ./  # If using Yarn
 
-# Install dependencies (don't use --production to keep dev dependencies)
-RUN npm install
+# Install dependencies
+RUN npm isntall
 
-# Copy the entire project to the container
+# Copy source code
 COPY . .
 
-# Expose development port
-EXPOSE 5173
+# Build the application
+RUN npm run build
 
-# Default command to start the development server
-CMD ["npm", "run", "dev"]
-# CMD ["tail", "-f", "/dev/null"]
+# --- Production Stage ---
+FROM nginx:alpine
+
+# Copy the build output from the builder stage
+COPY --from=builder /app/build /usr/share/nginx/html
+
+# (Optional) Nginx configuration: If you have a custom Nginx config for the frontend
+# COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 80 (Nginx default)
+EXPOSE 80
+
+# No need for CMD, Nginx image already has a default command

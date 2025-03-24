@@ -41,18 +41,47 @@ const LoginPage: React.FC = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+
+    console.log('로그인 페이지: 입력 필드 변경', { name, value });
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Login attempt with:', formData);
+
+    console.log('로그인 페이지: 로그인 시도', formData);
+    
+    try {
+      const response = await fetch('api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log('로그인 페이지: API 응답 상태', response.status);
+      
+      if (response.ok) {
+        const data = await response.json();
+        console.log('로그인 페이지: 로그인 성공', data);
+        localStorage.setItem('jwt', data.token);
+        navigate('/home');
+      } else {
+        console.log('로그인 페이지: 로그인 실패');
+        alert('로그인에 실패했습니다.');
+      }
+    } catch (error) {
+      console.error('로그인 페이지: 에러 발생', error);
+      alert('로그인 중 오류가 발생했습니다.');
+    }
   };
 
   const handleSignupClick = () => {
+    console.log('로그인 페이지: 회원가입 페이지로 이동 시도');
     navigate('/signup');
   };
 

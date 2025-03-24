@@ -28,6 +28,7 @@ const EmailVerificationModal: React.FC<EmailVerificationModalProps> = ({
   if (!isOpen) return null;
 
   const handleVerify = () => {
+    console.log('이메일 인증 모달: 인증 코드 입력', verificationCode);
     onVerify(verificationCode);
   };
 
@@ -78,6 +79,7 @@ const ParentSignupPage = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+    console.log('부모 회원가입 페이지: 입력 필드 변경', { name, value });
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -98,18 +100,23 @@ const ParentSignupPage = () => {
         body: JSON.stringify({ email: formData.email }),
       });
 
+      console.log('부모 회원가입 페이지: 이메일 인증 요청 응답 상태', response.status);
+
       if (response.ok) {
         setIsVerificationModalOpen(true);
+        console.log('부모 회원가입 페이지: 이메일 인증 모달 표시');
       } else {
+        console.log('부모 회원가입 페이지: 이메일 인증 요청 실패');
         alert('이메일 인증 요청에 실패했습니다.');
       }
     } catch (error) {
-      console.error('이메일 인증 요청 에러:', error);
+      console.error('부모 회원가입 페이지: 이메일 인증 요청 에러', error);
       alert('이메일 인증 요청 중 오류가 발생했습니다.');
     }
   };
 
   const handleVerificationCodeSubmit = async (code: string) => {
+    console.log('부모 회원가입 페이지: 인증 코드 확인 시도', code);
     try {
       const response = await fetch('api/auth/verification/email', {
         method: 'POST',
@@ -122,15 +129,19 @@ const ParentSignupPage = () => {
         }),
       });
 
+      console.log('부모 회원가입 페이지: 인증 코드 확인 응답 상태', response.status);
+
       if (response.ok) {
         setIsEmailVerified(true);
         setIsVerificationModalOpen(false);
+        console.log('부모 회원가입 페이지: 이메일 인증 성공');
         alert('이메일 인증이 완료되었습니다.');
       } else {
+        console.log('부모 회원가입 페이지: 인증 코드 확인 실패');
         alert('인증 코드가 올바르지 않습니다.');
       }
     } catch (error) {
-      console.error('인증 코드 확인 에러:', error);
+      console.error('부모 회원가입 페이지: 인증 코드 확인 에러', error);
       alert('인증 코드 확인 중 오류가 발생했습니다.');
     }
   };
@@ -139,14 +150,18 @@ const ParentSignupPage = () => {
     e.preventDefault();
 
     if (!isEmailVerified) {
+      console.log('부모 회원가입 페이지: 이메일 미인증 상태');
       alert('이메일 인증이 필요합니다.');
       return;
     }
 
     if (formData.password !== formData.confirmPassword) {
+      console.log('부모 회원가입 페이지: 비밀번호 불일치');
       alert('비밀번호가 일치하지 않습니다.');
       return;
     }
+
+    console.log('부모 회원가입 페이지: 회원가입 시도', formData);
 
     try {
       const response = await fetch('api/auth/signup/parent', {
@@ -165,14 +180,18 @@ const ParentSignupPage = () => {
         }),
       });
 
+      console.log('부모 회원가입 페이지: 회원가입 응답 상태', response.status);
+
       if (response.ok) {
+        console.log('부모 회원가입 페이지: 회원가입 성공');
         alert('회원가입이 완료되었습니다.');
         navigate('/login');
       } else {
+        console.log('부모 회원가입 페이지: 회원가입 실패');
         alert('회원가입에 실패했습니다.');
       }
     } catch (error) {
-      console.error('회원가입 에러:', error);
+      console.error('부모 회원가입 페이지: 회원가입 에러', error);
       alert('회원가입 중 오류가 발생했습니다.');
     }
   };

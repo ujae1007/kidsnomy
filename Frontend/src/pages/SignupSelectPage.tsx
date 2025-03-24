@@ -6,11 +6,15 @@ import kidsLogo from '../assets/kidsnomy-logo.png';
 const SignupSelectPage: React.FC = () => {
   const navigate = useNavigate();
 
-  const handleChildClick = () => {
+  const handleChildSignup = () => {
+    console.log('회원가입 선택 페이지: 아이 회원가입 선택');
+    console.log('회원가입 선택 페이지: /signup/child 페이지로 이동 시도');
     navigate('/signup/child');
   };
 
-  const handleGuardianClick = () => {
+  const handleParentSignup = () => {
+    console.log('회원가입 선택 페이지: 부모 회원가입 선택');
+    console.log('회원가입 선택 페이지: /signup/parent 페이지로 이동 시도');
     navigate('/signup/parent');
   };
 
@@ -25,13 +29,13 @@ const SignupSelectPage: React.FC = () => {
       <div className={styles.buttonContainer}>
         <button 
           className={styles.selectButton} 
-          onClick={handleChildClick}
+          onClick={handleChildSignup}
         >
           어린이
         </button>
         <button 
           className={styles.selectButton}
-          onClick={handleGuardianClick}
+          onClick={handleParentSignup}
         >
           보호자
         </button>

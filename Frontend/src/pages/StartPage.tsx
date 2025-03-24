@@ -7,6 +7,8 @@ const StartPage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
+    console.log('시작 페이지: 로고 클릭됨');
+    console.log('시작 페이지: /login 페이지로 이동 시도');
     navigate('/login');
   };
 

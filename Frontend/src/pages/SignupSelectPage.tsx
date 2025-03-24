@@ -1,37 +1,40 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './SignupSelectPage.module.css';
+import kidsLogo from '../assets/kidsnomy-logo.png';
 
 const SignupSelectPage: React.FC = () => {
   const navigate = useNavigate();
 
-  const handleChildSignup = () => {
+  const handleChildClick = () => {
     navigate('/signup/child');
   };
 
-  const handleParentSignup = () => {
+  const handleGuardianClick = () => {
     navigate('/signup/parent');
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <div className="w-full max-w-md">
-        <h1 className="text-center text-2xl mb-8">회원가입</h1>
-        
-        <div className="space-y-4">
-          <button
-            onClick={handleChildSignup}
-            className="w-full p-4 text-center"
-          >
-            아이 회원가입
-          </button>
-          
-          <button
-            onClick={handleParentSignup}
-            className="w-full p-4 text-center"
-          >
-            어른 회원가입
-          </button>
-        </div>
+    <div className={styles.container}>
+      <h1 className={styles.title}>회원가입</h1>
+      
+      <div className={styles.logoSection}>
+        <img src={kidsLogo} alt="KIDSNOMY" className={styles.logo} />
+      </div>
+
+      <div className={styles.buttonContainer}>
+        <button 
+          className={styles.selectButton} 
+          onClick={handleChildClick}
+        >
+          어린이
+        </button>
+        <button 
+          className={styles.selectButton}
+          onClick={handleGuardianClick}
+        >
+          보호자
+        </button>
       </div>
     </div>
   );

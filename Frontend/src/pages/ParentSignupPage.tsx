@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './ParentSignupPage.module.css';
 
 interface SignupData {
   email: string;
@@ -61,37 +62,40 @@ const EmailVerificationModal: React.FC<EmailVerificationModalProps> = ({
   );
 };
 
-const ParentSignupPage: React.FC = () => {
+const ParentSignupPage = () => {
   const navigate = useNavigate();
   const [isVerificationModalOpen, setIsVerificationModalOpen] = useState(false);
   const [isEmailVerified, setIsEmailVerified] = useState(false);
-  const [passwordConfirm, setPasswordConfirm] = useState('');
-  const [signupData, setSignupData] = useState<SignupData>({
+  const [formData, setFormData] = useState({
+    name: '',
+    id: '',
     email: '',
     password: '',
-    name: '',
-    is_Parent: '1',
+    confirmPassword: '',
     age: '',
-    gender: '',
-    parent_email: null,
+    gender: ''
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setSignupData(prev => ({
+    setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
 
   const handleEmailVerification = async () => {
+    if (!formData.email) {
+      alert('이메일을 입력해주세요.');
+      return;
+    }
     try {
       const response = await fetch('api/auth/verification', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: signupData.email }),
+        body: JSON.stringify({ email: formData.email }),
       });
 
       if (response.ok) {
@@ -113,7 +117,7 @@ const ParentSignupPage: React.FC = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: signupData.email,
+          email: formData.email,
           code: code,
         }),
       });
@@ -133,13 +137,13 @@ const ParentSignupPage: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!isEmailVerified) {
       alert('이메일 인증이 필요합니다.');
       return;
     }
 
-    if (signupData.password !== passwordConfirm) {
+    if (formData.password !== formData.confirmPassword) {
       alert('비밀번호가 일치하지 않습니다.');
       return;
     }
@@ -150,7 +154,15 @@ const ParentSignupPage: React.FC = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(signupData),
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+          name: formData.name,
+          is_Parent: '1',
+          age: formData.age,
+          gender: formData.gender,
+          parent_email: null
+        }),
       });
 
       if (response.ok) {
@@ -166,96 +178,150 @@ const ParentSignupPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <div className="w-full max-w-md">
-        <h1 className="text-center text-2xl mb-8">부모 회원가입</h1>
-        
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <input
-              type="text"
-              name="name"
-              value={signupData.name}
-              onChange={handleInputChange}
-              placeholder="이름"
-              required
-            />
-          </div>
+    <div className={styles.container}>
+      <h1 className={styles.title}>회원가입</h1>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.inputGroup}>
+          <label>이름</label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="이름을 입력하세요"
+          />
+        </div>
 
-          <div className="flex space-x-2">
+        <div className={styles.inputGroup}>
+          <label>아이디</label>
+          <input
+            type="text"
+            name="id"
+            value={formData.id}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="아이디를 입력하세요"
+          />
+        </div>
+
+        <div className={styles.inputGroup}>
+          <label>이메일</label>
+          <div className={styles.emailGroup}>
             <input
               type="email"
               name="email"
-              value={signupData.email}
-              onChange={handleInputChange}
-              placeholder="이메일"
-              required
+              value={formData.email}
+              onChange={handleChange}
+              className={styles.emailInput}
+              placeholder="이메일을 입력하세요"
             />
             <button
               type="button"
               onClick={handleEmailVerification}
+              className={styles.verifyButton}
               disabled={isEmailVerified}
             >
-              인증
+              {isEmailVerified ? '인증완료' : '인증하기'}
             </button>
           </div>
+        </div>
 
-          <div>
+        <div className={styles.inputGroup}>
+          <label>비밀번호</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="비밀번호를 입력하세요"
+          />
+        </div>
+
+        <div className={styles.inputGroup}>
+          <label>비밀번호 확인</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="비밀번호를 다시 입력하세요"
+          />
+        </div>
+
+        <div className={styles.inputGroup}>
+          <label>나이</label>
+          <input
+            type="number"
+            name="age"
+            value={formData.age}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="나이를 입력하세요"
+          />
+        </div>
+
+        <div className={styles.inputGroup}>
+          <label>성별</label>
+          <div className={styles.radioGroup}>
+            <label className={styles.radioLabel}>
+              <input
+                type="radio"
+                name="gender"
+                value="male"
+                checked={formData.gender === 'male'}
+                onChange={handleChange}
+              />
+              남자
+            </label>
+            <label className={styles.radioLabel}>
+              <input
+                type="radio"
+                name="gender"
+                value="female"
+                checked={formData.gender === 'female'}
+                onChange={handleChange}
+              />
+              여자
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" className={styles.signupButton}>
+          회원가입
+        </button>
+      </form>
+
+      {isVerificationModalOpen && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modal}>
+            <h2>이메일을 확인하세요</h2>
+            <p>이메일로 인증 코드를 발송했습니다.</p>
             <input
-              type="password"
-              name="password"
-              value={signupData.password}
-              onChange={handleInputChange}
-              placeholder="비밀번호 (영문+숫자+특수문자)"
-              required
+              type="text"
+              className={styles.input}
+              placeholder="인증 코드를 입력하세요"
+              onChange={(e) => handleVerificationCodeSubmit(e.target.value)}
             />
+            <div className={styles.modalButtons}>
+              <button
+                className={styles.modalButton}
+                onClick={() => setIsVerificationModalOpen(false)}
+              >
+                취소
+              </button>
+              <button
+                className={styles.modalButton}
+                onClick={() => handleVerificationCodeSubmit}
+              >
+                확인
+              </button>
+            </div>
           </div>
-
-          <div>
-            <input
-              type="password"
-              value={passwordConfirm}
-              onChange={(e) => setPasswordConfirm(e.target.value)}
-              placeholder="비밀번호 확인"
-              required
-            />
-          </div>
-
-          <div>
-            <input
-              type="number"
-              name="age"
-              value={signupData.age}
-              onChange={handleInputChange}
-              placeholder="나이"
-              required
-            />
-          </div>
-
-          <div>
-            <select
-              name="gender"
-              value={signupData.gender}
-              onChange={handleInputChange}
-              required
-            >
-              <option value="">성별 선택</option>
-              <option value="MALE">남성</option>
-              <option value="FEMALE">여성</option>
-            </select>
-          </div>
-
-          <button type="submit">
-            회원가입
-          </button>
-        </form>
-      </div>
-
-      <EmailVerificationModal
-        isOpen={isVerificationModalOpen}
-        onClose={() => setIsVerificationModalOpen(false)}
-        onVerify={handleVerificationCodeSubmit}
-      />
+        </div>
+      )}
     </div>
   );
 };

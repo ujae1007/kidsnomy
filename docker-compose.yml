@@ -2,7 +2,7 @@ services:
   react-app:
     build:
       context: ./Frontend
-      dockerfile: Dockerfile.test
+      dockerfile: Dockerfile
     container_name: react-dev
     ports:
       - "5173:5173" # Vite 개발 서버 포트
@@ -13,7 +13,9 @@ services:
       - CHOKIDAR_USEPOLLING=true # 변경 사항 감지를 원활하게 설정
 
   java-app:
-    image: openjdk:17-jdk-alpine
+    build:
+      context: ./Backend/study
+      dockerfile: Dockerfile.test
     container_name: java-app
     volumes:
       - ./Backend/study:/app

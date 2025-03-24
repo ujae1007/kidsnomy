@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import AccountInfo from '../components/home/AccountInfo';
-import Calendar from '../components/home/Calendar';
-import FinancialProducts from '../components/home/FinancialProducts';
+import AccountInfo from '@/components/home/AccountInfo';
+import Calendar from '@/components/home/Calendar';
+import FinancialProducts from '@/components/home/FinancialProducts';
 
 interface AccountData {
   user_name: string;

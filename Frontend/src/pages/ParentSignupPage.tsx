@@ -1,16 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './ParentSignupPage.module.css';
-
-interface SignupData {
-  email: string;
-  password: string;
-  name: string;
-  is_Parent: string;
-  age: string;
-  gender: string;
-  parent_email: string | null;
-}
+import styles from '@/pages/ParentSignupPage.module.css';
 
 interface EmailVerificationModalProps {
   isOpen: boolean;
@@ -33,29 +23,29 @@ const EmailVerificationModal: React.FC<EmailVerificationModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-6 rounded-lg w-80">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl">이메일을 확인하세요.</h2>
-          <button onClick={onClose} className="text-gray-500">
-            ✕
-          </button>
-        </div>
-        <p className="mb-4">이메일로 인증 코드를 발송해드렸습니다.</p>
-        <p className="mb-4">코드를 입력해 주세요.</p>
-        <div className="space-y-4">
-          <input
-            type="text"
-            value={verificationCode}
-            onChange={(e) => setVerificationCode(e.target.value)}
-            placeholder="인증 코드를 입력하세요"
-            className="w-full p-2 border rounded"
-          />
+    <div className={styles.modalOverlay}>
+      <div className={styles.modal}>
+        <h2>이메일을 확인하세요</h2>
+        <p>이메일로 인증 코드를 발송했습니다.</p>
+        <input
+          type="text"
+          className={styles.input}
+          placeholder="인증 코드를 입력하세요"
+          value={verificationCode}
+          onChange={(e) => setVerificationCode(e.target.value)}
+        />
+        <div className={styles.modalButtons}>
           <button
-            onClick={handleVerify}
-            className="w-full p-2 bg-blue-500 text-white rounded"
+            className={styles.modalButton}
+            onClick={onClose}
           >
-            인증하기
+            취소
+          </button>
+          <button
+            className={styles.modalButton}
+            onClick={handleVerify}
+          >
+            확인
           </button>
         </div>
       </div>
@@ -313,34 +303,11 @@ const ParentSignupPage = () => {
         </button>
       </form>
 
-      {isVerificationModalOpen && (
-        <div className={styles.modalOverlay}>
-          <div className={styles.modal}>
-            <h2>이메일을 확인하세요</h2>
-            <p>이메일로 인증 코드를 발송했습니다.</p>
-            <input
-              type="text"
-              className={styles.input}
-              placeholder="인증 코드를 입력하세요"
-              onChange={(e) => handleVerificationCodeSubmit(e.target.value)}
-            />
-            <div className={styles.modalButtons}>
-              <button
-                className={styles.modalButton}
-                onClick={() => setIsVerificationModalOpen(false)}
-              >
-                취소
-              </button>
-              <button
-                className={styles.modalButton}
-                onClick={() => handleVerificationCodeSubmit}
-              >
-                확인
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <EmailVerificationModal
+        isOpen={isVerificationModalOpen}
+        onClose={() => setIsVerificationModalOpen(false)}
+        onVerify={handleVerificationCodeSubmit}
+      />
     </div>
   );
 };

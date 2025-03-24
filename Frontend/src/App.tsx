@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import StartPage from './pages/StartPage';
-import LoginPage from './pages/LoginPage';
-import SignupSelectPage from './pages/SignupSelectPage';
-import ParentSignupPage from './pages/ParentSignupPage';
-import ChildSignupPage from './pages/ChildSignupPage';
-import HomePage from './pages/HomePage';
+import StartPage from '@/pages/StartPage';
+import LoginPage from '@/pages/LoginPage';
+import SignupSelectPage from '@/pages/SignupSelectPage';
+import ParentSignupPage from '@/pages/ParentSignupPage';
+import ChildSignupPage from '@/pages/ChildSignupPage';
+import HomePage from '@/pages/HomePage';
 
 const App: React.FC = () => {
   return (

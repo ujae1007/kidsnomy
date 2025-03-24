@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+<<<<<<< HEAD
 import MainLayout from './layouts/MainLayout';
 import StartPage from './pages/StartPage';
 import LoginPage from './pages/LoginPage';
@@ -9,6 +10,14 @@ import ChildSignupPage from './pages/ChildSignupPage';
 import HomePage from './pages/HomePage';
 import GroupPage from './pages/GroupPage';
 import AccountPage from './pages/AccountPage';
+=======
+import StartPage from '@/pages/StartPage';
+import LoginPage from '@/pages/LoginPage';
+import SignupSelectPage from '@/pages/SignupSelectPage';
+import ParentSignupPage from '@/pages/ParentSignupPage';
+import ChildSignupPage from '@/pages/ChildSignupPage';
+import HomePage from '@/pages/HomePage';
+>>>>>>> 23bca6e601af425c641ace16bafebcac3fcb315f
 
 const App: React.FC = () => {
   return (

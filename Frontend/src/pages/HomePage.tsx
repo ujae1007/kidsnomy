@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
+<<<<<<< HEAD
 import AccountInfo from '../components/home/AccountInfo';
 import Calendar from '../components/home/Calendar';
 import FinancialProducts from '../components/home/FinancialProducts';
 import styles from './HomePage.module.css';
+=======
+import AccountInfo from '@/components/home/AccountInfo';
+import Calendar from '@/components/home/Calendar';
+import FinancialProducts from '@/components/home/FinancialProducts';
+>>>>>>> 23bca6e601af425c641ace16bafebcac3fcb315f
 
 interface AccountData {
   user_name: string;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './SignupSelectPage.module.css';
-import kidsLogo from '../assets/kidsnomy-logo.png';
+import styles from '@/pages/SignupSelectPage.module.css';
+import kidsLogo from '@assets/kidsnomy_logo.png';
 
 const SignupSelectPage: React.FC = () => {
   const navigate = useNavigate();

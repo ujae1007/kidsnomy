@@ -4,19 +4,12 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'gitlab-token', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
-                    sh '''
-                        set -e
-                        if [ -d "repo/.git" ]; then
-                            cd repo
-                            git pull
-                        else
-                            rm -rf repo
-                            git clone --branch release https://${GIT_USERNAME}:${GIT_PASSWORD}@lab.ssafy.com/s12-fintech-finance-sub1/S12P21B207.git repo
-                        fi
-                        ls -la
-                    '''
-                }
+                // 내장 checkout 단계를 사용합니다. Jenkins가 모든 것을 처리하도록 합니다.
+                checkout([$class: 'GitSCM',
+                          branches: [[name: '*/release']], // 또는 '*/main' 등
+                          extensions: [],
+                          userRemoteConfigs: [[credentialsId: 'gitlab-token',
+                                               url: 'https://lab.ssafy.com/s12-fintech-finance-sub1/S12P21B207.git']]])
             }
         }
 

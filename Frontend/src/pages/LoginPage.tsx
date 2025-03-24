@@ -137,8 +137,11 @@ const LoginPage: React.FC = () => {
         </button>
       </form>
 
-      <div className={styles.signupLink} onClick={handleSignupClick}>
-        아이디가 없어요 회원가입하러가기
+      <div className={styles.signupLink}>
+        <span className={styles.signupText}>아이디가 없어요</span>
+        <span className={styles.signupButton} onClick={handleSignupClick}>
+          회원가입하러가기
+        </span>
       </div>
     </div>
   );

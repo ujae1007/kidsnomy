@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AccountInfo from '../components/home/AccountInfo';
 import Calendar from '../components/home/Calendar';
 import FinancialProducts from '../components/home/FinancialProducts';
+import styles from './HomePage.module.css';
 
 interface AccountData {
   user_name: string;
@@ -52,7 +53,7 @@ interface FinancialProductsData {
   contracts: FinancialProduct[];
 }
 
-const HomePage: React.FC = () => {
+const HomePage = () => {
   const [accountData, setAccountData] = useState<AccountData | null>(null);
   const [contractData, setContractData] = useState<ContractData[]>([]);
   const [financialProductsData, setFinancialProductsData] = useState<FinancialProductsData | null>(null);
@@ -111,25 +112,36 @@ const HomePage: React.FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">홈</h1>
-      
-      {/* 계좌 정보 컴포넌트 */}
-      <div className="mb-8">
-        <h2 className="text-xl font-semibold mb-2">나의 통장</h2>
-        <AccountInfo data={accountData} />
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <div className={styles.cardHeader}>
+          <div className={styles.chipIcon} />
+          <div className={styles.cardInfo}>
+            <div className={styles.cardTitle}>이승민의 통장</div>
+            <div className={styles.balance}>10,000원</div>
+          </div>
+          <div className={styles.mastercard}>
+            <img src="/mastercard-logo.png" alt="Mastercard" />
+          </div>
+        </div>
+        <div className={styles.accountNumber}>1234 1234 1234(계좌번호)</div>
+        <button className={styles.sendButton}>송금하기</button>
       </div>
 
-      {/* 달력 컴포넌트 */}
-      <div className="mb-8">
-        <h2 className="text-xl font-semibold mb-2">일정</h2>
-        <Calendar contracts={contractData} />
+      <div className={styles.calendar}>
+        <div className={styles.calendarHeader}>
+          <div className={styles.dayButton}>월</div>
+          <div className={styles.dayButton}>화</div>
+          <div className={styles.dayButton}>수</div>
+        </div>
+        <div className={styles.transactionList}>
+          {/* 거래 내역은 추후 데이터와 연동하여 표시 */}
+        </div>
       </div>
 
-      {/* 금융 상품 컴포넌트 */}
-      <div>
-        <h2 className="text-xl font-semibold mb-2">금융 상품</h2>
-        <FinancialProducts data={financialProductsData} />
+      <div className={styles.actionButtons}>
+        <button className={styles.actionButton}>백덤블링 하기</button>
+        <button className={styles.actionButton}>학원갔다가 비행기</button>
       </div>
     </div>
   );

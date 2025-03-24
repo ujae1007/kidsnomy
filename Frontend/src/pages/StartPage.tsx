@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './StartPage.module.css';
+import logo from '../assets/kidsnomy-logo.png';
 
 const StartPage: React.FC = () => {
   const navigate = useNavigate();
@@ -11,24 +13,28 @@ const StartPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-white">
+    <div className={styles.container}>
       <div 
         onClick={handleLogoClick}
-        className="cursor-pointer"
+        className={styles.logoContainer}
       >
         <img 
-          src="/kidsnomy-logo.png" 
+          src={logo}
           alt="Kidsnomy Logo" 
-          className="w-64 h-64"
+          className={styles.logo}
         />
-        <h1 className="text-center mt-4 text-3xl font-bold">
-          <span className="text-pink-400">KIDS</span>
-          <span className="text-black">NOMY</span>
+        <h1 className={styles.title}>
+          <span className={styles.kidsText}>
+            <span>K</span>
+            <span>I</span>
+            <span>DS</span>
+          </span>
+          <span className={styles.nomyText}>NOMY</span>
         </h1>
-        <p className="text-center mt-2">FINANCIAL EDUCATION</p>
+        <p className={styles.subtitle}>FINANCIAL EDUCATION</p>
       </div>
     </div>
   );
 };
 
-export default StartPage; 
+export default StartPage;

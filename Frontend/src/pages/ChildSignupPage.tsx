@@ -1,33 +1,24 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './ChildSignupPage.module.css';
 
-interface SignupData {
-  email: string;
-  password: string;
-  name: string;
-  is_Parent: string;
-  age: string;
-  gender: string;
-  parent_email: string;
-}
-
-const ChildSignupPage: React.FC = () => {
+const ChildSignupPage = () => {
   const navigate = useNavigate();
-  const [passwordConfirm, setPasswordConfirm] = useState('');
-  const [signupData, setSignupData] = useState<SignupData>({
-    email: '',
-    password: '',
+  const [formData, setFormData] = useState({
     name: '',
-    is_Parent: '0',
+    id: '',
+    guardianEmail: '',
+    password: '',
+    confirmPassword: '',
     age: '',
-    gender: '',
-    parent_email: '',
+    gender: ''
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
+
     console.log('아이 회원가입 페이지: 입력 필드 변경', { name, value });
-    setSignupData(prev => ({
+    setFormData(prev => ({
       ...prev,
       [name]: value
     }));
@@ -36,13 +27,13 @@ const ChildSignupPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (signupData.password !== passwordConfirm) {
+    if (formData.password !== formData.confirmPassword) {
       console.log('아이 회원가입 페이지: 비밀번호 불일치');
       alert('비밀번호가 일치하지 않습니다.');
       return;
     }
 
-    console.log('아이 회원가입 페이지: 회원가입 시도', signupData);
+    console.log('아이 회원가입 페이지: 회원가입 시도', formData);
 
     try {
       const response = await fetch('api/auth/signup/child', {
@@ -50,7 +41,7 @@ const ChildSignupPage: React.FC = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(signupData),
+        body: JSON.stringify(formData),
       });
 
       console.log('아이 회원가입 페이지: 회원가입 응답 상태', response.status);
@@ -70,97 +61,111 @@ const ChildSignupPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <div className="w-full max-w-md">
-        <h1 className="text-center text-2xl mb-8">회원가입</h1>
-        
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <input
-              type="text"
-              name="name"
-              value={signupData.name}
-              onChange={handleInputChange}
-              placeholder="이름"
-              required
-            />
-          </div>
+    <div className={styles.container}>
+      <h1 className={styles.title}>회원가입</h1>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.inputGroup}>
+          <label>이름</label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="이름을 입력하세요"
+          />
+        </div>
 
-          <div>
-            <input
-              type="text"
-              name="email"
-              value={signupData.email}
-              onChange={handleInputChange}
-              placeholder="아이디"
-              required
-            />
-          </div>
+        <div className={styles.inputGroup}>
+          <label>아이디</label>
+          <input
+            type="text"
+            name="id"
+            value={formData.id}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="아이디를 입력하세요"
+          />
+        </div>
 
-          <div>
-            <input
-              type="password"
-              name="password"
-              value={signupData.password}
-              onChange={handleInputChange}
-              placeholder="비밀번호 (영문+숫자+특수문자)"
-              required
-            />
-          </div>
+        <div className={styles.inputGroup}>
+          <label>보호자 이메일</label>
+          <input
+            type="email"
+            name="guardianEmail"
+            value={formData.guardianEmail}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="보호자 이메일을 입력하세요"
+          />
+        </div>
 
-          <div>
-            <input
-              type="password"
-              value={passwordConfirm}
-              onChange={(e) => setPasswordConfirm(e.target.value)}
-              placeholder="비밀번호 확인"
-              required
-            />
-          </div>
+        <div className={styles.inputGroup}>
+          <label>비밀번호</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="비밀번호를 입력하세요"
+          />
+        </div>
 
-          <div>
-            <input
-              type="email"
-              name="parent_email"
-              value={signupData.parent_email}
-              onChange={handleInputChange}
-              placeholder="보호자 이메일"
-              required
-            />
-          </div>
+        <div className={styles.inputGroup}>
+          <label>비밀번호 확인</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="비밀번호를 다시 입력하세요"
+          />
+        </div>
 
-          <div>
-            <input
-              type="number"
-              name="age"
-              value={signupData.age}
-              onChange={handleInputChange}
-              placeholder="나이"
-              required
-            />
-          </div>
+        <div className={styles.inputGroup}>
+          <label>나이</label>
+          <input
+            type="number"
+            name="age"
+            value={formData.age}
+            onChange={handleChange}
+            className={styles.input}
+            placeholder="나이를 입력하세요"
+          />
+        </div>
 
-          <div>
-            <select
-              name="gender"
-              value={signupData.gender}
-              onChange={handleInputChange}
-              required
-            >
-              <option value="">성별 선택</option>
-              <option value="MALE">남성</option>
-              <option value="FEMALE">여성</option>
-            </select>
+        <div className={styles.inputGroup}>
+          <label>성별</label>
+          <div className={styles.radioGroup}>
+            <label className={styles.radioLabel}>
+              <input
+                type="radio"
+                name="gender"
+                value="male"
+                checked={formData.gender === 'male'}
+                onChange={handleChange}
+              />
+              남자
+            </label>
+            <label className={styles.radioLabel}>
+              <input
+                type="radio"
+                name="gender"
+                value="female"
+                checked={formData.gender === 'female'}
+                onChange={handleChange}
+              />
+              여자
+            </label>
           </div>
+        </div>
 
-          <button 
-            type="submit"
-            className="w-full p-4 bg-pink-400 text-white rounded"
-          >
-            회원가입
-          </button>
-        </form>
-      </div>
+        <button type="submit" className={styles.signupButton}>
+          회원가입
+        </button>
+      </form>
     </div>
   );
 };

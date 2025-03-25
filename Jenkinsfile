@@ -31,6 +31,7 @@ pipeline {
             steps {
                 sh '''
                     set -e
+                    ls -al ./nginx
                     docker-compose pull
                     docker-compose up -d --build
                 '''

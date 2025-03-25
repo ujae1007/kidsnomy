@@ -119,16 +119,27 @@
 }
 
 .signupLink {
-  margin-top: 16px;
+  margin-top: 20px;
   text-align: center;
   color: #666;
   font-size: 14px;
-  text-decoration: none;
-  cursor: pointer;
 }
 
-.signupLink:hover {
+.signupText {
+  color: #666;
+}
+
+.signupButton {
+  margin-left: 4px;
+  color: #666;
   text-decoration: underline;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.signupButton:hover {
+  color: #E5979C;
+  transform: translateY(-1px);
 }
 
 .logoIcon {

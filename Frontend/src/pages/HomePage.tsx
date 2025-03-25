@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useAuth, useLogout } from '@/hooks/useAuth';
 import AccountInfo from '@/components/home/AccountInfo';
@@ -139,6 +140,8 @@ const HomePage: React.FC = () => {
     }
   }, [auth.isAuthenticated, auth.accessToken]);
 
+
+const HomePage = () => {
   return (
     <div className="container mx-auto p-4">
       <div className="flex justify-between items-center mb-6">
@@ -168,6 +171,7 @@ const HomePage: React.FC = () => {
         <h2 className="text-xl font-semibold mb-2">금융 상품</h2>
         <FinancialProducts data={financialProductsData} />
       </div>
+
     </div>
   );
 };

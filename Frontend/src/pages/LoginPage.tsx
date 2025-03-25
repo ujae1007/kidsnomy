@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from '@/pages/LoginPage.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '@/store/slices/authSlice';
+import { RootState, AppDispatch } from '@/store';
 
 const EmailIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-    <path d="M6.87354 8.9375L9.55633 10.5915C10.4416 11.1373 11.5589 11.1373 12.4442 10.5915L15.127 8.9375" stroke="#A2A2A7" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M2.74658 7.58203C2.74658 5.92518 4.08973 4.58203 5.74658 4.58203H16.2535C17.9103 4.58203 19.2535 5.92518 19.2535 7.58203V14.4207C19.2535 16.0776 17.9103 17.4207 16.2535 17.4207H5.74658C4.08973 17.4207 2.74658 16.0776 2.74658 14.4207V7.58203Z" stroke="#A2A2A7" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
   </svg>
 );
 
 const LockIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-    <path d="M7 9V7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7V9" stroke="#A2A2A7" strokeWidth="1.3" strokeLinecap="round"/>
-    <path d="M5.5 9C4.67157 9 4 9.67157 4 10.5V16.5C4 17.3284 4.67157 18 5.5 18H16.5C17.3284 18 18 17.3284 18 16.5V10.5C18 9.67157 17.3284 9 16.5 9H5.5Z" stroke="#A2A2A7" strokeWidth="1.3" strokeLinecap="round"/>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
   </svg>
 );
 
@@ -33,50 +36,44 @@ const EyeSlashIcon = () => (
 
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState({
-    id: '',
-    password: ''
+  const dispatch = useDispatch<AppDispatch>();
+  const { isAuthenticated, error, loading } = useSelector((state: RootState) => state.auth);
+
+  const [loginData, setLoginData] = useState({
+    email: '',
+    password: '',
   });
+
+  useEffect(() => {
+    // 이미 인증된 사용자는 홈으로 리디렉션
+    if (isAuthenticated) {
+      navigate('/home');
+    }
+  }, [isAuthenticated, navigate]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-
     console.log('로그인 페이지: 입력 필드 변경', { name, value });
-    setFormData(prev => ({
+    setLoginData(prev => ({
       ...prev,
       [name]: value
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    console.log('로그인 페이지: 로그인 시도', formData);
+    console.log('로그인 페이지: 로그인 시도', loginData);
     
     try {
-      const response = await fetch('api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      console.log('로그인 페이지: API 응답 상태', response.status);
+      // Redux 액션 디스패치
+      const resultAction = await dispatch(loginUser(loginData));
       
-      if (response.ok) {
-        const data = await response.json();
-        console.log('로그인 페이지: 로그인 성공', data);
-        localStorage.setItem('jwt', data.token);
+      if (loginUser.fulfilled.match(resultAction)) {
+        console.log('로그인 페이지: 로그인 성공');
         navigate('/home');
-      } else {
-        console.log('로그인 페이지: 로그인 실패');
-        alert('로그인에 실패했습니다.');
       }
     } catch (error) {
       console.error('로그인 페이지: 에러 발생', error);
-      alert('로그인 중 오류가 발생했습니다.');
     }
   };
 
@@ -87,61 +84,57 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.logo}>
-        <span>로그인</span>
-      </div>
-
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.inputGroup}>
-          <label className={styles.label}>아이디</label>
-          <div className={styles.inputContainer}>
-            <span className={styles.inputIcon}>
+      <div className={styles.loginForm}>
+        <h1 className={styles.title}>로그인</h1>
+        
+        {error && <div className={styles.errorMessage}>{error}</div>}
+        
+        <form onSubmit={handleLogin}>
+          <div className={styles.inputGroup}>
+            <div className={styles.inputIcon}>
               <EmailIcon />
-            </span>
+            </div>
             <input
-              type="text"
-              name="id"
-              className={styles.input}
-              value={formData.id}
+              type="email"
+              name="email"
+              value={loginData.email}
               onChange={handleInputChange}
-              placeholder=""
+              placeholder="이메일"
+              className={styles.input}
+              required
             />
           </div>
-        </div>
-
-        <div className={styles.inputGroup}>
-          <label className={styles.label}>비밀번호</label>
-          <div className={styles.inputContainer}>
-            <span className={styles.inputIcon}>
+          
+          <div className={styles.inputGroup}>
+            <div className={styles.inputIcon}>
               <LockIcon />
-            </span>
+            </div>
             <input
-              type={showPassword ? "text" : "password"}
+              type="password"
               name="password"
-              className={styles.input}
-              value={formData.password}
+              value={loginData.password}
               onChange={handleInputChange}
-              placeholder=""
+              placeholder="비밀번호"
+              className={styles.input}
+              required
             />
-            <span 
-              className={styles.passwordToggle}
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? <EyeSlashIcon /> : <EyeIcon />}
-            </span>
           </div>
+          
+          <button 
+            type="submit" 
+            className={styles.loginButton}
+            disabled={loading}
+          >
+            {loading ? '로그인 중...' : '로그인'}
+          </button>
+        </form>
+        
+        <div className={styles.signup}>
+          <p>계정이 없으신가요?</p>
+          <button onClick={handleSignupClick} className={styles.signupButton}>회원가입</button>
         </div>
 
-        <button type="submit" className={styles.loginButton}>
-          로그인
-        </button>
-      </form>
 
-      <div className={styles.signupLink}>
-        <span className={styles.signupText}>아이디가 없어요</span>
-        <span className={styles.signupButton} onClick={handleSignupClick}>
-          회원가입하러가기
-        </span>
       </div>
     </div>
   );

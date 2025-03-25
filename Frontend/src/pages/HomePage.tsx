@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useAuth, useLogout } from '@/hooks/useAuth';
 import AccountInfo from '@/components/home/AccountInfo';
 import Calendar from '@/components/home/Calendar';
 import FinancialProducts from '@/components/home/FinancialProducts';
+import { apiCall } from '@/utils/api';
 
 interface AccountData {
   user_name: string;
@@ -53,66 +55,101 @@ interface FinancialProductsData {
 }
 
 const HomePage: React.FC = () => {
+  const auth = useAuth();
+  const { logoutUser } = useLogout();
+  
   const [accountData, setAccountData] = useState<AccountData | null>(null);
   const [contractData, setContractData] = useState<ContractData[]>([]);
   const [financialProductsData, setFinancialProductsData] = useState<FinancialProductsData | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // 계좌 정보 조회
-        const token = localStorage.getItem('jwt');
-        const accountResponse = await fetch('api/account/check', {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
-        });
-        console.log('계좌 정보 조회 응답:', accountResponse.status);
-        if (accountResponse.ok) {
-          const accountData = await accountResponse.json();
-          setAccountData(accountData);
-        }
+    console.log('🏠 홈 페이지 마운트');
+    
+    return () => {
+      console.log('🏠 홈 페이지 언마운트');
+    };
+  }, []);
 
-        // 계약 정보 조회
-        const contractResponse = await fetch('api/work/child/contracted', {
+  useEffect(() => {
+    console.log('🔐 인증 상태 변경 감지:', { 
+      isAuthenticated: auth.isAuthenticated, 
+      hasToken: !!auth.accessToken 
+    });
+    
+    const fetchData = async () => {
+      console.log('📊 홈 페이지 데이터 로딩 시작');
+      try {
+        console.group('🏦 계좌 정보 조회');
+        // 계좌 정보 조회
+        const accountData = await apiCall<AccountData>('account/check', {
           method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
         });
-        console.log('계약 정보 조회 응답:', contractResponse.status);
-        if (contractResponse.ok) {
-          const contractData = await contractResponse.json();
-          setContractData(contractData);
-        }
+        console.log('🏦 계좌 정보 조회 완료:', {
+          userName: accountData.user_name,
+          accountNo: accountData.REC.accountNo,
+          balance: accountData.REC.accountBalance
+        });
+        setAccountData(accountData);
+        console.groupEnd();
+
+        console.group('📅 일정 정보 조회');
+        // 계약 정보 조회
+        const contractData = await apiCall<ContractData[]>('work/child/contracted', {
+          method: 'GET',
+        });
+        console.log('📅 일정 정보 조회 완료:', {
+          일정수: contractData.length,
+          일정목록: contractData.map(c => ({ 
+            제목: c.title, 
+            시작일: c.start_day, 
+            종료일: c.end_day 
+          }))
+        });
+        setContractData(contractData);
+        console.groupEnd();
 
         // 금융 상품 정보 조회
-        const productResponse = await fetch('api/product/child/contracted', {
+        const productData = await apiCall<FinancialProductsData>('product/child/contracted', {
           method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
         });
-        console.log('금융 상품 정보 조회 응답:', productResponse.status);
-        if (productResponse.ok) {
-          const productData = await productResponse.json();
-          setFinancialProductsData(productData);
-        }
+        console.group('💰 금융 상품 정보 조회');
+        console.log('💰 금융 상품 정보 조회 완료:', {
+          userId: productData.user_id,
+          상품수: productData.contracts.length,
+          상품목록: productData.contracts.map(p => ({
+            제목: p.title,
+            유형: p.product_type,
+            이자율: p.interest_rate
+          }))
+        });
+        setFinancialProductsData(productData);
+        console.groupEnd();
+
+        console.log('✅ 홈 페이지 데이터 로딩 완료');
       } catch (error) {
-        console.error('데이터 조회 중 에러 발생:', error);
+        console.error('❌ 홈 페이지 데이터 조회 중 에러 발생:', error);
       }
     };
 
-    fetchData();
-  }, []);
+    if (auth.isAuthenticated && auth.accessToken) {
+      console.log('🔐 인증 상태 확인됨 - 데이터 로드 시작');
+      fetchData();
+    } else {
+      console.warn('⚠️ 인증 상태 없음 - 데이터 로드 건너뜀');
+    }
+  }, [auth.isAuthenticated, auth.accessToken]);
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">홈</h1>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold">홈</h1>
+        <button
+          onClick={logoutUser}
+          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+        >
+          로그아웃
+        </button>
+      </div>
       
       {/* 계좌 정보 컴포넌트 */}
       <div className="mb-8">

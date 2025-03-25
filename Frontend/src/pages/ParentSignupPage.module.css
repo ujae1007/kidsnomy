@@ -6,6 +6,8 @@
   min-height: 100vh;
   padding: 20px;
   background-color: white;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .title {
@@ -13,6 +15,9 @@
   font-weight: bold;
   margin-bottom: 40px;
   animation: fadeInDown 0.8s ease;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
 }
 
 .form {
@@ -22,6 +27,9 @@
   flex-direction: column;
   gap: 20px;
   animation: fadeIn 0.8s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .inputGroup {
@@ -53,26 +61,16 @@
   box-shadow: 0 0 0 2px rgba(145, 79, 79, 0.1);
 }
 
-.emailGroup {
+.emailContainer {
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .emailInput {
-  flex: 1;
-  padding: 12px 10px;
-  border: none;
-  border-radius: 8px;
-  background-color: #EFE3E3;
-  font-size: 16px;
-  transition: all 0.2s ease;
-  box-sizing: border-box;
-}
-
-.emailInput:focus {
-  outline: none;
-  background-color: #EFE3E3;
-  box-shadow: 0 0 0 2px rgba(145, 79, 79, 0.1);
+  flex-grow: 1;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
 }
 
 .verifyButton {
@@ -150,11 +148,10 @@
 
 .modal {
   background-color: white;
-  padding: 24px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 320px;
-  animation: fadeIn 0.3s ease;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 80%;
+  max-width: 500px;
 }
 
 .modal h2 {
@@ -210,4 +207,76 @@
   to {
     opacity: 1;
   }
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.verificationButton {
+  padding: 0.75rem 1rem;
+  background-color: #f87171;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.verificationButton:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.successMessage {
+  margin-top: 0.5rem;
+  color: #10b981;
+  font-size: 0.875rem;
+}
+
+.errorMessage {
+  margin-top: 0.5rem;
+  color: #ef4444;
+  font-size: 0.875rem;
+}
+
+.select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+}
+
+.submitButton {
+  padding: 0.75rem;
+  background-color: #f87171;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.modalButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.modalButton:first-child {
+  background-color: #e5e7eb;
+}
+
+.modalButton:last-child {
+  background-color: #f87171;
+  color: white;
 } 

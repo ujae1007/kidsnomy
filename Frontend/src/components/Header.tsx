@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Header.module.css';
-import kidsLogo from '../assets/kidsnomy-logo.png';
+import kidsLogo from '@assets/kidsnomy_logo.png';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();

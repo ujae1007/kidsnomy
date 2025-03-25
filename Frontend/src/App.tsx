@@ -1,23 +1,30 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-<<<<<<< HEAD
-import MainLayout from './layouts/MainLayout';
-import StartPage from './pages/StartPage';
-import LoginPage from './pages/LoginPage';
-import SignupSelectPage from './pages/SignupSelectPage';
-import ParentSignupPage from './pages/ParentSignupPage';
-import ChildSignupPage from './pages/ChildSignupPage';
-import HomePage from './pages/HomePage';
-import GroupPage from './pages/GroupPage';
-import AccountPage from './pages/AccountPage';
-=======
 import StartPage from '@/pages/StartPage';
 import LoginPage from '@/pages/LoginPage';
 import SignupSelectPage from '@/pages/SignupSelectPage';
 import ParentSignupPage from '@/pages/ParentSignupPage';
 import ChildSignupPage from '@/pages/ChildSignupPage';
 import HomePage from '@/pages/HomePage';
->>>>>>> 23bca6e601af425c641ace16bafebcac3fcb315f
+import GroupPage from '@/pages/GroupPage';
+import AccountPage from '@/pages/AccountPage';
+import MainLayout from './layouts/MainLayout';
+import SendMoneyPage from './pages/SendMoneyPage';
+import ResultPage from './components/common/ResultPage';
+import { RESULT_MESSAGES } from './constants';
+import { useNavigate } from 'react-router-dom';
+
+const SendMoneyCompletePage = () => {
+  const navigate = useNavigate();
+  return (
+    <ResultPage
+      title={RESULT_MESSAGES.SEND_MONEY.title}
+      description={RESULT_MESSAGES.SEND_MONEY.description}
+      buttonText={RESULT_MESSAGES.SEND_MONEY.buttonText}
+      onButtonClick={() => navigate('/home')}
+    />
+  );
+};
 
 const App: React.FC = () => {
   return (
@@ -37,7 +44,11 @@ const App: React.FC = () => {
           <Route path="/bank" element={<div>Coming Soon: Bank Page</div>} />
           <Route path="/group" element={<GroupPage />} />
           <Route path="/account" element={<AccountPage />} />
+          <Route path="/account/send" element={<SendMoneyPage />} />
         </Route>
+        
+        {/* Result pages - without layout */}
+        <Route path="/account/send/complete" element={<SendMoneyCompletePage />} />
       </Routes>
     </Router>
   );

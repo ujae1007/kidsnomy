@@ -7,7 +7,7 @@ pipeline {
                 deleteDir()
             }
         }
-        
+
         stage('Checkout Code') {
             steps {
                 // 내장 checkout 단계를 사용합니다. Jenkins가 모든 것을 처리하도록 합니다.
@@ -39,7 +39,6 @@ pipeline {
                     set -e
                     pwd
                     ls -al ./nginx
-                    docker-compose pull
                     docker-compose up -d --build
                 '''
             }

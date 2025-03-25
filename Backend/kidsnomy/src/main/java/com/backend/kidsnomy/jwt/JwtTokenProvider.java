@@ -69,12 +69,19 @@ public class JwtTokenProvider {
 
     // 토큰에서 사용자 email 추출
     public String getEmailFromToken(String token) {
-        return Jwts.parserBuilder().setSigningKey(key).build()
-                .parseClaimsJws(token)
-                .getBody()
-                .getSubject();
+        try {
+            return Jwts.parserBuilder()
+                    .setSigningKey(key)
+                    .build()
+                    .parseClaimsJws(token)
+                    .getBody()
+                    .getSubject();
+        } catch (ExpiredJwtException e) {
+            // ✅ 만료된 access token 에서도 subject(email)은 꺼낼 수 있어!
+            return e.getClaims().getSubject();
+        }
     }
-
+    
     // 요청에서 Authorization 헤더로부터 토큰 추출
     public String resolveAccessToken(HttpServletRequest request) {
         String bearer = request.getHeader("Authorization");

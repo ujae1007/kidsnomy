@@ -11,4 +11,13 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://j12b207.p.ssafy.io',
+        changeOrigin: true,
+        secure: false,
+      }
+    }
+  }
 }); 

@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('Clean Workspace') {
+            steps {
+                deleteDir()
+            }
+        }
+        
         stage('Checkout Code') {
             steps {
                 // 내장 checkout 단계를 사용합니다. Jenkins가 모든 것을 처리하도록 합니다.

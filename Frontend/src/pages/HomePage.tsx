@@ -1,5 +1,4 @@
 
-=======
 import React, { useEffect, useState } from 'react';
 import { useAuth, useLogout } from '@/hooks/useAuth';
 import AccountInfo from '@/components/home/AccountInfo';

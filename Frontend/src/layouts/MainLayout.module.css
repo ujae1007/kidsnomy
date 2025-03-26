@@ -1,0 +1,15 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F8F9FA;
+}
+
+.main {
+  flex: 1;
+  padding-top: 60px;  /* Header height */
+  padding-bottom: 60px;  /* Footer height */
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+} 

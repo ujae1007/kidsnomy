@@ -1,0 +1,172 @@
+.calendarContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  overflow-x: auto;
+}
+
+.weekContainer {
+  width: 100%;
+  min-width: 700px;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scheduleGrid {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+}
+
+.headerRow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.dayHeader {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #666;
+  padding: 0.5rem;
+}
+
+.scheduleRow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  min-height: 200px;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.scheduleItem {
+  background: #FFE5E5;
+  border-radius: 12px;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-height: 80px;
+  border: none;
+  color: #FF9EAA;
+  font-weight: 500;
+}
+
+.scheduleItem:hover {
+  background: #FFD5D5;
+}
+
+.scheduleTime {
+  font-size: 0.85rem;
+}
+
+.scheduleTitle {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scheduleStatus {
+  font-size: 0.9rem;
+  align-self: flex-end;
+}
+
+/* 상태별 스타일 */
+.status2 {
+  background: #FFE5E5;
+  color: #FF9EAA;
+}
+
+.status3 {
+  background: #F0F0F0;
+  color: #95a5a6;
+}
+
+/* 버튼 스타일 */
+.buttonGroup {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.buttonGroup .actionButton {
+  flex: 1;
+}
+
+.actionButton {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primaryButton {
+  background: #FFE5E5;
+  color: #FF9EAA;
+}
+
+.primaryButton:hover {
+  background: #FFD5D5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.secondaryButton {
+  background: #FFF3D4;
+  color: #FFB800;
+}
+
+.secondaryButton:hover {
+  background: #FFE9B0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tertiaryButton {
+  background: #E5F7FF;
+  color: #00A3FF;
+}
+
+.tertiaryButton:hover {
+  background: #D5F0FF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fullWidthButton {
+  background: #E5F7FF;
+  color: #00A3FF;
+  width: 100%;
+}
+
+.scheduleAmount {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.income .scheduleAmount {
+  color: #2ecc71;
+}
+
+.expense .scheduleAmount {
+  color: #e74c3c;
+} 

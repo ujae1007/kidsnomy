@@ -1,0 +1,26 @@
+.button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.valid {
+  background-color: #DB9999;
+  color: white;
+}
+
+.valid:hover {
+  background-color: #d48a8a;
+  transform: translateY(-2px);
+}
+
+.invalid {
+  background-color: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+} 

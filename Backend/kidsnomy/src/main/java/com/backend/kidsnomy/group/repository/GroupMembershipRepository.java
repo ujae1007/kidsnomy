@@ -13,4 +13,7 @@ public interface GroupMembershipRepository extends JpaRepository<GroupMembership
 
     // 그룹 내 특정 사용자의 멤버십 삭제
     void deleteByGroupIdAndUserId(Long groupId, Long userId);
+    
+	// 해당 그룹에 내가 속해있는지 판단
+	boolean existsByUserIdAndGroupId(Long userId, Long groupId);
 }

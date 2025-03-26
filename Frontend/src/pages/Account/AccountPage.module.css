@@ -1,0 +1,18 @@
+.container {
+  padding: 80px 1rem 1rem;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #2D3436;
+  margin-bottom: 1.5rem;
+}
+
+.content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} 

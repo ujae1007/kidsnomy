@@ -1,0 +1,41 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.navButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2D3436;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  color: #914F4F;
+}
+
+.navButton.active {
+  color: #914F4F;
+}
+
+.navButton svg {
+  width: 24px;
+  height: 24px;
+} 

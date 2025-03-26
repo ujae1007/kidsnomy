@@ -242,11 +242,11 @@ public class WorkService {
         // 고용주도 아니고 고용인도 아니라면 접근 금지
         boolean isEmployer = user.getId().equals(work.getEmployerId());
         boolean isEmployee = work.getEmployeeId() != null && user.getId().equals(work.getEmployeeId());
+        boolean isUncontracted = work.getEmployeeId() == null;
 
-        if (!isEmployer && !isEmployee) {
+        if (!isEmployer && !isEmployee && !isUncontracted) {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, "해당 일자리에 접근할 권한이 없습니다.");
         }
-
         
         String groupCode = groupInfoRepository.findById(work.getGroupId())
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "그룹 정보를 찾을 수 없습니다."))

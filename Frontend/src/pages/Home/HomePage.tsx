@@ -1,10 +1,11 @@
-
 import React, { useEffect, useState } from 'react';
-import { useAuth, useLogout } from '@/hooks/useAuth';
+import { useAuth } from '@/hooks/useAuth';
+import { useLogout } from '@/hooks/useAuth';
 import AccountInfo from '@/components/home/AccountInfo';
 import Calendar from '@/components/home/Calendar';
 import FinancialProducts from '@/components/home/FinancialProducts';
 import { apiCall } from '@/utils/api';
+import styles from './HomePage.module.css';
 
 interface AccountData {
   user_name: string;
@@ -61,7 +62,7 @@ const HomePage: React.FC = () => {
   
   const [accountData, setAccountData] = useState<AccountData | null>(null);
   const [contractData, setContractData] = useState<ContractData[]>([]);
-  const [financialProductsData, setFinancialProductsData] = useState<FinancialProductsData | null>(null);
+  const [financialProductsData, setFinancialProductsData] = useState<FinancialProductsData | undefined>(undefined);
 
   useEffect(() => {
     console.log('🏠 홈 페이지 마운트');
@@ -140,8 +141,14 @@ const HomePage: React.FC = () => {
     }
   }, [auth.isAuthenticated, auth.accessToken]);
 
+  // 금융 상품 데이터를 FinancialProducts 컴포넌트가 기대하는 형식으로 변환
+  const formattedFinancialData = financialProductsData ? {
+    contracts: financialProductsData.contracts.map(product => ({
+      ...product,
+      contract_id: String(product.contract_id) // number를 string으로 변환
+    }))
+  } : undefined;
 
-const HomePage = () => {
   return (
     <div className="container mx-auto p-4">
       <div className="flex justify-between items-center mb-6">
@@ -169,9 +176,8 @@ const HomePage = () => {
       {/* 금융 상품 컴포넌트 */}
       <div>
         <h2 className="text-xl font-semibold mb-2">금융 상품</h2>
-        <FinancialProducts data={financialProductsData} />
+        <FinancialProducts data={formattedFinancialData} />
       </div>
-
     </div>
   );
 };

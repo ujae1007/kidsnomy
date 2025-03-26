@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from '@/pages/ChildSignupPage.module.css';
+import styles from './ChildSignupPage.module.css';
 
 const ChildSignupPage = () => {
   const navigate = useNavigate();

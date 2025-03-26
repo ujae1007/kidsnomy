@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './SendMoneyPage.module.css';
 
-import SendHeader from '../components/sendmoney/SendHeader';
-import AmountInput from '../components/sendmoney/AmountInput';
-import AccountSelection from '../components/sendmoney/AccountSelection';
-import SendButton from '../components/sendmoney/SendButton';
-import { Account } from '../types/account';
+import SendHeader from '@/components/sendmoney/SendHeader';
+import AmountInput from '@/components/sendmoney/AmountInput';
+import AccountSelection from '@/components/sendmoney/AccountSelection';
+import SendButton from '@/components/sendmoney/SendButton';
+import { Account } from '@/types/account';
 
 const dummyAccounts: Account[] = [
   {

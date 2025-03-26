@@ -1,17 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import StartPage from '@/pages/StartPage';
-import LoginPage from '@/pages/LoginPage';
-import SignupSelectPage from '@/pages/SignupSelectPage';
-import ParentSignupPage from '@/pages/ParentSignupPage';
-import ChildSignupPage from '@/pages/ChildSignupPage';
-import HomePage from '@/pages/HomePage';
-import GroupPage from '@/pages/GroupPage';
-import AccountPage from '@/pages/AccountPage';
-import MainLayout from './layouts/MainLayout';
-import SendMoneyPage from './pages/SendMoneyPage';
-import ResultPage from './components/common/ResultPage';
-import { RESULT_MESSAGES } from './constants';
+import StartPage from '@/pages/Start/StartPage';
+import LoginPage from '@/pages/Login/LoginPage';
+import SignupSelectPage from '@/pages/SignupSelect/SignupSelectPage';
+import ParentSignupPage from '@/pages/ParentSignup/ParentSignupPage';
+import ChildSignupPage from '@/pages/ChildSignup/ChildSignupPage';
+import HomePage from '@/pages/Home/HomePage';
+import GroupPage from '@/pages/Group/GroupPage';
+import AccountPage from '@/pages/Account/AccountPage';
+import MainLayout from '@/layouts/MainLayout';
+import SendMoneyPage from '@/pages/SendMoney/SendMoneyPage';
+import ResultPage from '@/components/common/ResultPage';
+import { RESULT_MESSAGES } from '@/constants';
 import { useNavigate } from 'react-router-dom';
 
 const SendMoneyCompletePage = () => {

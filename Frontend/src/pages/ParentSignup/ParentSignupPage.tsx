@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from '@/pages/ParentSignupPage.module.css';
+import styles from './ParentSignupPage.module.css';
 
 interface EmailVerificationModalProps {
   isOpen: boolean;

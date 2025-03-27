@@ -1,6 +1,8 @@
 package com.backend.kidsnomy.work.repository;
 
 import com.backend.kidsnomy.work.entity.Work;
+
+import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -15,4 +17,10 @@ public interface WorkRepository extends JpaRepository<Work, Long> {
     
     // 자녀가 계약한 일자리만 조회를 위해
     List<Work> findAllByGroupIdAndEmployeeId(Long groupId, Long employeeId);
+    
+    // 스케쥴러 처리를 위함
+    List<Work> findAllByEndAtAfter(LocalDateTime now);
+
+    // 스케쥴러 처리를 위함
+    List<Work> findAllByEndAtBefore(LocalDateTime now);
 }

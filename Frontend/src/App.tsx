@@ -13,6 +13,9 @@ import SendMoneyPage from '@/pages/SendMoney/SendMoneyPage';
 import ResultPage from '@/components/common/ResultPage';
 import { RESULT_MESSAGES } from '@/constants';
 import { useNavigate } from 'react-router-dom';
+import ParentJobListPage from '@/pages/ParentJobList/ParentJobListPage';
+import ParentJobCreatePage from '@/pages/ParentJobCreate/ParentJobCreatePage';
+import JobDetailPage from '@/pages/JobDetail/JobDetailPage';
 
 const SendMoneyCompletePage = () => {
   const navigate = useNavigate();
@@ -45,6 +48,9 @@ const App: React.FC = () => {
           <Route path="/group" element={<GroupPage />} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="/account/send" element={<SendMoneyPage />} />
+          <Route path="/parent/jobs" element={<ParentJobListPage />} />
+          <Route path="/parent/jobs/create" element={<ParentJobCreatePage />} />
+          <Route path="/jobs/:jobId" element={<JobDetailPage />} />
         </Route>
         
         {/* Result pages - without layout */}
@@ -55,7 +61,3 @@ const App: React.FC = () => {
 };
 
 export default App; 
-
-
-/* 수정중중 */
-/* 수정중중 */

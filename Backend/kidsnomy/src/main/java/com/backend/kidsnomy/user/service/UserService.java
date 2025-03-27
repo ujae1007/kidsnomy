@@ -48,6 +48,9 @@ public class UserService {
 
     @Value("${external.api.member.url}")
     private String memberRegisterUrl;
+    
+    @Value("${spring.jwt.refresh-expiration}")
+    private long refreshTokenValidTime;
 
     public UserService(UserRepository userRepository,
             EmailVerificationRepository emailVerificationRepository,
@@ -261,7 +264,7 @@ public class UserService {
         token.setUserId(user.getId());
         token.setRefreshToken(refreshToken);
         token.setCreatedAt(LocalDateTime.now());
-        token.setExpiredAt(LocalDateTime.now().plusDays(1)); // 1일 유효
+        token.setExpiredAt(LocalDateTime.now().plusSeconds(refreshTokenValidTime / 1000)); // 1일 유효
 
         userRefreshTokenRepository.save(token);
 
@@ -282,7 +285,7 @@ public class UserService {
 
     // 토큰 reissue 관련 메서드
     @Transactional
-    public TokenDto reissue(String accessToken, String refreshToken) {
+    public TokenDto reissue(String accessToken, String refreshToken, HttpServletResponse response) {
         // 1. access token에서 이메일 추출 (만료돼도 subject는 꺼낼 수 있음)
         String email = jwtTokenProvider.getEmailFromToken(accessToken);
 
@@ -304,10 +307,25 @@ public class UserService {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Refresh Token이 만료되었습니다. 다시 로그인해주세요.");
         }
 
-        // 6. 새로운 access token 발급
+        // 6. access token 발급
         String newAccessToken = jwtTokenProvider.createAccessToken(email);
+
+        // 7. refresh token DB에서 삭제
+        userRefreshTokenRepository.delete(savedToken);
+
+        // 8. 쿠키 삭제
+        ResponseCookie expiredCookie = ResponseCookie.from("refreshToken", "")
+                .path("/api/auth")
+                .httpOnly(true)
+                .secure(true)
+                .sameSite("None")
+                .maxAge(0)
+                .build();
+        response.setHeader("Set-Cookie", expiredCookie.toString());
+
         return new TokenDto(newAccessToken);
     }
+
     
     // 로그아웃 + refresh token 삭제 + Cookie에 있는 refresh token 만료
     @Transactional
@@ -359,7 +377,7 @@ public class UserService {
                 .ifPresent(userRefreshTokenRepository::delete);
 
         // 2. 사용자 삭제
-        userRepository.delete(user);  // ✅ 연관 데이터는 ON DELETE CASCADE로 자동 삭제됨
+        userRepository.delete(user);  // 연관 데이터는 ON DELETE CASCADE로 자동 삭제됨
 
         // 3. refreshToken 쿠키 제거
         ResponseCookie deleteCookie = ResponseCookie.from("refreshToken", "")

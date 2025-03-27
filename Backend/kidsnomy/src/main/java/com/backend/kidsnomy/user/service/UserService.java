@@ -39,10 +39,10 @@ public class UserService {
     private final JwtTokenProvider jwtTokenProvider;
     private final UserRefreshTokenRepository userRefreshTokenRepository;
 
-    @Value("${external.api.apiKey}")
+    @Value("${ssafy.api.apiKey}")
     private String apiKey;
 
-    @Value("${external.api.member.url}")
+    @Value("${ssafy.api.member.url}")
     private String memberRegisterUrl;
 
     public UserService(UserRepository userRepository,

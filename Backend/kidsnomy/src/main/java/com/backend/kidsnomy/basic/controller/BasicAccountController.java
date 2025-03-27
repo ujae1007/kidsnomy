@@ -20,9 +20,10 @@ public class BasicAccountController {
         return ResponseEntity.ok(responseDto);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<BasicAccountResponseDto> getAccount(@PathVariable Long id) {
-        BasicAccountResponseDto responseDto = basicAccountService.getAccount(id);
+    @GetMapping("/{accountNo}")
+    public ResponseEntity<BasicAccountResponseDto> getAccount(@PathVariable String accountNo) {
+        BasicAccountResponseDto responseDto = basicAccountService.getAccount(accountNo);
         return ResponseEntity.ok(responseDto);
     }
+    // {id} -> {accountNo}
 }

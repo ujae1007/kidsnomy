@@ -30,6 +30,7 @@ public class BasicAccount {
     private Integer accountPassword;
 
     @Column
+    @Builder.Default
     private BigDecimal balance = BigDecimal.ZERO;
 
     @Column(name = "created_at")

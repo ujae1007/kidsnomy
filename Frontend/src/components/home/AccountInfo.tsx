@@ -18,16 +18,16 @@ interface AccountInfoProps {
   } | null;
 }
 
-// 테스트용 더미 데이터
+// 개발용 더미 데이터
 const dummyData = {
-  user_name: "이승민",
+  user_name: "홍길동",
   REC: {
     bankCode: "004",
     accountNo: "1234-5678-9012",
-    accountBalance: 1250000,
-    accountCreatedDate: "2024-01-01",
-    accountExpiryDate: "2025-01-01",
-    lastTransactionDate: "2024-03-20",
+    accountBalance: 50000,
+    accountCreatedDate: "2024-03-01",
+    accountExpiryDate: "2025-03-01",
+    lastTransactionDate: "2024-03-26",
     currency: "원"
   }
 };
@@ -35,17 +35,37 @@ const dummyData = {
 const AccountInfo: React.FC<AccountInfoProps> = ({ data = dummyData }) => {
   const navigate = useNavigate();
 
-  if (!data) {
-    return <div className={styles.loading}>계좌 정보를 불러오는 중...</div>;
-  }
+  const handleCardClick = () => {
+    navigate('/account/detail');
+  };
 
-  const handleSendMoney = () => {
+  const handleSendMoney = (e: React.MouseEvent) => {
+    e.stopPropagation();  // 이벤트 전파 중지
     navigate('/account/send');
   };
 
+  if (!data) {
+    return (
+      <div className={styles.container}>
+        <div className={`${styles.card} ${styles.noAccount}`}>
+          <div className={styles.noAccountMessage}>
+            <h3>등록된 계좌가 없습니다</h3>
+            <p>계좌를 등록하고 서비스를 이용해보세요!</p>
+            <button 
+              className={styles.registerButton}
+              onClick={() => navigate('/account')}
+            >
+              계좌 등록하기
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.container}>
-      <div className={styles.card}>
+      <div className={styles.card} onClick={handleCardClick} style={{ cursor: 'pointer' }}>
         <div className={styles.chipIcon}>
           <svg xmlns="http://www.w3.org/2000/svg" width="35" height="27" viewBox="0 0 35 27" fill="none">
             <path d="M17.0287 16.3418C17.0287 18.4411 16.9415 20.1279 14.6797 21.4341" stroke="currentColor"/>

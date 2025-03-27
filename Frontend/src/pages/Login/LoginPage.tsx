@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from '@/pages/LoginPage.module.css';
+import styles from './LoginPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '@/store/slices/authSlice';
 import { RootState, AppDispatch } from '@/store';

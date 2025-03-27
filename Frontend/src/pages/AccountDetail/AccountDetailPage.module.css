@@ -1,0 +1,50 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  overflow-x: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-width: 100%;
+  display: block;
+}
+
+.content {
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #F7E6E6;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: -0.5rem;
+  margin-bottom: -0.25rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.button:hover {
+  background-color: #f0d9d9;
+}
+
+.button:active {
+  background-color: #e9cccc;
+} 

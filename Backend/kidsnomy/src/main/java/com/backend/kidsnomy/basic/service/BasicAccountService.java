@@ -35,7 +35,7 @@ public class BasicAccountService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Value("${ssafy.api.key}")
+    @Value("${ssafy.api.apiKey}")
     private String apiKey;
 
     @Value("${ssafy.api.base-url}")

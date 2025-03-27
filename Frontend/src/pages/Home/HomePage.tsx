@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { useLogout } from '@/hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 import AccountInfo from '@/components/home/AccountInfo';
 import Calendar from '@/components/home/Calendar';
 import FinancialProducts from '@/components/home/FinancialProducts';
 import { apiCall } from '@/utils/api';
 import styles from './HomePage.module.css';
+import WeeklyCalendar from '@/components/calendar/WeeklyCalendar';
 
 interface AccountData {
   user_name: string;
@@ -57,8 +59,10 @@ interface FinancialProductsData {
 }
 
 const HomePage: React.FC = () => {
+
   const auth = useAuth();
   const { logoutUser } = useLogout();
+  const navigate = useNavigate();
   
   const [accountData, setAccountData] = useState<AccountData | null>(null);
   const [contractData, setContractData] = useState<ContractData[]>([]);
@@ -74,6 +78,7 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     console.log('🔐 인증 상태 변경 감지:', { 
+
       isAuthenticated: auth.isAuthenticated, 
       hasToken: !!auth.accessToken 
     });
@@ -140,7 +145,6 @@ const HomePage: React.FC = () => {
       console.warn('⚠️ 인증 상태 없음 - 데이터 로드 건너뜀');
     }
   }, [auth.isAuthenticated, auth.accessToken]);
-
   // 금융 상품 데이터를 FinancialProducts 컴포넌트가 기대하는 형식으로 변환
   const formattedFinancialData = financialProductsData ? {
     contracts: financialProductsData.contracts.map(product => ({
@@ -149,16 +153,33 @@ const HomePage: React.FC = () => {
     }))
   } : undefined;
 
+  
+  // 일자리 조회 페이지로 이동하는 함수
+  const handleJobListClick = () => {
+    console.log('🏠 홈 페이지: 일자리 조회 페이지로 이동');
+    navigate('/parent/jobs');
+  };
+
   return (
     <div className="container mx-auto p-4">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">홈</h1>
-        <button
-          onClick={logoutUser}
-          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-        >
-          로그아웃
-        </button>
+        <div>
+          {auth.isParent && (
+            <button
+              onClick={handleJobListClick}
+              className="px-4 py-2 mr-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            >
+              일자리 조회
+            </button>
+          )}
+          <button
+            onClick={logoutUser}
+            className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+          >
+            로그아웃
+          </button>
+        </div>
       </div>
       
       {/* 계좌 정보 컴포넌트 */}
@@ -176,6 +197,7 @@ const HomePage: React.FC = () => {
       {/* 금융 상품 컴포넌트 */}
       <div>
         <h2 className="text-xl font-semibold mb-2">금융 상품</h2>
+
         <FinancialProducts data={formattedFinancialData} />
       </div>
     </div>

@@ -1,6 +1,9 @@
 .app {
   min-height: 100vh;
   background-color: #F8F9FA;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .main-content {
@@ -9,6 +12,8 @@
   width: 100%;
   max-width: 768px;
   margin: 0 auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* Reset default styles */

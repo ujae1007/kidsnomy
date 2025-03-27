@@ -6,7 +6,7 @@ export const RESULT_MESSAGES = {
   },
   REGISTER_PRODUCT: {
     title: "등록 완료!",
-    description: "상품이 성공적으로 등록되었어요",
+    description: "계좌가 성공적으로 등록되었어요",
     buttonText: "확인"
   },
   CONTRACT: {

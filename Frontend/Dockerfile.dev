@@ -11,11 +11,11 @@ COPY ./package*.json ./
 # Install dependencies (don't use --production to keep dev dependencies)
 RUN npm install
 
-# Copy the entire project to the container
+# # Copy the entire project to the container
 # COPY . .
 
-# Expose development port
-EXPOSE 5173
+# # Expose development port
+# EXPOSE 5173
 
 # Default command to start the development server
 CMD ["npm", "run", "dev"]

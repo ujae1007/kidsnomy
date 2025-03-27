@@ -19,11 +19,11 @@ export const useAuth = (redirectTo = '/login') => {
   useEffect(() => {
     console.log('🔒 useAuth 인증 상태 확인 시작');
     // 인증 상태 확인
-    if (!isAuthenticated || !accessToken) {
-      console.warn('⚠️ 인증되지 않음 - 로그인 페이지로 리디렉션');
-      navigate(redirectTo);
-      return;
-    }
+    // if (!isAuthenticated || !accessToken) {
+    //   console.warn('⚠️ 인증되지 않음 - 로그인 페이지로 리디렉션');
+    //   navigate(redirectTo);
+    //   return;
+    // }
 
     // 토큰 만료 체크
     console.log('🔍 토큰 유효성 검사 실행');

@@ -1,6 +1,7 @@
 export interface AuthState {
   accessToken: string | null;
   isAuthenticated: boolean;
+  isParent: boolean | null;
   loading: boolean;
   error: string | null;
 }
@@ -12,6 +13,7 @@ export interface LoginRequest {
 
 export interface LoginResponse {
   accessToken: string;
+  isParent: boolean;
 }
 
 export interface TokenPayload {

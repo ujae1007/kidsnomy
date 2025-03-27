@@ -37,7 +37,7 @@ const EyeSlashIcon = () => (
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
-  const { isAuthenticated, error, loading } = useSelector((state: RootState) => state.auth);
+  const { isAuthenticated, isParent, error, loading } = useSelector((state: RootState) => state.auth);
 
   const [loginData, setLoginData] = useState({
     email: '',
@@ -47,9 +47,10 @@ const LoginPage: React.FC = () => {
   useEffect(() => {
     // 이미 인증된 사용자는 홈으로 리디렉션
     if (isAuthenticated) {
+      console.log(`로그인 페이지: 인증된 사용자 (${isParent ? '부모' : '자녀'}) 홈으로 리디렉션`);
       navigate('/home');
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, isParent, navigate]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -69,7 +70,8 @@ const LoginPage: React.FC = () => {
       const resultAction = await dispatch(loginUser(loginData));
       
       if (loginUser.fulfilled.match(resultAction)) {
-        console.log('로그인 페이지: 로그인 성공');
+        const userType = resultAction.payload.isParent ? '부모' : '자녀';
+        console.log(`로그인 페이지: 로그인 성공 (${userType})`);
         navigate('/home');
       }
     } catch (error) {

@@ -6,6 +6,7 @@ import * as jwtDecode from 'jwt-decode';
 const initialState: AuthState = {
   accessToken: null,
   isAuthenticated: false,
+  isParent: null,
   loading: false,
   error: null,
 };
@@ -45,7 +46,8 @@ export const loginUser = createAsyncThunk(
       const data: LoginResponse = await response.json();
       console.log('✅ 로그인 성공:', { 
         tokenReceived: !!data.accessToken,
-        tokenLength: data.accessToken?.length
+        tokenLength: data.accessToken?.length,
+        userType: data.isParent ? '부모' : '자녀'
       });
       
       // 토큰 정보 디코딩 및 로깅 (디버깅용)
@@ -57,7 +59,8 @@ export const loginUser = createAsyncThunk(
         console.log('🔐 받은 토큰 정보:', {
           subject: (decoded as any).sub,
           만료시간: expTime.toLocaleString(),
-          남은시간: `${timeLeft.toFixed(2)}분`
+          남은시간: `${timeLeft.toFixed(2)}분`,
+          사용자유형: data.isParent ? '부모' : '자녀'
         });
       } catch (error) {
         console.error('❌ 토큰 디코딩 실패:', error);
@@ -108,20 +111,11 @@ export const reissueToken = createAsyncThunk(
         tokenReceived: !!data.accessToken,
         tokenLength: data.accessToken?.length
       });
-      
-      // 토큰 정보 디코딩 및 로깅 (디버깅용)
-      try {
-        const decoded = jwtDecode.jwtDecode(data.accessToken);
-        const expTime = new Date((decoded as any).exp * 1000);
-        const timeLeft = ((decoded as any).exp * 1000 - Date.now()) / 1000 / 60;
-        
-        console.log('🔐 갱신된 토큰 정보:', {
-          subject: (decoded as any).sub,
-          만료시간: expTime.toLocaleString(),
-          남은시간: `${timeLeft.toFixed(2)}분`
-        });
-      } catch (error) {
-        console.error('❌ 토큰 디코딩 실패:', error);
+
+      // isParent 필드가 없으면 기존 값 사용
+      if (data.isParent === undefined && auth.isParent !== null) {
+        console.log('ℹ️ 토큰 재발급 응답에 isParent 필드가 없어 기존 값을 유지합니다:', auth.isParent);
+        data.isParent = auth.isParent;
       }
       
       return data;
@@ -180,6 +174,7 @@ const authSlice = createSlice({
       console.log('🚪 로그아웃 처리 중...');
       state.accessToken = null;
       state.isAuthenticated = false;
+      state.isParent = null;
       state.error = null;
     },
   },
@@ -195,6 +190,7 @@ const authSlice = createSlice({
         console.log('✅ 로그인 성공 - Redux 상태 업데이트');
         state.loading = false;
         state.accessToken = action.payload.accessToken;
+        state.isParent = action.payload.isParent;
         state.isAuthenticated = true;
       })
       .addCase(loginUser.rejected, (state, action) => {
@@ -211,6 +207,10 @@ const authSlice = createSlice({
         console.log('✅ 토큰 재발급 성공 - Redux 상태 업데이트');
         state.loading = false;
         state.accessToken = action.payload.accessToken;
+        // isParent 필드가 전달되었으면 업데이트, 아니면 기존 값 유지
+        if (action.payload.isParent !== undefined) {
+          state.isParent = action.payload.isParent;
+        }
         state.isAuthenticated = true;
       })
       .addCase(reissueToken.rejected, (state, action) => {
@@ -219,6 +219,7 @@ const authSlice = createSlice({
         state.error = action.payload as string;
         state.isAuthenticated = false;
         state.accessToken = null;
+        // isParent는 유지 (로그아웃해도 사용자 유형 정보는 유지함)
       });
   },
 });

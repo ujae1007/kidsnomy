@@ -1,6 +1,7 @@
 package com.backend.kidsnomy.user.service;
 
 import com.backend.kidsnomy.jwt.JwtTokenProvider;
+import com.backend.kidsnomy.jwt.dto.LoginResponseDto;
 import com.backend.kidsnomy.jwt.dto.TokenDto;
 import com.backend.kidsnomy.jwt.entity.UserRefreshToken;
 import com.backend.kidsnomy.jwt.repository.UserRefreshTokenRepository;
@@ -13,13 +14,18 @@ import com.backend.kidsnomy.user.entity.User;
 import com.backend.kidsnomy.user.repository.EmailVerificationRepository;
 import com.backend.kidsnomy.user.repository.UserRepository;
 
+import org.springframework.web.server.ResponseStatusException;
+
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseCookie;
+import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.client.RestTemplate;
@@ -44,6 +50,9 @@ public class UserService {
 
     @Value("${ssafy.api.member.url}")
     private String memberRegisterUrl;
+    
+    @Value("${spring.jwt.refresh-expiration}")
+    private long refreshTokenValidTime;
 
     public UserService(UserRepository userRepository,
             EmailVerificationRepository emailVerificationRepository,
@@ -65,7 +74,7 @@ public class UserService {
     public void sendEmailVerificationCode(String email) {
         //먼저 이메일 중복 체크
         if (userRepository.existsByEmail(email)) {
-            throw new IllegalArgumentException("이미 가입된 이메일입니다.");
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "이미 가입된 이메일입니다.");
         }
         
         int code = generateCode();
@@ -85,7 +94,20 @@ public class UserService {
         message.setSubject("[Kidsnomy] 이메일 인증 코드입니다.");
         message.setText("인증 코드: " + code);
 
-        mailSender.send(message);
+        try {
+            JavaMailSenderImpl mailSenderImpl = (JavaMailSenderImpl) mailSender;
+
+            System.out.println("=== 이메일 전송 시도 ===");
+            System.out.println("EMAIL_USER: " + mailSenderImpl.getUsername());
+            System.out.println("EMAIL_HOST: " + mailSenderImpl.getHost());
+            System.out.println("EMAIL_PORT: " + mailSenderImpl.getPort());
+            System.out.println("받는 사람: " + email);
+            
+            mailSender.send(message);
+        } catch (MailException e) {
+            e.printStackTrace(); // 콘솔 로그로 오류 원인 확인
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "이메일 전송 중 오류가 발생했습니다.");
+        }
     }
 
     // 2. 이메일 인증 확인
@@ -107,15 +129,15 @@ public class UserService {
     public void registerParent(SignUpParentRequestDto dto) {
         // 1. 이메일 인증 여부 확인
         EmailVerification verification = emailVerificationRepository.findByEmail(dto.getEmail())
-                .orElseThrow(() -> new IllegalArgumentException("이메일 인증이 필요합니다."));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "이메일 인증이 필요합니다."));
 
         if (!verification.getStatus()) {
-            throw new IllegalStateException("이메일이 인증되지 않았습니다.");
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "이메일이 인증되지 않았습니다.");
         }
 
         // 2. 이메일 중복 확인
         if (userRepository.existsByEmail(dto.getEmail())) {
-            throw new IllegalArgumentException("해당 이메일은 이미 사용 중입니다.");
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "해당 이메일은 이미 사용 중입니다.");
         }
 
         // 3. 비밀번호 암호화
@@ -152,11 +174,11 @@ public class UserService {
             if (response != null && email.equals(response.getUserId())) {
                 return response.getUserKey(); // 👉 DB에 저장할 값
             } else {
-                throw new RuntimeException("외부 API 응답이 비정상입니다.");
+                throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "외부 API 응답이 비정상입니다.");
             }
 
         } catch (Exception e) {
-            throw new RuntimeException("외부 API 호출 실패: " + e.getMessage());
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "외부 API 호출 실패: " + e.getMessage());
         }
     }
 
@@ -206,15 +228,16 @@ public class UserService {
         }
     }
     
+    // 아이 회원가입 
     @Transactional
     public void registerChild(SignUpChildRequestDto dto) {
         // 부모 이메일 존재 여부 확인
         if (!userRepository.existsByEmail(dto.getParentEmail())) {
-            throw new IllegalArgumentException("존재하지 않는 부모 이메일입니다.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "존재하지 않는 부모 이메일입니다.");
         }
     	
         if (userRepository.existsByEmail(dto.getEmail())) {
-            throw new IllegalArgumentException("해당 이메일은 이미 사용 중입니다.");
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "해당 이메일은 이미 사용 중입니다.");
         }
 
         String encodedPassword = passwordEncoder.encode(dto.getPassword());
@@ -234,15 +257,16 @@ public class UserService {
         userRepository.save(child);
     }
     
+    // 로그인 할때의 동작들
     @Transactional
-    public TokenDto login(LoginRequestDto dto, HttpServletResponse response) {
+    public LoginResponseDto login(LoginRequestDto dto, HttpServletResponse response) {
         // 1. 사용자 조회
         User user = userRepository.findByEmail(dto.getEmail())
-                .orElseThrow(() -> new IllegalArgumentException("이메일 또는 비밀번호가 올바르지 않습니다."));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "이메일 또는 비밀번호가 올바르지 않습니다."));
 
         // 2. 비밀번호 확인
         if (!passwordEncoder.matches(dto.getPassword(), user.getPassword())) {
-            throw new IllegalArgumentException("이메일 또는 비밀번호가 올바르지 않습니다.");
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "이메일 또는 비밀번호가 올바르지 않습니다.");
         }
 
         // 3. 토큰 생성
@@ -255,7 +279,7 @@ public class UserService {
         token.setUserId(user.getId());
         token.setRefreshToken(refreshToken);
         token.setCreatedAt(LocalDateTime.now());
-        token.setExpiredAt(LocalDateTime.now().plusDays(1)); // 1일 유효
+        token.setExpiredAt(LocalDateTime.now().plusSeconds(refreshTokenValidTime / 1000)); // 1일 유효
 
         userRefreshTokenRepository.save(token);
 
@@ -270,38 +294,53 @@ public class UserService {
 
         response.setHeader("Set-Cookie", cookie.toString());
 
-        // 6. access token 반환
-        return new TokenDto(accessToken);
+        // 6. access token + 부모 여부 반환
+        return new LoginResponseDto(accessToken, user.getIsParent());
     }
 
     // 토큰 reissue 관련 메서드
     @Transactional
-    public TokenDto reissue(String accessToken, String refreshToken) {
+    public TokenDto reissue(String accessToken, String refreshToken, HttpServletResponse response) {
         // 1. access token에서 이메일 추출 (만료돼도 subject는 꺼낼 수 있음)
         String email = jwtTokenProvider.getEmailFromToken(accessToken);
 
         // 2. 사용자 조회
         User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new IllegalArgumentException("사용자를 찾을 수 없습니다."));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "사용자를 찾을 수 없습니다."));
 
         // 3. DB에서 refresh token 조회
         UserRefreshToken savedToken = userRefreshTokenRepository.findByUserId(user.getId())
-                .orElseThrow(() -> new IllegalArgumentException("저장된 리프레시 토큰이 없습니다."));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "저장된 리프레시 토큰이 없습니다."));
 
         // 4. 일치 여부 확인
         if (!savedToken.getRefreshToken().equals(refreshToken)) {
-            throw new IllegalArgumentException("Refresh Token이 유효하지 않습니다.");
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Refresh Token이 유효하지 않습니다.");
         }
 
         // 5. 만료 확인
         if (savedToken.getExpiredAt().isBefore(LocalDateTime.now())) {
-            throw new IllegalArgumentException("Refresh Token이 만료되었습니다. 다시 로그인해주세요.");
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Refresh Token이 만료되었습니다. 다시 로그인해주세요.");
         }
 
-        // 6. 새로운 access token 발급
+        // 6. access token 발급
         String newAccessToken = jwtTokenProvider.createAccessToken(email);
+
+        // 7. refresh token DB에서 삭제
+        userRefreshTokenRepository.delete(savedToken);
+
+        // 8. 쿠키 삭제
+        ResponseCookie expiredCookie = ResponseCookie.from("refreshToken", "")
+                .path("/api/auth")
+                .httpOnly(true)
+                .secure(true)
+                .sameSite("None")
+                .maxAge(0)
+                .build();
+        response.setHeader("Set-Cookie", expiredCookie.toString());
+
         return new TokenDto(newAccessToken);
     }
+
     
     // 로그아웃 + refresh token 삭제 + Cookie에 있는 refresh token 만료
     @Transactional
@@ -309,7 +348,7 @@ public class UserService {
         // 1. access token 꺼내기
         String accessToken = jwtTokenProvider.resolveAccessToken(request);
         if (accessToken == null || !jwtTokenProvider.validateToken(accessToken)) {
-            throw new IllegalArgumentException("유효하지 않은 토큰입니다.");
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "유효하지 않은 토큰입니다.");
         }
 
         // 2. 사용자 이메일 추출
@@ -317,7 +356,7 @@ public class UserService {
 
         // 3. 사용자 조회
         User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 존재하지 않습니다."));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "해당 사용자가 존재하지 않습니다."));
 
         // 4. refresh token DB 삭제
         userRefreshTokenRepository.findByUserId(user.getId())
@@ -340,20 +379,20 @@ public class UserService {
     public void deleteMe(HttpServletRequest request, HttpServletResponse response) {
         String accessToken = jwtTokenProvider.resolveAccessToken(request);
         if (accessToken == null || !jwtTokenProvider.validateToken(accessToken)) {
-            throw new IllegalArgumentException("유효하지 않은 access token입니다.");
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "유효하지 않은 access token입니다.");
         }
 
         String email = jwtTokenProvider.getEmailFromToken(accessToken);
 
         User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 존재하지 않습니다."));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "해당 사용자가 존재하지 않습니다."));
 
         // 1. refresh token 삭제 (DB)
         userRefreshTokenRepository.findByUserId(user.getId())
                 .ifPresent(userRefreshTokenRepository::delete);
 
         // 2. 사용자 삭제
-        userRepository.delete(user);  // ✅ 연관 데이터는 ON DELETE CASCADE로 자동 삭제됨
+        userRepository.delete(user);  // 연관 데이터는 ON DELETE CASCADE로 자동 삭제됨
 
         // 3. refreshToken 쿠키 제거
         ResponseCookie deleteCookie = ResponseCookie.from("refreshToken", "")

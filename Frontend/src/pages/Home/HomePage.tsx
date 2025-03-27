@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { useLogout } from '@/hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 import AccountInfo from '@/components/home/AccountInfo';
 import Calendar from '@/components/home/Calendar';
 import FinancialProducts from '@/components/home/FinancialProducts';
@@ -59,6 +60,7 @@ interface FinancialProductsData {
 const HomePage: React.FC = () => {
   const auth = useAuth();
   const { logoutUser } = useLogout();
+  const navigate = useNavigate();
   
   const [accountData, setAccountData] = useState<AccountData | null>(null);
   const [contractData, setContractData] = useState<ContractData[]>([]);
@@ -149,16 +151,32 @@ const HomePage: React.FC = () => {
     }))
   } : undefined;
 
+  // 일자리 조회 페이지로 이동하는 함수
+  const handleJobListClick = () => {
+    console.log('🏠 홈 페이지: 일자리 조회 페이지로 이동');
+    navigate('/parent/jobs');
+  };
+
   return (
     <div className="container mx-auto p-4">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">홈</h1>
-        <button
-          onClick={logoutUser}
-          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-        >
-          로그아웃
-        </button>
+        <div>
+          {auth.isParent && (
+            <button
+              onClick={handleJobListClick}
+              className="px-4 py-2 mr-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            >
+              일자리 조회
+            </button>
+          )}
+          <button
+            onClick={logoutUser}
+            className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+          >
+            로그아웃
+          </button>
+        </div>
       </div>
       
       {/* 계좌 정보 컴포넌트 */}

@@ -7,6 +7,7 @@ import Calendar from '@/components/home/Calendar';
 import FinancialProducts from '@/components/home/FinancialProducts';
 import { apiCall } from '@/utils/api';
 import styles from './HomePage.module.css';
+import WeeklyCalendar from '@/components/calendar/WeeklyCalendar';
 
 interface AccountData {
   user_name: string;
@@ -58,6 +59,7 @@ interface FinancialProductsData {
 }
 
 const HomePage: React.FC = () => {
+
   const auth = useAuth();
   const { logoutUser } = useLogout();
   const navigate = useNavigate();
@@ -76,6 +78,7 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     console.log('🔐 인증 상태 변경 감지:', { 
+
       isAuthenticated: auth.isAuthenticated, 
       hasToken: !!auth.accessToken 
     });
@@ -142,7 +145,6 @@ const HomePage: React.FC = () => {
       console.warn('⚠️ 인증 상태 없음 - 데이터 로드 건너뜀');
     }
   }, [auth.isAuthenticated, auth.accessToken]);
-
   // 금융 상품 데이터를 FinancialProducts 컴포넌트가 기대하는 형식으로 변환
   const formattedFinancialData = financialProductsData ? {
     contracts: financialProductsData.contracts.map(product => ({
@@ -151,6 +153,7 @@ const HomePage: React.FC = () => {
     }))
   } : undefined;
 
+  
   // 일자리 조회 페이지로 이동하는 함수
   const handleJobListClick = () => {
     console.log('🏠 홈 페이지: 일자리 조회 페이지로 이동');
@@ -194,6 +197,7 @@ const HomePage: React.FC = () => {
       {/* 금융 상품 컴포넌트 */}
       <div>
         <h2 className="text-xl font-semibold mb-2">금융 상품</h2>
+
         <FinancialProducts data={formattedFinancialData} />
       </div>
     </div>

@@ -77,7 +77,7 @@ public class JwtTokenProvider {
                     .getBody()
                     .getSubject();
         } catch (ExpiredJwtException e) {
-            // ✅ 만료된 access token 에서도 subject(email)은 꺼낼 수 있어!
+            // 만료된 access token 에서도 subject(email)은 꺼낼 수 있어!
             return e.getClaims().getSubject();
         }
     }

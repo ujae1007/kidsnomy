@@ -12,6 +12,7 @@ export default defineConfig({
     },
   },
   server: {
+    host: true,
     proxy: {
       '/api': {
         target: 'https://j12b207.p.ssafy.io',

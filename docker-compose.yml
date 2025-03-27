@@ -19,7 +19,6 @@ services:
     ports:
       - "5173:5173" # Vite 개발 서버 포트
     volumes:
-      # - ./Frontend/test/my-test-app:/app # 코드 변경 사항을 컨테이너 내부에 즉시 반영
       - /app/node_modules # 로컬 node_modules와 분리하여 충돌 방지
       - ./Frontend/build:/usr/share/nginx/html
     environment:

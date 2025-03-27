@@ -22,8 +22,10 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseCookie;
+import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.client.RestTemplate;
@@ -92,7 +94,20 @@ public class UserService {
         message.setSubject("[Kidsnomy] 이메일 인증 코드입니다.");
         message.setText("인증 코드: " + code);
 
-        mailSender.send(message);
+        try {
+            JavaMailSenderImpl mailSenderImpl = (JavaMailSenderImpl) mailSender;
+
+            System.out.println("=== 이메일 전송 시도 ===");
+            System.out.println("EMAIL_USER: " + mailSenderImpl.getUsername());
+            System.out.println("EMAIL_HOST: " + mailSenderImpl.getHost());
+            System.out.println("EMAIL_PORT: " + mailSenderImpl.getPort());
+            System.out.println("받는 사람: " + email);
+            
+            mailSender.send(message);
+        } catch (MailException e) {
+            e.printStackTrace(); // 콘솔 로그로 오류 원인 확인
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "이메일 전송 중 오류가 발생했습니다.");
+        }
     }
 
     // 2. 이메일 인증 확인

@@ -1,0 +1,3377 @@
+[
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "서울특별시 교통회관",
+        "label": "생활"
+    },
+    {
+        "category_name": "교육,학문 > 교육단체 > 연수원",
+        "place_name": "서울특별시 교통연수원",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 교통시설 > 주차장",
+        "place_name": "서울특별시 교통회관 주차장",
+        "label": "교통"
+    },
+    {
+        "category_name": "가정,생활 > 유아 > 놀이시설 > 놀이터",
+        "place_name": "신천어린이교통공원 놀이터",
+        "label": "취미"
+    },
+    {
+        "category_name": "교육,학문 > 교육단체 > 체험학습장",
+        "place_name": "어린이교통안전교육장",
+        "label": "문화"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 잠실승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단 > 운전면허시험장",
+        "place_name": "한국교통안전공단 송파운전적성정밀검사장",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 교통시설 > 주차장",
+        "place_name": "신천어린이교통공원 주차장2",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 교통시설 > 주차장",
+        "place_name": "신천어린이교통공원 주차장1",
+        "label": "교통"
+    },
+    {
+        "category_name": "가정,생활 > 취미 > 복권",
+        "place_name": "교통카드판매소",
+        "label": "교통"
+    },
+    {
+        "category_name": "가정,생활 > 취미 > 복권",
+        "place_name": "교통카드판매대",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단 > 운전면허시험장",
+        "place_name": "한국도로교통공단 강남운전면허시험장",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단 > 운전면허시험장",
+        "place_name": "한국도로교통공단 강남운전면허시험장 기능시험장",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "일원교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교육,학문 > 연구소",
+        "place_name": "대중교통포럼",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "가정,생활 > 취미 > 복권",
+        "place_name": "교통카드충전소",
+        "label": "교통"
+    },
+    {
+        "category_name": "가정,생활 > 취미 > 복권",
+        "place_name": "교통카드충전소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "천마교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 교통시설 > 주차장",
+        "place_name": "한국도로교통공단 강남운전면허시험장 주차장",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 행정기관부속시설",
+        "place_name": "광진구청 교통지도과",
+        "label": "생활"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "천마교통 사무실",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 행정기관 > 경찰서 > 치안센터",
+        "place_name": "교통정보센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국건설교통신기술협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "동부교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "영미교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 건설,건축",
+        "place_name": "교통물류연구원",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 건설,건축 > 건축설계,컨설팅",
+        "place_name": "다원도시교통연구소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "진영교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 강남자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    },
+    {
+        "category_name": "서비스,산업 > 전문대행 > 컨설팅",
+        "place_name": "한국교통안전컨설팅",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국교통장애인협회 송파구지회",
+        "label": "교육"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "삼광교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 수서승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 대공원승무사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 본사",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성동자동차검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "한서교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "언론,미디어 > 신문",
+        "place_name": "교통문화신문",
+        "label": "도서"
+    },
+    {
+        "category_name": "교통,수송 > 운송 > 버스회사 > 시내버스",
+        "place_name": "구의교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "승진교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단",
+        "place_name": "서울교통공사 군자차량사업소",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 택시",
+        "place_name": "대건교통",
+        "label": "교통"
+    },
+    {
+        "category_name": "교통,수송 > 자동차 > 자동차검사소",
+        "place_name": "한국교통안전공단 성우자동차출장검사소",
+        "label": "교통"
+    },
+    {
+        "category_name": "사회,공공기관 > 공사,공단 > 한국도로교통공단",
+        "place_name": "한국도로교통공단 서울지부",
+        "label": "교통"
+    }
+]

@@ -1,0 +1,3377 @@
+[
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "뉴질랜드스토리",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 투썸플레이스",
+        "place_name": "투썸플레이스 잠실역점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "젠젠 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "카페이클립스",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 석촌호수점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 석촌서호점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 파스쿠찌",
+        "place_name": "파스쿠찌 잠실역점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실역점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "마호가니커피 잠실홈플러스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 석촌호수DI점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "오린지",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 할리스",
+        "place_name": "할리스 잠실광고회관점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "롯데호텔월드 더라운지 앤바",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "봉땅",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "비엔나커피 센트럴 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "겟썸커피 LMoA점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "앙떼띠 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 석촌호수동호점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 커피빈",
+        "place_name": "커피빈 석촌호수점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 메가MGC커피",
+        "place_name": "메가MGC커피 석촌호수사거리점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "차백도 잠실석촌호수점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페마나랑",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 이디야커피",
+        "place_name": "이디야커피 잠실역점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "커피바이 로스터스",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "카페드로잉",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 카페마마스",
+        "place_name": "카페마마스 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "위커파크",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "에비뉴엘퍼플라운지 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실시그마타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 커피빈",
+        "place_name": "커피빈 방이점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 잠실샤롯데점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 설빙",
+        "place_name": "설빙 롯데월드어드벤처점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 엔제리너스",
+        "place_name": "엔제리너스 롯데백잠실광장점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 갤러리아팰리스점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 갤러리카페",
+        "place_name": "에브리데이몬데이",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "아쿠아가든 카페 롯데월드타워점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "뷰클런즈",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "제이바웃커피",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점 > 스타벅스",
+        "place_name": "스타벅스 잠실대교남단R점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페",
+        "place_name": "진저베어",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페 > 디저트카페 > 노티드",
+        "place_name": "노티드월드 잠실롯데월드몰",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 커피전문점",
+        "place_name": "카페시나몬",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "베이크 롯데백화점 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페",
+        "place_name": "앤티크커피 잠실점",
+        "label": "카페"
+    },
+    {
+        "category_name": "음식점 > 카페 > 테마카페",
+        "place_name": "세라젬웰카페 서울잠실직영점",
+        "label": "카페"
+    }
+]

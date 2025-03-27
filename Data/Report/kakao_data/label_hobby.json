@@ -1,0 +1,3377 @@
+[
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "롯데월드 VR스페이스",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "에스에프엔터테인먼트",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "퓨처핸즈업",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "런2피씨방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "피크PC방 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "플레이존 PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "런투PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "제로백PC 잠실학원사거리점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "오아시스메타PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "겜숲플스카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "제로PC방 잠실학원사거리점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "레드포스PC아레나 석촌점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "OKPC존",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑스타PC방 석촌점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "로지텍G PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "레드포스PC아레나 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "레벨업PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "헌터PC 석촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주 피씨방 (ZOO PC방)",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "제로백PC 삼전역점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "리가플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "쓰리팝PC방 잠실점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "WAXPC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "레전드VR 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "더캠프PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "(바이브)VIBE PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "비원PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "텐즈(TENZ)PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "레드포스PC아레나 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "와드PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "엑스매니아플스방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "프라임PC카페",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "시즌원PC방 잠실본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "크레이지 플레이스테이션3",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "안드로메다잠실",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "샤먼PC CAFE",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "미디어웹 3pop 잠실새내점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "주식회사 더리치레인 잠실 삼전점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "몽키타운PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "탑플레이스PC방",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방 > 크라우드PC",
+        "place_name": "크라우드PC 둔촌본점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드 PC방 동서울터미널점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "맥스피드PC 송파가락직영점",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "이스포츠센터PC",
+        "label": "취미"
+    },
+    {
+        "category_name": "가정,생활 > 여가시설 > 게임방,PC방",
+        "place_name": "바나나PC카페",
+        "label": "취미"
+    }
+]

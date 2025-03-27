@@ -1,0 +1,3377 @@
+[
+    {
+        "category_name": "교육,학문 > 문화센터",
+        "place_name": "잠실생활문화지원센터",
+        "label": "문화"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 잠실장미점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 석촌호수점",
+        "label": "식당"
+    },
+    {
+        "category_name": "부동산 > 주거시설 > 아파트 > 아파트부속시설",
+        "place_name": "트리지움생활지원센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "교육,학문 > 문화센터",
+        "place_name": "송파생활문화대학",
+        "label": "문화"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 석촌역2번출구점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 송파삼전점",
+        "label": "식당"
+    },
+    {
+        "category_name": "의료,건강 > 임신,출산 > 산모도우미",
+        "place_name": "홈스토리생활 송파지사",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "브레인생활건강",
+        "label": "병원"
+    },
+    {
+        "category_name": "가정,생활 > 미용 > 화장품",
+        "place_name": "서울건강생활",
+        "label": "미용"
+    },
+    {
+        "category_name": "가정,생활 > 생활용품점 > 주방용품 > 주방가구,싱크대판매",
+        "place_name": "생활용품",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 건강식품판매",
+        "place_name": "녹십초생활건강",
+        "label": "생활"
+    },
+    {
+        "category_name": "가정,생활 > 미용 > 화장품",
+        "place_name": "수서건강생활",
+        "label": "미용"
+    },
+    {
+        "category_name": "서비스,산업 > 환경 > 방역,방제",
+        "place_name": "좋은생활환경",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 잠실새내점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 생활용품점",
+        "place_name": "생활용품디씨아울렛",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 건강식품판매",
+        "place_name": "풀무원건강생활 잠실지점",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 건강식품판매",
+        "place_name": "풀무원건강생활 송파지점",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 건강식품판매",
+        "place_name": "한미생활건강",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "한마음공동생활가정",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업 > 전기,전자 > 생활가전제조",
+        "place_name": "조은생활",
+        "label": "생활"
+    },
+    {
+        "category_name": "스포츠,레저 > 스포츠시설 > 체육관",
+        "place_name": "생활체육정보센터",
+        "label": "문화"
+    },
+    {
+        "category_name": "교육,학문 > 학원 > 수학학원",
+        "place_name": "슬기로운수학생활",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 자양점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "강남장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성코엑스점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 구의역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진발달장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강남일원점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진나눔장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "광진장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "서비스,산업 > 기업",
+        "place_name": "한국생활건강",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "국민생활체육회",
+        "label": "교육"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "한국생활자전거협회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 선릉역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "가정,생활 > 전자제품 > 전자제품판매",
+        "place_name": "한경희생활과학 광진점",
+        "label": "생활"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 강동구청점",
+        "label": "식당"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회 > 사회복지시설 > 장애인복지시설",
+        "place_name": "으뜸장애인자립생활센터",
+        "label": "생활"
+    },
+    {
+        "category_name": "의료,건강 > 의료기기판매",
+        "place_name": "혜당생활과학",
+        "label": "병원"
+    },
+    {
+        "category_name": "부동산 > 빌딩",
+        "place_name": "생활의지혜와향기",
+        "label": "생활"
+    },
+    {
+        "category_name": "사회,공공기관 > 단체,협회",
+        "place_name": "생활체육전국풋살연합회",
+        "label": "교육"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 삼성휘문점",
+        "label": "식당"
+    },
+    {
+        "category_name": "음식점 > 술집 > 호프,요리주점 > 생활맥주",
+        "place_name": "생활맥주 가락시장역점",
+        "label": "식당"
+    },
+    {
+        "category_name": "서비스,산업 > 제조업",
+        "place_name": "고준성생활환경연구소",
+        "label": "생활"
+    }
+]

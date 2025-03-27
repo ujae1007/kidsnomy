@@ -1,6 +1,7 @@
 package com.backend.kidsnomy.user.controller;
 
 import com.backend.kidsnomy.jwt.JwtTokenProvider;
+import com.backend.kidsnomy.jwt.dto.LoginResponseDto;
 import com.backend.kidsnomy.jwt.dto.TokenDto;
 import com.backend.kidsnomy.user.dto.EmailSendRequestDto;
 import com.backend.kidsnomy.user.dto.EmailVerificationDto;
@@ -80,11 +81,12 @@ public class UserController {
     
     // 5. 로그인
     @PostMapping("/login")
-    public ResponseEntity<TokenDto> login(@RequestBody LoginRequestDto dto, HttpServletResponse response) {
-        TokenDto token = userService.login(dto, response);
+    public ResponseEntity<LoginResponseDto> login(@RequestBody LoginRequestDto dto, HttpServletResponse response) {
+        LoginResponseDto token = userService.login(dto, response);
         return ResponseEntity.ok(token);
     }
     
+   
     // 6. 토큰 reissue
     @PostMapping("/reissue")
     public ResponseEntity<TokenDto> reissue(

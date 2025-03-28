@@ -16,14 +16,17 @@ headers = {
 category_list = {"교육":'edu', "병원":'health', "pc방":'hobby', "식당":'eat', "카페":'cafe', "쇼핑":'shopping', "문구":'stationary',
                  "미용":'beauty', "문화":'culture', "도서":'book', "생활":'life', "교통":'transportation'}
 # eng_categories = ['edu', 'health', 'hobby', 'eat', 'cafe', 'shopping', 'stationary', 'beauty', 'culture', 'book', 'life', 'transportation']
-additional_list = {"카페":["간식", "아이스크림할인점"],
-                   "미용":["올리브영"],
-                   "문화":["영화관", "미술관", "박물관", "놀이동산", "아쿠아리움", "동물원"],
-                   "생활":["다이소", "대형마트", "슈퍼"],
-                   "pc방":["노래", "사진", "오락"],
-                   "병원":["약국"],
-                   "교통":["운수", "터미널"]} # 코레일, 티머니
-
+# additional_list = {"카페":["간식", "아이스크림할인점"],
+#                    "미용":["올리브영"],
+#                    "교육":["학원"],
+#                    "쇼핑":["백화점", "아울렛", "옷"],
+#                    "식당":["레스토랑", "음식"],
+#                    "문화":["영화관", "미술관", "박물관", "놀이동산", "아쿠아리움", "동물원"],
+#                    "생활":["다이소", "대형마트", "슈퍼"],
+#                    "병원":["약국"],
+#                    "pc방":["노래", "사진", "오락"],
+#                    "교통":["운수", "터미널"]} # 코레일, 티머니
+additional_list = {"교육":["학원"]} # 코레일, 티머니
 case_input = int(input("데이터 수집하고 싶은 곳은?(기본:1, 그외: 2): "))
 if case_input == 1:
     for category in category_list:

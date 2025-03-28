@@ -1,0 +1,3377 @@
+[
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 잠실점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 중고서점",
+        "place_name": "알라딘중고서점 잠실롯데월드타워점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점",
+        "place_name": "아크앤북 잠실롯데월드몰점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 중고서점",
+        "place_name": "서울책보고",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 중고서점",
+        "place_name": "알라딘중고서점 잠실새내역점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점",
+        "place_name": "마중물서점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점",
+        "place_name": "디퍼런트 북샵",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점",
+        "place_name": "아람북스 롯데백화점 잠실점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점",
+        "place_name": "동심서당",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점",
+        "place_name": "책방무엇보다",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "예림당",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점",
+        "place_name": "정은도서",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점",
+        "place_name": "장미문고",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "토이필북스",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 천호점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점",
+        "place_name": "동네북 송파서점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "세종아동전집",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "도서출판새샘",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점",
+        "place_name": "책숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점",
+        "place_name": "뜸BOOK뜸BOOK",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "도서출판한국헤르만헤세",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 건대스타시티점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점",
+        "place_name": "글사랑방",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 영풍문고",
+        "place_name": "영풍문고 스타필드코엑스몰점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "도서출판흰돌",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "워터저널",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점",
+        "place_name": "하이리빙자료실",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "하와이컴퍼니",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점",
+        "place_name": "송파문고",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "MJ레이블",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "명인문화사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "피플랩인베스트먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "더그림엔터테인먼트",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "포엠포엠",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "점프스터디",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "오름교육",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "선교횃불씨씨엠2U",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "나무와숲",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "시사의창",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "이안서가",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사",
+        "place_name": "족보나라",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 출판사 > 잡지사,정기간행물출판",
+        "place_name": "심슨출판",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "대한교육사",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서 > 서점 > 교보문고",
+        "place_name": "교보문고 핫트랙스 가든파이브점",
+        "label": "도서"
+    },
+    {
+        "category_name": "문화,예술 > 도서",
+        "place_name": "종합책문구",
+        "label": "도서"
+    }
+]

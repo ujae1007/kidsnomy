@@ -8,8 +8,12 @@ category_list = {"교육":'edu', "병원":'health', "pc방":'hobby', "식당":'e
 # eng_categories = ['edu', 'health', 'hobby', 'eat', 'cafe', 'shopping', 'stationary', 'beauty', 'culture', 'book', 'life', 'transportation']
 additional_list = {"카페":["간식", "아이스크림할인점"],
                    "미용":["올리브영"],
+                   "교육":["학원"],
+                   "쇼핑":["백화점", "아울렛", "옷"],
+                   "식당":["레스토랑", "음식"],
                    "문화":["영화관", "미술관", "박물관", "놀이동산", "아쿠아리움", "동물원"],
                    "생활":["다이소", "대형마트", "슈퍼"],
+                   "병원":["약국"],
                    "pc방":["노래", "사진", "오락"],
                    "교통":["운수", "터미널"]} # 코레일, 티머니
 category_label_list = {'q': "교육", 'w': "병원", 'e': "취미", 'r': "식당", 't': "카페", 'a':"쇼핑", 's':"문구",
@@ -20,11 +24,28 @@ category_label_list = {'q': "교육", 'w': "병원", 'e': "취미", 'r': "식당
 카페 -> "category_name": "음식점 > 카페 > 커피전문점",
 
 '''
-label_data_list = defaultdict(str)
+# label_data_list = defaultdict(str)
+with open("./kakao_data/label_data.json", "r", encoding="utf-8") as f:
+    label_data_list = json.load(f)
+#
+# print(len(label_data_list))
+
+# 라벨링할 데이터 카테고리별 갯수 확인
+# res = []
+# for category in category_list:
+#     start_time = time.time()
+#     file_path = f"./kakao_data/processed_{category_list[category]}.json"
+#     with open(file_path, "r", encoding="utf-8") as f:
+#         data = json.load(f)
+#         print(f"{category} {len(data)}")
+#         res.append(len(data))
+#
+# print(sum(res))
+
 for category in category_list:
     start_time = time.time()
     res = []
-    file_path = f"./kakao_data/{category_list[category]}.json"
+    file_path = f"./kakao_data/processed_{category_list[category]}.json"
     with open(file_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 

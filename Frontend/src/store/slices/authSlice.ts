@@ -21,10 +21,11 @@ export const loginUser = createAsyncThunk(
       console.log('🔑 로그인 요청 시작:', { email: credentials.email, passwordLength: credentials.password.length });
       console.time('⏱️ 로그인 요청 시간');
       
-      const response = await fetch('https://j12b207.p.ssafy.io/api/auth/login', {
+      const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(credentials),
         credentials: 'include', // 쿠키 포함
@@ -89,10 +90,11 @@ export const reissueToken = createAsyncThunk(
       console.log('🔄 토큰 재발급 요청 시작');
       console.time('⏱️ 토큰 재발급 요청 시간');
       
-      const response = await fetch('https://j12b207.p.ssafy.io/api/auth/reissue', {
+      const response = await fetch('/api/auth/reissue', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${auth.accessToken}`,
+          'Accept': 'application/json'
         },
         credentials: 'include', // 쿠키를 포함하도록 설정
       });

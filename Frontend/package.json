@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "start": "vite preview",
+    "dev": "node --max_old_space_size=4096 ./node_modules/vite/bin/vite.js",
+    "build": "node --max_old_space_size=4096 ./node_modules/vite/bin/vite.js build",
+    "start": "node --max_old_space_size=4096 ./node_modules/vite/bin/vite.js preview",
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
     "redux-persist": "^6.0.0"
   },
   "devDependencies": {
+    "@types/node": "^22.13.14",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@vitejs/plugin-react": "^4.3.4",

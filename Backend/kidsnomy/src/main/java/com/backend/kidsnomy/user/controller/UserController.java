@@ -37,6 +37,10 @@ public class UserController {
             return ResponseEntity.ok("인증 코드가 전송되었습니다.");
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("서버 오류: " + e.getMessage());
         }
     }
 
@@ -87,10 +91,11 @@ public class UserController {
     }
     
    
-    // 6. 토큰 reissue
+ // 6. 토큰 reissue
     @PostMapping("/reissue")
     public ResponseEntity<TokenDto> reissue(
             HttpServletRequest request,
+            HttpServletResponse response,
             @CookieValue(name = "refreshToken", required = false) String refreshToken
     ) {
         String accessToken = jwtTokenProvider.resolveAccessToken(request);
@@ -99,9 +104,10 @@ public class UserController {
             return ResponseEntity.badRequest().build();
         }
 
-        TokenDto token = userService.reissue(accessToken, refreshToken);
+        TokenDto token = userService.reissue(accessToken, refreshToken, response);
         return ResponseEntity.ok(token);
     }
+
     
     // 7. 로그아웃
     @PostMapping("/logout")

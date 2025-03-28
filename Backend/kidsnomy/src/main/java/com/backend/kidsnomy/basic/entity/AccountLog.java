@@ -6,7 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "account_log")
@@ -29,21 +31,21 @@ public class AccountLog {
     @Column(name = "transaction_name")
     private String transactionName;
 
-    @Column(name = "transactionUniqueNo", nullable = false, unique = true)
+    @Column(name = "transaction_unique_no", nullable = false, unique = true)
     private String transactionUniqueNo;
 
-    @Column(name = "transactionDate")
-    private LocalDateTime transactionDate;
+    @Column(name = "transaction_date")
+    private LocalDate transactionDate; // 변경 전 : LocalDateTime
 
-    @Column(name = "transactionTime")
-    private LocalDateTime transactionTime;
+    @Column(name = "transaction_time")
+    private LocalTime transactionTime; // 변경 전 : LocalDateTime
 
-    @Column(name = "transactionType")
+    @Column(name = "transaction_type")
     private Integer transactionType;
 
-    @Column(name = "transactionBalance")
+    @Column(name = "transaction_balance")
     private BigDecimal transactionBalance;
 
-    @Column(name = "transactionAfterBalance")
+    @Column(name = "transaction_after_balance")
     private BigDecimal transactionAfterBalance;
 }

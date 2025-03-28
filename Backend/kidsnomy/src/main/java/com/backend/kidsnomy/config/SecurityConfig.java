@@ -41,7 +41,8 @@ public class SecurityConfig {
                     "/api/account/**",
                     "/api/work/**",
                     "/api/finance/**",
-                    "/api/auto/**"
+                    "/api/auto/**",
+                    "/api/basic/**"
                 ).permitAll()
                 .anyRequest().authenticated()
             )

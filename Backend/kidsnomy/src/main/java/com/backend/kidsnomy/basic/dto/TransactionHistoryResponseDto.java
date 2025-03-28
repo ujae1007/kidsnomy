@@ -1,14 +1,18 @@
 package com.backend.kidsnomy.basic.dto;
 
+import lombok.Builder;
 import lombok.Data;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Data
+@Builder
 public class TransactionHistoryResponseDto {
     private String totalCount;
     private List<TransactionDto> list;
 
     @Data
+    @Builder
     public static class TransactionDto {
         private String transactionUniqueNo;
         private String transactionDate;
@@ -16,8 +20,8 @@ public class TransactionHistoryResponseDto {
         private String transactionType;
         private String transactionTypeName;
         private String transactionAccountNo;
-        private String transactionBalance;
-        private String transactionAfterBalance;
+        private BigDecimal transactionBalance;
+        private BigDecimal transactionAfterBalance;
         private String transactionSummary;
         private String transactionMemo;
     }

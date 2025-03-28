@@ -3,7 +3,6 @@ import { useAuth } from '@/hooks/useAuth';
 import { useLogout } from '@/hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import AccountInfo from '@/components/home/AccountInfo';
-import Calendar from '@/components/home/Calendar';
 import FinancialProducts from '@/components/home/FinancialProducts';
 import { apiCall } from '@/utils/api';
 import styles from './HomePage.module.css';
@@ -59,7 +58,6 @@ interface FinancialProductsData {
 }
 
 const HomePage: React.FC = () => {
-
   const auth = useAuth();
   const { logoutUser } = useLogout();
   const navigate = useNavigate();
@@ -78,7 +76,6 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     console.log('🔐 인증 상태 변경 감지:', { 
-
       isAuthenticated: auth.isAuthenticated, 
       hasToken: !!auth.accessToken 
     });
@@ -145,16 +142,14 @@ const HomePage: React.FC = () => {
       console.warn('⚠️ 인증 상태 없음 - 데이터 로드 건너뜀');
     }
   }, [auth.isAuthenticated, auth.accessToken]);
-  // 금융 상품 데이터를 FinancialProducts 컴포넌트가 기대하는 형식으로 변환
+
   const formattedFinancialData = financialProductsData ? {
     contracts: financialProductsData.contracts.map(product => ({
       ...product,
-      contract_id: String(product.contract_id) // number를 string으로 변환
+      contract_id: String(product.contract_id)
     }))
   } : undefined;
 
-  
-  // 일자리 조회 페이지로 이동하는 함수
   const handleJobListClick = () => {
     console.log('🏠 홈 페이지: 일자리 조회 페이지로 이동');
     navigate('/parent/jobs');
@@ -191,13 +186,12 @@ const HomePage: React.FC = () => {
       {/* 달력 컴포넌트 */}
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-2">일정</h2>
-        <Calendar contracts={contractData} />
+        <WeeklyCalendar contracts={contractData} />
       </div>
 
       {/* 금융 상품 컴포넌트 */}
       <div>
         <h2 className="text-xl font-semibold mb-2">금융 상품</h2>
-
         <FinancialProducts data={formattedFinancialData} />
       </div>
     </div>

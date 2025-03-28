@@ -1,0 +1,31 @@
+.searchContainer {
+  width: calc(100% - 2rem);
+  margin: 0.5rem 1rem;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 25px;
+  background-color: #F5F2F2;
+  color: #333;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  padding-left: 3rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M24.9133 23.5867L19.0457 17.7203C22.5786 13.4788 22.1506 7.20867 18.0739 3.48669C13.9973 -0.235296 7.71418 -0.0925018 3.81084 3.81084C-0.0925018 7.71418 -0.235296 13.9973 3.48669 18.0739C7.20867 22.1506 13.4788 22.5786 17.7203 19.0457L23.5867 24.9133C23.953 25.2796 24.547 25.2796 24.9133 24.9133C25.2796 24.547 25.2796 23.953 24.9133 23.5867ZM2.6875 11.125C2.6875 6.4651 6.4651 2.6875 11.125 2.6875C15.7849 2.6875 19.5625 6.4651 19.5625 11.125C19.5625 15.7849 15.7849 19.5625 11.125 19.5625C6.46724 19.5573 2.69267 15.7828 2.6875 11.125Z' fill='%23826B6B'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 1rem center;
+  background-size: 1.5rem;
+}
+
+.searchInput:focus {
+  outline: none;
+  background-color: #F5F2F2;
+}
+
+.searchInput::placeholder {
+  color: transparent;
+} 

@@ -1,0 +1,140 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: calc(90vh - 2rem);
+  background-color: white;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #E0E0E0;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin: 2rem 1rem;
+  line-height: 1.6;
+}
+
+.chatBox {
+  display: flex;
+  gap: 0.75rem;
+  margin: 0 1rem 2rem;
+  padding: 1rem 1.5rem;
+  background-color: #F5F2F2;
+  border-radius: 12px;
+}
+
+.profileImage {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-left: -0.25rem;
+}
+
+.profileImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.messageBox {
+  flex: 1;
+}
+
+.name {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.message {
+  color: #333;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.inputContainer {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background-color: white;
+  display: flex;
+  gap: 1rem;
+  border-top: 1px solid #E0E0E0;
+  margin-top: auto;
+}
+
+.input {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #F5F2F2;
+  font-size: 1rem;
+  resize: none;
+  min-height: 48px;
+  max-height: 120px;
+}
+
+.input::placeholder {
+  color: #666;
+}
+
+.input:focus {
+  outline: none;
+  background-color: #F0F0F0;
+}
+
+.reportButton {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+}
+
+.sendButton {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.sendButton:hover {
+  transform: scale(1.1);
+}
+
+.sendButton:active {
+  transform: scale(0.95);
+} 

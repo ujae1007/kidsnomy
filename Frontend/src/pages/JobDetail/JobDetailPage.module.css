@@ -1,0 +1,84 @@
+/* 스타일 초기화 */
+.container {
+  padding: 1.5rem 1rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.status {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #F5F2F2;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.infoSection {
+  margin-bottom: 2rem;
+}
+
+.infoRow {
+  display: flex;
+  padding: 1rem;
+  background-color: #F5F2F2;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.label {
+  flex: 1;
+  font-weight: 500;
+  color: #333;
+}
+
+.value {
+  flex: 2;
+  color: #333;
+}
+
+.contentSection {
+  margin-bottom: 2rem;
+}
+
+.contentTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.content {
+  padding: 1rem;
+  background-color: #F5F2F2;
+  border-radius: 8px;
+  white-space: pre-line;
+  line-height: 1.5;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.buttonContainer button {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #E08585;
+  color: #333;
+}
+
+.buttonContainer button:hover {
+  background-color: #d67373;
+} 

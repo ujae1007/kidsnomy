@@ -1,0 +1,122 @@
+.container {
+  width: 100%;
+  padding: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+.productCard {
+  flex: 0 0 calc(100% - 2rem);  /* 한 번에 하나의 카드만 보이도록 */
+  scroll-snap-align: center;     /* 중앙 정렬로 변경 */
+  background: #FFE5E5;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.productCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.interestRate {
+  font-size: 1rem;
+  color: #2D3436;
+  margin-bottom: 0.5rem;
+}
+
+.balance {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2D3436;
+  margin: 1rem 0;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2D3436;
+  margin-bottom: 0.25rem;
+}
+
+.content {
+  font-size: 0.9rem;
+  color: #636e72;
+}
+
+.additionalInfo {
+  font-size: 0.85rem;
+  color: #636e72;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoGrid {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.label {
+  color: #636e72;
+  font-size: 0.9rem;
+}
+
+.value {
+  font-weight: 500;
+  color: #2D3436;
+}
+
+.highlight {
+  color: #FF9EAA;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #dfe6e9;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #FF9EAA;
+} 

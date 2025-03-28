@@ -1,6 +1,14 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node,react,java,python,venv,dotenv
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,react,java,python,venv,dotenv
 
+application-env.properties
+
+docker-compose.override.yml
+
+*.sqlite3
+*.bin
+*.pickle
+
 *.pem
 
 ### dotenv ###

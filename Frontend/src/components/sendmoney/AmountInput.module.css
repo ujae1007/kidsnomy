@@ -1,0 +1,43 @@
+.container {
+  padding: 20px 0;
+}
+
+.label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #914F4F;
+  margin-bottom: 12px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 16px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #914F4F;
+  background-color: #F7F2F2;
+  border: 1px solid #E3CFCF;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  border-color: #E3CFCF;
+  box-shadow: 0 0 0 2px rgba(227, 207, 207, 0.2);
+}
+
+.currency {
+  position: absolute;
+  right: 16px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #914F4F;
+} 

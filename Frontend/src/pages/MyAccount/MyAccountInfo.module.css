@@ -1,0 +1,81 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1A0D0D;
+}
+
+.content {
+  padding: 0 1rem;
+}
+
+.accountCard {
+  background-color: #F5F2F2;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.accountHeader {
+  margin-bottom: 1.5rem;
+}
+
+.accountHeader h2 {
+  font-size: 1.2rem;
+  color: #826B6B;
+  font-weight: bold;
+}
+
+.accountDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(130, 107, 107, 0.2);
+}
+
+.detailItem:last-child {
+  border-bottom: none;
+}
+
+.label {
+  color: #826B6B;
+  font-size: 1rem;
+}
+
+.value {
+  color: #826B6B;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.deleteButton {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #DB9999;
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.deleteButton:hover {
+  opacity: 0.9;
+} 

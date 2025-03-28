@@ -1,0 +1,134 @@
+/* 시작 페이지 스타일 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: white;
+}
+
+.logoContainer {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;  /* 뷰포트 너비의 90%로 제한 */
+  max-width: 1000px;  /* 최대 너비 증가 */
+  transition: transform 0.3s ease;  /* 호버 효과를 위한 트랜지션 */
+}
+
+.logoContainer:hover {
+  transform: scale(1.02);  /* 호버시 살짝 커지는 효과 */
+}
+
+.logo {
+  width: 15rem;  /* 크기 증가 */
+  height: 15rem;
+  object-fit: contain;
+  animation: fadeInDown 1s ease-out;  /* 위에서 아래로 페이드인 */
+}
+
+.title {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 4rem;  /* 폰트 크기 증가 */
+  margin-bottom: 0.2rem;
+  line-height: 1;
+  display: flex;
+  width: 100%;  /* 컨테이너 너비에 맞춤 */
+  justify-content: center;
+  animation: fadeInUp 1s ease-out 0.3s;  /* 아래에서 위로 페이드인, 0.3초 딜레이 */
+  animation-fill-mode: both;
+}
+
+.kidsText {
+  color: #FF9EAA;
+  font-family: 'Varela Round', sans-serif;
+  -webkit-text-stroke: 1.5px #FF9EAA;
+}
+
+.kidsText span {
+  display: inline-block;
+  animation: bounce 1s ease-out 1s;  /* 각 글자 바운스 효과, 1초 딜레이 */
+  animation-fill-mode: both;
+}
+
+.kidsText span:nth-child(2) {
+  color: #FFD93D;
+  -webkit-text-stroke: 1.5px #FFD93D;
+  animation-delay: 1.1s;  /* 두 번째 글자 약간 딜레이 */
+}
+
+.kidsText span:nth-child(3) {
+  animation-delay: 1.2s;  /* 세 번째 글자 약간 딜레이 */
+}
+
+.nomyText {
+  color: #2D3436;
+  font-family: 'Varela Round', sans-serif;
+  -webkit-text-stroke: 1.5px #2D3436;
+  animation: fadeIn 1s ease-out 1.3s;  /* 페이드인 효과, 1.3초 딜레이 */
+  animation-fill-mode: both;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 0.2rem;
+  font-size: 1.1rem;  /* 폰트 크기 약간 증가 */
+  font-weight: 600;
+  letter-spacing: 6px;
+  font-family: 'Varela Round', sans-serif;
+  color: #2D3436;
+  animation: fadeIn 1s ease-out 1.5s;  /* 페이드인 효과, 1.5초 딜레이 */
+  animation-fill-mode: both;
+}
+
+/* 애니메이션 키프레임 정의 */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  80% {
+    transform: translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

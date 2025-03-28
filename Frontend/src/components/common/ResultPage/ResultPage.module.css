@@ -1,0 +1,145 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 320px;
+  position: relative;
+  z-index: 1;
+}
+
+.iconWrapper {
+  position: relative;
+  width: 190px;
+  height: 192px;
+  margin-bottom: 24px;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+  animation: checkAppear 0.6s ease-out;
+}
+
+.icon svg path:last-child {
+  animation: checkDraw 0.8s ease-out;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation-fill-mode: forwards;
+}
+
+@keyframes checkAppear {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes checkDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-3px, -3px); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(3px, -2px); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-2px, 3px); }
+}
+
+/* Decorative circles */
+.circle1 {
+  position: absolute;
+  width: 17.892px;
+  height: 17.952px;
+  flex-shrink: 0;
+  top: -10px;
+  right: -10px;
+  animation: float1 3s ease-in-out infinite;
+}
+
+.circle2 {
+  position: absolute;
+  width: 10.908px;
+  height: 10.945px;
+  flex-shrink: 0;
+  bottom: 20px;
+  left: -5px;
+  animation: float2 4s ease-in-out infinite;
+}
+
+.circle3 {
+  position: absolute;
+  width: 10.908px;
+  height: 10.945px;
+  flex-shrink: 0;
+  bottom: -7px;
+  right: -10px;
+  animation: float3 3.5s ease-in-out infinite;
+}
+
+.title {
+  width: 301px;
+  color: #914F4F;
+  text-align: center;
+  font-family: "Anonymous Pro";
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.198px;
+  font-variant-numeric: lining-nums proportional-nums;
+  margin: 0 0 12px 0;
+}
+
+.description {
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 32px 0;
+}
+
+.button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 50px;
+  background-color: #914F4F;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.button:hover {
+  background-color: #7a4242;
+  transform: translateY(-1px);
+} 

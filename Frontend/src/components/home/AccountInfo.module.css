@@ -1,0 +1,144 @@
+.container {
+  padding: 1rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.card {
+  background: linear-gradient(135deg, #FF9EAA 0%, #FFD93D 100%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  color: #2D3436;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 158, 170, 0.5);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.chipIcon {
+  margin-bottom: 1.5rem;
+  color: #2D3436;
+  opacity: 0.9;
+}
+
+.cardInfo {
+  flex-grow: 1;
+  margin: 0 1rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.balance {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.mastercard {
+  position: absolute;
+  top: 1rem;
+  right: -1rem;
+  width: 120px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mastercard img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.accountNumber {
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.accountDetails {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detailItem:last-child {
+  border-bottom: none;
+}
+
+.detailLabel {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.detailValue {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.sendButton {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #FF9EAA;
+  color: #2D3436;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.sendButton:hover {
+  background-color: #ff8696;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 반응형 디자인 */
+@media (min-width: 768px) {
+  .card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+} 

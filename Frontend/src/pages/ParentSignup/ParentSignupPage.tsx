@@ -91,32 +91,38 @@ const ParentSignupPage = () => {
       alert('이메일을 입력해주세요.');
       return;
     }
-
+    
+    console.log('부모 회원가입 페이지: 이메일 인증 요청', formData.email);
+    
     try {
-      console.log('부모 회원가입 페이지: 이메일 인증 요청', formData.email);
+      // 요청 데이터 로깅
+      const requestData = { email: formData.email };
+      console.log('요청 데이터:', JSON.stringify(requestData));
       
-      const response = await fetch('api/auth/verification', {
+      const response = await fetch('/api/auth/verification', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify({
-          email: formData.email,
-        }),
+        body: JSON.stringify(requestData),
       });
-      
+
       console.log('부모 회원가입 페이지: 이메일 인증 요청 응답 상태', response.status);
       
-      if (response.ok) {
-        setIsVerificationModalOpen(true);
-        console.log('부모 회원가입 페이지: 인증 코드 발송 성공');
-      } else {
-        console.log('부모 회원가입 페이지: 인증 코드 발송 실패');
-        alert('인증 코드 발송에 실패했습니다. 다시 시도해주세요.');
+      // 응답 내용 확인
+      const responseText = await response.text();
+      console.log('응답 내용:', responseText);
+      
+      if (!response.ok) {
+        throw new Error(`이메일 인증 요청에 실패했습니다. 상태 코드: ${response.status}`);
       }
+
+      setIsVerificationModalOpen(true);
+      alert('인증 코드가 이메일로 전송되었습니다.');
     } catch (error) {
-      console.error('부모 회원가입 페이지: 인증 코드 발송 에러', error);
-      alert('인증 코드 발송 중 오류가 발생했습니다.');
+      console.error('부모 회원가입 페이지: 이메일 인증 요청 실패', error);
+      alert((error as Error).message);
     }
   };
 
@@ -124,10 +130,11 @@ const ParentSignupPage = () => {
     try {
       console.log('부모 회원가입 페이지: 인증 코드 확인 시도', code);
       
-      const response = await fetch('api/auth/verification/email', {
+      const response = await fetch('/api/auth/verification/email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify({
           email: formData.email,
@@ -185,10 +192,11 @@ const ParentSignupPage = () => {
         parent_email: null,
       };
       
-      const response = await fetch('api/auth/signup/parent', {
+      const response = await fetch('/api/auth/signup/parent', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(signupData),
       });

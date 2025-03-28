@@ -36,10 +36,11 @@ const ChildSignupPage = () => {
     console.log('아이 회원가입 페이지: 회원가입 시도', formData);
 
     try {
-      const response = await fetch('api/auth/signup/child', {
+      const response = await fetch('/api/auth/signup/child', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(formData),
       });

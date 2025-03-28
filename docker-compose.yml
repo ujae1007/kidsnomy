@@ -1,15 +1,16 @@
 services:
-  # nginx:
-  #   image: nginx:latest
-  #   ports:
-  #     - "80:80"       # HTTP (HTTPS 리다이렉트)
-  #     - "443:443"     # HTTPS
-  #   volumes:
-  #     - ./nginx/app.conf:/etc/nginx/conf.d/app.conf:ro  # 최종 Nginx 설정
-  #     - /home/ubuntu/kidsnomi/certs:/etc/nginx/certs:ro          # 인증서 및 키
-  #     - ./Frontend/build:/var/www/app/build:ro   # 프런트엔드 빌드 파일 (필요한 경우)
-  #   depends_on:
-  #     - java-app  # (필요한 경우)
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"       # HTTP (HTTPS 리다이렉트)
+      - "443:443"     # HTTPS
+    volumes:
+      - ./nginx:/etc/nginx/conf.d:ro  # 최종 Nginx 설정
+      - /home/ubuntu/kidsnomy/certs:/etc/letsencrypt:ro          # 인증서 및 키
+      - ./Frontend/build/dist:/var/www/app/   # 프런트엔드 빌드 파일 (필요한 경우)
+    depends_on:
+      - java-app
+      - react-app
 
   react-app:
     build:
@@ -19,27 +20,29 @@ services:
     ports:
       - "5173:5173" # Vite 개발 서버 포트
     volumes:
+      # - ./Frontend/test/my-test-app:/app # 코드 변경 사항을 컨테이너 내부에 즉시 반영
       - /app/node_modules # 로컬 node_modules와 분리하여 충돌 방지
-      - ./Frontend/build:/usr/share/nginx/html
+      - ./Frontend/build:/app/build:rw
     environment:
-      - CHOKIDAR_USEPOLLING=true # 변경 사항 감지를 원활하게 설정
+      NODE_OPTIONS: '--max-old-space-size=8192'
 
   java-app:
     build:
-      context: ./Backend/study
+      context: ./Backend/kidsnomy
       dockerfile: Dockerfile.test
+    # image: openjdk:17-jdk-alpine
     container_name: java-app
     volumes:
-      # - ./Backend/study:/app
+      # - ./Backend/kidsnomy:/app
       - gradle-cache:/root/.gradle
     working_dir: /app
-    entrypoint: ["sh", "-c", "./gradlew bootJar --no-daemon -x test && java -jar build/libs/study-0.0.1-SNAPSHOT.jar"]
+    # entrypoint: ["sh", "-c", "./gradlew bootJar --no-daemon -x test && java -jar build/libs/kidsnomy-0.0.1-SNAPSHOT.jar"]
     ports:
       - "8080:8080"
     depends_on:
       - mysql
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/study?serverTimezone=UTC
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/kidsnomy?serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: ssafy
       SPRING_DATASOURCE_PASSWORD: ssafy
 
@@ -48,7 +51,7 @@ services:
     container_name: mysql-db
     environment:
       MYSQL_ROOT_PASSWORD: ssafy
-      MYSQL_DATABASE: study
+      MYSQL_DATABASE: kidsnomy
       MYSQL_USER: ssafy
       MYSQL_PASSWORD: ssafy
     ports:

@@ -1,245 +1,242 @@
 package com.backend.kidsnomy.basic.service;
 
-import com.backend.kidsnomy.basic.dto.BasicAccountRequestDto;
-import com.backend.kidsnomy.basic.dto.BasicAccountResponseDto;
-import com.backend.kidsnomy.basic.dto.TransactionHistoryResponseDto;
+import com.backend.kidsnomy.basic.dto.*;
 import com.backend.kidsnomy.basic.entity.BasicAccount;
-import com.backend.kidsnomy.basic.entity.AccountLog;
+import com.backend.kidsnomy.basic.exception.AccountCloseException;
+import com.backend.kidsnomy.basic.exception.AccountCreationException;
+import com.backend.kidsnomy.basic.exception.AccountNotFoundException;
 import com.backend.kidsnomy.basic.repository.BasicAccountRepository;
-import com.backend.kidsnomy.basic.repository.AccountLogRepository;
+import com.backend.kidsnomy.common.exception.AuthenticationException;
 import com.backend.kidsnomy.common.util.ApiUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.backend.kidsnomy.common.service.UserKeyService;
+
+import com.backend.kidsnomy.jwt.JwtTokenProvider;
+import jakarta.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 public class BasicAccountService {
 
-    @Autowired
-    private BasicAccountRepository basicAccountRepository;
+    private final BasicAccountRepository basicAccountRepository;
+    private final RestTemplate restTemplate;
+    private final JwtTokenProvider jwtTokenProvider;
+    private final UserKeyService userKeyService;
 
-    @Autowired
-    private AccountLogRepository accountLogRepository;
+    private final String apiKey;
+    private final String baseUrl;
 
-    @Autowired
-    private RestTemplate restTemplate;
+    public BasicAccountService(
+            BasicAccountRepository basicAccountRepository,
+            RestTemplate restTemplate,
+            JwtTokenProvider jwtTokenProvider,
+            UserKeyService userKeyService,
+            @Value("${ssafy.api.apiKey}") String apiKey,
+            @Value("${ssafy.api.base-url}") String baseUrl) {
+        this.basicAccountRepository = basicAccountRepository;
+        this.restTemplate = restTemplate;
+        this.jwtTokenProvider = jwtTokenProvider;
+        this.userKeyService = userKeyService;
+        this.apiKey = apiKey;
+        this.baseUrl = baseUrl;
+    }
 
-    @Value("${ssafy.api.apiKey}")
-    private String apiKey;
-
-    @Value("${ssafy.api.base-url}")
-    private String baseUrl;
-
-    /**
-     * 수시입출금 계좌 생성
-     */
+    // 계좌 생성
     @Transactional
-    public BasicAccountResponseDto createAccount(BasicAccountRequestDto requestDto) {
-        // API 요청 준비
+    public BasicAccountResponseDto createAccount(HttpServletRequest request, BasicAccountRequestDto requestDto) {
+        System.out.println("✅ 계좌 생성 시작");
+        // 1. 토큰에서 이메일 추출 (애플리케이션 인증)
+        String token = jwtTokenProvider.resolveAccessToken(request);
+        System.out.println("✅ 토큰 추출: " + token);
+        if (token == null || !jwtTokenProvider.validateToken(token)) {
+            System.out.println("🚨 인증 실패: 유효하지 않은 토큰");
+            throw new AuthenticationException("유효하지 않은 토큰입니다.");
+        }
+        String email = jwtTokenProvider.getEmailFromToken(token);
+        System.out.println("✅ 인증된 사용자: " + email);
+
+        // 2. 이메일로 userKey 조회 (외부 API용 식별자 획득)
+        String userKey = userKeyService.getUserKeyByEmail(email);
+
+        // 3. API 요청 준비 (외부 API 통신)
         String apiUrl = baseUrl + "/ssafy/api/v1/edu/demandDeposit/createDemandDepositAccount";
 
         // 요청 본문 생성
         Map<String, Object> requestBody = new HashMap<>();
+        Map<String, Object> header = ApiUtils.createApiRequestHeader("createDemandDepositAccount", apiKey, userKey);
 
-        // Header 생성
-        Map<String, Object> header = ApiUtils.createApiRequestHeader("createDemandDepositAccount", apiKey);
-        // userKey 추가 (실제 구현 시 사용자 인증 정보에서 가져와야 함)
-        header.put("userKey", "2695628f-11a1-418e-b533-9ae19e0650ec"); // 예시 값
         requestBody.put("Header", header);
-
-        // 요청 데이터 설정
         requestBody.put("accountTypeUniqueNo", requestDto.getAccountTypeUniqueNo());
 
-        // API 호출
-        HttpEntity<Map<String, Object>> httpEntity = ApiUtils.createHttpEntity(requestBody);
-        Map<String, Object> response = restTemplate.postForObject(apiUrl, httpEntity, Map.class);
+        try {
+            // 4. HTTP 엔티티 생성 - API 호출  (userKey 사용)
+            HttpEntity<Map<String, Object>> httpEntity = ApiUtils.createHttpEntity(requestBody, userKey);
+            Map<String, Object> response = restTemplate.postForObject(apiUrl, httpEntity, Map.class);
 
-        // 응답 처리
-        if (response != null && response.containsKey("REC")) {
+            // 응답 처리
+            if (response == null || !response.containsKey("REC")) {
+                throw new AccountCreationException("계좌 생성 응답에 필요한 정보가 없습니다.");
+            }
+
             Map<String, Object> rec = (Map<String, Object>) response.get("REC");
-            String accountNo = (String) rec.get("accountNo");
+            String accountNo  = Optional.ofNullable((String) rec.get("accountNo"))
+                    .orElseThrow(() -> new AccountCreationException("계좌번호 정보가 없습니다."));
 
-            // DB에 계좌 정보 저장
-            BasicAccount account = new BasicAccount();
-            account.setUserId(requestDto.getUserId().intValue());
-            account.setAccountNo(accountNo);
-            account.setAccountPassword(requestDto.getAccountPassword());
-            account.setBalance(BigDecimal.ZERO);
-            account.setCreatedAt(LocalDateTime.now());
+            // 계좌 정보 저장
+            BasicAccount account = BasicAccount.builder()
+                    .userId(requestDto.getUserId())
+                    .accountNo(accountNo)
+                    .accountPassword(requestDto.getAccountPassword())
+                    .balance(BigDecimal.ZERO)
+                    .build();
+
             basicAccountRepository.save(account);
 
-            // 응답 DTO 생성
-            BasicAccountResponseDto responseDto = new BasicAccountResponseDto();
-            responseDto.setAccountNo(accountNo);
-            responseDto.setAccountBalance("0");
-            responseDto.setAccountCreatedDate(account.getCreatedAt().format(DateTimeFormatter.ofPattern("yyyyMMdd")));
-            responseDto.setLastTransactionDate("");
+            // 응답 생성
+            return BasicAccountResponseDto.builder()
+                    .accountNo(accountNo)
+                    .balance(BigDecimal.ZERO)
+                    .build();
 
-            return responseDto;
+        } catch (HttpClientErrorException e) {
+            throw new AccountCreationException("SSAFY API 호출 실패: " + e.getResponseBodyAsString());
+        } catch (AccountCreationException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new AccountCreationException("계좌 생성 중 오류 발생: " + e.getMessage());
         }
-
-        throw new RuntimeException("계좌 생성에 실패했습니다.");
     }
 
-    /**
-     * 계좌 조회
-     */
-    public BasicAccountResponseDto getAccount(String accountNo) {
-        // DB에서 계좌 정보 조회
-        BasicAccount account = basicAccountRepository.findByAccountNo(accountNo)
-                .orElseThrow(() -> new RuntimeException("계좌를 찾을 수 없습니다."));
+    // 계좌 조회
+    public AccountCheckResponseDto retrieveAccount(HttpServletRequest request, AccountCheckRequestDto requestDto) {
+        // 1. 토큰에서 이메일 추출
+        String token = jwtTokenProvider.resolveAccessToken(request);
+        if (token == null || !jwtTokenProvider.validateToken(token)) {
+            throw new AuthenticationException("유효하지 않은 토큰입니다.");
+        }
+        String email = jwtTokenProvider.getEmailFromToken(token);
+
+        // 2. 이메일로 userKey 조회
+        String userKey = userKeyService.getUserKeyByEmail(email);
 
         // API 요청 준비
         String apiUrl = baseUrl + "/ssafy/api/v1/edu/demandDeposit/inquireDemandDepositAccount";
 
         // 요청 본문 생성
         Map<String, Object> requestBody = new HashMap<>();
+        Map<String, Object> header = ApiUtils.createApiRequestHeader("inquireDemandDepositAccount", apiKey, userKey);
 
-        // Header 생성
-        Map<String, Object> header = ApiUtils.createApiRequestHeader("inquireDemandDepositAccount", apiKey);
-        header.put("userKey", "2695628f-11a1-418e-b533-9ae19e0650ec"); // 예시 값
         requestBody.put("Header", header);
+        requestBody.put("accountNo", requestDto.getAccountNo());
 
-        // 요청 데이터 설정
-        requestBody.put("accountNo", accountNo);
+        try {
+            // API 호출
+            HttpEntity<Map<String, Object>> httpEntity = ApiUtils.createHttpEntity(requestBody, userKey);
+            Map<String, Object> response = restTemplate.postForObject(apiUrl, httpEntity, Map.class);
 
-        // API 호출
-        HttpEntity<Map<String, Object>> httpEntity = ApiUtils.createHttpEntity(requestBody);
-        Map<String, Object> response = restTemplate.postForObject(apiUrl, httpEntity, Map.class);
+            // 응답 처리
+            if (response == null || !response.containsKey("REC")) {
+                throw new AccountNotFoundException("계좌 조회 응답에 필요한 정보가 없습니다.");
+            }
 
-        // 응답 처리
-        if (response != null && response.containsKey("REC")) {
             Map<String, Object> rec = (Map<String, Object>) response.get("REC");
 
-            // 응답 DTO 생성
-            BasicAccountResponseDto responseDto = new BasicAccountResponseDto();
-            responseDto.setAccountNo((String) rec.get("accountNo"));
-            responseDto.setAccountBalance((String) rec.get("accountBalance"));
-            responseDto.setAccountCreatedDate((String) rec.get("accountCreatedDate"));
-            responseDto.setLastTransactionDate((String) rec.get("lastTransactionDate"));
+            // 응답 데이터 변환
+            BigDecimal accountBalance = new BigDecimal(Optional.ofNullable(rec.get("accountBalance"))
+                    .orElse("0").toString());
 
-            return responseDto;
+            // 응답 생성
+            return AccountCheckResponseDto.builder()
+                    .user_name(Optional.ofNullable((String) rec.get("userName")).orElse(""))
+                    .bankCode(Optional.ofNullable((String) rec.get("bankCode")).orElse(""))
+                    .accountNo(Optional.ofNullable((String) rec.get("accountNo")).orElse(""))
+                    .accountBalance(accountBalance)
+                    .accountCreatedDate(Optional.ofNullable((String) rec.get("accountCreatedDate")).orElse(""))
+                    .accountExpiryDate(Optional.ofNullable((String) rec.get("accountExpiryDate")).orElse(""))
+                    .lastTransactionDate(Optional.ofNullable((String) rec.get("lastTransactionDate")).orElse(""))
+                    .currency(Optional.ofNullable((String) rec.get("currency")).orElse("KRW"))
+                    .build();
+
+        } catch (HttpClientErrorException e) {
+            throw new AccountNotFoundException("SSAFY API 호출 실패: " + e.getResponseBodyAsString());
+        } catch (AccountNotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new AccountNotFoundException("계좌 조회 중 오류 발생: " + e.getMessage());
         }
-
-        throw new RuntimeException("계좌 정보를 조회할 수 없습니다.");
     }
 
-    /**
-     * 계좌 거래 내역 조회
-     */
-    public TransactionHistoryResponseDto getTransactionHistory(String accountNo) {
-        // DB에서 계좌 정보 조회
-        BasicAccount account = basicAccountRepository.findByAccountNo(accountNo)
-                .orElseThrow(() -> new RuntimeException("계좌를 찾을 수 없습니다."));
+    // 계좌 해지
+    @Transactional
+    public AccountCloseResponseDto deleteAccount(HttpServletRequest request, AccountCloseRequestDto requestDto) {
+        // JwtTokenProvider 직접 사용
+        String token = jwtTokenProvider.resolveAccessToken(request);
+        if (token == null || !jwtTokenProvider.validateToken(token)) {
+            throw new AuthenticationException("유효하지 않은 토큰입니다.");
+        }
+        String email = jwtTokenProvider.getEmailFromToken(token);
 
-        // 계좌 생성일 조회
-        String accountCreatedDate = account.getCreatedAt().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
-
-        // 현재 날짜 조회
-        String currentDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+        // 2. 이메일로 userKey 조회
+        String userKey = userKeyService.getUserKeyByEmail(email);
 
         // API 요청 준비
-        String apiUrl = baseUrl + "/ssafy/api/v1/edu/demandDeposit/inquireTransactionHistory";
+        String apiUrl = baseUrl + "/ssafy/api/v1/edu/demandDeposit/deleteDemandDepositAccount";
 
         // 요청 본문 생성
         Map<String, Object> requestBody = new HashMap<>();
+        Map<String, Object> header = ApiUtils.createApiRequestHeader("deleteDemandDepositAccount", apiKey, userKey);
 
-        // Header 생성
-        Map<String, Object> header = ApiUtils.createApiRequestHeader("inquireTransactionHistoryList", apiKey);
-        header.put("userKey", "2695628f-11a1-418e-b533-9ae19e0650ec"); // 예시 값
         requestBody.put("Header", header);
+        requestBody.put("accountNo", requestDto.getAccountNo());
 
-        // 요청 데이터 설정
-        requestBody.put("accountNo", accountNo);
-        requestBody.put("startDate", accountCreatedDate);
-        requestBody.put("endDate", currentDate);
-        requestBody.put("transactionType", "A"); // 모든 거래 유형
-        requestBody.put("orderByType", "DESC"); // 최근 거래부터
-
-        // API 호출
-        HttpEntity<Map<String, Object>> httpEntity = ApiUtils.createHttpEntity(requestBody);
-        Map<String, Object> response = restTemplate.postForObject(apiUrl, httpEntity, Map.class);
-
-        // 응답 처리
-        if (response != null && response.containsKey("REC")) {
-            Map<String, Object> rec = (Map<String, Object>) response.get("REC");
-            String totalCount = (String) rec.get("totalCount");
-            List<Map<String, Object>> transactionList = (List<Map<String, Object>>) rec.get("list");
-
-            // 거래 내역 저장 (필요한 경우)
-            saveTransactionLogs(account.getUserId(), accountNo, transactionList);
-
-            // 응답 DTO 생성
-            TransactionHistoryResponseDto responseDto = new TransactionHistoryResponseDto();
-            responseDto.setTotalCount(totalCount);
-
-            List<TransactionHistoryResponseDto.TransactionDto> dtoList = new ArrayList<>();
-            for (Map<String, Object> transaction : transactionList) {
-                TransactionHistoryResponseDto.TransactionDto dto = new TransactionHistoryResponseDto.TransactionDto();
-                dto.setTransactionUniqueNo((String) transaction.get("transactionUniqueNo"));
-                dto.setTransactionDate((String) transaction.get("transactionDate"));
-                dto.setTransactionTime((String) transaction.get("transactionTime"));
-                dto.setTransactionType((String) transaction.get("transactionType"));
-                dto.setTransactionTypeName((String) transaction.get("transactionTypeName"));
-                dto.setTransactionAccountNo((String) transaction.get("transactionAccountNo"));
-                dto.setTransactionBalance((String) transaction.get("transactionBalance"));
-                dto.setTransactionAfterBalance((String) transaction.get("transactionAfterBalance"));
-                dto.setTransactionSummary((String) transaction.get("transactionSummary"));
-                dto.setTransactionMemo((String) transaction.get("transactionMemo"));
-                dtoList.add(dto);
-            }
-            responseDto.setList(dtoList);
-
-            return responseDto;
+        // 잔액 반환 계좌번호가 있는 경우에만 추가
+        if (requestDto.getRefundAccountNo() != null && !requestDto.getRefundAccountNo().isEmpty()) {
+            requestBody.put("refundAccountNo", requestDto.getRefundAccountNo());
         }
 
-        throw new RuntimeException("거래 내역을 조회할 수 없습니다.");
-    }
+        try {
+            // API 호출
+            HttpEntity<Map<String, Object>> httpEntity = ApiUtils.createHttpEntity(requestBody, userKey);
+            Map<String, Object> response = restTemplate.postForObject(apiUrl, httpEntity, Map.class);
 
-    /**
-     * 거래 내역 저장 (필요한 경우)
-     */
-    private void saveTransactionLogs(Integer userId, String accountNo, List<Map<String, Object>> transactionList) {
-        for (Map<String, Object> transaction : transactionList) {
-            String transactionUniqueNo = (String) transaction.get("transactionUniqueNo");
-
-            // 이미 저장된 거래 내역인지 확인
-            if (!accountLogRepository.existsByTransactionUniqueNo(transactionUniqueNo)) {
-                AccountLog log = new AccountLog();
-                log.setUserId(userId);
-                log.setAccountNo(accountNo);
-                log.setTransactionName((String) transaction.get("transactionTypeName"));
-                log.setTransactionUniqueNo(transactionUniqueNo);
-
-                // 날짜와 시간 파싱
-                String transactionDate = (String) transaction.get("transactionDate");
-                String transactionTime = (String) transaction.get("transactionTime");
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
-                LocalDateTime dateTime = LocalDateTime.parse(transactionDate + transactionTime, formatter);
-
-                log.setTransactionDate(dateTime);
-                log.setTransactionTime(dateTime);
-
-                // 거래 유형 설정 (1: 입금, 2: 출금)
-                log.setTransactionType(Integer.parseInt((String) transaction.get("transactionType")));
-
-                // 금액 설정
-                log.setTransactionBalance(new BigDecimal((String) transaction.get("transactionBalance")));
-                log.setTransactionAfterBalance(new BigDecimal((String) transaction.get("transactionAfterBalance")));
-
-                accountLogRepository.save(log);
+            // 응답 처리
+            if (response == null || !response.containsKey("REC")) {
+                throw new AccountCloseException("계좌 해지 응답에 필요한 정보가 없습니다.");
             }
+
+            Map<String, Object> rec = (Map<String, Object>) response.get("REC");
+
+            // 응답 데이터 변환
+            BigDecimal accountBalance = new BigDecimal(Optional.ofNullable(rec.get("accountBalance"))
+                    .orElse("0").toString());
+
+            // 로컬 DB에서 계좌 정보 삭제
+            basicAccountRepository.deleteByAccountNo(requestDto.getAccountNo());
+
+            // 응답 생성
+            return AccountCloseResponseDto.builder()
+                    .status(Optional.ofNullable((String) rec.get("status")).orElse("CLOSED"))
+                    .accountNo(Optional.ofNullable((String) rec.get("accountNo")).orElse(""))
+                    .refundAccountNo(Optional.ofNullable((String) rec.get("refundAccountNo")).orElse(null))
+                    .accountBalance(accountBalance)
+                    .build();
+
+        } catch (HttpClientErrorException e) {
+            throw new AccountCloseException("SSAFY API 호출 실패: " + e.getResponseBodyAsString());
+        } catch (AccountCloseException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new AccountCloseException("계좌 해지 중 오류 발생: " + e.getMessage());
         }
     }
 }

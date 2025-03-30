@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class ApiUtils {
 
-    public static Map<String, Object> createApiRequestHeader(String apiName, String apiKey) {
+    public static Map<String, Object> createApiRequestHeader(String apiName, String apiKey, String userKey) {
         LocalDateTime now = LocalDateTime.now();
         String transmissionDate = now.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
         String transmissionTime = now.format(DateTimeFormatter.ofPattern("HHmmss"));
@@ -27,7 +27,7 @@ public class ApiUtils {
         header.put("apiServiceCode", apiName);
         header.put("institutionTransactionUniqueNo", transactionUniqueNo);
         header.put("apiKey", apiKey);
-
+        header.put("userKey", userKey); // ✅ userKey 추가
         return header;
     }
 
@@ -36,9 +36,10 @@ public class ApiUtils {
         return date + time + sequenceNumber;
     }
 
-    public static HttpEntity<Map<String, Object>> createHttpEntity(Map<String, Object> requestBody) {
+    public static HttpEntity<Map<String, Object>> createHttpEntity(Map<String, Object> requestBody, String userKey) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.set("userKey", userKey); // ✅ HTTP Header에도 userKey 추가
         return new HttpEntity<>(requestBody, headers);
     }
 }

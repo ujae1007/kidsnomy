@@ -1,29 +1,45 @@
 package com.backend.kidsnomy.basic.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import com.backend.kidsnomy.basic.dto.BasicAccountRequestDto;
-import com.backend.kidsnomy.basic.dto.BasicAccountResponseDto;
+import com.backend.kidsnomy.basic.dto.*;
 import com.backend.kidsnomy.basic.service.BasicAccountService;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
+
+import lombok.RequiredArgsConstructor;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+
 @RestController
-@RequestMapping("/api/basic/account")
+@RequestMapping("/api/account")
+@RequiredArgsConstructor
 public class BasicAccountController {
 
-    @Autowired
-    private BasicAccountService basicAccountService;
+    private final BasicAccountService basicAccountService;
 
+    // 계좌 생성 API
     @PostMapping("/create")
-    public ResponseEntity<BasicAccountResponseDto> createAccount(@RequestBody BasicAccountRequestDto requestDto) {
-        BasicAccountResponseDto responseDto = basicAccountService.createAccount(requestDto);
+    public ResponseEntity<BasicAccountResponseDto> createAccount(HttpServletRequest request, @Valid @RequestBody BasicAccountRequestDto requestDto) {
+        System.out.println("✅ 계좌 생성 요청 도착: " + request.getRequestURI());
+        BasicAccountResponseDto responseDto = basicAccountService.createAccount(request, requestDto);
         return ResponseEntity.ok(responseDto);
     }
 
-    @GetMapping("/{accountNo}")
-    public ResponseEntity<BasicAccountResponseDto> getAccount(@PathVariable String accountNo) {
-        BasicAccountResponseDto responseDto = basicAccountService.getAccount(accountNo);
+    // 계좌 조회 API
+    @GetMapping("/check")
+    public ResponseEntity<AccountCheckResponseDto> retrieveAccount(HttpServletRequest request, @Valid @RequestBody AccountCheckRequestDto requestDto) {
+        System.out.println("✅ 계좌 조회 요청 도착: " + request.getRequestURI());
+        AccountCheckResponseDto responseDto = basicAccountService.retrieveAccount(request, requestDto);
         return ResponseEntity.ok(responseDto);
     }
-    // {id} -> {accountNo}
+
+    // 계좌 해지 API
+    @DeleteMapping("/delete")
+    public ResponseEntity<AccountCloseResponseDto> deleteAccount(HttpServletRequest request, @Valid @RequestBody AccountCloseRequestDto requestDto) {
+        System.out.println("✅ 계좌 해지 요청 도착: " + request.getRequestURI());
+        AccountCloseResponseDto responseDto = basicAccountService.deleteAccount(request, requestDto);
+        return ResponseEntity.ok(responseDto);
+    }
 }

@@ -38,12 +38,13 @@ public class SecurityConfig {
                 .requestMatchers(
                     "/api/auth/**",
                     "/api/group/**",
-                    "/api/account/**",
                     "/api/work/**",
                     "/api/finance/**",
                     "/api/auto/**",
-                    "/api/basic/**"
+                    "/api/basic/**",
+                    "/api/account/**"
                 ).permitAll()
+                .requestMatchers("/api/account/**").authenticated()
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
@@ -55,7 +56,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173")); // 프론트 포트 허용
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173", "http://localhost:8080")); // 프론트 포트 허용 + Postman 테스트용
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true); // 쿠키 등 자격 정보 허용

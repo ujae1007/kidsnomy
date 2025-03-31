@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import styles from './JobDetailPage.module.css';
+import { apiCall } from '@/utils/api';
 
 interface Job {
   jobId: number;
@@ -22,33 +23,14 @@ interface Job {
   status: number;
 }
 
-// 더미 데이터
-const dummyJob: Job = {
-  jobId: 1,
-  groupId: 1,
-  groupCode: "TEST123",
-  employerId: 1,
-  employeeId: 2,
-  employerName: "엄마",
-  employeeName: "아들",
-  title: "방 청소하기",
-  content: "1. 침대 정리하기\n2. 바닥 쓸기\n3. 먼지 닦기\n4. 쓰레기 버리기",
-  salary: 5000,
-  rewardText: "아이스크림 사주기",
-  isPermanent: true,
-  startAt: "2024-03-20",
-  endAt: "2024-03-20",
-  status: 1
-};
-
 const JobDetailPage: React.FC = () => {
   const { jobId } = useParams<{ jobId: string }>();
   const navigate = useNavigate();
   const { accessToken, isAuthenticated, isParent } = useSelector((state: RootState) => state.auth);
   
-  const [job, setJob] = useState<Job | null>(dummyJob); // 더미 데이터로 초기화
+  const [job, setJob] = useState<Job | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(false); // 로딩 상태를 false로 설정
+  const [loading, setLoading] = useState<boolean>(true);
   
   const getStatusText = (status: number): string => {
     switch (status) {
@@ -63,46 +45,30 @@ const JobDetailPage: React.FC = () => {
   useEffect(() => {
     console.log('📄 일자리 상세 페이지 마운트, jobId:', jobId);
     
-    // API 호출 부분을 주석 처리하고 더미 데이터 사용
-    // const fetchJobDetail = async () => {
-    //   console.log(`🔍 일자리 상세 정보 조회 시도 (jobId: ${jobId})`);
-    //   setLoading(true);
-    //   setError(null);
+    const fetchJobDetail = async () => {
+      console.log(`🔍 일자리 상세 정보 조회 시도 (jobId: ${jobId})`);
+      setLoading(true);
+      setError(null);
       
       try {
-        const response = await fetch(`/api/work/check/detail/${jobId}`, {
+        const data = await apiCall<Job>(`work/check/detail/${jobId}`, {
           method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${accessToken}`,
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
+          auth: true
         });
         
-    //     console.log(`🔄 일자리 상세 정보 응답 상태: ${response.status}`);
-        
-    //     if (!response.ok) {
-    //       if (response.status === 404) {
-    //         throw new Error('일자리를 찾을 수 없습니다.');
-    //       } else if (response.status === 403) {
-    //         throw new Error('해당 일자리에 접근할 권한이 없습니다.');
-    //       } else {
-    //         throw new Error('일자리 정보를 불러오는데 실패했습니다.');
-    //       }
-    //     }
-        
-    //     const data = await response.json();
-    //     console.log('✅ 일자리 상세 정보 조회 성공:', data);
-    //     setJob(data);
-    //   } catch (error) {
-    //     console.error('❌ 일자리 상세 정보 조회 중 에러 발생:', error);
-    //     setError((error as Error).message);
-    //   } finally {
-    //     setLoading(false);
-    //   }
-    // };
+        console.log('✅ 일자리 상세 정보 조회 성공:', data);
+        setJob(data);
+      } catch (error) {
+        console.error('❌ 일자리 상세 정보 조회 중 에러 발생:', error);
+        setError((error as Error).message);
+      } finally {
+        setLoading(false);
+      }
+    };
     
-    // fetchJobDetail();
+    if (jobId && isAuthenticated) {
+      fetchJobDetail();
+    }
     
     return () => {
       console.log('📄 일자리 상세 페이지 언마운트');
@@ -117,43 +83,14 @@ const JobDetailPage: React.FC = () => {
     console.log(`🗑️ 일자리 삭제 시도 (jobId: ${jobId})`);
     
     try {
-      const response = await fetch(`/api/work/delete/${jobId}`, {
+      await apiCall(`work/delete/${jobId}`, {
         method: 'DELETE',
-        headers: {
-          // 'Authorization': `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
+        auth: true
       });
       
-      console.log(`🔄 일자리 삭제 응답 상태: ${response.status}`);
-      
-      // 응답 상태에 따른 처리
-      if (response.ok) {
-        console.log('✅ 일자리 삭제 성공');
-        alert('일자리가 삭제 되었습니다.');
-        navigate('/parent/jobs');
-        return;
-      }
-      
-      // 오류 상태에 따른 처리
-      const errorText = await response.text();
-      console.error('❌ 일자리 삭제 실패:', errorText);
-      
-      switch (response.status) {
-        case 400:
-          throw new Error('이미 계약된 일자리는 삭제할 수 없습니다.');
-        case 403:
-          if (errorText.includes('부모만')) {
-            throw new Error('부모만 일자리를 삭제할 수 있습니다.');
-          } else {
-            throw new Error('본인이 생성한 일자리만 삭제할 수 있습니다.');
-          }
-        case 404:
-          throw new Error('해당 일자리가 존재하지 않습니다.');
-        default:
-          throw new Error('일자리 삭제에 실패했습니다.');
-      }
+      console.log('✅ 일자리 삭제 성공');
+      alert('일자리가 삭제 되었습니다.');
+      navigate('/parent/jobs');
     } catch (error) {
       console.error('❌ 일자리 삭제 중 에러 발생:', error);
       alert((error as Error).message);
@@ -169,58 +106,14 @@ const JobDetailPage: React.FC = () => {
     }
     
     try {
-      console.log(`📤 API 요청: PUT /api/work/child/contract/${jobId}`);
-      const response = await fetch(`/api/work/child/contract/${jobId}`, {
+      await apiCall(`work/child/contract/${jobId}`, {
         method: 'PUT',
-        headers: {
-          // 'Authorization': `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
+        auth: true
       });
       
-      console.log(`🔄 일자리 수락(계약) 응답 상태: ${response.status} ${response.statusText}`);
-      console.log(`🔑 인증 토큰 사용됨: ${accessToken ? 'Bearer ' + accessToken.substring(0, 10) + '...' : '없음'}`);
-      
-      // 응답 상태에 따른 처리
-      if (response.ok) {
-        console.log('✅ 일자리 수락(계약) 성공');
-        alert('일자리가 성공적으로 계약되었습니다.');
-        window.location.reload();
-        return;
-      }
-      
-      // 오류 상태에 따른 처리
-      let errorText = '';
-      try {
-        // JSON 응답 시도
-        const errorJson = await response.json();
-        errorText = errorJson.message || errorJson.error || JSON.stringify(errorJson);
-        console.error('❌ 일자리 수락(계약) 실패 (JSON):', errorJson);
-      } catch {
-        // 일반 텍스트 응답
-        errorText = await response.text();
-        console.error('❌ 일자리 수락(계약) 실패 (Text):', errorText);
-      }
-      
-      switch (response.status) {
-        case 403:
-          if (errorText.includes('자녀만')) {
-            throw new Error('자녀만 일자리를 계약할 수 있습니다.');
-          } else if (errorText.includes('그룹')) {
-            throw new Error('본인이 속한 그룹의 일자리가 아닙니다.');
-          } else {
-            throw new Error(`접근이 거부되었습니다: ${errorText}`);
-          }
-        case 404:
-          throw new Error('일자리가 존재하지 않습니다.');
-        case 400:
-          throw new Error('이미 계약된 일자리입니다.');
-        case 401:
-          throw new Error('인증이 필요합니다. 다시 로그인해주세요.');
-        default:
-          throw new Error(`일자리 계약에 실패했습니다 (${response.status}): ${errorText}`);
-      }
+      console.log('✅ 일자리 수락(계약) 성공');
+      alert('일자리가 성공적으로 계약되었습니다.');
+      window.location.reload();
     } catch (error) {
       console.error('❌ 일자리 수락(계약) 중 에러 발생:', error);
       alert((error as Error).message);

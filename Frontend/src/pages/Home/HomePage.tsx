@@ -151,31 +151,16 @@ const HomePage: React.FC = () => {
   } : undefined;
 
   const handleJobListClick = () => {
-    console.log('🏠 홈 페이지: 일자리 조회 페이지로 이동');
-    navigate('/parent/jobs');
+    if (auth.isParent) {
+      navigate('/parent/jobs');
+    } else {
+      navigate('/child/jobs');
+    }
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">홈</h1>
-        <div>
-          {auth.isParent && (
-            <button
-              onClick={handleJobListClick}
-              className="px-4 py-2 mr-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-            >
-              일자리 조회
-            </button>
-          )}
-          <button
-            onClick={logoutUser}
-            className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-          >
-            로그아웃
-          </button>
-        </div>
-      </div>
+    <div className={styles.container}>
+      <h1 className={styles.title}>홈페이지</h1>
       
       {/* 계좌 정보 컴포넌트 */}
       <div className="mb-8">
@@ -194,6 +179,13 @@ const HomePage: React.FC = () => {
         <h2 className="text-xl font-semibold mb-2">금융 상품</h2>
         <FinancialProducts data={formattedFinancialData} />
       </div>
+      <button onClick={handleJobListClick} className={styles.button}>
+        {auth.isParent ? '일자리 관리' : '일자리 보기'}
+      </button>
+      
+      <button onClick={logoutUser} className={styles.button}>
+        로그아웃
+      </button>
     </div>
   );
 };

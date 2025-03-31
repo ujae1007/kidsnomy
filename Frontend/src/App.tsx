@@ -21,6 +21,8 @@ import JobDetailPage from '@/pages/JobDetail/JobDetailPage';
 import ParentBankProductsPage from '@/pages/ParentBankProducts/ParentBankProductsPage';
 import CreateBankProductsPage from '@/pages/CreateBankProducts/CreateBankProductsPage';
 import ChildBankProductsPage from '@/pages/ChildBankProducts/ChildBankProductsPage';
+import ChildJobListPage from '@/pages/ChildJobList/ChildJobListPage';
+
 
 const SendMoneyCompletePage = () => {
   const navigate = useNavigate();
@@ -58,11 +60,14 @@ const App: React.FC = () => {
           <Route path="/account/send" element={<SendMoneyPage />} />
           <Route path="/myaccount" element={<MyAccountInfo />} />
           <Route path="/account/detail" element={<AccountDetailPage />} />
-          <Route path="/account/send/complete" element={<SendMoneyCompletePage />} />
           <Route path="/parent/jobs" element={<ParentJobListPage />} />
           <Route path="/parent/jobs/create" element={<ParentJobCreatePage />} />
+          <Route path="/child/jobs" element={<ChildJobListPage />} />
           <Route path="/jobs/:jobId" element={<JobDetailPage />} />
         </Route>
+        
+        {/* Result pages - without layout */}
+        <Route path="/account/send/complete" element={<SendMoneyCompletePage />} />
       </Routes>
     </Router>
   );

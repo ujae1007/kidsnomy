@@ -67,15 +67,49 @@ const ParentJobListPage: React.FC = () => {
     setSearchTerm(value);
   };
   
-  const handleStatusFilterChange = (filter: string) => {
-    if (filter === 'all') {
-      setSelectedStatus(null);
-      setSortOrder('desc');
-    } else if (filter === 'latest') {
-      setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc');
-    } else {
-      setSelectedStatus(Number(filter));
-      setSortOrder('desc');
+  // 일자리 데이터 가져오기
+  const fetchJobs = async () => {
+    setLoading(true);
+    setError(null);
+    
+    try {
+      console.log('📊 부모 일자리 조회 데이터 로딩 시작');
+      const response = await fetch(`/api/work/parent/check/${groupId}`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      
+      console.log(`🔄 부모 일자리 조회 응답 상태: ${response.status} ${response.statusText}`);
+      
+      if (!response.ok) {
+        if (response.status === 403) {
+          const errorText = await response.text();
+          console.error('❌ 접근 거부됨:', errorText);
+          throw new Error(errorText || '접근이 거부되었습니다.');
+        }
+        throw new Error('일자리 정보를 가져오는 데 실패했습니다.');
+      }
+      
+      const data = await response.json();
+      console.log('✅ 부모 일자리 조회 성공:', { 
+        jobCount: data.length, 
+        jobs: data.map((job: Job) => ({ 
+          title: job.title, 
+          status: job.status, 
+          employer: job.employerName 
+        }))
+      });
+      
+      setJobs(data);
+      setFilteredJobs(data);
+    } catch (error) {
+      console.error('❌ 부모 일자리 조회 중 에러 발생:', error);
+      setError((error as Error).message);
+    } finally {
+      setLoading(false);
     }
   };
   

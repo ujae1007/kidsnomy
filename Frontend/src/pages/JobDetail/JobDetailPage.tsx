@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import styles from './JobDetailPage.module.css';
-import JobInputField from '@/components/jobs/JobInputField';
 
 interface Job {
   jobId: number;
@@ -70,14 +69,15 @@ const JobDetailPage: React.FC = () => {
     //   setLoading(true);
     //   setError(null);
       
-    //   try {
-    //     const response = await fetch(`https://j12b207.p.ssafy.io/api/work/check/detail/${jobId}`, {
-    //       method: 'GET',
-    //       headers: {
-    //         // 'Authorization': `Bearer ${accessToken}`,
-    //         'Content-Type': 'application/json',
-    //       },
-    //     });
+      try {
+        const response = await fetch(`/api/work/check/detail/${jobId}`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+        });
         
     //     console.log(`🔄 일자리 상세 정보 응답 상태: ${response.status}`);
         
@@ -117,22 +117,43 @@ const JobDetailPage: React.FC = () => {
     console.log(`🗑️ 일자리 삭제 시도 (jobId: ${jobId})`);
     
     try {
-      const response = await fetch(`https://j12b207.p.ssafy.io/api/work/delete/${jobId}`, {
+      const response = await fetch(`/api/work/delete/${jobId}`, {
         method: 'DELETE',
         headers: {
           // 'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
       });
       
       console.log(`🔄 일자리 삭제 응답 상태: ${response.status}`);
       
-      if (!response.ok) {
-        throw new Error('일자리 삭제에 실패했습니다.');
+      // 응답 상태에 따른 처리
+      if (response.ok) {
+        console.log('✅ 일자리 삭제 성공');
+        alert('일자리가 삭제 되었습니다.');
+        navigate('/parent/jobs');
+        return;
       }
       
-      console.log('✅ 일자리 삭제 성공');
-      navigate('/parent/jobs');
+      // 오류 상태에 따른 처리
+      const errorText = await response.text();
+      console.error('❌ 일자리 삭제 실패:', errorText);
+      
+      switch (response.status) {
+        case 400:
+          throw new Error('이미 계약된 일자리는 삭제할 수 없습니다.');
+        case 403:
+          if (errorText.includes('부모만')) {
+            throw new Error('부모만 일자리를 삭제할 수 있습니다.');
+          } else {
+            throw new Error('본인이 생성한 일자리만 삭제할 수 있습니다.');
+          }
+        case 404:
+          throw new Error('해당 일자리가 존재하지 않습니다.');
+        default:
+          throw new Error('일자리 삭제에 실패했습니다.');
+      }
     } catch (error) {
       console.error('❌ 일자리 삭제 중 에러 발생:', error);
       alert((error as Error).message);
@@ -140,27 +161,68 @@ const JobDetailPage: React.FC = () => {
   };
   
   const handleAcceptJob = async () => {
-    console.log(`👍 일자리 수락 시도 (jobId: ${jobId})`);
+    console.log(`👍 일자리 수락(계약) 시도 (jobId: ${jobId})`);
+    
+    if (!confirm('이 일자리를 수락하시겠습니까? 수락하면 계약이 체결됩니다.')) {
+      console.log('❌ 일자리 수락 취소됨');
+      return;
+    }
     
     try {
-      const response = await fetch(`https://j12b207.p.ssafy.io/api/work/accept/${jobId}`, {
+      console.log(`📤 API 요청: PUT /api/work/child/contract/${jobId}`);
+      const response = await fetch(`/api/work/child/contract/${jobId}`, {
         method: 'PUT',
         headers: {
           // 'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
       });
       
-      console.log(`🔄 일자리 수락 응답 상태: ${response.status}`);
+      console.log(`🔄 일자리 수락(계약) 응답 상태: ${response.status} ${response.statusText}`);
+      console.log(`🔑 인증 토큰 사용됨: ${accessToken ? 'Bearer ' + accessToken.substring(0, 10) + '...' : '없음'}`);
       
-      if (!response.ok) {
-        throw new Error('일자리 수락에 실패했습니다.');
+      // 응답 상태에 따른 처리
+      if (response.ok) {
+        console.log('✅ 일자리 수락(계약) 성공');
+        alert('일자리가 성공적으로 계약되었습니다.');
+        window.location.reload();
+        return;
       }
       
-      console.log('✅ 일자리 수락 성공');
-      window.location.reload(); // 페이지 새로고침
+      // 오류 상태에 따른 처리
+      let errorText = '';
+      try {
+        // JSON 응답 시도
+        const errorJson = await response.json();
+        errorText = errorJson.message || errorJson.error || JSON.stringify(errorJson);
+        console.error('❌ 일자리 수락(계약) 실패 (JSON):', errorJson);
+      } catch {
+        // 일반 텍스트 응답
+        errorText = await response.text();
+        console.error('❌ 일자리 수락(계약) 실패 (Text):', errorText);
+      }
+      
+      switch (response.status) {
+        case 403:
+          if (errorText.includes('자녀만')) {
+            throw new Error('자녀만 일자리를 계약할 수 있습니다.');
+          } else if (errorText.includes('그룹')) {
+            throw new Error('본인이 속한 그룹의 일자리가 아닙니다.');
+          } else {
+            throw new Error(`접근이 거부되었습니다: ${errorText}`);
+          }
+        case 404:
+          throw new Error('일자리가 존재하지 않습니다.');
+        case 400:
+          throw new Error('이미 계약된 일자리입니다.');
+        case 401:
+          throw new Error('인증이 필요합니다. 다시 로그인해주세요.');
+        default:
+          throw new Error(`일자리 계약에 실패했습니다 (${response.status}): ${errorText}`);
+      }
     } catch (error) {
-      console.error('❌ 일자리 수락 중 에러 발생:', error);
+      console.error('❌ 일자리 수락(계약) 중 에러 발생:', error);
       alert((error as Error).message);
     }
   };
@@ -168,23 +230,68 @@ const JobDetailPage: React.FC = () => {
   const handleCompleteJob = async () => {
     console.log(`🏁 일자리 완료 요청 시도 (jobId: ${jobId})`);
     
+    if (!confirm('정말로 이 일자리를 완료로 표시하시겠습니까? 완료 후에는 취소할 수 없습니다.')) {
+      console.log('❌ 일자리 완료 요청 취소됨');
+      return;
+    }
+    
     try {
-      const response = await fetch(`https://j12b207.p.ssafy.io/api/work/complete/${jobId}`, {
+      console.log(`📤 API 요청: PUT /api/work/child/complete/${jobId}`);
+      const response = await fetch(`/api/work/child/complete/${jobId}`, {
         method: 'PUT',
         headers: {
           // 'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
       });
       
-      console.log(`🔄 일자리 완료 요청 응답 상태: ${response.status}`);
+      console.log(`🔄 일자리 완료 요청 응답 상태: ${response.status} ${response.statusText}`);
+      console.log(`🔑 인증 토큰 사용됨: ${accessToken ? 'Bearer ' + accessToken.substring(0, 10) + '...' : '없음'}`);
       
-      if (!response.ok) {
-        throw new Error('일자리 완료 요청에 실패했습니다.');
+      // 응답 상태에 따른 처리
+      if (response.ok) {
+        console.log('✅ 일자리 완료 요청 성공');
+        alert('일자리 완료 요청이 정상적으로 처리되었습니다.');
+        window.location.reload();
+        return;
       }
       
-      console.log('✅ 일자리 완료 요청 성공');
-      window.location.reload(); // 페이지 새로고침
+      // 오류 상태에 따른 처리
+      let errorText = '';
+      try {
+        // JSON 응답 시도
+        const errorJson = await response.json();
+        errorText = errorJson.message || errorJson.error || JSON.stringify(errorJson);
+        console.error('❌ 일자리 완료 요청 실패 (JSON):', errorJson);
+      } catch {
+        // 일반 텍스트 응답
+        errorText = await response.text();
+        console.error('❌ 일자리 완료 요청 실패 (Text):', errorText);
+      }
+      
+      switch (response.status) {
+        case 403:
+          if (errorText.includes('자녀만')) {
+            throw new Error('자녀만 완료 요청을 할 수 있습니다.');
+          } else if (errorText.includes('본인이 계약한')) {
+            throw new Error('본인이 계약한 일자리가 아닙니다.');
+          } else {
+            throw new Error(`접근이 거부되었습니다: ${errorText}`);
+          }
+        case 404:
+          if (errorText.includes('사용자')) {
+            throw new Error('사용자를 찾을 수 없습니다.');
+          } else {
+            throw new Error('일자리를 찾을 수 없습니다.');
+          }
+        case 400:
+          throw new Error('진행 중인 일자리만 완료 요청이 가능합니다.');
+        case 401:
+          throw new Error('인증이 필요합니다. 다시 로그인해주세요.');
+        default:
+          throw new Error(`일자리 완료 요청에 실패했습니다 (${response.status}): ${errorText}`);
+      }
     } catch (error) {
       console.error('❌ 일자리 완료 요청 중 에러 발생:', error);
       alert((error as Error).message);
@@ -195,11 +302,12 @@ const JobDetailPage: React.FC = () => {
     console.log(`✓ 일자리 승인 시도 (jobId: ${jobId})`);
     
     try {
-      const response = await fetch(`https://j12b207.p.ssafy.io/api/work/approve/${jobId}`, {
+      const response = await fetch(`/api/work/approve/${jobId}`, {
         method: 'PUT',
         headers: {
           // 'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
       });
       
@@ -210,7 +318,7 @@ const JobDetailPage: React.FC = () => {
       }
       
       console.log('✅ 일자리 승인 성공');
-      window.location.reload(); // 페이지 새로고침
+      window.location.reload();
     } catch (error) {
       console.error('❌ 일자리 승인 중 에러 발생:', error);
       alert((error as Error).message);
@@ -223,16 +331,44 @@ const JobDetailPage: React.FC = () => {
     if (isParent) {
       // 부모인 경우
       if (job.status === 1) {
-        return <button onClick={handleDeleteJob}>삭제</button>;
+        return (
+          <button 
+            onClick={handleDeleteJob} 
+            className={`${styles.button} ${styles.warningButton}`}
+          >
+            삭제
+          </button>
+        );
       } else if (job.status === 3) {
-        return <button onClick={handleApproveJob}>승인</button>;
+        return (
+          <button 
+            onClick={handleApproveJob} 
+            className={`${styles.button} ${styles.primaryButton}`}
+          >
+            승인
+          </button>
+        );
       }
     } else {
       // 자녀인 경우
       if (job.status === 1) {
-        return <button onClick={handleAcceptJob}>수락</button>;
+        return (
+          <button 
+            onClick={handleAcceptJob} 
+            className={`${styles.button} ${styles.primaryButton}`}
+          >
+            수락
+          </button>
+        );
       } else if (job.status === 2) {
-        return <button onClick={handleCompleteJob}>일을 다 끝냈어요</button>;
+        return (
+          <button 
+            onClick={handleCompleteJob} 
+            className={`${styles.button} ${styles.primaryButton}`}
+          >
+            일을 다 끝냈어요
+          </button>
+        );
       }
     }
     
@@ -240,15 +376,15 @@ const JobDetailPage: React.FC = () => {
   };
   
   if (loading) {
-    return <div>로딩 중...</div>;
+    return <div className={styles.loading}>로딩 중...</div>;
   }
   
   if (error) {
-    return <div>{error}</div>;
+    return <div className={styles.error}>{error}</div>;
   }
   
   if (!job) {
-    return <div>일자리 정보를 찾을 수 없습니다.</div>;
+    return <div className={styles.error}>일자리 정보를 찾을 수 없습니다.</div>;
   }
   
   const formatDate = (dateString: string) => {
@@ -258,69 +394,51 @@ const JobDetailPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <h1 className={styles.title}>{job.title}</h1>
-        <span className={styles.status}>{getStatusText(job.status)}</span>
-      </div>
-
-      <div className={styles.infoSection}>
-        <JobInputField
-          label="등록자"
-          name="employerName"
-          value={job.employerName}
-          isReadOnly={true}
-        />
-        <JobInputField
-          label="급여"
-          name="salary"
-          value={`${job.salary.toLocaleString()}원`}
-          isReadOnly={true}
-        />
+      <h1 className={styles.title}>일자리 상세보기</h1>
+      
+      <div>
+        <h2 className={styles.subTitle}>{job.title}</h2>
+        <div className={styles.statusTag}>상태: {getStatusText(job.status)}</div>
+        
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>날짜</h3>
+          <p className={styles.sectionContent}>{formatDate(job.startAt)} ~ {formatDate(job.endAt)}</p>
+        </div>
+        
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>상세내용</h3>
+          <p className={styles.sectionContent}>{job.content}</p>
+        </div>
+        
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>급여</h3>
+          <p className={styles.sectionContent}>{job.salary.toLocaleString()}원</p>
+        </div>
+        
         {job.rewardText && (
-          <JobInputField
-            label="추가 보상"
-            name="rewardText"
-            value={job.rewardText}
-            isReadOnly={true}
-          />
+          <div className={styles.section}>
+            <h3 className={styles.sectionTitle}>추가보상</h3>
+            <p className={styles.sectionContent}>{job.rewardText}</p>
+          </div>
         )}
-        <JobInputField
-          label="시작일"
-          name="startAt"
-          value={formatDate(job.startAt)}
-          type="date"
-          isReadOnly={true}
-        />
-        <JobInputField
-          label="종료일"
-          name="endAt"
-          value={formatDate(job.endAt)}
-          type="date"
-          isReadOnly={true}
-        />
-        <JobInputField
-          label="루틴 여부"
-          name="isPermanent"
-          value={job.isPermanent ? 'true' : 'false'}
-          type="checkbox"
-          isReadOnly={true}
-        />
-      </div>
-
-      <div className={styles.contentSection}>
-        <h2 className={styles.contentTitle}>상세 내용</h2>
-        <JobInputField
-          label=""
-          name="content"
-          value={job.content}
-          type="textarea"
-          isReadOnly={true}
-        />
-      </div>
-
-      <div className={styles.buttonContainer}>
-        {renderActionButton()}
-        <button onClick={() => navigate(-1)}>뒤로 가기</button>
+        
+        <div className={styles.section}>
+          <h3 className={styles.sectionTitle}>정보</h3>
+          <p className={styles.sectionContent}>고용주: {job.employerName}</p>
+          {job.employeeId && <p className={styles.sectionContent}>근로자: {job.employeeName}</p>}
+          <p className={styles.sectionContent}>그룹 코드: {job.groupCode}</p>
+          <p className={styles.sectionContent}>루틴 여부: {job.isPermanent ? '예' : '아니오'}</p>
+        </div>
+        
+        <div className={styles.buttonsContainer}>
+          {renderActionButton()}
+          <button 
+            onClick={() => navigate(-1)} 
+            className={`${styles.button} ${styles.secondaryButton}`}
+          >
+            뒤로 가기
+          </button>
+        </div>
       </div>
     </div>
   );

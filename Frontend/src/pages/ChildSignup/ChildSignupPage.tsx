@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './ChildSignupPage.module.css';
+import { apiCall } from '@/utils/api';
+
+interface SignupResponse {
+  message: string;
+  success: boolean;
+}
 
 const ChildSignupPage = () => {
   const navigate = useNavigate();
@@ -36,23 +42,34 @@ const ChildSignupPage = () => {
     console.log('아이 회원가입 페이지: 회원가입 시도', formData);
 
     try {
-      const response = await fetch('api/auth/signup/child', {
+      const signupData = {
+        email: formData.id,
+        password: formData.password,
+        name: formData.name,
+        is_Parent: '0',
+        age: formData.age,
+        gender: formData.gender,
+        parent_email: formData.guardianEmail,
+      };
+
+      const response = await apiCall<SignupResponse>('auth/signup/child', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(signupData),
       });
 
-      console.log('아이 회원가입 페이지: 회원가입 응답 상태', response.status);
+      console.log('아이 회원가입 페이지: 회원가입 응답', response);
 
-      if (response.ok) {
+      if (response.success) {
         console.log('아이 회원가입 페이지: 회원가입 성공');
         alert('회원가입이 완료되었습니다.');
         navigate('/login');
       } else {
         console.log('아이 회원가입 페이지: 회원가입 실패');
-        alert('회원가입에 실패했습니다.');
+        alert(response.message || '회원가입에 실패했습니다.');
       }
     } catch (error) {
       console.error('아이 회원가입 페이지: 회원가입 에러', error);

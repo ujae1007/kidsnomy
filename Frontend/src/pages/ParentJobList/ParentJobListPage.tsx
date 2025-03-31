@@ -55,7 +55,7 @@ const ParentJobListPage: React.FC = () => {
     
     try {
       console.log('📊 부모 일자리 조회 데이터 로딩 시작');
-      const response = await fetch(`https://j12b207.p.ssafy.io/api/work/parent/check/${groupId}`, {
+      const response = await fetch(`/api/work/parent/check/${groupId}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${accessToken}`,

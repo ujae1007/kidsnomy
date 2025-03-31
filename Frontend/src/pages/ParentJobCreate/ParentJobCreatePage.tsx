@@ -73,7 +73,7 @@ const ParentJobCreatePage: React.FC = () => {
     console.log('📝 일자리 생성 시도:', formData);
     
     try {
-      const response = await fetch('https://j12b207.p.ssafy.io/api/work/create', {
+      const response = await fetch('/api/work/create', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${accessToken}`,

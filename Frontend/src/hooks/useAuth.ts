@@ -26,27 +26,27 @@ export const useAuth = (redirectTo = '/login') => {
     // }
 
     // 토큰 만료 체크
-    console.log('🔍 토큰 유효성 검사 실행');
-    const isValid = dispatch(checkTokenExpiration());
-    if (!isValid) {
-      console.warn('⚠️ 토큰이 만료됨 - 로그아웃 후 로그인 페이지로 리디렉션');
-      dispatch(logout());
-      navigate(redirectTo);
-    } else {
-      console.log('✅ 토큰 유효성 확인됨');
-    }
+    // console.log('🔍 토큰 유효성 검사 실행');
+    // const isValid = dispatch(checkTokenExpiration());
+    // if (!isValid) {
+    //   console.warn('⚠️ 토큰이 만료됨 - 로그아웃 후 로그인 페이지로 리디렉션');
+    //   dispatch(logout());
+    //   navigate(redirectTo);
+    // } else {
+    //   console.log('✅ 토큰 유효성 확인됨');
+    // }
 
     // 토큰 유효성 정기 검사 (5분마다)
-    console.log('⏰ 토큰 정기 검사 인터벌 설정 (5분마다)');
-    const tokenCheckInterval = setInterval(() => {
-      console.log('⏰ 토큰 정기 검사 실행 중');
-      dispatch(checkTokenExpiration());
-    }, 300000); // 5분 = 300,000ms
+    // console.log('⏰ 토큰 정기 검사 인터벌 설정 (5분마다)');
+    // const tokenCheckInterval = setInterval(() => {
+    //   console.log('⏰ 토큰 정기 검사 실행 중');
+    //   dispatch(checkTokenExpiration());
+    // }, 300000); // 5분 = 300,000ms
 
-    return () => {
-      console.log('⏰ 토큰 정기 검사 인터벌 정리');
-      clearInterval(tokenCheckInterval);
-    };
+    // return () => {
+    //   console.log('⏰ 토큰 정기 검사 인터벌 정리');
+    //   clearInterval(tokenCheckInterval);
+    // };
   }, [isAuthenticated, accessToken, navigate, redirectTo, dispatch]);
 
   return auth;

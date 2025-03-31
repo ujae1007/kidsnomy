@@ -18,16 +18,8 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# --- Production Stage ---
-FROM nginx:alpine
+CMD [ "cp", "-r", "/app/dist", "/app/build" ]
 
-# Copy the build output from the builder stage
-COPY --from=builder /app/build /usr/share/nginx/html
-
-# (Optional) Nginx configuration: If you have a custom Nginx config for the frontend
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Expose port 80 (Nginx default)
-EXPOSE 80
-
-# No need for CMD, Nginx image already has a default command
+# # --- Check the build output ---
+# RUN ls -la /app/dist
+# CMD [ "tail", "-f", "/dev/null" ]

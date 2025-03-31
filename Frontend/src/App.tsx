@@ -10,9 +10,7 @@ import GroupPage from '@/pages/Group/GroupPage';
 import AccountPage from '@/pages/Account/AccountPage';
 import MainLayout from '@/layouts/MainLayout';
 import SendMoneyPage from '@/pages/SendMoney/SendMoneyPage';
-import ResultPage from '@/components/common/ResultPage';
-import { RESULT_MESSAGES } from '@/constants';
-import { useNavigate } from 'react-router-dom';
+import SendMoneyResultPage from '@/pages/SendMoney/SendMoneyResultPage';
 import MyAccountInfo from '@/pages/MyAccount/MyAccountInfo';
 import AccountDetailPage from './pages/AccountDetail/AccountDetailPage';
 import ParentJobListPage from '@/pages/ParentJobList/ParentJobListPage';
@@ -22,52 +20,75 @@ import ParentBankProductsPage from '@/pages/ParentBankProducts/ParentBankProduct
 import CreateBankProductsPage from '@/pages/CreateBankProducts/CreateBankProductsPage';
 import ChildBankProductsPage from '@/pages/ChildBankProducts/ChildBankProductsPage';
 import ChildJobListPage from '@/pages/ChildJobList/ChildJobListPage';
-
-
-const SendMoneyCompletePage = () => {
-  const navigate = useNavigate();
-  return (
-    <ResultPage
-      title={RESULT_MESSAGES.SEND_MONEY.title}
-      description={RESULT_MESSAGES.SEND_MONEY.description}
-      buttonText={RESULT_MESSAGES.SEND_MONEY.buttonText}
-      onButtonClick={() => navigate('/home')}
-    />
-  );
-};
+import PrivateRoute from '@/components/auth/PrivateRoute';
+import NotFoundPage from '@/pages/Error/NotFoundPage';
 
 const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-        {/* Auth pages - without header and footer */}
+        {/* 공개 페이지 - 인증 불필요 */}
         <Route path="/" element={<StartPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupSelectPage />} />
         <Route path="/signup/child" element={<ChildSignupPage />} />
         <Route path="/signup/parent" element={<ParentSignupPage />} />
 
-        {/* Main pages - with header and footer */}
+        {/* 인증이 필요한 페이지 */}
         <Route element={<MainLayout />}>
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/work" element={<div>Coming Soon: Work Page</div>} />
-          <Route path="/bank" element={<div>Coming Soon: Bank Page</div>} />
-          <Route path="/bank/products" element={<ParentBankProductsPage />} />
-          <Route path="/bank/products/create" element={<CreateBankProductsPage />} />
-          <Route path="/child/bank/products" element={<ChildBankProductsPage />} />
-          <Route path="/group" element={<GroupPage />} />
-          <Route path="/account" element={<AccountPage />} />
-          <Route path="/account/send" element={<SendMoneyPage />} />
-          <Route path="/myaccount" element={<MyAccountInfo />} />
-          <Route path="/account/detail" element={<AccountDetailPage />} />
-          <Route path="/parent/jobs" element={<ParentJobListPage />} />
-          <Route path="/parent/jobs/create" element={<ParentJobCreatePage />} />
-          <Route path="/child/jobs" element={<ChildJobListPage />} />
-          <Route path="/jobs/:jobId" element={<JobDetailPage />} />
+          {/* 공통 접근 가능 페이지 */}
+          <Route path="/home" element={
+            <PrivateRoute element={<HomePage />} />
+          } />
+          <Route path="/account" element={
+            <PrivateRoute element={<AccountPage />} />
+          } />
+          <Route path="/myaccount" element={
+            <PrivateRoute element={<MyAccountInfo />} />
+          } />
+          <Route path="/account/detail" element={
+            <PrivateRoute element={<AccountDetailPage />} />
+          } />
+          <Route path="/group" element={
+            <PrivateRoute element={<GroupPage />} />
+          } />
+
+          {/* 부모 전용 페이지 */}
+          <Route path="/bank/products" element={
+            <PrivateRoute element={<ParentBankProductsPage />} allowedRoles={['PARENT']} />
+          } />
+          <Route path="/bank/products/create" element={
+            <PrivateRoute element={<CreateBankProductsPage />} allowedRoles={['PARENT']} />
+          } />
+          <Route path="/parent/jobs" element={
+            <PrivateRoute element={<ParentJobListPage />} allowedRoles={['PARENT']} />
+          } />
+          <Route path="/parent/jobs/create" element={
+            <PrivateRoute element={<ParentJobCreatePage />} allowedRoles={['PARENT']} />
+          } />
+          <Route path="/send-money" element={
+            <PrivateRoute element={<SendMoneyPage />} allowedRoles={['PARENT']} />
+          } />
+          <Route path="/send-money/result" element={
+            <PrivateRoute element={<SendMoneyResultPage />} allowedRoles={['PARENT']} />
+          } />
+
+          {/* 자녀 전용 페이지 */}
+          <Route path="/child/bank/products" element={
+            <PrivateRoute element={<ChildBankProductsPage />} allowedRoles={['CHILD']} />
+          } />
+          <Route path="/child/jobs" element={
+            <PrivateRoute element={<ChildJobListPage />} allowedRoles={['CHILD']} />
+          } />
+
+          {/* 공통 접근 가능한 상세 페이지 */}
+          <Route path="/jobs/:jobId" element={
+            <PrivateRoute element={<JobDetailPage />} />
+          } />
         </Route>
-        
-        {/* Result pages - without layout */}
-        <Route path="/account/send/complete" element={<SendMoneyCompletePage />} />
+
+        {/* 404 페이지 */}
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );

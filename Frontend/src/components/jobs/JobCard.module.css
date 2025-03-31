@@ -1,0 +1,92 @@
+.card {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  background-color: white;
+  border-bottom: 1px solid #EEEEEE;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.statusBadge {
+  padding: 0.5rem 0.75rem;
+  background-color: #F0E0E0;
+  color: #333;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0; /* 텍스트 오버플로우 방지 */
+}
+
+.title {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.salary {
+  font-size: 1.125rem;
+  color: #826B6B;
+  margin: 0;
+  font-weight: 600;
+}
+
+.moreButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
+}
+
+.moreButton:hover {
+  color: #333;
+}
+
+/* 태블릿 이상 화면 */
+@media (min-width: 768px) {
+  .card {
+    padding: 1.75rem;
+    gap: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+  }
+
+  .statusBadge {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .salary {
+    font-size: 1.4rem;
+  }
+
+  .moreButton {
+    font-size: 1.75rem;
+    position: static;
+  }
+} 

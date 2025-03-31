@@ -1,4 +1,6 @@
 .container {
+  max-width: 600px;
+  margin: 0 auto;
   padding: 1rem;
 }
 
@@ -138,7 +140,8 @@
 /* 반응형 디자인 */
 @media (min-width: 768px) {
   .card {
-    max-width: 400px;
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto;
   }
 } 

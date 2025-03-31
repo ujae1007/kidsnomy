@@ -41,7 +41,8 @@ public class SecurityConfig {
                     "/api/account/**",
                     "/api/work/**",
                     "/api/finance/**",
-                    "/api/auto/**"
+                    "/api/auto/**",
+                    "/api/chatbot"
                 ).permitAll()
                 .anyRequest().authenticated()
             )

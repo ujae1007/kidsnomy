@@ -18,6 +18,6 @@ public class BasicProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false)
+    @Column(name = "account_type_unique_no", nullable = false)
     private String accountTypeUniqueNo;
 }

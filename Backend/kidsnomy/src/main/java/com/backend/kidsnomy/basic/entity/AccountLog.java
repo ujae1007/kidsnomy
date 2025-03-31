@@ -25,7 +25,7 @@ public class AccountLog {
     @Column(name = "user_id", nullable = false)
     private Integer userId;
 
-    @Column(nullable = false)
+    @Column(name = "account_no", nullable = false)
     private String accountNo;
 
     @Column(name = "transaction_name")
@@ -48,4 +48,10 @@ public class AccountLog {
 
     @Column(name = "transaction_after_balance")
     private BigDecimal transactionAfterBalance;
+
+    @Column(name = "transaction_summary")
+    private String transactionSummary;
+
+    @Column(name = "transaction_memo")
+    private String transactionMemo;
 }

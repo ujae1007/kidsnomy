@@ -23,7 +23,7 @@ public class BasicAccount {
     @Column(name = "user_id", nullable = false)
     private Integer userId;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "account_no", nullable = false, unique = true)
     private String accountNo;
 
     @Column(name = "account_password")

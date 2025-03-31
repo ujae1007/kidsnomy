@@ -3,6 +3,12 @@
 
 application-env.properties
 
+docker-compose.override.yml
+
+*.sqlite3
+*.bin
+*.pickle
+
 *.pem
 
 ### dotenv ###

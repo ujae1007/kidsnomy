@@ -22,14 +22,33 @@ interface Job {
   status: number;
 }
 
+// 더미 데이터
+const dummyJob: Job = {
+  jobId: 1,
+  groupId: 1,
+  groupCode: "TEST123",
+  employerId: 1,
+  employeeId: 2,
+  employerName: "엄마",
+  employeeName: "아들",
+  title: "방 청소하기",
+  content: "1. 침대 정리하기\n2. 바닥 쓸기\n3. 먼지 닦기\n4. 쓰레기 버리기",
+  salary: 5000,
+  rewardText: "아이스크림 사주기",
+  isPermanent: true,
+  startAt: "2024-03-20",
+  endAt: "2024-03-20",
+  status: 1
+};
+
 const JobDetailPage: React.FC = () => {
   const { jobId } = useParams<{ jobId: string }>();
   const navigate = useNavigate();
   const { accessToken, isAuthenticated, isParent } = useSelector((state: RootState) => state.auth);
   
-  const [job, setJob] = useState<Job | null>(null);
+  const [job, setJob] = useState<Job | null>(dummyJob); // 더미 데이터로 초기화
   const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false); // 로딩 상태를 false로 설정
   
   const getStatusText = (status: number): string => {
     switch (status) {
@@ -44,16 +63,11 @@ const JobDetailPage: React.FC = () => {
   useEffect(() => {
     console.log('📄 일자리 상세 페이지 마운트, jobId:', jobId);
     
-    if (!isAuthenticated) {
-      console.log('❌ 인증되지 않은 사용자');
-      navigate('/login');
-      return;
-    }
-    
-    const fetchJobDetail = async () => {
-      console.log(`🔍 일자리 상세 정보 조회 시도 (jobId: ${jobId})`);
-      setLoading(true);
-      setError(null);
+    // API 호출 부분을 주석 처리하고 더미 데이터 사용
+    // const fetchJobDetail = async () => {
+    //   console.log(`🔍 일자리 상세 정보 조회 시도 (jobId: ${jobId})`);
+    //   setLoading(true);
+    //   setError(null);
       
       try {
         const response = await fetch(`/api/work/check/detail/${jobId}`, {
@@ -65,30 +79,30 @@ const JobDetailPage: React.FC = () => {
           },
         });
         
-        console.log(`🔄 일자리 상세 정보 응답 상태: ${response.status}`);
+    //     console.log(`🔄 일자리 상세 정보 응답 상태: ${response.status}`);
         
-        if (!response.ok) {
-          if (response.status === 404) {
-            throw new Error('일자리를 찾을 수 없습니다.');
-          } else if (response.status === 403) {
-            throw new Error('해당 일자리에 접근할 권한이 없습니다.');
-          } else {
-            throw new Error('일자리 정보를 불러오는데 실패했습니다.');
-          }
-        }
+    //     if (!response.ok) {
+    //       if (response.status === 404) {
+    //         throw new Error('일자리를 찾을 수 없습니다.');
+    //       } else if (response.status === 403) {
+    //         throw new Error('해당 일자리에 접근할 권한이 없습니다.');
+    //       } else {
+    //         throw new Error('일자리 정보를 불러오는데 실패했습니다.');
+    //       }
+    //     }
         
-        const data = await response.json();
-        console.log('✅ 일자리 상세 정보 조회 성공:', data);
-        setJob(data);
-      } catch (error) {
-        console.error('❌ 일자리 상세 정보 조회 중 에러 발생:', error);
-        setError((error as Error).message);
-      } finally {
-        setLoading(false);
-      }
-    };
+    //     const data = await response.json();
+    //     console.log('✅ 일자리 상세 정보 조회 성공:', data);
+    //     setJob(data);
+    //   } catch (error) {
+    //     console.error('❌ 일자리 상세 정보 조회 중 에러 발생:', error);
+    //     setError((error as Error).message);
+    //   } finally {
+    //     setLoading(false);
+    //   }
+    // };
     
-    fetchJobDetail();
+    // fetchJobDetail();
     
     return () => {
       console.log('📄 일자리 상세 페이지 언마운트');
@@ -106,7 +120,7 @@ const JobDetailPage: React.FC = () => {
       const response = await fetch(`/api/work/delete/${jobId}`, {
         method: 'DELETE',
         headers: {
-          'Authorization': `Bearer ${accessToken}`,
+          // 'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
@@ -159,7 +173,7 @@ const JobDetailPage: React.FC = () => {
       const response = await fetch(`/api/work/child/contract/${jobId}`, {
         method: 'PUT',
         headers: {
-          'Authorization': `Bearer ${accessToken}`,
+          // 'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
@@ -226,7 +240,7 @@ const JobDetailPage: React.FC = () => {
       const response = await fetch(`/api/work/child/complete/${jobId}`, {
         method: 'PUT',
         headers: {
-          'Authorization': `Bearer ${accessToken}`,
+          // 'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
@@ -291,7 +305,7 @@ const JobDetailPage: React.FC = () => {
       const response = await fetch(`/api/work/approve/${jobId}`, {
         method: 'PUT',
         headers: {
-          'Authorization': `Bearer ${accessToken}`,
+          // 'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
@@ -377,7 +391,7 @@ const JobDetailPage: React.FC = () => {
     const date = new Date(dateString);
     return date.toLocaleDateString('ko-KR');
   };
-  
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>일자리 상세보기</h1>

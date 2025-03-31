@@ -1,0 +1,62 @@
+.container {
+  padding: 1.5rem 1rem 7rem;
+  box-sizing: border-box;
+  background-color: white;
+  min-height: 100vh;
+  position: relative;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.error {
+  background-color: #fee;
+  color: #e33;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.submitButton {
+  background-color: #E08585;
+  color: #333;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.submitButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.chatButton {
+  position: fixed;
+  bottom: 5rem;
+  right: 1rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: #E57373;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+} 

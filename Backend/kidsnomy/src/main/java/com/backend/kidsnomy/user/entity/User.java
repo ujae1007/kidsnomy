@@ -22,7 +22,7 @@ public class User {
     @Column(name = "is_parent")
     private Boolean isParent;
 
-    @Column(name = "user_Key", length = 70)
+    @Column(name = "user_key", length = 70)
     private String userKey;
 
     private Integer age;

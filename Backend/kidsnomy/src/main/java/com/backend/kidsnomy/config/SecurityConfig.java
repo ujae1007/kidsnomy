@@ -42,9 +42,10 @@ public class SecurityConfig {
                     "/api/finance/**",
                     "/api/auto/**",
                     "/api/basic/**",
-                    "/api/account/**"
-                ).permitAll()
-                .requestMatchers("/api/account/**").authenticated()
+                    "/error",
+                    "/api/account/accountlog"
+            ).permitAll()
+                .requestMatchers("/api/account/**").authenticated() // 나머지 /api/account/** 경로는 인증 필요
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)

@@ -35,10 +35,10 @@ public class AccountLog {
     private String transactionUniqueNo;
 
     @Column(name = "transaction_date")
-    private LocalDate transactionDate; // 변경 전 : LocalDateTime
+    private LocalDateTime transactionDate;
 
     @Column(name = "transaction_time")
-    private LocalTime transactionTime; // 변경 전 : LocalDateTime
+    private LocalDateTime transactionTime;
 
     @Column(name = "transaction_type")
     private Integer transactionType;

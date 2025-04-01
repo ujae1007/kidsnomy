@@ -1,6 +1,9 @@
 package com.backend.kidsnomy.group.repository;
 
 import com.backend.kidsnomy.group.entity.GroupMembership;
+
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface GroupMembershipRepository extends JpaRepository<GroupMembership, Long> {
@@ -16,4 +19,7 @@ public interface GroupMembershipRepository extends JpaRepository<GroupMembership
     
 	// 해당 그룹에 내가 속해있는지 판단
 	boolean existsByUserIdAndGroupId(Long userId, Long groupId);
+	
+	// 내가 가입한 그룹 목록 조회
+	List<GroupMembership> findByUserId(Long userId);
 }

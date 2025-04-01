@@ -38,12 +38,14 @@ public class SecurityConfig {
                 .requestMatchers(
                     "/api/auth/**",
                     "/api/group/**",
-                    "/api/account/**",
                     "/api/work/**",
                     "/api/finance/**",
                     "/api/auto/**",
-                    "/api/chatbot"
-                ).permitAll()
+                    "/api/basic/**",
+                    "/error",
+                    "/api/account/accountlog"
+            ).permitAll()
+                .requestMatchers("/api/account/**").authenticated() // 나머지 /api/account/** 경로는 인증 필요
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
@@ -58,7 +60,8 @@ public class SecurityConfig {
         configuration.setAllowedOrigins(Arrays.asList(
             "http://localhost:5173",
             "http://localhost",
-            "https://j12b207.p.ssafy.io"
+            "https://j12b207.p.ssafy.io",
+            "http://localhost:8080"
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));

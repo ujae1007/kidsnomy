@@ -38,11 +38,14 @@ public class SecurityConfig {
                 .requestMatchers(
                     "/api/auth/**",
                     "/api/group/**",
-                    "/api/account/**",
                     "/api/work/**",
                     "/api/finance/**",
-                    "/api/auto/**"
-                ).permitAll()
+                    "/api/auto/**",
+                    "/api/basic/**",
+                    "/error",
+                    "/api/account/accountlog"
+            ).permitAll()
+                .requestMatchers("/api/account/**").authenticated() // 나머지 /api/account/** 경로는 인증 필요
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)

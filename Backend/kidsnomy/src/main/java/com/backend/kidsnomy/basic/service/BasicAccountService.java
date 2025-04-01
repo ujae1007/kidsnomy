@@ -1,10 +1,13 @@
 package com.backend.kidsnomy.basic.service;
 
 import com.backend.kidsnomy.basic.dto.*;
+import com.backend.kidsnomy.basic.entity.AccountLog;
 import com.backend.kidsnomy.basic.entity.BasicAccount;
 import com.backend.kidsnomy.basic.exception.AccountCloseException;
 import com.backend.kidsnomy.basic.exception.AccountCreationException;
+import com.backend.kidsnomy.basic.exception.AccountException;
 import com.backend.kidsnomy.basic.exception.AccountNotFoundException;
+import com.backend.kidsnomy.basic.repository.AccountLogRepository;
 import com.backend.kidsnomy.basic.repository.BasicAccountRepository;
 import com.backend.kidsnomy.common.exception.AuthenticationException;
 import com.backend.kidsnomy.common.util.ApiUtils;
@@ -13,6 +16,10 @@ import com.backend.kidsnomy.common.service.UserKeyService;
 import com.backend.kidsnomy.jwt.JwtTokenProvider;
 import jakarta.servlet.http.HttpServletRequest;
 
+<<<<<<< Updated upstream
+=======
+import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> Stashed changes
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Service;
@@ -21,7 +28,12 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -239,4 +251,94 @@ public class BasicAccountService {
             throw new AccountCloseException("계좌 해지 중 오류 발생: " + e.getMessage());
         }
     }
+    
+    // 계좌 거래내역 조회
+    @Autowired
+    private AccountLogRepository accountLogRepository;
+
+    public AccountTransactionResponseDto getAccountLog(HttpServletRequest request, AccountTransactionRequestDto requestDto) {
+        String token = jwtTokenProvider.resolveAccessToken(request);
+        if (token == null || !jwtTokenProvider.validateToken(token)) {
+            throw new AuthenticationException("유효하지 않은 토큰입니다.");
+        }
+
+        String email = jwtTokenProvider.getEmailFromToken(token);
+        String userKey = userKeyService.getUserKeyByEmail(email);
+
+        String apiUrl = baseUrl + "/ssafy/api/v1/edu/demandDeposit/inquireTransactionHistoryList";
+
+        Map<String, Object> header = ApiUtils.createApiRequestHeader("inquireTransactionHistoryList", apiKey, userKey);
+
+        Map<String, Object> body = new HashMap<>();
+        body.put("Header", header);
+        body.put("accountNo", requestDto.getAccountNo());
+        body.put("startDate", requestDto.getStartDate());
+        body.put("endDate", requestDto.getEndDate());
+        body.put("transactionType", requestDto.getTransactionType());
+        body.put("orderByType", requestDto.getOrderByType());
+
+        HttpEntity<Map<String, Object>> httpEntity = ApiUtils.createHttpEntity(body, userKey);
+
+        try {
+            Map<String, Object> response = restTemplate.postForObject(apiUrl, httpEntity, Map.class);
+            Map<String, Object> rec = (Map<String, Object>) response.get("REC");
+            List<Map<String, Object>> list = (List<Map<String, Object>>) rec.get("list");
+
+            List<AccountTransactionResponseDto.TransactionDetail> result = new ArrayList<>();
+
+            for (Map<String, Object> item : list) {
+                String transactionUniqueNo = (String) item.get("transactionUniqueNo");
+                String transactionAccountNo = (String) item.get("transactionAccountNo");
+                String transactionDate = (String) item.get("transactionDate");
+                String transactionTime = (String) item.get("transactionTime");
+
+                AccountTransactionResponseDto.TransactionDetail dto = new AccountTransactionResponseDto.TransactionDetail(
+                    String.valueOf(item.get("transactionUniqueNo")),
+                    transactionDate,
+                    transactionTime,
+                    (String) item.get("transactionType"),
+                    (String) item.get("transactionTypeName"),
+                    transactionAccountNo,
+                    new BigDecimal(item.get("transactionBalance").toString()),
+                    new BigDecimal(item.get("transactionAfterBalance").toString()),
+                    (String) item.get("transactionSummary"),
+                    (String) item.get("transactionMemo")
+                );
+
+                result.add(dto);
+               
+
+                // ✅ 저장되어 있으면 저장은 하지 않고 넘어감
+                if (accountLogRepository.existsByTransactionUniqueNo(transactionUniqueNo)) {
+                    continue;
+                }
+
+                AccountLog log = new AccountLog();
+                log.setUserId(
+                    basicAccountRepository.findByAccountNo(requestDto.getAccountNo())
+                        .orElseThrow(() -> new AccountNotFoundException("계좌를 찾을 수 없습니다."))
+                        .getUserId()
+                );
+                log.setAccountNo(requestDto.getAccountNo()); // 내 계좌번호
+                log.setTransactionName(transactionAccountNo); // 상대 계좌번호 (null 가능)
+                log.setTransactionUniqueNo((String) item.get("transactionUniqueNo"));
+                log.setTransactionDate(LocalDate.parse(transactionDate, DateTimeFormatter.ofPattern("yyyyMMdd")).atStartOfDay());
+                log.setTransactionTime(LocalTime.parse(transactionTime, DateTimeFormatter.ofPattern("HHmmss")).atDate(LocalDate.now()));
+                log.setTransactionType(Integer.parseInt((String) item.get("transactionType")));
+                log.setTransactionBalance(new BigDecimal(item.get("transactionBalance").toString()));
+                log.setTransactionAfterBalance(new BigDecimal(item.get("transactionAfterBalance").toString()));
+                log.setTransactionSummary((String) item.get("transactionSummary"));
+                log.setTransactionMemo((String) item.get("transactionMemo"));
+
+                accountLogRepository.save(log);
+            }
+
+            return new AccountTransactionResponseDto(result);
+
+        } catch (Exception e) {
+            throw new AccountException("거래내역 조회 실패: " + e.getMessage());
+        }
+    }
+
+
 }

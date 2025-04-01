@@ -42,4 +42,14 @@ public class BasicAccountController {
         AccountCloseResponseDto responseDto = basicAccountService.deleteAccount(request, requestDto);
         return ResponseEntity.ok(responseDto);
     }
+    
+    // 계좌 거래 내역 조회 API
+    @GetMapping("/accountlog")
+    public ResponseEntity<AccountTransactionResponseDto> getAccountLog(
+            HttpServletRequest request,
+            @Valid @RequestBody AccountTransactionRequestDto requestDto) {
+        AccountTransactionResponseDto response = basicAccountService.getAccountLog(request, requestDto);
+        return ResponseEntity.ok(response);
+    }
+
 }

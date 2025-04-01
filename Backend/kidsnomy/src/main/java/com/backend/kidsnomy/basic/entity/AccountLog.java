@@ -18,8 +18,8 @@ public class AccountLog {
     @Column(name = "account_no", nullable = false)
     private String accountNo;
 
-    @Column(name = "transaction_name")
-    private String transactionName;
+    @Column(name = "transaction_account_no", length = 70)
+    private String transactionAccountNo;
 
     @Column(name = "transaction_unique_no", nullable = false, unique = true)
     private String transactionUniqueNo;
@@ -49,14 +49,14 @@ public class AccountLog {
     public AccountLog() {}
 
     // 전체 필드 생성자
-    public AccountLog(Integer id, Integer userId, String accountNo, String transactionName,
+    public AccountLog(Integer id, Integer userId, String accountNo, String transactionAccountNo,
                       String transactionUniqueNo, LocalDateTime transactionDate, LocalDateTime transactionTime,
                       Integer transactionType, BigDecimal transactionBalance, BigDecimal transactionAfterBalance,
                       String transactionSummary, String transactionMemo) {
         this.id = id;
         this.userId = userId;
         this.accountNo = accountNo;
-        this.transactionName = transactionName;
+        this.transactionAccountNo = transactionAccountNo;
         this.transactionUniqueNo = transactionUniqueNo;
         this.transactionDate = transactionDate;
         this.transactionTime = transactionTime;
@@ -92,12 +92,12 @@ public class AccountLog {
         this.accountNo = accountNo;
     }
 
-    public String getTransactionName() {
-        return transactionName;
+    public String getTransactionAccountNo() {
+        return transactionAccountNo;
     }
 
-    public void setTransactionName(String transactionName) {
-        this.transactionName = transactionName;
+    public void setTransactionAccountNo(String transactionAccountNo) {
+        this.transactionAccountNo = transactionAccountNo;
     }
 
     public String getTransactionUniqueNo() {

@@ -1,0 +1,90 @@
+{
+    "Header": {
+        "responseCode": "H0000",
+        "responseMessage": "정상처리 되었습니다.",
+        "apiName": "inquireTransactionHistoryList",
+        "transmissionDate": "20250331",
+        "transmissionTime": "141703",
+        "institutionCode": "00100",
+        "apiKey": "265a24cbda3049959c697baf14f51154",
+        "apiServiceCode": "inquireTransactionHistoryList",
+        "institutionTransactionUniqueNo": "20250331141703999999"
+    },
+    "REC": {
+        "totalCount": "6",
+        "list": [
+            {
+                "transactionUniqueNo": "85085",
+                "transactionDate": "20250326",
+                "transactionTime": "172109",
+                "transactionType": "2",
+                "transactionTypeName": "출금",
+                "transactionAccountNo": "",
+                "transactionBalance": "1000",
+                "transactionAfterBalance": "995000",
+                "transactionSummary": "CU, 서울시 강남구",
+                "transactionMemo": ""
+            },
+            {
+                "transactionUniqueNo": "85084",
+                "transactionDate": "20250326",
+                "transactionTime": "171955",
+                "transactionType": "2",
+                "transactionTypeName": "출금",
+                "transactionAccountNo": "",
+                "transactionBalance": "1000",
+                "transactionAfterBalance": "996000",
+                "transactionSummary": "CU, 서울시 강남구",
+                "transactionMemo": ""
+            },
+            {
+                "transactionUniqueNo": "85083",
+                "transactionDate": "20250326",
+                "transactionTime": "171925",
+                "transactionType": "2",
+                "transactionTypeName": "출금",
+                "transactionAccountNo": "",
+                "transactionBalance": "1000",
+                "transactionAfterBalance": "997000",
+                "transactionSummary": "CU, 서울시 강남구",
+                "transactionMemo": ""
+            },
+            {
+                "transactionUniqueNo": "85082",
+                "transactionDate": "20250326",
+                "transactionTime": "171643",
+                "transactionType": "2",
+                "transactionTypeName": "출금",
+                "transactionAccountNo": "",
+                "transactionBalance": "1000",
+                "transactionAfterBalance": "998000",
+                "transactionSummary": "테스트 결제: 상호명, 대전광역시 유성구 덕명동 515-3",
+                "transactionMemo": ""
+            },
+            {
+                "transactionUniqueNo": "85046",
+                "transactionDate": "20250326",
+                "transactionTime": "130609",
+                "transactionType": "2",
+                "transactionTypeName": "출금",
+                "transactionAccountNo": "",
+                "transactionBalance": "1000",
+                "transactionAfterBalance": "999000",
+                "transactionSummary": "테스트 결제: 상호명, 대전광역시 유성구 덕명동 515-3",
+                "transactionMemo": ""
+            },
+            {
+                "transactionUniqueNo": "85045",
+                "transactionDate": "20250326",
+                "transactionTime": "130456",
+                "transactionType": "1",
+                "transactionTypeName": "입금",
+                "transactionAccountNo": "",
+                "transactionBalance": "1000000",
+                "transactionAfterBalance": "1000000",
+                "transactionSummary": "입금",
+                "transactionMemo": ""
+            }
+        ]
+    }
+}

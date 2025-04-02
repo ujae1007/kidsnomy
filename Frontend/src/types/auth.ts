@@ -2,6 +2,7 @@ export interface AuthState {
   accessToken: string | null;
   isAuthenticated: boolean;
   isParent: boolean | null;
+  userRole: 'PARENT' | 'CHILD' | null;
   loading: boolean;
   error: string | null;
 }

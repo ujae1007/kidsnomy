@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
-import { useLogout } from '@/hooks/useAuth';
-import { useNavigate } from 'react-router-dom';
 import AccountInfo from '@/components/home/AccountInfo';
 import FinancialProducts from '@/components/home/FinancialProducts';
 import { apiCall } from '@/utils/api';
@@ -59,9 +57,6 @@ interface FinancialProductsData {
 
 const HomePage: React.FC = () => {
   const auth = useAuth();
-  const { logoutUser } = useLogout();
-  const navigate = useNavigate();
-  
   const [accountData, setAccountData] = useState<AccountData | null>(null);
   const [contractData, setContractData] = useState<ContractData[]>([]);
   const [financialProductsData, setFinancialProductsData] = useState<FinancialProductsData | undefined>(undefined);
@@ -150,18 +145,8 @@ const HomePage: React.FC = () => {
     }))
   } : undefined;
 
-  const handleJobListClick = () => {
-    if (auth.isParent) {
-      navigate('/parent/jobs');
-    } else {
-      navigate('/child/jobs');
-    }
-  };
-
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>홈페이지</h1>
-      
       {/* 계좌 정보 컴포넌트 */}
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-2">나의 통장</h2>
@@ -179,13 +164,6 @@ const HomePage: React.FC = () => {
         <h2 className="text-xl font-semibold mb-2">금융 상품</h2>
         <FinancialProducts data={formattedFinancialData} />
       </div>
-      <button onClick={handleJobListClick} className={styles.button}>
-        {auth.isParent ? '일자리 관리' : '일자리 보기'}
-      </button>
-      
-      <button onClick={logoutUser} className={styles.button}>
-        로그아웃
-      </button>
     </div>
   );
 };

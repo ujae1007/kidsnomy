@@ -23,6 +23,7 @@ declare const styles: {
   readonly errorMessage: string;
   readonly select: string;
   readonly submitButton: string;
+  readonly radioInput: string;
 };
 
 export default styles; 

@@ -6,7 +6,8 @@ import * as jwtDecode from 'jwt-decode';
 const initialState: AuthState = {
   accessToken: null,
   isAuthenticated: false,
-  isParent: null,
+  userRole: null,
+  userId: null,
   loading: false,
   error: null,
 };
@@ -176,8 +177,37 @@ const authSlice = createSlice({
       console.log('🚪 로그아웃 처리 중...');
       state.accessToken = null;
       state.isAuthenticated = false;
-      state.isParent = null;
+      state.userRole = null;
+      state.userId = null;
       state.error = null;
+    },
+    setAccessToken: (state, action: PayloadAction<string>) => {
+      console.log('🔑 토큰 설정');
+      state.accessToken = action.payload;
+      state.isAuthenticated = true;
+
+      try {
+        const decoded = jwtDecode.default(action.payload) as JwtPayload;
+        state.userRole = decoded.role;
+        state.userId = decoded.sub;
+        
+        console.log('✅ 토큰 디코딩 성공:', {
+          role: decoded.role,
+          userId: decoded.sub,
+          expiresAt: new Date(decoded.exp * 1000).toISOString()
+        });
+      } catch (error) {
+        console.error('❌ 토큰 디코딩 실패:', error);
+        state.userRole = null;
+        state.userId = null;
+      }
+    },
+    clearAuth: (state) => {
+      console.log('🔒 인증 정보 초기화');
+      state.accessToken = null;
+      state.isAuthenticated = false;
+      state.userRole = null;
+      state.userId = null;
     },
   },
   extraReducers: (builder) => {
@@ -192,7 +222,8 @@ const authSlice = createSlice({
         console.log('✅ 로그인 성공 - Redux 상태 업데이트');
         state.loading = false;
         state.accessToken = action.payload.accessToken;
-        state.isParent = action.payload.isParent;
+        state.userRole = action.payload.isParent ? 'PARENT' : 'CHILD';
+        state.userId = (jwtDecode.jwtDecode(action.payload.accessToken) as any).sub;
         state.isAuthenticated = true;
       })
       .addCase(loginUser.rejected, (state, action) => {
@@ -211,7 +242,7 @@ const authSlice = createSlice({
         state.accessToken = action.payload.accessToken;
         // isParent 필드가 전달되었으면 업데이트, 아니면 기존 값 유지
         if (action.payload.isParent !== undefined) {
-          state.isParent = action.payload.isParent;
+          state.userRole = action.payload.isParent ? 'PARENT' : 'CHILD';
         }
         state.isAuthenticated = true;
       })
@@ -221,9 +252,12 @@ const authSlice = createSlice({
         state.error = action.payload as string;
         state.isAuthenticated = false;
         state.accessToken = null;
+        state.userRole = null;
+        state.userId = null;
         // isParent는 유지 (로그아웃해도 사용자 유형 정보는 유지함)
       });
   },
 });
 
+export const { setAccessToken, clearAuth } = authSlice.actions;
 export default authSlice.reducer; 

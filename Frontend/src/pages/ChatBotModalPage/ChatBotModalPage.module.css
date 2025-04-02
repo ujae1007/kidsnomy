@@ -1,56 +1,55 @@
 .container {
+  padding: 20px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  height: calc(90vh - 2rem);
-  background-color: white;
-  position: relative;
+  background-color: #fff;
 }
 
 .header {
   display: flex;
   align-items: center;
-  padding: 1rem;
-  border-bottom: 1px solid #E0E0E0;
-  position: sticky;
-  top: 0;
-  background-color: white;
-  z-index: 1;
+  margin-bottom: 20px;
 }
 
 .backButton {
   background: none;
   border: none;
-  padding: 0.5rem;
-  margin-right: 1rem;
   cursor: pointer;
-  display: flex;
-  align-items: center;
+  padding: 8px;
 }
 
 .title {
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: bold;
   color: #333;
-  margin: 2rem 1rem;
-  line-height: 1.6;
+  margin-bottom: 24px;
+  text-align: center;
 }
 
 .chatBox {
   display: flex;
-  gap: 0.75rem;
-  margin: 0 1rem 2rem;
-  padding: 1rem 1.5rem;
-  background-color: #F5F2F2;
-  border-radius: 12px;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.userChat {
+  flex-direction: row-reverse;
+}
+
+.userChat .messageBox {
+  background-color:#DB9999;
+}
+
+.userChat .message {
+  color: white;
 }
 
 .profileImage {
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
   overflow: hidden;
-  flex-shrink: 0;
-  margin-left: -0.25rem;
 }
 
 .profileImage img {
@@ -60,53 +59,66 @@
 }
 
 .messageBox {
-  flex: 1;
+  background-color: #F5F5F5;
+  padding: 12px;
+  border-radius: 12px;
+  max-width: 70%;
 }
 
 .name {
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: bold;
   color: #333;
-  margin-bottom: 0.5rem;
+  margin-bottom: 4px;
 }
 
 .message {
+  font-size: 14px;
   color: #333;
-  line-height: 1.6;
-  white-space: pre-line;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .inputContainer {
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1rem;
-  background-color: white;
-  display: flex;
-  gap: 1rem;
-  border-top: 1px solid #E0E0E0;
   margin-top: auto;
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
 }
 
 .input {
   flex: 1;
-  padding: 1rem;
-  border: none;
+  padding: 12px;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  background-color: #F5F2F2;
-  font-size: 1rem;
-  resize: none;
-  min-height: 48px;
-  max-height: 120px;
-}
-
-.input::placeholder {
-  color: #666;
+  font-size: 14px;
 }
 
 .input:focus {
   outline: none;
-  background-color: #F0F0F0;
+  border-color: #DB9999;
+}
+
+.sendButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sendButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sendButton svg {
+  width: 24px;
+  height: 24px;
 }
 
 .reportButton {
@@ -120,21 +132,6 @@
   transform: rotate(-90deg);
 }
 
-.sendButton {
-  background: none;
-  border: none;
-  padding: 0.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.2s ease;
-}
-
-.sendButton:hover {
-  transform: scale(1.1);
-}
-
-.sendButton:active {
-  transform: scale(0.95);
+.input::placeholder {
+  color: #666;
 } 

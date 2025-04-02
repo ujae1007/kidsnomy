@@ -8,7 +8,15 @@ interface AmountInputProps {
 
 const AmountInput: React.FC<AmountInputProps> = ({ amount, onAmountChange }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/[^0-9]/g, '');
+    const rawValue = e.target.value;
+    const value = rawValue.replace(/[^0-9]/g, '');
+    
+    console.log('💰 금액 입력 처리:', {
+      rawInput: rawValue,
+      sanitizedValue: value,
+      isValid: /^[0-9]*$/.test(value)
+    });
+    
     onAmountChange(value);
   };
 
@@ -22,6 +30,7 @@ const AmountInput: React.FC<AmountInputProps> = ({ amount, onAmountChange }) => 
           onChange={handleChange}
           className={styles.input}
           placeholder="0"
+          aria-label="송금 금액 입력"
         />
         <span className={styles.currency}>원</span>
       </div>

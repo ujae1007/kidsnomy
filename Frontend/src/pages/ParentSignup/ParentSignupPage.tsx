@@ -77,7 +77,6 @@ const ParentSignupPage = () => {
   const [verificationStatus, setVerificationStatus] = useState<'none' | 'success' | 'error'>('none');
   const [formData, setFormData] = useState({
     name: '',
-    id: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -187,7 +186,7 @@ const ParentSignupPage = () => {
       console.log('부모 회원가입 페이지: 회원가입 시도', formData);
       
       const signupData = {
-        email: formData.id,
+        email: formData.email,
         password: formData.password,
         name: formData.name,
         is_Parent: '1',
@@ -229,18 +228,6 @@ const ParentSignupPage = () => {
             type="text"
             name="name"
             value={formData.name}
-            onChange={handleInputChange}
-            className={styles.input}
-            required
-          />
-        </div>
-        
-        <div>
-          <label className={styles.label}>아이디</label>
-          <input
-            type="text"
-            name="id"
-            value={formData.id}
             onChange={handleInputChange}
             className={styles.input}
             required
@@ -312,17 +299,32 @@ const ParentSignupPage = () => {
         
         <div>
           <label className={styles.label}>성별</label>
-          <select
-            name="gender"
-            value={formData.gender}
-            onChange={handleInputChange}
-            className={styles.select}
-            required
-          >
-            <option value="">선택하세요</option>
-            <option value="MALE">남성</option>
-            <option value="FEMALE">여성</option>
-          </select>
+          <div className={styles.radioGroup}>
+            <label className={styles.radioLabel}>
+              <input
+                type="radio"
+                name="gender"
+                value="MALE"
+                checked={formData.gender === "MALE"}
+                onChange={handleInputChange}
+                className={styles.radioInput}
+                required
+              />
+              <span>남성</span>
+            </label>
+            <label className={styles.radioLabel}>
+              <input
+                type="radio"
+                name="gender"
+                value="FEMALE"
+                checked={formData.gender === "FEMALE"}
+                onChange={handleInputChange}
+                className={styles.radioInput}
+                required
+              />
+              <span>여성</span>
+            </label>
+          </div>
         </div>
         
         <button type="submit" className={styles.submitButton}>

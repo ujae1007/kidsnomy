@@ -22,6 +22,7 @@ import ChildBankProductsPage from '@/pages/ChildBankProducts/ChildBankProductsPa
 import ChildJobListPage from '@/pages/ChildJobList/ChildJobListPage';
 import PrivateRoute from '@/components/auth/PrivateRoute';
 import NotFoundPage from '@/pages/Error/NotFoundPage';
+import EmailVerification from '@/pages/Signup/EmailVerification';
 
 const App: React.FC = () => {
   return (
@@ -33,6 +34,7 @@ const App: React.FC = () => {
         <Route path="/signup" element={<SignupSelectPage />} />
         <Route path="/signup/child" element={<ChildSignupPage />} />
         <Route path="/signup/parent" element={<ParentSignupPage />} />
+        <Route path="/signup/verify-email" element={<EmailVerification />} />
 
         {/* 인증이 필요한 페이지 */}
         <Route element={<MainLayout />}>

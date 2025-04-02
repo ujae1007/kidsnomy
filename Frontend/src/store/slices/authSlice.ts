@@ -5,6 +5,8 @@ import * as jwtDecode from 'jwt-decode';
 // 초기 상태 정의
 const initialState: AuthState = {
   accessToken: null,
+  refreshToken: null,
+  email: null,
   isAuthenticated: false,
   userRole: null,
   userId: null,
@@ -176,35 +178,26 @@ const authSlice = createSlice({
     logoutSuccess: (state) => {
       console.log('🚪 로그아웃 처리 중...');
       state.accessToken = null;
+      state.refreshToken = null;
+      state.email = null;
       state.isAuthenticated = false;
       state.userRole = null;
       state.userId = null;
       state.error = null;
     },
-    setAccessToken: (state, action: PayloadAction<string>) => {
-      console.log('🔑 토큰 설정');
-      state.accessToken = action.payload;
+    setTokens: (state, action: PayloadAction<{ accessToken: string; refreshToken: string }>) => {
+      state.accessToken = action.payload.accessToken;
+      state.refreshToken = action.payload.refreshToken;
       state.isAuthenticated = true;
-
-      try {
-        const decoded = jwtDecode.default(action.payload) as JwtPayload;
-        state.userRole = decoded.role;
-        state.userId = decoded.sub;
-        
-        console.log('✅ 토큰 디코딩 성공:', {
-          role: decoded.role,
-          userId: decoded.sub,
-          expiresAt: new Date(decoded.exp * 1000).toISOString()
-        });
-      } catch (error) {
-        console.error('❌ 토큰 디코딩 실패:', error);
-        state.userRole = null;
-        state.userId = null;
-      }
+    },
+    setEmail: (state, action: PayloadAction<string>) => {
+      state.email = action.payload;
     },
     clearAuth: (state) => {
       console.log('🔒 인증 정보 초기화');
       state.accessToken = null;
+      state.refreshToken = null;
+      state.email = null;
       state.isAuthenticated = false;
       state.userRole = null;
       state.userId = null;
@@ -222,9 +215,11 @@ const authSlice = createSlice({
         console.log('✅ 로그인 성공 - Redux 상태 업데이트');
         state.loading = false;
         state.accessToken = action.payload.accessToken;
+        state.refreshToken = action.payload.refreshToken;
         state.userRole = action.payload.isParent ? 'PARENT' : 'CHILD';
         state.userId = (jwtDecode.jwtDecode(action.payload.accessToken) as any).sub;
         state.isAuthenticated = true;
+        state.email = action.payload.email;
       })
       .addCase(loginUser.rejected, (state, action) => {
         console.error('❌ 로그인 실패 - Redux 상태 업데이트', action.payload);
@@ -240,11 +235,13 @@ const authSlice = createSlice({
         console.log('✅ 토큰 재발급 성공 - Redux 상태 업데이트');
         state.loading = false;
         state.accessToken = action.payload.accessToken;
+        state.refreshToken = action.payload.refreshToken;
         // isParent 필드가 전달되었으면 업데이트, 아니면 기존 값 유지
         if (action.payload.isParent !== undefined) {
           state.userRole = action.payload.isParent ? 'PARENT' : 'CHILD';
         }
         state.isAuthenticated = true;
+        state.email = action.payload.email;
       })
       .addCase(reissueToken.rejected, (state, action) => {
         console.error('❌ 토큰 재발급 실패 - Redux 상태 업데이트', action.payload);
@@ -252,12 +249,14 @@ const authSlice = createSlice({
         state.error = action.payload as string;
         state.isAuthenticated = false;
         state.accessToken = null;
+        state.refreshToken = null;
         state.userRole = null;
         state.userId = null;
+        state.email = null;
         // isParent는 유지 (로그아웃해도 사용자 유형 정보는 유지함)
       });
   },
 });
 
-export const { setAccessToken, clearAuth } = authSlice.actions;
+export const { setTokens, setEmail, clearAuth } = authSlice.actions;
 export default authSlice.reducer; 

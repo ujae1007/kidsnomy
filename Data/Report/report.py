@@ -38,10 +38,145 @@
     }
 
 '''
+import os
+import requests
 import json
+from dotenv import load_dotenv
+import numpy as np
+import torch
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from collections import defaultdict
 
-file_path = f"./expense/data.json"
-with open(file_path, "r", encoding="utf-8") as f:
-    data = json.load(f)
+load_dotenv()
 
-data['REC']['list']
+# 학습한 모델 로드
+model_path = "./kobert_category"  # 학습된 모델이 저장된 경로
+
+# 카테고리 목록과 매핑
+categories = ['교육', '의료', '취미', '식비', '카페/간식', '쇼핑', '문구', '미용', '문화', '도서', '생활', '교통']
+category_to_id = {cat: i for i, cat in enumerate(categories)}
+id_to_category = {i: cat for i, cat in enumerate(categories)}
+
+# 이미 학습된 모델과 토크나이저 로드
+tokenizer = AutoTokenizer.from_pretrained(model_path)
+model = AutoModelForSequenceClassification.from_pretrained(model_path)
+
+def search_kakao_map(store, address):
+    """
+    도로명 주소로 카카오맵 검색해서 해당 가게의 카테고리 들고오기
+    input: store -> 가게명 address -> 주소
+    output: category
+    """
+    REST_API_KEY = os.getenv('KAKAO_API')
+    URL = "https://dapi.kakao.com/v2/local/search/keyword.json"
+
+    headers = {
+        "Authorization": f"KakaoAK {REST_API_KEY}"
+    }
+    for page in range(1, 46):
+        params = {
+            "query": address,
+            # "x": "127.09761630337", # 송파구
+            # "y": "37.51232891786",
+            "radius": 20000,
+            "page": 1
+        }
+
+        response = requests.get(URL, headers=headers, params=params)
+        if response.status_code == 200:
+            data = response.json()["documents"]
+            for item in range(len(data)):
+                if data[item]['place_name'] == store:
+                    return data[item]['category_name']
+        else:
+            print(f"Error {response.status_code}: {response.text}")
+            continue
+
+def category_classification(kakao_category):
+    """
+    카카오맵 카테고리 데이터를 프로그램에 맞게 재분류하는 함수
+    input: kakao_category -> 분류해야하는 카테고리(str)
+    output: predicted_category -> 재분류된 카테고리(str)
+    """
+    # 입력 텍스트를 토큰화
+    encodings = tokenizer(kakao_category, padding="max_length", truncation=True, max_length=64, return_tensors="pt")
+
+    encodings['token_type_ids'] = torch.zeros_like(encodings['input_ids'])
+
+    # 예측 수행
+    with torch.no_grad():
+        outputs = model(**encodings)
+        logits = outputs.logits
+
+    # 예측된 라벨을 얻기
+    prediction = torch.argmax(logits, dim=-1).cpu().item()
+
+    # 예측 결과를 카테고리로 변환
+    predicted_category = id_to_category[prediction]
+
+    return predicted_category
+
+def total_expense(data):
+    """
+    카테고리별 총 소비액 계산하는 함수
+    input: data[json] => store->상호명, address->가게주소, price->지출액, category->카카오맵카테고리, predicted_category->재분류된 카테고리
+    output: res[json] => category->카테고리 expense->총소비액
+    """
+    res = []
+    total_data = defaultdict(int)
+    for category in categories:
+        total_data[category] = 0
+
+    for item in range(len(data)):
+        total_data[data['predicted_category']] += data[item]['price']
+
+    for category in total_data:
+        res.append({'category':category, 'expense':total_data[category]})
+
+    return res
+
+def db_data_preprocessing(db_data):
+    """
+    DB 데이터 전처리 하는 함수
+    input: db데이터[json]
+
+    >>DB 데이터 <<
+    Account_Log 테이블  --> ssafy api 거래고유번호 참고 (transactionUniqueNo)
+        - Id (increase num) int [PK]
+        - user_id (거래한 계좌의 소유주 아이디)
+        - transaction_account_no (varchar(70)) --> 로컬DB memo(송금계좌정보) + ssafy api의 memo
+        - transactionUniqueNo -> ssafy api 거래고유번호 참고 (transactionUniqueNo)
+        - transactionDate (timestamp) --> 거래날짜 (년월일)
+        - transactionTime (timestamp) --> 거래시간 (시분초)
+        - transactionType (tinyint) --> 입출금 구분 (0, 1)
+        - transactionBalance (Decimal(15,2)) --> 거래 금액
+        - transactionAfterBalance (decimal(15,2)) --> 거래 후 잔액
+    output: res[json]
+    """
+    
+
+def category_expense(db_data):
+    """
+    카테고리별 총 지출금액 계산하는 통합 함수
+    input: 전처리된 Account_log DB 데이터 -> db_data_preprocessing 함수 결과물
+
+    output: 총 지출 금액 데이터
+    """
+
+    data = []
+    place_name = "왕가탕후루 충장로점"
+    road_address_name = "광주 동구 충장로3가 41-1"
+    price = 3500
+    searched_category = search_kakao_map(place_name, road_address_name)
+    predicted_category = category_classification(searched_category)
+    data.append({'store': place_name, 'address': road_address_name, 'price': price, 'category': searched_category,
+                 'predicted_category': predicted_category})
+    res = total_expense(data)
+    return res
+
+
+if __name__ == "__main__":
+    res1 = category_expense()
+    print(res1)
+
+

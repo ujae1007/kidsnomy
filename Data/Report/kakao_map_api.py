@@ -15,7 +15,7 @@ headers = {
 
 category_list = {"교육":'edu', "병원":'health', "pc방":'hobby', "식당":'eat', "카페":'cafe', "쇼핑":'shopping', "문구":'stationary',
                  "미용":'beauty', "문화":'culture', "도서":'book', "생활":'life', "교통":'transportation'}
-SEARCH_QUERY = "국민은행, 세종특별자치시 한누리대로 193 참미르빌딩"
+SEARCH_QUERY = "탕후루"
 params = {
     "query": SEARCH_QUERY,
     # "x": "127.09761630337", # 송파구

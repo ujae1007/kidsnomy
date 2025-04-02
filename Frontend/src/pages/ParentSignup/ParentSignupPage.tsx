@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './ParentSignupPage.module.css';
 import { apiCall } from '@/utils/api';
-import { useDispatch } from 'react-redux';
-import { setEmail } from '@/store/slices/authSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { setEmail, clearEmail } from '@/store/slices/authSlice';
+import { RootState } from '@/store';
+
+interface SignupFormData {
+  email: string;
+  password: string;
+  confirmPassword: string;
+  name: string;
+  phone: string;
+  gender: string;
+  birth: string;
+  age: string;
+}
 
 // API 응답 타입 정의
 interface ApiResponse {
@@ -59,23 +71,33 @@ const EmailVerificationModal: React.FC<EmailVerificationModalProps> = ({
   );
 };
 
-const ParentSignupPage = () => {
+const ParentSignupPage: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const verifiedEmail = useSelector((state: RootState) => state.auth.email);
   const [isVerificationModalOpen, setIsVerificationModalOpen] = useState(false);
-  const [isEmailVerified, setIsEmailVerified] = useState(false);
+  const [isEmailVerified, setIsEmailVerified] = useState(Boolean(verifiedEmail));
   const [verificationMessage, setVerificationMessage] = useState('');
   const [verificationStatus, setVerificationStatus] = useState<'none' | 'success' | 'error'>('none');
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+  const [formData, setFormData] = useState<SignupFormData>({
+    email: verifiedEmail || '',
     password: '',
     confirmPassword: '',
-    age: '',
-    gender: ''
+    name: '',
+    phone: '',
+    gender: '',
+    birth: '',
+    age: ''
   });
   const [isSendingCode, setIsSendingCode] = useState(false);
   const [verificationError, setVerificationError] = useState('');
+
+  // 컴포넌트가 언마운트될 때 이메일 정보 초기화
+  useEffect(() => {
+    return () => {
+      dispatch(clearEmail());
+    };
+  }, [dispatch]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -98,7 +120,9 @@ const ParentSignupPage = () => {
 
     try {
       setIsSendingCode(true);
-      await apiCall<ApiResponse>('/auth/verification', {
+      console.log('이메일 인증 코드 요청:', formData.email);
+      
+      const response = await apiCall<ApiResponse>('/auth/verification', {
         method: 'POST',
         body: JSON.stringify({ email: formData.email }),
         headers: {
@@ -106,11 +130,16 @@ const ParentSignupPage = () => {
         }
       });
 
-      // 이메일을 Redux에 저장
-      dispatch(setEmail(formData.email));
-      
-      // 이메일 인증 페이지로 이동
-      navigate('/signup/verify-email');
+      if (response.success) {
+        // 이메일을 Redux에 저장
+        dispatch(setEmail(formData.email));
+        
+        console.log('이메일 인증 페이지로 이동');
+        // 이메일 인증 페이지로 이동
+        navigate('/signup/email-verification');
+      } else {
+        setVerificationError(response.message || '인증 코드 전송에 실패했습니다.');
+      }
     } catch (error: any) {
       console.error('인증 코드 전송 실패:', error);
       setVerificationError(error.message || '인증 코드 전송에 실패했습니다. 다시 시도해주세요.');
@@ -231,14 +260,16 @@ const ParentSignupPage = () => {
               onChange={handleInputChange}
               className={styles.emailInput}
               required
+              placeholder="이메일"
+              disabled={isEmailVerified}
             />
             <button
               type="button"
               onClick={handleSendVerificationCode}
               className={styles.verificationButton}
-              disabled={isSendingCode}
+              disabled={isEmailVerified}
             >
-              {isSendingCode ? '보내는 중...' : '인증하기'}
+              {isEmailVerified ? '인증완료' : '이메일 인증'}
             </button>
           </div>
           {verificationError && (

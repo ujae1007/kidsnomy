@@ -34,7 +34,7 @@ const App: React.FC = () => {
         <Route path="/signup" element={<SignupSelectPage />} />
         <Route path="/signup/child" element={<ChildSignupPage />} />
         <Route path="/signup/parent" element={<ParentSignupPage />} />
-        <Route path="/signup/verify-email" element={<EmailVerification />} />
+        <Route path="/signup/email-verification" element={<EmailVerification />} />
 
         {/* 인증이 필요한 페이지 */}
         <Route element={<MainLayout />}>

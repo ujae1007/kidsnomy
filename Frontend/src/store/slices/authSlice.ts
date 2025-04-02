@@ -2,6 +2,11 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { AuthState, LoginRequest, LoginResponse } from '@/types/auth';
 import * as jwtDecode from 'jwt-decode';
 
+// API 기본 URL 설정
+const API_URL = 'http://localhost:8080';
+// 배포 시 사용할 URL
+// const API_URL = 'https://j12b207.p.ssafy.io';
+
 // 초기 상태 정의
 const initialState: AuthState = {
   accessToken: null,
@@ -10,6 +15,7 @@ const initialState: AuthState = {
   isAuthenticated: false,
   userRole: null,
   userId: null,
+  isParent: null,
   loading: false,
   error: null,
 };
@@ -24,7 +30,7 @@ export const loginUser = createAsyncThunk(
       console.log('🔑 로그인 요청 시작:', { email: credentials.email, passwordLength: credentials.password.length });
       console.time('⏱️ 로그인 요청 시간');
       
-      const response = await fetch('/api/auth/login', {
+      const response = await fetch(`${API_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -93,7 +99,7 @@ export const reissueToken = createAsyncThunk(
       console.log('🔄 토큰 재발급 요청 시작');
       console.time('⏱️ 토큰 재발급 요청 시간');
       
-      const response = await fetch('/api/auth/reissue', {
+      const response = await fetch(`${API_URL}/api/auth/reissue`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${auth.accessToken}`,
@@ -183,15 +189,20 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
       state.userRole = null;
       state.userId = null;
+      state.isParent = null;
+      state.loading = false;
       state.error = null;
+    },
+    setEmail: (state, action: PayloadAction<string>) => {
+      state.email = action.payload;
+    },
+    clearEmail: (state) => {
+      state.email = null;
     },
     setTokens: (state, action: PayloadAction<{ accessToken: string; refreshToken: string }>) => {
       state.accessToken = action.payload.accessToken;
       state.refreshToken = action.payload.refreshToken;
       state.isAuthenticated = true;
-    },
-    setEmail: (state, action: PayloadAction<string>) => {
-      state.email = action.payload;
     },
     clearAuth: (state) => {
       console.log('🔒 인증 정보 초기화');
@@ -201,6 +212,9 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
       state.userRole = null;
       state.userId = null;
+      state.isParent = null;
+      state.loading = false;
+      state.error = null;
     },
   },
   extraReducers: (builder) => {
@@ -220,6 +234,7 @@ const authSlice = createSlice({
         state.userId = (jwtDecode.jwtDecode(action.payload.accessToken) as any).sub;
         state.isAuthenticated = true;
         state.email = action.payload.email;
+        state.isParent = action.payload.isParent;
       })
       .addCase(loginUser.rejected, (state, action) => {
         console.error('❌ 로그인 실패 - Redux 상태 업데이트', action.payload);
@@ -239,6 +254,7 @@ const authSlice = createSlice({
         // isParent 필드가 전달되었으면 업데이트, 아니면 기존 값 유지
         if (action.payload.isParent !== undefined) {
           state.userRole = action.payload.isParent ? 'PARENT' : 'CHILD';
+          state.isParent = action.payload.isParent;
         }
         state.isAuthenticated = true;
         state.email = action.payload.email;
@@ -253,10 +269,10 @@ const authSlice = createSlice({
         state.userRole = null;
         state.userId = null;
         state.email = null;
-        // isParent는 유지 (로그아웃해도 사용자 유형 정보는 유지함)
+        state.isParent = null;
       });
   },
 });
 
-export const { setTokens, setEmail, clearAuth } = authSlice.actions;
+export const { setEmail, clearEmail, setTokens, clearAuth } = authSlice.actions;
 export default authSlice.reducer; 

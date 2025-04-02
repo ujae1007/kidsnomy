@@ -17,7 +17,11 @@ export interface LoginRequest {
 
 export interface LoginResponse {
   accessToken: string;
+  refreshToken: string;
+  email: string;
   isParent: boolean;
+  userId: string;
+  message: string;
 }
 
 export interface TokenPayload {

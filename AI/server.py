@@ -1,19 +1,14 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+from RAG.func import RAG_Chatbot
+
+chatbot = RAG_Chatbot()
 app = FastAPI()
 
-class ChatResponse(BaseModel):
-    response: str
-
-# 가상의 챗봇 응답 함수 (실제 챗봇 로직으로 대체해야 함)
-def get_chat(message: str) -> str:
-    # 간단한 예시로 입력된 메시지를 그대로 반환
-    return f"챗봇 응답: {message}"
-
-@app.get("/api/chat", response_model=ChatResponse)
-async def chat(message: str):
-    response = get_chat(message)
+@app.get("/api/chat")
+async def chat(message: str) -> str:
+    response = chatbot.get_chat(message)
     return {"response": response}
 
 # 실행 방법:

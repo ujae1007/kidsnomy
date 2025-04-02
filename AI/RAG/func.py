@@ -1,4 +1,3 @@
-# API 키를 환경변수로 관리하기 위한 설정 파일
 from dotenv import load_dotenv
 
 from langchain.chains import RetrievalQA
@@ -13,7 +12,6 @@ from langchain.embeddings import SentenceTransformerEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
-
 
 # API 키 정보 로드
 load_dotenv()
@@ -71,13 +69,27 @@ class RAG_Chatbot:
     global system_prompt
 
     def __init__(self, embeddings_model_name="paraphrase-multilingual-mpnet-base-v2", persist_directory="./chroma_db", folder_path = "./data/crawled_data"):
+        """class 초기화
+
+        Args:
+            embeddings_model_name (str, optional): 임베딩 모델 이름. Defaults to "paraphrase-multilingual-mpnet-base-v2".
+            persist_directory (str, optional): ChromaDB 데이터를 저장할 경로. Defaults to "./chroma_db".
+            folder_path (str, optional): RAG의 문서가 될 데이터. Defaults to "./data/crawled_data".
+        """
         self.embeddings = SentenceTransformerEmbeddings(model_name=embeddings_model_name)
         self.persist_directory = persist_directory
         self.folder_path = folder_path
         self._make_chroma_db()
 
-    def _make_chroma_db(self, chunk_size=500, chunk_overlap=50, batch_size=32):
-        
+    def _make_chroma_db(self, chunk_size: int=500, chunk_overlap: int=50, batch_size: int=32):
+        """ChromaDB를 생성합니다.
+
+        Args:
+            chunk_size (int, optional): 청크 크기. Defaults to 500.
+            chunk_overlap (int, optional): 청크 오버랩 크기. Defaults to 50.
+            batch_size (int, optional): 배치 크기. Defaults to 32.
+        """
+
         nltk.download('averaged_perceptron_tagger_eng')
 
         # 텍스트 파일 로드
@@ -91,29 +103,17 @@ class RAG_Chatbot:
         self.chroma_db = self._add_to_chroma_batched(texts, self.embeddings, batch_size=batch_size, persist_directory=self.persist_directory)
 
     
-    def _add_to_chroma_batched(texts: str, embeddings, batch_size: int=32, persist_directory: str="./chroma_db"):
+    def _add_to_chroma_batched(self, texts: list, embeddings: SentenceTransformerEmbeddings, batch_size: int=32, persist_directory: str="./chroma_db") -> Chroma:
         """문서들을 배치 단위로 ChromaDB에 추가하고 저장합니다. 이미 DB가 존재하면 추가하지 않습니다.
 
         Args:
-            texts (str): _description_
-            embeddings (_type_): _description_
-            batch_size (int, optional): _description_. Defaults to 32.
-            persist_directory (str, optional): _description_. Defaults to "./chroma_db".
+            texts (list): langchain Document 객체의 리스트.
+            embeddings (SentenceTransformerEmbeddings): 사용할 임베딩 모델.
+            batch_size (int, optional): 배치 크기. Defaults to 32.
+            persist_directory (str, optional): ChromaDB 데이터를 저장할 경로. Defaults to "./chroma_db".
 
         Returns:
-            _type_: _description_
-        """
-        """
-        문서들을 배치 단위로 ChromaDB에 추가하고 저장합니다. 이미 DB가 존재하면 추가하지 않습니다.
-
-        Args:
-            texts: langchain Document 객체의 리스트.
-            embeddings: 사용할 임베딩 모델.
-            batch_size: 배치 크기.
-            persist_directory: ChromaDB 데이터를 저장할 경로.
-
-        Returns:
-            ChromaDB 인스턴스 또는 None.
+            Chroma: ChromaDB 인스턴스.
         """
 
         if os.path.exists(persist_directory): #DB가 이미 존재하면
@@ -132,7 +132,7 @@ class RAG_Chatbot:
         db.persist() # 데이터를 디스크에 저장
         return db
 
-    def get_answer(self, query, max_tokens=1024):
+    def get_chat(self, query, max_tokens=1024):
         retriever = self.chroma_db.as_retriever(search_kwargs={'k': 5})
         llm = OpenAI(max_tokens=max_tokens)
         qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=retriever)

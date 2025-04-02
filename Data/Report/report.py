@@ -49,6 +49,8 @@ from collections import defaultdict
 
 load_dotenv()
 
+
+### CATEGORY MODEL 관련 설정
 # 학습한 모델 로드
 model_path = "./kobert_category"  # 학습된 모델이 저장된 경로
 
@@ -128,7 +130,7 @@ def total_expense(data):
         total_data[category] = 0
 
     for item in range(len(data)):
-        total_data[data['predicted_category']] += data[item]['price']
+        total_data[data[item]['predicted_category']] += data[item]['price']
 
     for category in total_data:
         res.append({'category':category, 'expense':total_data[category]})
@@ -141,21 +143,15 @@ def db_data_preprocessing(db_data):
     input: db데이터[json]
 
     >>DB 데이터 <<
-    Account_Log 테이블  --> ssafy api 거래고유번호 참고 (transactionUniqueNo)
-        - Id (increase num) int [PK]
-        - user_id (거래한 계좌의 소유주 아이디)
-        - transaction_account_no (varchar(70)) --> 로컬DB memo(송금계좌정보) + ssafy api의 memo
-        - transactionUniqueNo -> ssafy api 거래고유번호 참고 (transactionUniqueNo)
-        - transactionDate (timestamp) --> 거래날짜 (년월일)
-        - transactionTime (timestamp) --> 거래시간 (시분초)
-        - transactionType (tinyint) --> 입출금 구분 (0, 1)
-        - transactionBalance (Decimal(15,2)) --> 거래 금액
-        - transactionAfterBalance (decimal(15,2)) --> 거래 후 잔액
+    ACCOUNT_LOG TABLE
+      `transaction_date` TIMESTAMP, -> 결제일
+      `transaction_type` TINYINT, ->입출금 타입(1->입금, 2->출금)
+      `transaction_balance` DECIMAL(15,2), -> 입출금 금액
+      `transaction_summary` VARCHAR(255), -> 입출금 정보 -> 형식: 가게명, 도로명주소
     output: res[json]
     """
-    
 
-def category_expense(db_data):
+def category_expense():
     """
     카테고리별 총 지출금액 계산하는 통합 함수
     input: 전처리된 Account_log DB 데이터 -> db_data_preprocessing 함수 결과물
@@ -178,5 +174,6 @@ def category_expense(db_data):
 if __name__ == "__main__":
     res1 = category_expense()
     print(res1)
+
 
 

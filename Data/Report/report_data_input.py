@@ -6,6 +6,7 @@ import requests
 import json
 from datetime import datetime
 import random
+import time
 
 USER_KEY = "32f154ed-f444-41ab-a073-c292e61565cf"
 ACCOUNT_NO = "9994364739163546"
@@ -80,17 +81,16 @@ def payment_log(cnt):
         data = json.load(f)["total_data"]
 
     for item in range(cnt):
-        print("나양:", item)
         random_num = random.randint(0, len(data))
         pay.pay(ACCOUNT_NO, data[random_num]['price'], data[random_num]['place_name'], data[random_num]['road_address_name'])
-
+        time.sleep(5)
 
 if __name__ == "__main__":
     ## 입금
     # account_deposit()
     
     ## 결제
-    input_data_num = 5
+    input_data_num = 3
     payment_log(input_data_num)
 
     ## 계좌 조회

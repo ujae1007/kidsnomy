@@ -37,8 +37,6 @@ pipeline {
             steps {
                 sh '''
                     set -e
-                    pwd
-                    ls -al ./nginx
                     docker-compose up -d --build
                 '''
             }

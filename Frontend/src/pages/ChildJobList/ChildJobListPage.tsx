@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
+import SearchBar from '@/components/jobs/SearchBar';
+import FilterButtons from '@/components/jobs/FilterButtons';
 import styles from './ChildJobListPage.module.css';
 
 // 일자리 데이터 타입 정의
@@ -30,9 +32,6 @@ const STATUS_LABELS: Record<number, string> = {
   4: '최종완료'
 };
 
-// 조회 모드 타입
-type ViewMode = 'uncontracted' | 'contracted';
-
 const ChildJobListPage: React.FC = () => {
   const navigate = useNavigate();
   const { accessToken, isAuthenticated, isParent } = useSelector((state: RootState) => state.auth);
@@ -47,7 +46,6 @@ const ChildJobListPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedStatus, setSelectedStatus] = useState<number | null>(null);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
-  const [viewMode, setViewMode] = useState<ViewMode>('uncontracted');
   
   // 그룹 ID는 추후 동적으로 가져오거나 사용자 선택으로 변경 가능
   const groupId = 1; // 예시 그룹 ID
@@ -58,45 +56,46 @@ const ChildJobListPage: React.FC = () => {
     setError(null);
     
     try {
-      console.log(`📊 자녀 일자리 조회 데이터 로딩 시작 (모드: ${viewMode})`);
+      console.log('📊 자녀 일자리 조회 데이터 로딩 시작');
       
-      // API 경로 설정 (조회 모드에 따라 다른 API 호출)
-      const apiPath = viewMode === 'uncontracted' 
-        ? `/api/work/child/check/${groupId}` 
-        : `/api/work/child/contracted/${groupId}`;
-      
-      const response = await fetch(apiPath, {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
+      // 임시 데이터로 대체
+      const mockData: Job[] = [
+        {
+          jobId: 1,
+          groupId: 1,
+          employerId: 1,
+          employeeId: null,
+          employerName: "김부모",
+          employeeName: null,
+          title: "방 청소하기",
+          content: "방 청소 부탁해요",
+          salary: 5000,
+          rewardText: "용돈 5000원",
+          isPermanent: false,
+          startAt: "2024-02-15T00:00:00",
+          endAt: "2024-02-16T00:00:00",
+          status: 1
         },
-      });
-      
-      console.log(`🔄 자녀 일자리 조회 응답 상태: ${response.status} ${response.statusText}`);
-      
-      if (!response.ok) {
-        if (response.status === 403) {
-          const errorText = await response.text();
-          console.error('❌ 접근 거부됨:', errorText);
-          throw new Error(errorText || '접근이 거부되었습니다.');
+        {
+          jobId: 2,
+          groupId: 1,
+          employerId: 1,
+          employeeId: null,
+          employerName: "이부모",
+          employeeName: null,
+          title: "설거지하기",
+          content: "설거지 해주세요",
+          salary: 3000,
+          rewardText: "용돈 3000원",
+          isPermanent: false,
+          startAt: "2024-02-15T00:00:00",
+          endAt: "2024-02-17T00:00:00",
+          status: 2
         }
-        throw new Error('일자리 정보를 가져오는 데 실패했습니다.');
-      }
+      ];
       
-      const data = await response.json();
-      console.log('✅ 자녀 일자리 조회 성공:', { 
-        jobCount: data.length, 
-        jobs: data.map((job: Job) => ({ 
-          title: job.title, 
-          status: job.status, 
-          employer: job.employerName 
-        }))
-      });
-      
-      setJobs(data);
-      setFilteredJobs(data);
+      setJobs(mockData);
+      setFilteredJobs(mockData);
     } catch (error) {
       console.error('❌ 자녀 일자리 조회 중 에러 발생:', error);
       setError((error as Error).message);
@@ -107,42 +106,20 @@ const ChildJobListPage: React.FC = () => {
   
   // 컴포넌트 마운트 시 데이터 가져오기
   useEffect(() => {
-    // 권한 체크
-    if (!isAuthenticated) {
-      console.log('❌ 인증되지 않은 사용자');
-      navigate('/login');
-      return;
-    }
-    
-    if (isParent === true) {
-      console.log('❌ 부모 계정으로 접근 시도');
-      setError('자녀 계정만 접근할 수 있습니다.');
-      return;
-    }
-    
     fetchJobs();
-  }, [isAuthenticated, isParent, navigate, viewMode]);
+  }, []);
   
   // 검색어 변경 처리
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
+  const handleSearchChange = (value: string) => {
+    setSearchTerm(value);
   };
   
   // 상태 필터 변경 처리
-  const handleStatusFilterChange = (status: number | null) => {
-    setSelectedStatus(status);
-  };
-  
-  // 정렬 순서 변경 처리
-  const handleSortOrderChange = () => {
-    setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
-  };
-  
-  // 조회 모드 변경 처리
-  const handleViewModeChange = (mode: ViewMode) => {
-    if (mode !== viewMode) {
-      setViewMode(mode);
-      setSelectedStatus(null); // 모드 변경 시 필터 초기화
+  const handleStatusFilterChange = (filter: string) => {
+    if (filter === 'latest') {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSelectedStatus(filter === 'all' ? null : Number(filter));
     }
   };
   
@@ -184,80 +161,24 @@ const ChildJobListPage: React.FC = () => {
     setFilteredJobs(result);
   }, [jobs, searchTerm, selectedStatus, sortOrder]);
   
-  // 날짜 포맷 함수
-  const formatDate = (dateString: string) => {
-    return dateString.split('T')[0]; // YYYY-MM-DD 형식으로 변환
-  };
-  
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>자녀 일자리 조회</h1>
-      
       {error && <div className={styles.error}>{error}</div>}
       
       {!error && (
         <>
-          {/* 조회 모드 선택 */}
+          {/* 검색 및 필터 영역 */}
           <div className={styles.controlsContainer}>
-            <div className={styles.viewModeContainer}>
-              <button 
-                onClick={() => handleViewModeChange('uncontracted')}
-                className={`${styles.viewModeButton} ${viewMode === 'uncontracted' ? styles.active : ''}`}
-              >
-                계약 안된 일자리 보기
-              </button>
-              <button 
-                onClick={() => handleViewModeChange('contracted')}
-                className={`${styles.viewModeButton} ${viewMode === 'contracted' ? styles.active : ''}`}
-              >
-                내가 계약한 일자리 보기
-              </button>
-            </div>
+            <SearchBar 
+              searchTerm={searchTerm}
+              onSearchChange={handleSearchChange}
+            />
             
-            {/* 검색 및 필터 영역 */}
-            <div className={styles.searchContainer}>
-              <input
-                type="text"
-                placeholder="제목 또는 부모 이름으로 검색"
-                value={searchTerm}
-                onChange={handleSearchChange}
-                className={styles.searchInput}
-              />
-            </div>
-            
-            <div className={styles.filterContainer}>
-              <button 
-                onClick={() => handleStatusFilterChange(null)}
-                className={`${styles.filterButton} ${selectedStatus === null ? styles.active : ''}`}
-              >
-                전체
-              </button>
-              <button 
-                onClick={() => handleStatusFilterChange(1)}
-                className={`${styles.filterButton} ${selectedStatus === 1 ? styles.active : ''}`}
-              >
-                계약전
-              </button>
-              <button 
-                onClick={() => handleStatusFilterChange(2)}
-                className={`${styles.filterButton} ${selectedStatus === 2 ? styles.active : ''}`}
-              >
-                계약후
-              </button>
-              <button 
-                onClick={() => handleStatusFilterChange(4)}
-                className={`${styles.filterButton} ${selectedStatus === 4 ? styles.active : ''}`}
-              >
-                최종완료
-              </button>
-              
-              <button 
-                onClick={handleSortOrderChange}
-                className={styles.sortButton}
-              >
-                {sortOrder === 'asc' ? '날짜 오름차순' : '날짜 내림차순'}
-              </button>
-            </div>
+            <FilterButtons
+              selectedFilter={selectedStatus?.toString() || 'all'}
+              onFilterChange={handleStatusFilterChange}
+              type="jobs"
+            />
           </div>
           
           {/* 일자리 목록 */}
@@ -271,12 +192,18 @@ const ChildJobListPage: React.FC = () => {
                   onClick={() => handleJobClick(job.jobId)}
                   className={styles.jobCard}
                 >
-                  <div className={styles.jobStatus}>{STATUS_LABELS[job.status] || '알 수 없음'}</div>
-                  <h3 className={styles.jobTitle}>{job.title}</h3>
-                  <div className={styles.jobDetails}>
-                    <p>급여: {job.salary.toLocaleString()}원</p>
-                    <p>마감일: {formatDate(job.endAt)}</p>
+                  <div className={styles.jobStatus}>
+                    {STATUS_LABELS[job.status] || '알 수 없음'}
                   </div>
+                  <div className={styles.jobContent}>
+                    <h3 className={styles.jobTitle}>{job.title}</h3>
+                    <p className={styles.jobSalary}>{job.salary.toLocaleString()}원</p>
+                  </div>
+                  <button className={styles.menuButton}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                    </svg>
+                  </button>
                 </div>
               ))
             ) : (

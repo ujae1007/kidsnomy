@@ -2,6 +2,7 @@ declare const styles: {
   container: string;
   title: string;
   logoSection: string;
+  logo: string;
   piggyBankContainer: string;
   logoText: string;
   kidsNomy: string;

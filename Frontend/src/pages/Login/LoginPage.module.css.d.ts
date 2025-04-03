@@ -1,17 +1,20 @@
 declare const styles: {
-  container: string;
-  logo: string;
-  form: string;
-  inputGroup: string;
-  label: string;
-  inputContainer: string;
-  inputIcon: string;
-  input: string;
-  passwordToggle: string;
-  loginButton: string;
-  signupLink: string;
-  signupText: string;
-  signupButton: string;
+  readonly container: string;
+  readonly logo: string;
+  readonly form: string;
+  readonly inputGroup: string;
+  readonly label: string;
+  readonly inputContainer: string;
+  readonly inputIcon: string;
+  readonly input: string;
+  readonly passwordToggle: string;
+  readonly loginButton: string;
+  readonly signupLink: string;
+  readonly signupText: string;
+  readonly signupButton: string;
+  readonly title: string;
+  readonly errorMessage: string;
+  readonly signup: string;
 };
 
 export default styles; 

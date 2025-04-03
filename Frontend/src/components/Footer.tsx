@@ -1,12 +1,22 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useAuth } from '@/hooks/useAuth';
 import styles from './Footer.module.css';
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const auth = useAuth();
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleWorkClick = () => {
+    if (auth.isParent) {
+      navigate('/parent/jobs');
+    } else {
+      navigate('/child/jobs');
+    }
+  };
 
   return (
     <footer className={styles.footer}>
@@ -19,7 +29,7 @@ const Footer: React.FC = () => {
       </button>
       <button 
         className={`${styles.navButton} ${isActive('/work') ? styles.active : ''}`}
-        onClick={() => navigate('/work')}
+        onClick={handleWorkClick}
       >
         <WorkIcon />
         <span>일자리</span>

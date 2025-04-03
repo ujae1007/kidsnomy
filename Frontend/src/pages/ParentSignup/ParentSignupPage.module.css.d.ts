@@ -9,6 +9,7 @@ declare const styles: {
   readonly verificationButton: string;
   readonly select: string;
   readonly submitButton: string;
+  readonly radioInput: string;
   readonly errorMessage: string;
   readonly message: string;
   readonly success: string;

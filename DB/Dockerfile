@@ -1,4 +1,4 @@
-FROM mysql:8.0.40
+FROM mysql:latest
 
 
 # 스키마 파일 복사

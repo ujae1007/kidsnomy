@@ -12,18 +12,16 @@ const ChildSignupPage = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
-    id: '',
-    guardianEmail: '',
+    email: '',
+    parentEmail: '',
     password: '',
     confirmPassword: '',
     age: '',
     gender: ''
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-
-    console.log('아이 회원가입 페이지: 입력 필드 변경', { name, value });
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -34,46 +32,42 @@ const ChildSignupPage = () => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      console.log('아이 회원가입 페이지: 비밀번호 불일치');
       alert('비밀번호가 일치하지 않습니다.');
       return;
     }
 
-    console.log('아이 회원가입 페이지: 회원가입 시도', formData);
-
     try {
       const signupData = {
-        email: formData.id,
+        email: formData.email,
         password: formData.password,
         name: formData.name,
-        is_Parent: '0',
-        age: formData.age,
+        age: parseInt(formData.age),
         gender: formData.gender,
-        parent_email: formData.guardianEmail,
+        parentEmail: formData.parentEmail
       };
 
-      const response = await apiCall<SignupResponse>('auth/signup/child', {
+      const response = await apiCall<SignupResponse>('/auth/signup/child', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(signupData),
+        body: JSON.stringify(signupData)
       });
 
-      console.log('아이 회원가입 페이지: 회원가입 응답', response);
-
       if (response.success) {
-        console.log('아이 회원가입 페이지: 회원가입 성공');
-        alert('회원가입이 완료되었습니다.');
+        alert('자녀 회원가입이 완료되었습니다.');
         navigate('/login');
       } else {
-        console.log('아이 회원가입 페이지: 회원가입 실패');
         alert(response.message || '회원가입에 실패했습니다.');
       }
-    } catch (error) {
-      console.error('아이 회원가입 페이지: 회원가입 에러', error);
-      alert('회원가입 중 오류가 발생했습니다.');
+    } catch (error: any) {
+      if (error.status === 400) {
+        alert('존재하지 않는 부모 이메일입니다.');
+      } else if (error.status === 409) {
+        alert('해당 이메일은 이미 사용 중입니다.');
+      } else {
+        alert('회원가입 처리 중 오류가 발생했습니다.');
+      }
     }
   };
 
@@ -90,18 +84,20 @@ const ChildSignupPage = () => {
             onChange={handleChange}
             className={styles.input}
             placeholder="이름을 입력하세요"
+            required
           />
         </div>
 
         <div className={styles.inputGroup}>
-          <label>아이디</label>
+          <label>이메일</label>
           <input
-            type="text"
-            name="id"
-            value={formData.id}
+            type="email"
+            name="email"
+            value={formData.email}
             onChange={handleChange}
             className={styles.input}
-            placeholder="아이디를 입력하세요"
+            placeholder="이메일을 입력하세요"
+            required
           />
         </div>
 
@@ -109,11 +105,12 @@ const ChildSignupPage = () => {
           <label>보호자 이메일</label>
           <input
             type="email"
-            name="guardianEmail"
-            value={formData.guardianEmail}
+            name="parentEmail"
+            value={formData.parentEmail}
             onChange={handleChange}
             className={styles.input}
             placeholder="보호자 이메일을 입력하세요"
+            required
           />
         </div>
 
@@ -126,6 +123,7 @@ const ChildSignupPage = () => {
             onChange={handleChange}
             className={styles.input}
             placeholder="비밀번호를 입력하세요"
+            required
           />
         </div>
 
@@ -138,6 +136,7 @@ const ChildSignupPage = () => {
             onChange={handleChange}
             className={styles.input}
             placeholder="비밀번호를 다시 입력하세요"
+            required
           />
         </div>
 
@@ -150,33 +149,23 @@ const ChildSignupPage = () => {
             onChange={handleChange}
             className={styles.input}
             placeholder="나이를 입력하세요"
+            required
           />
         </div>
 
         <div className={styles.inputGroup}>
           <label>성별</label>
-          <div className={styles.radioGroup}>
-            <label className={styles.radioLabel}>
-              <input
-                type="radio"
-                name="gender"
-                value="male"
-                checked={formData.gender === 'male'}
-                onChange={handleChange}
-              />
-              남자
-            </label>
-            <label className={styles.radioLabel}>
-              <input
-                type="radio"
-                name="gender"
-                value="female"
-                checked={formData.gender === 'female'}
-                onChange={handleChange}
-              />
-              여자
-            </label>
-          </div>
+          <select
+            name="gender"
+            value={formData.gender}
+            onChange={handleChange}
+            className={styles.select}
+            required
+          >
+            <option value="">선택하세요</option>
+            <option value="Male">남성</option>
+            <option value="Female">여성</option>
+          </select>
         </div>
 
         <button type="submit" className={styles.signupButton}>

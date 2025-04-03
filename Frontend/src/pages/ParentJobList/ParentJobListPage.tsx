@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
+import { apiCall } from '@/utils/api';
 import styles from './ParentJobListPage.module.css';
 import SearchBar from '@/components/jobs/SearchBar';
 import FilterButtons from '@/components/jobs/FilterButtons';
@@ -13,6 +16,7 @@ interface Job {
   title: string;
   salary: number;
   status: number;
+  employerName: string;
 }
 
 // 상태값에 대한 레이블
@@ -22,41 +26,15 @@ const STATUS_LABELS: Record<number, string> = {
   4: '최종완료'
 };
 
-// 목업 데이터
-const MOCK_JOBS: Job[] = [
-  {
-    jobId: 1,
-    title: '설거지 하기',
-    salary: 1000,
-    status: 1
-  },
-  {
-    jobId: 2,
-    title: '분리수거하기',
-    salary: 2000,
-    status: 2
-  },
-  {
-    jobId: 3,
-    title: '백덤블링하기',
-    salary: 3000,
-    status: 4
-  },
-  {
-    jobId: 4,
-    title: '책 읽고 독후감 쓰기',
-    salary: 1000,
-    status: 1
-  }
-];
-
 const ParentJobListPage: React.FC = () => {
   const navigate = useNavigate();
+  const { groupId } = useSelector((state: RootState) => state.auth);
   
   // 상태 관리
-  const [jobs] = useState<Job[]>(MOCK_JOBS);
-  const [filteredJobs, setFilteredJobs] = useState<Job[]>(MOCK_JOBS);
-  const [loading] = useState<boolean>(false);
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const [filteredJobs, setFilteredJobs] = useState<Job[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
   
   // 검색 및 필터링 상태
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -74,29 +52,14 @@ const ParentJobListPage: React.FC = () => {
     
     try {
       console.log('📊 부모 일자리 조회 데이터 로딩 시작');
-      const response = await fetch(`/api/work/parent/check/${groupId}`, {
+      const data = await apiCall<Job[]>(`work/parent/check/${groupId}`, {
         method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
-        },
+        auth: true,
       });
       
-      console.log(`🔄 부모 일자리 조회 응답 상태: ${response.status} ${response.statusText}`);
-      
-      if (!response.ok) {
-        if (response.status === 403) {
-          const errorText = await response.text();
-          console.error('❌ 접근 거부됨:', errorText);
-          throw new Error(errorText || '접근이 거부되었습니다.');
-        }
-        throw new Error('일자리 정보를 가져오는 데 실패했습니다.');
-      }
-      
-      const data = await response.json();
       console.log('✅ 부모 일자리 조회 성공:', { 
         jobCount: data.length, 
-        jobs: data.map((job: Job) => ({ 
+        jobs: data.map(job => ({ 
           title: job.title, 
           status: job.status, 
           employer: job.employerName 
@@ -120,6 +83,22 @@ const ParentJobListPage: React.FC = () => {
   const handleCreateJob = () => {
     navigate('/parent/jobs/create');
   };
+
+  const handleStatusFilterChange = (status: string) => {
+    if (status === 'latest') {
+      setSortOrder('desc');
+      setSelectedStatus(null);
+    } else if (status === 'oldest') {
+      setSortOrder('asc');
+      setSelectedStatus(null);
+    } else {
+      setSelectedStatus(Number(status));
+    }
+  };
+  
+  useEffect(() => {
+    fetchJobs();
+  }, [groupId]);
   
   useEffect(() => {
     let result = [...jobs];
@@ -153,13 +132,15 @@ const ParentJobListPage: React.FC = () => {
       <CreateJobButton onClick={handleCreateJob} />
       
       <FilterButtons
-        selectedFilter={selectedStatus?.toString() || (sortOrder === 'desc' ? 'latest' : 'all')}
+        selectedFilter={selectedStatus?.toString() || (sortOrder === 'desc' ? 'latest' : 'oldest')}
         onFilterChange={handleStatusFilterChange}
       />
       
       <div className={styles.jobList}>
         {loading ? (
           <div className={styles.loading}>로딩 중...</div>
+        ) : error ? (
+          <div className={styles.error}>{error}</div>
         ) : filteredJobs.length > 0 ? (
           filteredJobs.map(job => (
             <JobCard

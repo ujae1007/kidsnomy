@@ -44,6 +44,7 @@
   stroke-dasharray: 200;
   stroke-dashoffset: 200;
   animation-fill-mode: forwards;
+  animation-delay: 0.3s;
 }
 
 @keyframes checkAppear {
@@ -105,38 +106,36 @@
 }
 
 .title {
-  width: 301px;
   color: #914F4F;
   text-align: center;
-  font-family: "Anonymous Pro";
-  font-size: 55px;
-  font-style: normal;
+  font-size: 32px;
   font-weight: 700;
-  line-height: 30px;
-  letter-spacing: 0.198px;
-  font-variant-numeric: lining-nums proportional-nums;
+  line-height: 1.4;
   margin: 0 0 12px 0;
+  word-break: keep-all;
+  white-space: pre-wrap;
 }
 
 .description {
   font-size: 16px;
   color: #666;
   margin: 0 0 32px 0;
+  word-break: keep-all;
+  white-space: pre-wrap;
+  line-height: 1.5;
 }
 
 .button {
   width: 100%;
   padding: 16px;
   border: none;
-  border-radius: 50px;
+  border-radius: 8px;
   background-color: #914F4F;
   color: white;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  z-index: 1;
 }
 
 .button:hover {

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useAuth } from '@/hooks/useAuth';
 import styles from './SavingProductDetailPage.module.css';
+import SavingContractModal from '@/components/Modal/SavingContractModal';
 
 interface SavingProduct {
   id: number;
@@ -16,40 +18,67 @@ interface SavingProduct {
 const SavingProductDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { isParent } = useAuth();
   const [product, setProduct] = useState<SavingProduct | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+
+  console.log('Auth State:', { isParent });
+  console.log('Product ID:', id);
 
   useEffect(() => {
     // TODO: API 호출로 실제 데이터 가져오기
     const fetchProduct = async () => {
-      // 임시 데이터
-      setProduct({
-        id: Number(id),
-        name: '일주일에 3,000원 모으기',
-        description: '매주 조금씩 저축하는 습관을 길러요',
-        interestRate: 10,
-        period: 24,
-        monthlyPayment: 12000,
-        features: [
-          '매주 일정 금액을 저축하는 습관 형성',
-          '높은 이자율로 더 많은 돈을 모을 수 있어요',
-          '자동 이체로 편리하게 저축'
-        ],
-        benefits: [
-          '높은 이자율 10%',
-          '매월 자동 이체 시 추가 혜택',
-          '저축 목표 달성 시 특별 혜택'
-        ]
-      });
-      setIsLoading(false);
+      try {
+        console.log('Fetching saving product data...');
+        // TODO: 실제 API 호출로 변경
+        // const response = await axios.get(`/api/saving-products/${id}`);
+        // setProduct(response.data);
+        
+        // 임시 데이터
+        setProduct({
+          id: Number(id),
+          name: '일주일에 3,000원 모으기',
+          description: '매주 조금씩 저축하는 습관을 길러요',
+          interestRate: 10,
+          period: 24,
+          monthlyPayment: 12000,
+          features: [
+            '매주 조금씩 저축하는 습관 형성',
+            '높은 이자율로 더 많은 돈을 모을 수 있어요',
+            '정기적인 저축으로 안정적인 자산 형성'
+          ],
+          benefits: [
+            '높은 이자율 10%',
+            '매월 정기 저축 시 추가 혜택',
+            '저축 목표 달성 시 특별 보너스'
+          ]
+        });
+        console.log('Product data loaded successfully');
+      } catch (error) {
+        console.error('Error fetching product:', error);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     fetchProduct();
   }, [id]);
 
   const handleContract = () => {
-    // TODO: 계약 모달 열기
-    console.log('계약하기');
+    console.log('Contract button clicked, opening modal');
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    console.log('Closing modal');
+    setShowModal(false);
+  };
+
+  const handleDelete = () => {
+    console.log('Delete button clicked');
+    // TODO: 삭제 API 호출
+    console.log('삭제하기');
   };
 
   if (isLoading) {
@@ -62,57 +91,70 @@ const SavingProductDetailPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <h1 className={styles.title}>{product.name}</h1>
-        <p className={styles.description}>{product.description}</p>
-      </div>
-
-      <div className={styles.infoSection}>
-        <div className={styles.infoCard}>
-          <h2>상품 정보</h2>
-          <div className={styles.infoGrid}>
-            <div className={styles.infoItem}>
-              <span className={styles.label}>이자율</span>
-              <span className={styles.value}>{product.interestRate}%</span>
-            </div>
-            <div className={styles.infoItem}>
-              <span className={styles.label}>기간</span>
-              <span className={styles.value}>{product.period}개월</span>
-            </div>
-            <div className={styles.infoItem}>
-              <span className={styles.label}>월 납입금</span>
-              <span className={styles.value}>{product.monthlyPayment.toLocaleString()}원</span>
-            </div>
-          </div>
+      <div className={styles.content}>
+        <h1 className={styles.title}>은행 상품 상세보기</h1>
+        
+        <div className={styles.formGroup}>
+          <label>상품 종류</label>
+          <div className={styles.value}>적금</div>
         </div>
 
-        <div className={styles.featuresCard}>
-          <h2>상품 특징</h2>
-          <ul className={styles.featuresList}>
-            {product.features.map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
+        <div className={styles.formGroup}>
+          <label>상품 제목</label>
+          <div className={styles.value}>{product.name}</div>
         </div>
 
-        <div className={styles.benefitsCard}>
-          <h2>혜택</h2>
-          <ul className={styles.benefitsList}>
-            {product.benefits.map((benefit, index) => (
-              <li key={index}>{benefit}</li>
-            ))}
-          </ul>
+        <div className={styles.formGroup}>
+          <label>이자</label>
+          <div className={styles.value}>{product.interestRate}%</div>
+        </div>
+
+        <div className={styles.formGroup}>
+          <label>상세내용</label>
+          <div className={styles.value}>{product.description}</div>
+        </div>
+
+        <div className={styles.formGroup}>
+          <label>만기일</label>
+          <div className={styles.value}>{product.period}주</div>
+        </div>
+
+        <div className={styles.formGroup}>
+          <label>이자 지급 주기</label>
+          <div className={styles.value}>30일</div>
+        </div>
+
+        <div className={styles.formGroup}>
+          <label>적금 납입 주기</label>
+          <div className={styles.value}>{product.monthlyPayment.toLocaleString()}원</div>
+        </div>
+
+        <div className={styles.buttonWrapper}>
+          {!isParent && (
+            <button 
+              className={styles.contractButton}
+              onClick={handleContract}
+            >
+              계약하기
+            </button>
+          )}
+          {isParent && (
+            <button 
+              className={styles.deleteButton}
+              onClick={handleDelete}
+            >
+              삭제하기
+            </button>
+          )}
         </div>
       </div>
 
-      <div className={styles.actionSection}>
-        <button 
-          className={styles.contractButton}
-          onClick={handleContract}
-        >
-          계약하기
-        </button>
-      </div>
+      <SavingContractModal
+        isOpen={showModal}
+        onClose={handleCloseModal}
+        productId={product.id}
+        productName={product.name}
+      />
     </div>
   );
 };

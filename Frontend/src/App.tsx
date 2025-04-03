@@ -10,7 +10,7 @@ import GroupPage from '@/pages/Group/GroupPage';
 import AccountPage from '@/pages/Account/AccountPage';
 import MainLayout from '@/layouts/MainLayout';
 import SendMoneyPage from '@/pages/SendMoney/SendMoneyPage';
-import ResultPage from '@/components/common/ResultPage';
+import ResultPage from '@/components/common/ResultPage/ResultPage';
 import { RESULT_MESSAGES } from '@/constants';
 import { useNavigate } from 'react-router-dom';
 import MyAccountInfo from '@/pages/MyAccount/MyAccountInfo';
@@ -73,6 +73,7 @@ const App: React.FC = () => {
         
         {/* Result pages - without layout */}
         <Route path="/account/send/complete" element={<SendMoneyCompletePage />} />
+        <Route path="/result" element={<ResultPage />} />
       </Routes>
     </Router>
   );

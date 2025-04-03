@@ -25,7 +25,11 @@ import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -275,8 +279,8 @@ public class BasicAccountService {
                 log.setAccountNo(requestDto.getAccountNo()); // 내 계좌번호
                 log.setTransactionAccountNo(transactionAccountNo); // 상대 계좌번호 (null 가능)
                 log.setTransactionUniqueNo((String) item.get("transactionUniqueNo"));
-                log.setTransactionDate(LocalDate.parse(transactionDate, DateTimeFormatter.ofPattern("yyyyMMdd")).atStartOfDay());
-                log.setTransactionTime(LocalTime.parse(transactionTime, DateTimeFormatter.ofPattern("HHmmss")).atDate(LocalDate.now()));
+                log.setTransactionDate(transactionDate);
+                log.setTransactionTime(transactionTime); 
                 log.setTransactionType(Integer.parseInt((String) item.get("transactionType")));
                 log.setTransactionBalance(new BigDecimal(item.get("transactionBalance").toString()));
                 log.setTransactionAfterBalance(new BigDecimal(item.get("transactionAfterBalance").toString()));

@@ -4,3 +4,10 @@ openai
 nltk
 sentence-transformers
 chromadb
+langchain-huggingface
+langchain-community
+langchain_community
+unstructured
+
+fastapi
+uvicorn

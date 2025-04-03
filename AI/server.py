@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from RAG.func import RAG_Chatbot
+from rag.rag import RAG_Chatbot
 
 chatbot = RAG_Chatbot()
 app = FastAPI()

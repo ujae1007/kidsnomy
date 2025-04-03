@@ -13,6 +13,8 @@ from langchain.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
 
+CURRENT_PATH = os.path.dirname(os.path.abspath(__file__))
+
 # API 키 정보 로드
 load_dotenv()
 
@@ -77,8 +79,8 @@ class RAG_Chatbot:
             folder_path (str, optional): RAG의 문서가 될 데이터. Defaults to "./data/crawled_data".
         """
         self.embeddings = SentenceTransformerEmbeddings(model_name=embeddings_model_name)
-        self.persist_directory = persist_directory
-        self.folder_path = folder_path
+        self.persist_directory = os.path.join(CURRENT_PATH, persist_directory)
+        self.folder_path = os.path.join(CURRENT_PATH, folder_path)
         self._make_chroma_db()
 
     def _make_chroma_db(self, chunk_size: int=500, chunk_overlap: int=50, batch_size: int=32):

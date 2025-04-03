@@ -1,0 +1,139 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.description {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.infoCard, .featuresCard, .benefitsCard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.infoCard h2, .featuresCard h2, .benefitsCard h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.value {
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.featuresList, .benefitsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.featuresList li, .benefitsList li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.featuresList li::before, .benefitsList li::before {
+  content: '•';
+  position: absolute;
+  left: 0.5rem;
+  color: #E8A9A9;
+}
+
+.actionSection {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contractButton {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+  padding: 1rem;
+  border: none;
+  border-radius: 25px;
+  background-color: #E8A9A9;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contractButton:hover {
+  background-color: #D88E8E;
+}
+
+@media (min-width: 768px) {
+  .infoSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .infoCard {
+    grid-column: 1 / -1;
+  }
+
+  .actionSection {
+    position: static;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 2rem;
+  }
+} 

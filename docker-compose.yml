@@ -5,7 +5,7 @@ services:
       - "80:80"       # HTTP (HTTPS 리다이렉트)
       - "443:443"     # HTTPS
     volumes:
-      - ./nginx/app.conf:/etc/nginx/conf.d/app.conf:ro  # 젠킨스 테스트트
+      - ./nginx:/etc/nginx/conf.d  # 최종 Nginx 설정
       - /home/ubuntu/kidsnomy/certs:/etc/letsencrypt:ro          # 인증서 및 키
       - ./Frontend/build/dist:/var/www/app/   # 프런트엔드 빌드 파일 (필요한 경우)
     depends_on:

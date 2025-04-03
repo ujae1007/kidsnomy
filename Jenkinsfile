@@ -39,6 +39,7 @@ pipeline {
                     set -e
                     pwd
                     ls -al ./nginx
+                    ls -al ./nginx/app.conf  # 추가 (파일인지 확인)
                     docker-compose up -d --build
                 '''
             }

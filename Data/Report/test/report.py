@@ -170,6 +170,9 @@ def category_expense():
     res = total_expense(data)
     return res
 
+# 카테고리 저장
+# 통계 자료 -> 5주차 합계
+# 이번주 카테고리별 합계
 
 if __name__ == "__main__":
     res1 = category_expense()

@@ -20,9 +20,15 @@ import ParentBankProductsPage from '@/pages/ParentBankProducts/ParentBankProduct
 import CreateBankProductsPage from '@/pages/CreateBankProducts/CreateBankProductsPage';
 import ChildBankProductsPage from '@/pages/ChildBankProducts/ChildBankProductsPage';
 import ChildJobListPage from '@/pages/ChildJobList/ChildJobListPage';
+<<<<<<< HEAD
 import FinanceReportPage from '@/pages/FinanceReport/FinanceReportPage';
 import PrivateRoute from '@/components/auth/PrivateRoute';
 import NotFoundPage from '@/pages/Error/NotFoundPage';
+=======
+import PrivateRoute from '@/components/auth/PrivateRoute';
+import NotFoundPage from '@/pages/Error/NotFoundPage';
+import EmailVerification from '@/pages/Signup/EmailVerification';
+>>>>>>> f46af41e8d18d5be588fc1cabee5cecbbf190209
 
 const App: React.FC = () => {
   return (
@@ -34,6 +40,7 @@ const App: React.FC = () => {
         <Route path="/signup" element={<SignupSelectPage />} />
         <Route path="/signup/child" element={<ChildSignupPage />} />
         <Route path="/signup/parent" element={<ParentSignupPage />} />
+        <Route path="/signup/email-verification" element={<EmailVerification />} />
 
         {/* 인증이 필요한 페이지 */}
         <Route element={<MainLayout />}>
@@ -81,9 +88,12 @@ const App: React.FC = () => {
           <Route path="/child/jobs" element={
             <PrivateRoute element={<ChildJobListPage />} allowedRoles={['CHILD']} />
           } />
+<<<<<<< HEAD
           <Route path="/finance-report" element={
             <PrivateRoute element={<FinanceReportPage />} allowedRoles={['CHILD']} />
           } />
+=======
+>>>>>>> f46af41e8d18d5be588fc1cabee5cecbbf190209
 
           {/* 공통 접근 가능한 상세 페이지 */}
           <Route path="/jobs/:jobId" element={

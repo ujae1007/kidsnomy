@@ -74,24 +74,22 @@
 }
 
 .verifyButton {
-  padding: 0 16px;
+  padding: 0.5rem 1rem;
+  background-color: #1976d2;
+  color: white;
   border: none;
-  border-radius: 8px;
-  background-color: #DB9999;
-  color: #333;
-  font-size: 14px;
-  font-weight: bold;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.verifyButton:hover {
-  background-color: #c98989;
+  font-size: 0.9rem;
 }
 
 .verifyButton:disabled {
-  background-color: #c98989;
+  background-color: #ccc;
   cursor: not-allowed;
+}
+
+.verifyButton:hover:not(:disabled) {
+  background-color: #1565c0;
 }
 
 .radioGroup {
@@ -254,8 +252,8 @@
 
 .errorMessage {
   margin-top: 0.5rem;
-  color: #ef4444;
-  font-size: 0.875rem;
+  color: #d32f2f;
+  font-size: 0.9rem;
 }
 
 .select {
@@ -304,4 +302,40 @@
 .modalButton:last-child {
   background-color: #f87171;
   color: white;
+}
+
+.message {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.message.success {
+  color: #2e7d32;
+  background-color: #e8f5e9;
+}
+
+.message.error {
+  color: #d32f2f;
+  background-color: #ffebee;
+}
+
+.message.none {
+  color: #1976d2;
+  background-color: #e3f2fd;
+}
+
+.verificationCodeContainer {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.verificationCodeInput {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 } 

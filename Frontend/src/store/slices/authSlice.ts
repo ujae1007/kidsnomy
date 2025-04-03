@@ -162,12 +162,36 @@ export const checkTokenExpiration = () => (dispatch: any, getState: any) => {
   }
 };
 
-// 로그아웃 액션
-export const logout = () => (dispatch: any) => {
-  console.log('🚪 로그아웃 요청');
-  dispatch(authSlice.actions.logoutSuccess());
-  console.log('✅ 로그아웃 완료');
-};
+// 로그아웃 비동기 액션 정의
+export const logoutUser = createAsyncThunk(
+  'auth/logout',
+  async (_, { rejectWithValue }) => {
+    try {
+      console.log('🚪 로그아웃 요청 시작');
+      
+      const response = await fetch('/api/auth/logout', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        credentials: 'include',
+      });
+
+      if (!response.ok) {
+        console.error(`❌ 로그아웃 실패: HTTP 상태 ${response.status}`);
+        return rejectWithValue('로그아웃에 실패했습니다.');
+      }
+
+      console.log('✅ 로그아웃 성공');
+      return null;
+    } catch (error) {
+      console.error('❌ 로그아웃 요청 중 예외 발생:', error);
+      return rejectWithValue('네트워크 오류가 발생했습니다.');
+    }
+  }
+);
 
 const authSlice = createSlice({
   name: 'auth',
@@ -255,6 +279,19 @@ const authSlice = createSlice({
         state.userRole = null;
         state.userId = null;
         // isParent는 유지 (로그아웃해도 사용자 유형 정보는 유지함)
+      })
+      // 로그아웃 처리
+      .addCase(logoutUser.fulfilled, (state) => {
+        state.accessToken = null;
+        state.isAuthenticated = false;
+        state.userRole = null;
+        state.userId = null;
+        state.loading = false;
+        state.error = null;
+        localStorage.removeItem('accessToken'); // 로컬 스토리지의 토큰도 제거
+      })
+      .addCase(logoutUser.rejected, (state, action) => {
+        state.error = action.payload as string;
       });
   },
 });

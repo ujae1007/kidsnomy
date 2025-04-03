@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '@/store';
-import { checkTokenExpiration, logout } from '@/store/slices/authSlice';
+import { checkTokenExpiration, logout, logoutUser } from '@/store/slices/authSlice';
 
 /**
  * 인증 상태를 확인하고 토큰의 유효성을 검사하는 커스텀 훅
@@ -62,12 +62,18 @@ export const useLogout = (redirectTo = '/login') => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
 
-  const logoutUser = () => {
+  const handleLogout = async () => {
     console.log('🚪 로그아웃 함수 호출됨');
-    dispatch(logout());
-    console.log('🚪 로그인 페이지로 리디렉션');
-    navigate(redirectTo);
+    try {
+      await dispatch(logoutUser()).unwrap();
+      console.log('🚪 로그인 페이지로 리디렉션');
+      navigate(redirectTo);
+    } catch (error) {
+      console.error('❌ 로그아웃 실패:', error);
+      // 에러가 발생해도 로그인 페이지로 이동
+      navigate(redirectTo);
+    }
   };
 
-  return { logoutUser };
+  return { logoutUser: handleLogout };
 }; 

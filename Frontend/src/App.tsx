@@ -20,6 +20,7 @@ import ParentBankProductsPage from '@/pages/ParentBankProducts/ParentBankProduct
 import CreateBankProductsPage from '@/pages/CreateBankProducts/CreateBankProductsPage';
 import ChildBankProductsPage from '@/pages/ChildBankProducts/ChildBankProductsPage';
 import ChildJobListPage from '@/pages/ChildJobList/ChildJobListPage';
+import FinanceReportPage from '@/pages/FinanceReport/FinanceReportPage';
 import PrivateRoute from '@/components/auth/PrivateRoute';
 import NotFoundPage from '@/pages/Error/NotFoundPage';
 
@@ -79,6 +80,9 @@ const App: React.FC = () => {
           } />
           <Route path="/child/jobs" element={
             <PrivateRoute element={<ChildJobListPage />} allowedRoles={['CHILD']} />
+          } />
+          <Route path="/finance-report" element={
+            <PrivateRoute element={<FinanceReportPage />} allowedRoles={['CHILD']} />
           } />
 
           {/* 공통 접근 가능한 상세 페이지 */}

@@ -99,9 +99,6 @@ public class ReportService {
                     dto.setTransactionType(log.getTransactionType());
                     dto.setTransactionBalance(log.getTransactionBalance());
                     dto.setTransactionSummary(log.getTransactionSummary());
-                    dto.setAfterBalance(log.getTransactionAfterBalance());
-                    dto.setAccountNo(log.getAccountNo());
-                    dto.setUserId(log.getUserId());
                     weeklyList.add(dto);
                 }
             }

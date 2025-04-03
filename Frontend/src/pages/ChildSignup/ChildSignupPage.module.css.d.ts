@@ -7,6 +7,7 @@ declare const styles: {
   readonly radioGroup: string;
   readonly radioLabel: string;
   readonly signupButton: string;
+  readonly select: string;
 };
 
 export default styles; 

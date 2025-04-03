@@ -3,9 +3,8 @@ import { AuthState, LoginRequest, LoginResponse } from '@/types/auth';
 import * as jwtDecode from 'jwt-decode';
 
 // API 기본 URL 설정
-const API_URL = 'http://localhost:8080';
-// 배포 시 사용할 URL
-// const API_URL = 'https://j12b207.p.ssafy.io';
+const API_BASE_URL = 'http://localhost:8080';  // 개발 환경
+// const API_BASE_URL = 'https://j12b207.p.ssafy.io';  // 배포 환경
 
 // 초기 상태 정의
 const initialState: AuthState = {
@@ -30,7 +29,7 @@ export const loginUser = createAsyncThunk(
       console.log('🔑 로그인 요청 시작:', { email: credentials.email, passwordLength: credentials.password.length });
       console.time('⏱️ 로그인 요청 시간');
       
-      const response = await fetch(`${API_URL}/api/auth/login`, {
+      const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -99,7 +98,7 @@ export const reissueToken = createAsyncThunk(
       console.log('🔄 토큰 재발급 요청 시작');
       console.time('⏱️ 토큰 재발급 요청 시간');
       
-      const response = await fetch(`${API_URL}/api/auth/reissue`, {
+      const response = await fetch(`${API_BASE_URL}/api/auth/reissue`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${auth.accessToken}`,

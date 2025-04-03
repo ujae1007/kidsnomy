@@ -4,6 +4,7 @@ services:
     ports:
       - "80:80"       # HTTP (HTTPS 리다이렉트)
       - "443:443"     # HTTPS
+    entrypoint: "tail -f /dev/null"
     volumes:
       - ./nginx:/etc/nginx/conf.d  # 최종 Nginx 설정
       - /home/ubuntu/kidsnomy/certs:/etc/letsencrypt:ro          # 인증서 및 키

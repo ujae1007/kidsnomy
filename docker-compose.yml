@@ -1,18 +1,17 @@
 services:
-  nginx:
-    image: nginx:latest
-    ports:
-      - "80:80"       # HTTP (HTTPS 리다이렉트)
-      - "443:443"     # HTTPS
-    entrypoint: "tail -f /dev/null"
-    volumes:
-      # - ./nginx:/etc/nginx/conf.d  # 최종 Nginx 설정
-      - "$PWD/nginx/app.conf:/etc/nginx/conf.d/app.conf" # 추가 
-      - /home/ubuntu/kidsnomy/certs:/etc/letsencrypt:ro          # 인증서 및 키
-      - ./Frontend/build/dist:/var/www/app/   # 프런트엔드 빌드 파일 (필요한 경우)
-    depends_on:
-      - java-app
-      - react-app
+  # nginx:
+  #   image: nginx:latest
+  #   ports:
+  #     - "80:80"       # HTTP (HTTPS 리다이렉트)
+  #     - "443:443"     # HTTPS
+  #   # entrypoint: "tail -f /dev/null"
+  #   volumes:
+  #     # - ./nginx:/etc/nginx/conf.d  # 최종 Nginx 설정
+  #     - /home/ubuntu/kidsnomy/certs:/etc/letsencrypt:ro          # 인증서 및 키
+  #     # - ./Frontend/build/dist:/var/www/app/   # 프런트엔드 빌드 파일 (필요한 경우)
+  #   depends_on:
+  #     - java-app
+  #     - react-app
 
   react-app:
     build:
@@ -24,7 +23,10 @@ services:
     volumes:
       # - ./Frontend/test/my-test-app:/app # 코드 변경 사항을 컨테이너 내부에 즉시 반영
       - /app/node_modules # 로컬 node_modules와 분리하여 충돌 방지
-      - ./Frontend/build:/app/build:rw
+      - /home/ubuntu/kidsnomy/certs:/etc/letsencrypt:ro          # 인증서 및 키
+      # - ./Frontend/build:/app/build:rw
+    depends_on:
+      - java-app
 
   java-app:
     build:

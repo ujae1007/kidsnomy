@@ -4,15 +4,16 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import styles from './JobDetailPage.module.css';
 import { apiCall } from '@/utils/api';
+import JobCompleteConfirmModal from '../../components/Modal/JobCompleteConfirmModal';
 
 interface Job {
   jobId: number;
   groupId: number;
   groupCode: string;
   employerId: number;
-  employeeId: number;
+  employeeId: number | null;
   employerName: string;
-  employeeName: string;
+  employeeName: string | null;
   title: string;
   content: string;
   salary: number;
@@ -26,11 +27,13 @@ interface Job {
 const JobDetailPage: React.FC = () => {
   const { jobId } = useParams<{ jobId: string }>();
   const navigate = useNavigate();
-  const { accessToken, isAuthenticated, isParent } = useSelector((state: RootState) => state.auth);
+  const { accessToken, isAuthenticated } = useSelector((state: RootState) => state.auth);
+  const isParent = true;  // 부모 버전을 보기 위해 true로 변경
   
   const [job, setJob] = useState<Job | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [isCompleteModalOpen, setIsCompleteModalOpen] = useState(false);
   
   const getStatusText = (status: number): string => {
     switch (status) {
@@ -51,29 +54,43 @@ const JobDetailPage: React.FC = () => {
       setError(null);
       
       try {
-        const data = await apiCall<Job>(`work/check/detail/${jobId}`, {
-          method: 'GET',
-          auth: true
-        });
+        // 임시 데이터 사용
+        const mockData: Job = {
+          jobId: Number(jobId),
+          groupId: 1,
+          groupCode: "GROUP1",
+          employerId: 1,
+          employeeId: null,  // 계약 전 상태이므로 null로 변경
+          employerName: "김부모",
+          employeeName: null,  // 계약 전 상태이므로 null로 변경
+          title: "방 청소하기",
+          content: "방 청소를 깨끗하게 해주세요. 책상 정리도 함께 부탁드립니다.",
+          salary: 5000,
+          rewardText: "용돈 5000원 + 간식",
+          isPermanent: false,
+          startAt: "2024-03-15",
+          endAt: "2024-03-16",
+          status: 1  // 계약 전 상태로 변경
+        };
         
-        console.log('✅ 일자리 상세 정보 조회 성공:', data);
-        setJob(data);
+        console.log('✅ 임시 데이터 로드 성공:', mockData);
+        setJob(mockData);
       } catch (error) {
-        console.error('❌ 일자리 상세 정보 조회 중 에러 발생:', error);
+        console.error('❌ 데이터 로드 중 에러 발생:', error);
         setError((error as Error).message);
       } finally {
         setLoading(false);
       }
     };
     
-    if (jobId && isAuthenticated) {
+    if (jobId) {
       fetchJobDetail();
     }
     
     return () => {
       console.log('📄 일자리 상세 페이지 언마운트');
     };
-  }, [jobId, accessToken, isAuthenticated, navigate]);
+  }, [jobId]);
   
   const handleDeleteJob = async () => {
     if (!confirm('정말로 이 일자리를 삭제하시겠습니까?')) {
@@ -218,6 +235,19 @@ const JobDetailPage: React.FC = () => {
     }
   };
   
+  const handleCompleteClick = () => {
+    setIsCompleteModalOpen(true);
+  };
+
+  const handleConfirmComplete = () => {
+    // TODO: API 호출로 상태 변경
+    setIsCompleteModalOpen(false);
+  };
+
+  const handleCancelComplete = () => {
+    setIsCompleteModalOpen(false);
+  };
+  
   const renderActionButton = () => {
     if (!job) return null;
     
@@ -256,7 +286,7 @@ const JobDetailPage: React.FC = () => {
       } else if (job.status === 2) {
         return (
           <button 
-            onClick={handleCompleteJob} 
+            onClick={handleCompleteClick} 
             className={`${styles.button} ${styles.primaryButton}`}
           >
             일을 다 끝냈어요
@@ -287,52 +317,47 @@ const JobDetailPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>일자리 상세보기</h1>
-      
-      <div>
-        <h2 className={styles.subTitle}>{job.title}</h2>
-        <div className={styles.statusTag}>상태: {getStatusText(job.status)}</div>
+      <div className={styles.content}>
+        <h1 className={styles.title}>일자리 상세보기</h1>
         
-        <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>날짜</h3>
-          <p className={styles.sectionContent}>{formatDate(job.startAt)} ~ {formatDate(job.endAt)}</p>
+        <div className={styles.formGroup}>
+          <label>제목</label>
+          <div className={styles.value}>{job.title}</div>
         </div>
-        
-        <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>상세내용</h3>
-          <p className={styles.sectionContent}>{job.content}</p>
+
+        <div className={styles.formGroup}>
+          <label>날짜</label>
+          <div className={styles.value}>
+            {formatDate(job.startAt)}-{formatDate(job.endAt)}
+          </div>
         </div>
-        
-        <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>급여</h3>
-          <p className={styles.sectionContent}>{job.salary.toLocaleString()}원</p>
+
+        <div className={styles.formGroup}>
+          <label>상세내용</label>
+          <div className={styles.value}>{job.content}</div>
         </div>
-        
+
+        <div className={styles.formGroup}>
+          <label>급여</label>
+          <div className={styles.value}>{job.salary.toLocaleString()}원</div>
+        </div>
+
         {job.rewardText && (
-          <div className={styles.section}>
-            <h3 className={styles.sectionTitle}>추가보상</h3>
-            <p className={styles.sectionContent}>{job.rewardText}</p>
+          <div className={styles.formGroup}>
+            <label>추가보상</label>
+            <div className={styles.value}>{job.rewardText}</div>
           </div>
         )}
-        
-        <div className={styles.section}>
-          <h3 className={styles.sectionTitle}>정보</h3>
-          <p className={styles.sectionContent}>고용주: {job.employerName}</p>
-          {job.employeeId && <p className={styles.sectionContent}>근로자: {job.employeeName}</p>}
-          <p className={styles.sectionContent}>그룹 코드: {job.groupCode}</p>
-          <p className={styles.sectionContent}>루틴 여부: {job.isPermanent ? '예' : '아니오'}</p>
-        </div>
-        
-        <div className={styles.buttonsContainer}>
-          {renderActionButton()}
-          <button 
-            onClick={() => navigate(-1)} 
-            className={`${styles.button} ${styles.secondaryButton}`}
-          >
-            뒤로 가기
-          </button>
-        </div>
       </div>
+
+      <div className={styles.buttonWrapper}>
+        {renderActionButton()}
+      </div>
+      <JobCompleteConfirmModal
+        isOpen={isCompleteModalOpen}
+        onConfirm={handleConfirmComplete}
+        onCancel={handleCancelComplete}
+      />
     </div>
   );
 };

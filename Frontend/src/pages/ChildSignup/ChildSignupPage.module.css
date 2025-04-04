@@ -92,6 +92,23 @@
   box-shadow: 0 4px 8px rgba(219, 153, 153, 0.3);
 }
 
+.select {
+  width: 100%;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #EFE3E3;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.select:focus {
+  outline: none;
+  background-color: #EFE3E3;
+  box-shadow: 0 0 0 2px rgba(145, 79, 79, 0.1);
+}
+
 @keyframes fadeInDown {
   from {
     opacity: 0;

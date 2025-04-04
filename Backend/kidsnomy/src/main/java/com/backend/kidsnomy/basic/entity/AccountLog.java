@@ -25,10 +25,10 @@ public class AccountLog {
     private String transactionUniqueNo;
 
     @Column(name = "transaction_date")
-    private LocalDateTime transactionDate;
+    private String transactionDate;
 
     @Column(name = "transaction_time")
-    private LocalDateTime transactionTime;
+    private String transactionTime;
 
     @Column(name = "transaction_type")
     private Integer transactionType;
@@ -50,7 +50,7 @@ public class AccountLog {
 
     // 전체 필드 생성자
     public AccountLog(Integer id, Integer userId, String accountNo, String transactionAccountNo,
-                      String transactionUniqueNo, LocalDateTime transactionDate, LocalDateTime transactionTime,
+                      String transactionUniqueNo, String transactionDate, String transactionTime,
                       Integer transactionType, BigDecimal transactionBalance, BigDecimal transactionAfterBalance,
                       String transactionSummary, String transactionMemo) {
         this.id = id;
@@ -108,19 +108,19 @@ public class AccountLog {
         this.transactionUniqueNo = transactionUniqueNo;
     }
 
-    public LocalDateTime getTransactionDate() {
+    public String getTransactionDate() {
         return transactionDate;
     }
 
-    public void setTransactionDate(LocalDateTime transactionDate) {
+    public void setTransactionDate(String transactionDate) {
         this.transactionDate = transactionDate;
     }
 
-    public LocalDateTime getTransactionTime() {
+    public String getTransactionTime() {
         return transactionTime;
     }
 
-    public void setTransactionTime(LocalDateTime transactionTime) {
+    public void setTransactionTime(String transactionTime) {
         this.transactionTime = transactionTime;
     }
 

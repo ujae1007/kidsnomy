@@ -1,0 +1,3377 @@
+[
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 교보문고 잠실점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 카카오프렌즈",
+        "place_name": "카카오프렌즈 롯데월드몰 잠실점",
+        "label": "쇼핑"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 잠실새내점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 드림디포",
+        "place_name": "드림디포 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 알파",
+        "place_name": "알파 삼전점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구",
+        "place_name": "도토리숲 롯데월드몰점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 무인문구점 > 빵꾸똥꾸문구야",
+        "place_name": "빵꾸똥꾸문구야 잠실점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 무인문구점 > 문구야놀자",
+        "place_name": "문구야놀자 잠실점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 드림디포",
+        "place_name": "드림디포 석촌중앙점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 드림디포",
+        "place_name": "드림디포 잠실새내점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "교보핫트랙스 잠실점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "바른오피스",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 알파",
+        "place_name": "알파 올림픽점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 드림디포",
+        "place_name": "드림디포 송파역점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "대우문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "이에스아이시",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구",
+        "place_name": "시로앤마로 잠실플래그십스토어",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문보장 3호점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 알파",
+        "place_name": "알파 송파한양점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "천호문구도매상사",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "예림문구화방",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "지아이엠코리아",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 알파",
+        "place_name": "알파 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "맨션문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "코리아에이에스",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "모양",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 무인문구점 > 말랑놀이터",
+        "place_name": "말랑놀이터 송파초점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "소프트잉크",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "파랑새문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "선향문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "알베르토 굿즈샵",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "동아문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "그린오피스 송파점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "가나안문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "문빵꾸",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "수놓다진",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "아이셀",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 구의점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "펀펀스토어 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "마리앤 모리",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품 > 디자인문구 > 아트박스",
+        "place_name": "아트박스 대치점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "똥방구 리센츠점",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "와와문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "우정팬시문구",
+        "label": "문구"
+    },
+    {
+        "category_name": "가정,생활 > 문구,사무용품",
+        "place_name": "다솜문구완구",
+        "label": "문구"
+    }
+]

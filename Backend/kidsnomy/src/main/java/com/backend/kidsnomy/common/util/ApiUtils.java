@@ -9,11 +9,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.time.ZoneId;
 
 public class ApiUtils {
 
     public static Map<String, Object> createApiRequestHeader(String apiName, String apiKey, String userKey) {
-        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime now = LocalDateTime.now(ZoneId.of("Asia/Seoul"));
         String transmissionDate = now.format(DateTimeFormatter.ofPattern("yyyyMMdd"));
         String transmissionTime = now.format(DateTimeFormatter.ofPattern("HHmmss"));
         String transactionUniqueNo = generateTransactionUniqueNo(transmissionDate, transmissionTime);

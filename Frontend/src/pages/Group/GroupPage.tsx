@@ -1,32 +1,116 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './GroupPage.module.css';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
+import { apiCall } from '@/utils/api';
 
 interface Group {
-  id: string;
-  name: string;
+  groupId: number;
+  groupCode: string;
+  ownerName: string;
 }
+
+interface CreateGroupResponse {
+  groupCode: string;
+}
+
+// interface GroupParticipationRequest {
+//   groupCode: string;
+// }
 
 const GroupPage: React.FC = () => {
   const navigate = useNavigate();
-  // TODO: 실제 사용자 타입은 전역 상태나 API를 통해 가져와야 함
-  const [isParent] = useState(true); // 임시로 부모 사용자로 설정
-
+  const { isParent } = useSelector((state: RootState) => state.auth);
   const [searchQuery, setSearchQuery] = useState('');
-  const [groups, setGroups] = useState<Group[]>([
-    { id: '1', name: '그룹장' },
-    { id: '2', name: '그룹장' },
-    { id: '3', name: '그룹장' },
-  ]);
+  const [groups, setGroups] = useState<Group[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSearch = () => {
-    // TODO: 그룹 코드로 검색 구현
-    console.log('그룹 검색:', searchQuery);
+  // 그룹 목록 조회
+  useEffect(() => {
+    const fetchGroups = async () => {
+      try {
+        const response = await apiCall<Group[]>('group/check', {
+          method: 'GET',
+          auth: true
+        });
+        setGroups(response);
+      } catch (error) {
+        console.error('그룹 목록 조회 중 에러 발생:', error);
+        setError('그룹 목록을 불러오는데 실패했습니다.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchGroups();
+  }, []);
+
+  const handleSearch = async () => {
+    if (!searchQuery.trim()) {
+      alert('그룹 코드를 입력해주세요.');
+      return;
+    }
+
+    try {
+      await apiCall('group/participation', {
+        method: 'POST',
+        auth: true,
+        body: JSON.stringify({
+          groupCode: searchQuery.trim()
+        })
+      });
+      
+      // 성공적으로 그룹 참여가 완료된 경우
+      alert('그룹 참여가 완료되었습니다.');
+      setSearchQuery(''); // 입력 필드 초기화
+      
+      // 그룹 목록 새로고침
+      const updatedGroups = await apiCall<Group[]>('group/check', {
+        method: 'GET',
+        auth: true
+      });
+      setGroups(updatedGroups);
+      
+    } catch (error: any) {
+      if (error.status === 404) {
+        alert('해당 그룹이 존재하지 않습니다.');
+      } else if (error.status === 409) {
+        alert('이미 참여 중인 그룹입니다.');
+      } else {
+        alert('그룹 참여 중 오류가 발생했습니다.');
+      }
+      console.error('그룹 참여 에러:', error);
+    }
   };
 
-  const handleCreateGroup = () => {
-    // TODO: 그룹 생성 로직 구현
-    console.log('그룹 생성');
+  const handleCreateGroup = async () => {
+    try {
+      const response = await apiCall<CreateGroupResponse>('group/create', {
+        method: 'POST',
+        auth: true
+      });
+      
+      // 성공적으로 그룹이 생성된 경우
+      alert(`그룹이 생성되었습니다.\n그룹 코드: ${response.groupCode}`);
+      
+      // 그룹 목록 새로고침
+      const updatedGroups = await apiCall<Group[]>('group/check', {
+        method: 'GET',
+        auth: true
+      });
+      setGroups(updatedGroups);
+    } catch (error: any) {
+      // 403 에러인 경우
+      if (error.status === 403) {
+        alert('부모 사용자만 그룹을 생성할 수 있습니다.');
+      } else {
+        // 기타 에러
+        alert('그룹 생성 중 오류가 발생했습니다.');
+      }
+      console.error('그룹 생성 에러:', error);
+    }
   };
 
   const handleDeleteGroup = (groupId: string) => {
@@ -57,19 +141,16 @@ const GroupPage: React.FC = () => {
       </div>
 
       <div className={styles.searchSection}>
-        <h2 className={styles.sectionTitle}>그룹코드 검색</h2>
+        <h2 className={styles.sectionTitle}>그룹코드 입력</h2>
         <div className={styles.searchBar}>
           <div className={styles.searchInputWrapper}>
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="그룹코드 검색"
+              placeholder="그룹코드를 입력해주세요."
               className={styles.searchInput}
             />
-            <svg className={styles.searchIcon} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path fillRule="evenodd" clipRule="evenodd" d="M19.5306 18.4694L14.8366 13.7762C17.6629 10.383 17.3204 5.36693 14.0591 2.38935C10.7978 -0.588237 5.77134 -0.474001 2.64867 2.64867C-0.474001 5.77134 -0.588237 10.7978 2.38935 14.0591C5.36693 17.3204 10.383 17.6629 13.7762 14.8366L18.4694 19.5306C18.7624 19.8237 19.2376 19.8237 19.5306 19.5306C19.8237 19.2376 19.8237 18.7624 19.5306 18.4694ZM1.75 8.5C1.75 4.77208 4.77208 1.75 8.5 1.75C12.2279 1.75 15.25 4.77208 15.25 8.5C15.25 12.2279 12.2279 15.25 8.5 15.25C4.77379 15.2459 1.75413 12.2262 1.75 8.5Z" fill="#914F4F"/>
-            </svg>
           </div>
           <button 
             className={styles.searchButton}
@@ -83,17 +164,26 @@ const GroupPage: React.FC = () => {
       <div className={styles.groupSection}>
         <h2 className={styles.sectionTitle}>그룹 목록</h2>
         <div className={styles.groupList}>
-          {groups.map((group) => (
-            <div key={group.id} className={styles.groupItem}>
-              <span className={styles.groupName}>그룹장</span>
-              <button
-                className={styles.deleteButton}
-                onClick={() => handleDeleteGroup(group.id)}
-              >
-                삭제
-              </button>
-            </div>
-          ))}
+          {isLoading ? (
+            <div className={styles.message}>로딩 중...</div>
+          ) : error ? (
+            <div className={styles.errorMessage}>{error}</div>
+          ) : groups.length === 0 ? (
+            <div className={styles.message}>가입한 그룹이 없습니다.</div>
+          ) : (
+            groups.map((group) => (
+              <div key={group.groupId} className={styles.groupItem}>
+                <span className={styles.groupName}>{group.ownerName}</span>
+                <span className={styles.groupCode}>그룹코드: {group.groupCode}</span>
+                <button
+                  className={styles.deleteButton}
+                  onClick={() => handleDeleteGroup(group.groupId.toString())}
+                >
+                  삭제
+                </button>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </div>

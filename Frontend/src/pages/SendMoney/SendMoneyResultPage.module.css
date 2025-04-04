@@ -1,0 +1,94 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.icon {
+  font-size: 64px;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.details {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 32px;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.detailItem:last-child {
+  border-bottom: none;
+}
+
+.detailItem span:first-child {
+  color: #666;
+}
+
+.detailItem span:last-child {
+  font-weight: 600;
+  color: #333;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button.home {
+  background-color: #DB9999;
+  color: white;
+}
+
+.button.home:hover {
+  background-color: #d48a8a;
+  transform: translateY(-2px);
+}
+
+.button.retry {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.button.retry:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.errorMessage {
+  color: #e74c3c;
+  font-size: 18px;
+  margin-bottom: 24px;
+} 

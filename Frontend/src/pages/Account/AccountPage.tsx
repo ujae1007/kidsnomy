@@ -3,15 +3,22 @@ import { useNavigate } from 'react-router-dom';
 import styles from './AccountPage.module.css';
 import ResultPage from '@/components/common/ResultPage';
 import { RESULT_MESSAGES } from '@/constants/messages';
+import { apiCall }from '@/utils/api';
+
+interface AccountResponse {
+  accountNo: string;
+  balance: number;
+}
 
 const AccountPage: React.FC = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    name: '',
-    accountNumber: '',
-    confirmAccountNumber: ''
+    accountPassword: '',
+    confirmAccountPassword: ''
   });
   const [showResult, setShowResult] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -21,27 +28,48 @@ const AccountPage: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: 계좌 등록 로직 구현
-    console.log('계좌 등록:', formData);
-    setShowResult(true);
+    
+    // 비밀번호 확인
+    if (formData.accountPassword !== formData.confirmAccountPassword) {
+      setErrorMessage('비밀번호가 일치하지 않습니다.');
+      return;
+    }
+
+    try {
+      const response = await apiCall<AccountResponse>('account/create', {
+        method: 'POST',
+        auth: true,
+        body: JSON.stringify({
+          accountPassword: formData.accountPassword
+        })
+      });
+
+      if (response) {
+        setIsSuccess(true);
+        setShowResult(true);
+      }
+    } catch (error) {
+      setIsSuccess(false);
+      setErrorMessage('계좌 등록에 실패했습니다.');
+      setShowResult(true);
+    }
   };
 
   const handleAccountInfo = () => {
-    // 나의 계좌 정보 페이지로 이동
     navigate('/myaccount');
   };
 
   const handleResultConfirm = () => {
-    navigate('/home');  // 홈으로 이동
+    navigate('/home');
   };
 
   if (showResult) {
     return (
       <ResultPage
-        title={RESULT_MESSAGES.REGISTER_PRODUCT.title}
-        description={RESULT_MESSAGES.REGISTER_PRODUCT.description}
+        title={isSuccess ? RESULT_MESSAGES.REGISTER_PRODUCT.title : '계좌 등록 실패'}
+        description={isSuccess ? RESULT_MESSAGES.REGISTER_PRODUCT.description : errorMessage}
         buttonText={RESULT_MESSAGES.REGISTER_PRODUCT.buttonText}
         onButtonClick={handleResultConfirm}
       />
@@ -54,20 +82,9 @@ const AccountPage: React.FC = () => {
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.inputGroup}>
           <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="이름"
-            className={styles.input}
-          />
-        </div>
-        
-        <div className={styles.inputGroup}>
-          <input
-            type="text"
-            name="accountNumber"
-            value={formData.accountNumber}
+            type="password"
+            name="accountPassword"
+            value={formData.accountPassword}
             onChange={handleChange}
             placeholder="계좌 비밀번호"
             className={styles.input}
@@ -76,9 +93,9 @@ const AccountPage: React.FC = () => {
 
         <div className={styles.inputGroup}>
           <input
-            type="text"
-            name="confirmAccountNumber"
-            value={formData.confirmAccountNumber}
+            type="password"
+            name="confirmAccountPassword"
+            value={formData.confirmAccountPassword}
             onChange={handleChange}
             placeholder="비밀번호 확인"
             className={styles.input}

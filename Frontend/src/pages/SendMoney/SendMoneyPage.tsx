@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import { apiCall } from '@/utils/api';
 import styles from './SendMoneyPage.module.css';
+import { RESULT_MESSAGES } from '@/constants';
 
 import SendHeader from '@/components/sendmoney/SendHeader';
 import AmountInput from '@/components/sendmoney/AmountInput';
@@ -128,13 +129,12 @@ const SendMoneyPage: React.FC = () => {
           status: response.data.status
         });
         
-        navigate('/send-money/result', {
+        navigate('/account/send/complete', {
           state: {
-            status: response.data.status,
-            amount: request.amount,
-            transactionId: response.data.transactionId,
-            fromAccount: response.data.fromAccount,
-            timestamp: response.data.timestamp
+            title: RESULT_MESSAGES.SEND_MONEY.title,
+            description: RESULT_MESSAGES.SEND_MONEY.description,
+            buttonText: RESULT_MESSAGES.SEND_MONEY.buttonText,
+            buttonLink: '/home'
           }
         });
       } else {

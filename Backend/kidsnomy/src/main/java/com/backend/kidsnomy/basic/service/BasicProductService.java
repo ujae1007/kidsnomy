@@ -85,7 +85,7 @@ public class BasicProductService {
         Map<String, Object> requestBody = new HashMap<>();
         Map<String, Object> header = ApiUtils.createApiRequestHeader("createDemandDeposit", apiKey, userKey);
         requestBody.put("Header", header);
-
+        System.out.println(requestBody.get("Header"));
         requestBody.put("bankCode", Objects.requireNonNullElse(requestDto.getBankCode(), "999"));
         requestBody.put("accountName", requestDto.getAccountName());
         requestBody.put("accountDescription", requestDto.getAccountDescription());

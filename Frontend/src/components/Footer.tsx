@@ -18,6 +18,14 @@ const Footer: React.FC = () => {
     }
   };
 
+  const handleBankClick = () => {
+    if (auth.isParent) {
+      navigate('/bank/products');
+    } else {
+      navigate('/child/bank/products');
+    }
+  };
+
   return (
     <footer className={styles.footer}>
       <button 
@@ -36,7 +44,7 @@ const Footer: React.FC = () => {
       </button>
       <button 
         className={`${styles.navButton} ${isActive('/bank') ? styles.active : ''}`}
-        onClick={() => navigate('/bank')}
+        onClick={handleBankClick}
       >
         <BankIcon />
         <span>은행</span>

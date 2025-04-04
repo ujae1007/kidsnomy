@@ -63,7 +63,7 @@ CREATE TABLE `account_log` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `user_id` INT NOT NULL,
   `account_no` VARCHAR(50) NOT NULL,
-  `transaction_name` VARCHAR(70),
+  `transaction_account_no` VARCHAR(70),
   `transaction_unique_no` VARCHAR(50) NOT NULL UNIQUE,
   `transaction_date` TIMESTAMP,
   `transaction_time` TIMESTAMP,

@@ -36,7 +36,10 @@ services:
       SPRING_DATASOURCE_PASSWORD: ssafy
 
   mysql:
-    image: mysql:8.0.40
+    # image: mysql:8.0.40
+    build: 
+      context: ./DB
+      dockerfile: Dockerfile
     container_name: mysql-db
     environment:
       MYSQL_ROOT_PASSWORD: ssafy

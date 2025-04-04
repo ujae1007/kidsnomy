@@ -3,8 +3,8 @@ import { AuthState, LoginRequest, LoginResponse } from '@/types/auth';
 import * as jwtDecode from 'jwt-decode';
 
 // API 기본 URL 설정
-const API_BASE_URL = 'http://localhost:8080';  // 개발 환경
-// const API_BASE_URL = 'https://j12b207.p.ssafy.io';  // 배포 환경
+// const API_BASE_URL = 'http://localhost:8080';  // 개발 환경
+const API_BASE_URL = 'https://j12b207.p.ssafy.io';  // 배포 환경
 
 // 초기 상태 정의
 const initialState: AuthState = {

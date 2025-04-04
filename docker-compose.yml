@@ -7,6 +7,7 @@ services:
     container_name: react-app
     ports:
       - "80:80"
+      - "443:443"
       - "5173:5173" # Vite 개발 서버 포트
     volumes:
       - /app/node_modules # 로컬 node_modules와 분리하여 충돌 방지

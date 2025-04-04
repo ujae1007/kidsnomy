@@ -28,12 +28,7 @@ import SavingProductDetailPage from '@/pages/SavingProductDetail/SavingProductDe
 const SendMoneyCompletePage = () => {
   const navigate = useNavigate();
   return (
-    <ResultPage
-      title={RESULT_MESSAGES.SEND_MONEY.title}
-      description={RESULT_MESSAGES.SEND_MONEY.description}
-      buttonText={RESULT_MESSAGES.SEND_MONEY.buttonText}
-      onButtonClick={() => navigate('/home')}
-    />
+    <ResultPage />
   );
 };
 

@@ -1,12 +1,12 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Clean Workspace') {
-            steps {
-                cleanWs()
-            }
-        }
+    // stages {
+    //     stage('Clean Workspace') {
+    //         steps {
+    //             deleteDir()
+    //         }
+    //     }
 
         stage('Checkout Code') {
             steps {

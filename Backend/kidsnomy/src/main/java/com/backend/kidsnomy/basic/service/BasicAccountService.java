@@ -26,13 +26,6 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -53,20 +46,20 @@ public class BasicAccountService {
     private final String baseUrl;
 
     public BasicAccountService(
+            BasicProductRepository basicProductRepository,
             BasicAccountRepository basicAccountRepository,
+            UserRepository userRepository,
             RestTemplate restTemplate,
             JwtTokenProvider jwtTokenProvider,
             UserKeyService userKeyService,
-            UserRepository userRepository,
-            BasicProductRepository basicProductRepository,
             @Value("${ssafy.api.apiKey}") String apiKey,
             @Value("${ssafy.api.base-url}") String baseUrl) {
+        this.basicProductRepository = basicProductRepository;
         this.basicAccountRepository = basicAccountRepository;
+        this.userRepository = userRepository;
         this.restTemplate = restTemplate;
         this.jwtTokenProvider = jwtTokenProvider;
         this.userKeyService = userKeyService;
-        this.userRepository = userRepository;
-        this.basicProductRepository = basicProductRepository;
         this.apiKey = apiKey;
         this.baseUrl = baseUrl;
     }
@@ -74,6 +67,7 @@ public class BasicAccountService {
     // 계좌 생성
     @Transactional
     public BasicAccountResponseDto createAccount(HttpServletRequest request, BasicAccountRequestDto requestDto) {
+
         String token = jwtTokenProvider.resolveAccessToken(request);
         if (token == null || !jwtTokenProvider.validateToken(token)) {
             throw new AuthenticationException("유효하지 않은 토큰입니다.");
@@ -114,7 +108,7 @@ public class BasicAccountService {
                     .orElseThrow(() -> new AccountCreationException("계좌번호 정보가 없습니다."));
 
             BasicAccount account = new BasicAccount();
-            account.setUserId(userId.intValue()); // Integer로 형변환
+            account.setUserId(userId);
             account.setAccountNo(accountNo);
             account.setAccountPassword(requestDto.getAccountPassword());
             account.setBalance(BigDecimal.ZERO);
@@ -305,11 +299,7 @@ public class BasicAccountService {
                 }
 
                 AccountLog log = new AccountLog();
-                log.setUserId(
-                    basicAccountRepository.findByAccountNo(requestDto.getAccountNo())
-                        .orElseThrow(() -> new AccountNotFoundException("계좌를 찾을 수 없습니다."))
-                        .getUserId()
-                );
+                log.setUserId(log.getUserId());
                 log.setAccountNo(requestDto.getAccountNo()); // 내 계좌번호
                 log.setTransactionAccountNo(transactionAccountNo); // 상대 계좌번호 (null 가능)
                 log.setTransactionUniqueNo((String) item.get("transactionUniqueNo"));

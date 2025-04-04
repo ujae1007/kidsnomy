@@ -7,8 +7,7 @@ public class AccountCheckRequestDto {
     @NotBlank(message = "계좌번호는 필수입니다")
     private String accountNo;
 
-    public AccountCheckRequestDto() {
-    }
+    public AccountCheckRequestDto() {}
 
     public AccountCheckRequestDto(String accountNo) {
         this.accountNo = accountNo;

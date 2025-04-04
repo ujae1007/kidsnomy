@@ -5,7 +5,9 @@ import com.backend.kidsnomy.work.entity.Work;
 import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface WorkRepository extends JpaRepository<Work, Long> {
     // 일자리 생성은 save() 메서드만 사용하면 됨 (JpaRepository 기본 제공)
 	

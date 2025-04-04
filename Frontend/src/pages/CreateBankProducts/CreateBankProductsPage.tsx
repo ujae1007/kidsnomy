@@ -8,48 +8,44 @@ interface ProductFormData {
   description: string;
   interestRate: number;
   period: number;
-  monthlyPayment?: number; // 적금의 경우에만 사용
+  monthlyPayment?: number;
+  interestPaymentDate?: string;
+  depositPaymentDate?: string;
 }
 
 const CreateBankProductsPage: React.FC = () => {
   const navigate = useNavigate();
-  // 상태 관리
   const [formData, setFormData] = useState<ProductFormData>({
     type: 'deposit',
     name: '',
     description: '',
     interestRate: 0,
     period: 0,
-    monthlyPayment: 0
+    interestPaymentDate: '',
+    depositPaymentDate: ''
   });
-  
-  // 핸들러 함수들
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: name === 'type' ? value : 
-              name === 'interestRate' || name === 'period' || name === 'monthlyPayment' ? 
-              Number(value) : value
+      [name]: value
     }));
   };
-  
-  const handleSubmit = async (e: React.FormEvent) => {
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // API 호출 및 처리
     console.log('상품 생성:', formData);
     navigate('/bank/products');
   };
-  
+
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>금융상품 생성</h1>
+      <h1 className={styles.title}>은행 상품 만들기</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
-        {/* 상품 유형 선택 */}
         <div className={styles.formGroup}>
-          <label htmlFor="type">상품 유형</label>
-          <select 
-            id="type"
+          <label>상품 종류</label>
+          <select
             name="type"
             value={formData.type}
             onChange={handleInputChange}
@@ -59,90 +55,98 @@ const CreateBankProductsPage: React.FC = () => {
             <option value="saving">적금</option>
           </select>
         </div>
-        
-        {/* 상품명 */}
+
         <div className={styles.formGroup}>
-          <label htmlFor="name">상품명</label>
+          <label>상품 제목</label>
           <input
             type="text"
-            id="name"
             name="name"
             value={formData.name}
             onChange={handleInputChange}
             className={styles.input}
-            required
+            placeholder="상품 제목을 입력해주세요"
           />
         </div>
-        
-        {/* 상품 설명 */}
+
         <div className={styles.formGroup}>
-          <label htmlFor="description">상품 설명</label>
+          <label>이자</label>
+          <div className={styles.inputWithUnit}>
+            <input
+              type="number"
+              name="interestRate"
+              value={formData.interestRate}
+              onChange={handleInputChange}
+              className={styles.input}
+              placeholder="이자율을 입력해주세요"
+              step="0.1"
+            />
+            <span className={styles.unit}>%</span>
+          </div>
+        </div>
+
+        <div className={styles.formGroup}>
+          <label>상세내용</label>
           <textarea
-            id="description"
             name="description"
             value={formData.description}
             onChange={handleInputChange}
             className={styles.textarea}
-            required
+            placeholder="상세내용을 입력해주세요"
           />
         </div>
-        
-        {/* 이자율 */}
+
         <div className={styles.formGroup}>
-          <label htmlFor="interestRate">이자율 (%)</label>
-          <input
-            type="number"
-            id="interestRate"
-            name="interestRate"
-            value={formData.interestRate}
-            onChange={handleInputChange}
-            className={styles.input}
-            required
-            min="0"
-            step="0.1"
-          />
-        </div>
-        
-        {/* 기간 */}
-        <div className={styles.formGroup}>
-          <label htmlFor="period">기간 (개월)</label>
-          <input
-            type="number"
-            id="period"
-            name="period"
-            value={formData.period}
-            onChange={handleInputChange}
-            className={styles.input}
-            required
-            min="1"
-          />
-        </div>
-        
-        {/* 월 납입금 (적금의 경우에만 표시) */}
-        {formData.type === 'saving' && (
-          <div className={styles.formGroup}>
-            <label htmlFor="monthlyPayment">월 납입금 (원)</label>
+          <label>만기일</label>
+          <div className={styles.inputWithUnit}>
             <input
               type="number"
-              id="monthlyPayment"
-              name="monthlyPayment"
-              value={formData.monthlyPayment}
+              name="period"
+              value={formData.period}
               onChange={handleInputChange}
               className={styles.input}
-              required
-              min="0"
+              placeholder="만기일을 입력해주세요"
             />
+            <span className={styles.unit}>주</span>
           </div>
-        )}
-        
-        <div className={styles.buttonGroup}>
-          <button type="button" onClick={() => navigate('/bank/products')} className={styles.cancelButton}>
-            취소
-          </button>
-          <button type="submit" className={styles.submitButton}>
-            상품 생성
-          </button>
         </div>
+
+        {formData.type === 'saving' && (
+          <>
+            <div className={styles.formGroup}>
+              <label>이자 지급 주기</label>
+              <div className={styles.inputWithUnit}>
+                <input
+                  type="text"
+                  name="interestPaymentDate"
+                  value={formData.interestPaymentDate}
+                  onChange={handleInputChange}
+                  className={styles.input}
+                  placeholder="이자 지급일을 입력해주세요"
+                />
+                <span className={styles.unit}>일</span>
+              </div>
+            </div>
+
+            <div className={styles.formGroup}>
+              <label>적금 납입 주기</label>
+              <div className={styles.inputWithUnit}>
+                <input
+                  type="text"
+                  name="depositPaymentDate"
+                  value={formData.depositPaymentDate}
+                  onChange={handleInputChange}
+                  className={styles.input}
+                  placeholder="적금 납입일을 입력해주세요"
+                />
+                <span className={styles.unit}>일</span>
+              </div>
+            </div>
+          </>
+        )}
+
+        <button type="submit" className={styles.submitButton}>
+          만들기
+        </button>
       </form>
     </div>
   );

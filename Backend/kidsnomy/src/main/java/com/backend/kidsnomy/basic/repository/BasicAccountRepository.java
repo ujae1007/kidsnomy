@@ -17,7 +17,7 @@ public interface BasicAccountRepository extends JpaRepository<BasicAccount, Inte
     Optional<BasicAccount> findByAccountNo(String accountNo);
 
     // 사용자 ID로 계좌 목록 조회
-    List<BasicAccount> findByUserId(Integer userId);
+    List<BasicAccount> findByUserId(Long userId);
 
     // 계좌번호 존재 여부 확인
     boolean existsByAccountNo(String accountNo);

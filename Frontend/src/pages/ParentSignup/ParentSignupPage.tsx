@@ -1,169 +1,133 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './ParentSignupPage.module.css';
 import { apiCall } from '@/utils/api';
+import { useDispatch, useSelector } from 'react-redux';
+import { setEmail, clearEmail } from '@/store/slices/authSlice';
+import { RootState } from '@/store';
+
+interface SignupFormData {
+  email: string;
+  password: string;
+  confirmPassword: string;
+  name: string;
+  age: string;
+  gender: string;
+}
 
 // API 응답 타입 정의
-interface VerificationResponse {
+interface ApiResponse {
   message: string;
   success: boolean;
 }
 
-interface SignupResponse {
-  message: string;
-  success: boolean;
+interface SignupResponse extends ApiResponse {
   data?: {
     accessToken?: string;
     refreshToken?: string;
   };
 }
 
-interface EmailVerificationModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onVerify: (code: string) => void;
-}
-
-const EmailVerificationModal: React.FC<EmailVerificationModalProps> = ({
-  isOpen,
-  onClose,
-  onVerify,
-}) => {
-  const [verificationCode, setVerificationCode] = useState('');
-
-  if (!isOpen) return null;
-
-  const handleVerify = () => {
-    console.log('이메일 인증 모달: 인증 코드 입력', verificationCode);
-    onVerify(verificationCode);
-  };
-
-  return (
-    <div className={styles.modalOverlay}>
-      <div className={styles.modal}>
-        <h2>이메일을 확인하세요</h2>
-        <p>이메일로 인증 코드를 발송했습니다.</p>
-        <input
-          type="text"
-          className={styles.input}
-          placeholder="인증 코드를 입력하세요"
-          value={verificationCode}
-          onChange={(e) => setVerificationCode(e.target.value)}
-        />
-        <div className={styles.modalButtons}>
-          <button
-            className={styles.modalButton}
-            onClick={onClose}
-          >
-            취소
-          </button>
-          <button
-            className={styles.modalButton}
-            onClick={handleVerify}
-          >
-            확인
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const ParentSignupPage = () => {
+const ParentSignupPage: React.FC = () => {
   const navigate = useNavigate();
-  const [isVerificationModalOpen, setIsVerificationModalOpen] = useState(false);
-  const [isEmailVerified, setIsEmailVerified] = useState(false);
+  const dispatch = useDispatch();
+  const verifiedEmail = useSelector((state: RootState) => state.auth.email);
+  const [isEmailVerified, setIsEmailVerified] = useState(Boolean(verifiedEmail));
+  const [verificationCode, setVerificationCode] = useState('');
   const [verificationMessage, setVerificationMessage] = useState('');
   const [verificationStatus, setVerificationStatus] = useState<'none' | 'success' | 'error'>('none');
-  const [formData, setFormData] = useState({
-    name: '',
-    id: '',
-    email: '',
+  const [formData, setFormData] = useState<SignupFormData>({
+    email: verifiedEmail || '',
     password: '',
     confirmPassword: '',
+    name: '',
     age: '',
     gender: ''
   });
+  const [isSendingCode, setIsSendingCode] = useState(false);
+  const [verificationError, setVerificationError] = useState('');
+
+  // 컴포넌트가 언마운트될 때 이메일 정보 초기화
+  useEffect(() => {
+    return () => {
+      dispatch(clearEmail());
+    };
+  }, [dispatch]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    console.log('부모 회원가입 페이지: 입력 필드 변경', { name, value });
     
-    // 이메일이 변경되면 이메일 인증 상태 초기화
     if (name === 'email') {
       setIsEmailVerified(false);
       setVerificationStatus('none');
       setVerificationMessage('');
+      setVerificationCode('');
     }
     
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
-  const handleEmailVerification = async () => {
+  const handleSendVerificationCode = async () => {
     if (!formData.email) {
-      alert('이메일을 입력해주세요.');
+      setVerificationError('이메일을 입력해주세요.');
       return;
     }
-    
-    console.log('부모 회원가입 페이지: 이메일 인증 요청', formData.email);
-    
+
     try {
-      const requestData = { email: formData.email };
-      console.log('요청 데이터:', JSON.stringify(requestData));
+      setIsSendingCode(true);
+      setVerificationError('');
       
-      const response = await apiCall<VerificationResponse>('auth/verification', {
+      const response = await apiCall<ApiResponse>('/auth/verification', {
         method: 'POST',
+        body: JSON.stringify({ email: formData.email }),
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(requestData),
+          'Content-Type': 'application/json'
+        }
       });
 
-      console.log('부모 회원가입 페이지: 이메일 인증 요청 응답', response);
+      setVerificationMessage('인증 코드가 전송되었습니다.');
+      setVerificationStatus('none');
       
-      setIsVerificationModalOpen(true);
-      alert('인증 코드가 이메일로 전송되었습니다.');
-    } catch (error) {
-      console.error('부모 회원가입 페이지: 이메일 인증 요청 실패', error);
-      alert((error as Error).message);
+    } catch (error: any) {
+      if (error.status === 409) {
+        setVerificationError('이미 가입된 이메일입니다.');
+      } else {
+        setVerificationError(error.message || '인증 코드 전송에 실패했습니다. 다시 시도해주세요.');
+      }
+    } finally {
+      setIsSendingCode(false);
     }
   };
 
-  const handleVerificationCodeSubmit = async (code: string) => {
+  const handleVerifyCode = async () => {
+    if (!verificationCode) {
+      setVerificationError('인증 코드를 입력해주세요.');
+      return;
+    }
+
     try {
-      console.log('부모 회원가입 페이지: 인증 코드 확인 시도', code);
-      
-      const response = await apiCall<VerificationResponse>('auth/verification/email', {
+      const response = await apiCall<ApiResponse>('/auth/verification/email', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           email: formData.email,
-          verificationCode: code,
-        }),
+          verificationCode: parseInt(verificationCode)
+        })
       });
-      
-      console.log('부모 회원가입 페이지: 인증 코드 확인 응답', response);
-      
+
       if (response.success) {
-        console.log('부모 회원가입 페이지: 이메일 인증 성공');
         setIsEmailVerified(true);
         setVerificationMessage('이메일 인증이 완료되었습니다.');
         setVerificationStatus('success');
-        setIsVerificationModalOpen(false);
+        dispatch(setEmail(formData.email));
       } else {
-        setVerificationMessage('인증 코드가 일치하지 않습니다.');
+        setVerificationMessage(response.message);
         setVerificationStatus('error');
       }
-    } catch (error) {
-      console.error('부모 회원가입 페이지: 인증 코드 확인 에러', error);
-      setVerificationMessage('인증 과정에서 오류가 발생했습니다.');
+    } catch (error: any) {
+      setVerificationMessage('인증 코드가 일치하지 않습니다.');
       setVerificationStatus('error');
     }
   };
@@ -172,40 +136,31 @@ const ParentSignupPage = () => {
     e.preventDefault();
     
     if (!isEmailVerified) {
-      console.log('부모 회원가입 페이지: 이메일 미인증 상태');
       alert('이메일 인증이 필요합니다.');
       return;
     }
     
     if (formData.password !== formData.confirmPassword) {
-      console.log('부모 회원가입 페이지: 비밀번호 불일치');
       alert('비밀번호가 일치하지 않습니다.');
       return;
     }
     
     try {
-      console.log('부모 회원가입 페이지: 회원가입 시도', formData);
-      
       const signupData = {
-        email: formData.id,
+        email: formData.email,
         password: formData.password,
         name: formData.name,
-        is_Parent: '1',
-        age: formData.age,
-        gender: formData.gender,
-        parent_email: null,
+        age: parseInt(formData.age),
+        gender: formData.gender
       };
       
-      const response = await apiCall<SignupResponse>('auth/signup/parent', {
+      const response = await apiCall<SignupResponse>('/auth/signup/parent', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(signupData),
+        body: JSON.stringify(signupData)
       });
-
-      console.log('부모 회원가입 페이지: 회원가입 응답', response);
 
       if (response.success) {
         alert('회원가입이 완료되었습니다.');
@@ -213,9 +168,18 @@ const ParentSignupPage = () => {
       } else {
         alert(response.message || '회원가입에 실패했습니다.');
       }
-    } catch (error) {
-      console.error('부모 회원가입 페이지: 회원가입 실패', error);
-      alert('회원가입 처리 중 오류가 발생했습니다.');
+    } catch (error: any) {
+      if (error.status === 400) {
+        alert('이메일 인증이 필요합니다.');
+      } else if (error.status === 403) {
+        alert('이메일이 인증되지 않았습니다.');
+      } else if (error.status === 409) {
+        alert('해당 이메일은 이미 사용 중입니다.');
+      } else if (error.status === 502) {
+        alert('외부 API 응답이 비정상입니다.');
+      } else {
+        alert('회원가입 처리 중 오류가 발생했습니다.');
+      }
     }
   };
 
@@ -236,18 +200,6 @@ const ParentSignupPage = () => {
         </div>
         
         <div>
-          <label className={styles.label}>아이디</label>
-          <input
-            type="text"
-            name="id"
-            value={formData.id}
-            onChange={handleInputChange}
-            className={styles.input}
-            required
-          />
-        </div>
-        
-        <div>
           <label className={styles.label}>이메일</label>
           <div className={styles.emailContainer}>
             <input
@@ -257,19 +209,45 @@ const ParentSignupPage = () => {
               onChange={handleInputChange}
               className={styles.emailInput}
               required
+              placeholder="이메일"
+              disabled={isEmailVerified}
             />
             <button
               type="button"
-              onClick={handleEmailVerification}
+              onClick={handleSendVerificationCode}
               className={styles.verificationButton}
-              disabled={isEmailVerified}
+              disabled={isEmailVerified || isSendingCode}
             >
-              {isEmailVerified ? '인증완료' : '인증하기'}
+              {isEmailVerified ? '인증완료' : isSendingCode ? '전송 중...' : '인증코드 받기'}
             </button>
           </div>
-          {verificationStatus !== 'none' && (
-            <div className={verificationStatus === 'success' ? styles.successMessage : styles.errorMessage}>
+          {verificationMessage && (
+            <div className={`${styles.message} ${styles[verificationStatus]}`}>
               {verificationMessage}
+            </div>
+          )}
+          {!isEmailVerified && verificationStatus !== 'success' && (
+            <div className={styles.verificationCodeContainer}>
+              <input
+                type="text"
+                value={verificationCode}
+                onChange={(e) => setVerificationCode(e.target.value)}
+                className={styles.verificationCodeInput}
+                placeholder="인증 코드 입력"
+              />
+              <button
+                type="button"
+                onClick={handleVerifyCode}
+                className={styles.verifyButton}
+                disabled={!verificationCode}
+              >
+                인증하기
+              </button>
+            </div>
+          )}
+          {verificationError && (
+            <div className={styles.errorMessage}>
+              {verificationError}
             </div>
           )}
         </div>
@@ -320,8 +298,8 @@ const ParentSignupPage = () => {
             required
           >
             <option value="">선택하세요</option>
-            <option value="MALE">남성</option>
-            <option value="FEMALE">여성</option>
+            <option value="Male">남성</option>
+            <option value="Female">여성</option>
           </select>
         </div>
         
@@ -329,14 +307,8 @@ const ParentSignupPage = () => {
           회원가입
         </button>
       </form>
-
-      <EmailVerificationModal
-        isOpen={isVerificationModalOpen}
-        onClose={() => setIsVerificationModalOpen(false)}
-        onVerify={handleVerificationCodeSubmit}
-      />
     </div>
   );
 };
 
-export default ParentSignupPage; 
+export default ParentSignupPage;

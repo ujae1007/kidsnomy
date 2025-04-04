@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './ChildBankProductsPage.module.css';
 import JobCard from '@/components/jobs/JobCard';
 import SearchBar from '@/components/jobs/SearchBar';
@@ -36,6 +37,7 @@ const ChildBankProductsPage: React.FC = () => {
       monthlyPayment: 12000,
     }
   ]);
+  const navigate = useNavigate();
 
   const handleSearchChange = (value: string) => {
     setSearchTerm(value);
@@ -45,8 +47,12 @@ const ChildBankProductsPage: React.FC = () => {
     setSelectedFilter(filter);
   };
 
-  const handleProductClick = (productId: number) => {
-    console.log('상품 선택:', productId);
+  const handleProductClick = (product: BankProduct) => {
+    if (product.type === 'deposit') {
+      navigate(`deposit/${product.id}`);
+    } else {
+      navigate(`saving/${product.id}`);
+    }
   };
 
   const filteredProducts = products.filter(product => {
@@ -95,7 +101,7 @@ const ChildBankProductsPage: React.FC = () => {
             status={product.type === 'deposit' ? '예금' : '적금'}
             title={product.name}
             salary={product.type === 'deposit' ? product.period * 10000 : product.monthlyPayment || 0}
-            onMoreClick={() => handleProductClick(product.id)}
+            onMoreClick={() => handleProductClick(product)}
           >
             <div className={styles.productInfo}>
               <div className={styles.infoRow}>

@@ -3,6 +3,7 @@ package com.backend.kidsnomy.user.controller;
 import com.backend.kidsnomy.jwt.JwtTokenProvider;
 import com.backend.kidsnomy.jwt.dto.LoginResponseDto;
 import com.backend.kidsnomy.jwt.dto.TokenDto;
+import com.backend.kidsnomy.user.dto.ApiResponseDto;
 import com.backend.kidsnomy.user.dto.EmailSendRequestDto;
 import com.backend.kidsnomy.user.dto.EmailVerificationDto;
 import com.backend.kidsnomy.user.dto.LoginRequestDto;
@@ -46,12 +47,15 @@ public class UserController {
 
     // 2. 인증 코드 검증
     @PostMapping("/verification/email")
-    public ResponseEntity<String> verifyEmailCode(@RequestBody EmailVerificationDto dto) {
+    public ResponseEntity<ApiResponseDto> verifyEmailCode(@RequestBody EmailVerificationDto dto) {
         boolean success = userService.verifyCode(dto);
+
         if (success) {
-            return ResponseEntity.ok("이메일 인증이 완료되었습니다.");
+            return ResponseEntity.ok(new ApiResponseDto(true, "이메일 인증이 완료되었습니다."));
         } else {
-            return ResponseEntity.badRequest().body("인증 코드가 일치하지 않습니다.");
+            return ResponseEntity
+                .badRequest()
+                .body(new ApiResponseDto(false, "인증 코드가 일치하지 않습니다."));
         }
     }
 

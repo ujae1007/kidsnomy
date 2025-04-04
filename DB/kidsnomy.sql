@@ -10,7 +10,7 @@ CREATE TABLE `user` (
   `password` VARCHAR(100) NOT NULL,
   `name` VARCHAR(50) NOT NULL,
   `is_parent` BOOLEAN,
-  `userKey` VARCHAR(70),
+  `user_key` VARCHAR(70),
   `age` INT,
   `gender` VARCHAR(10),
   `parent_email` VARCHAR(50)
@@ -45,7 +45,7 @@ CREATE TABLE `group_membership` (
 CREATE TABLE `basic_account` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `user_id` INT NOT NULL,
-  `accountNo` VARCHAR(50) NOT NULL UNIQUE,
+  `account_no` VARCHAR(50) NOT NULL UNIQUE,
   `account_password` INT,
   `balance` DECIMAL(15,2) DEFAULT 0,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -55,23 +55,25 @@ CREATE TABLE `basic_account` (
 -- basic_product 테이블
 CREATE TABLE `basic_product` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
-  `accountTypeUniqueNo` VARCHAR(50) NOT NULL
+  `account_type_unique_no` VARCHAR(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- account_log 테이블
 CREATE TABLE `account_log` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `user_id` INT NOT NULL,
-  `accountNo` VARCHAR(50) NOT NULL,
-  `transaction_name` VARCHAR(70),
-  `transactionUniqueNo` VARCHAR(50) NOT NULL UNIQUE,
-  `transactionDate` TIMESTAMP,
-  `transactionTime` TIMESTAMP,
-  `transactionType` TINYINT,
-  `transactionBalance` DECIMAL(15,2),
-  `transactionAfterBalance` DECIMAL(15,2),
+  `account_no` VARCHAR(50) NOT NULL,
+  `transaction_account_no` VARCHAR(70),
+  `transaction_unique_no` VARCHAR(50) NOT NULL UNIQUE,
+  `transaction_date` TIMESTAMP,
+  `transaction_time` TIMESTAMP,
+  `transaction_type` TINYINT,
+  `transaction_balance` DECIMAL(15,2),
+  `transaction_after_balance` DECIMAL(15,2),
+  `transaction_summary` VARCHAR(255),
+  `transaction_memo` VARCHAR(255),
   FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON DELETE CASCADE,
-  FOREIGN KEY (`accountNo`) REFERENCES `basic_account`(`accountNo`) ON DELETE CASCADE
+  FOREIGN KEY (`account_no`) REFERENCES `basic_account`(`account_no`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- job 테이블
@@ -115,7 +117,7 @@ CREATE TABLE `deposit` (
   `content` TEXT,
   `interest_rate` DECIMAL(5,2),
   `due_date` INT,
-  `productType` TINYINT DEFAULT 0,
+  `product_type` TINYINT DEFAULT 0,
   FOREIGN KEY (`group_id`) REFERENCES `group_info`(`id`) ON DELETE CASCADE,
   FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -131,7 +133,7 @@ CREATE TABLE `savings` (
   `due_date` INT,
   `rate_date` INT,
   `pay_date` INT,
-  `productType` TINYINT DEFAULT 1,
+  `product_type` TINYINT DEFAULT 1,
   FOREIGN KEY (`group_id`) REFERENCES `group_info`(`id`) ON DELETE CASCADE,
   FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -144,7 +146,7 @@ CREATE TABLE `deposit_contract` (
   `product_id` INT NOT NULL,
   `start_day` TIMESTAMP,
   `end_day` TIMESTAMP,
-  `accountNo` VARCHAR(50) NOT NULL UNIQUE,
+  `account_no` VARCHAR(50) NOT NULL UNIQUE,
   `balance` DECIMAL(15,2) DEFAULT 0,
   `total_volume` DECIMAL(15,2),
   FOREIGN KEY (`group_id`) REFERENCES `group_info`(`id`) ON DELETE CASCADE,
@@ -160,7 +162,7 @@ CREATE TABLE `savings_contract` (
   `product_id` INT NOT NULL,
   `start_day` TIMESTAMP,
   `end_day` TIMESTAMP,
-  `accountNo` VARCHAR(50) NOT NULL UNIQUE,
+  `account_no` VARCHAR(50) NOT NULL UNIQUE,
   `balance` DECIMAL(15,2) DEFAULT 0,
   `one_time_volume` DECIMAL(15,2),
   `rate_volume` DECIMAL(15,2) DEFAULT 0,
@@ -173,32 +175,36 @@ CREATE TABLE `savings_contract` (
 CREATE TABLE `deposit_log` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `user_id` INT NOT NULL,
-  `accountNo` VARCHAR(50) NOT NULL,
-  `transactionUniqueNo` VARCHAR(50) NOT NULL UNIQUE,
-  `transactionDate` TIMESTAMP,
-  `transactionTime` TIMESTAMP,
-  `transactionType` BOOLEAN,
-  `transactionBalance` DECIMAL(15,2),
-  `transactionAfterBalance` DECIMAL(15,2),
-  `productType` TINYINT DEFAULT 0,
+  `account_no` VARCHAR(50) NOT NULL,
+  `transaction_unique_no` VARCHAR(50) NOT NULL UNIQUE,
+  `transaction_date` TIMESTAMP,
+  `transaction_time` TIMESTAMP,
+  `transaction_type` BOOLEAN,
+  `transaction_balance` DECIMAL(15,2),
+  `transaction_after_balance` DECIMAL(15,2),
+  `transaction_summary` VARCHAR(255),
+  `transaction_memo` VARCHAR(255),
+  `product_type` TINYINT DEFAULT 0,
   FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON DELETE CASCADE,
-  FOREIGN KEY (`accountNo`) REFERENCES `deposit_contract`(`accountNo`) ON DELETE CASCADE
+  FOREIGN KEY (`account_no`) REFERENCES `deposit_contract`(`account_no`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- savings_log 테이블
 CREATE TABLE `savings_log` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `user_id` INT NOT NULL,
-  `accountNo` VARCHAR(50) NOT NULL,
-  `transactionUniqueNo` VARCHAR(50) NOT NULL UNIQUE,
-  `transactionDate` TIMESTAMP,
-  `transactionTime` TIMESTAMP,
-  `transactionType` BOOLEAN,
-  `transactionBalance` DECIMAL(15,2),
-  `transactionAfterBalance` DECIMAL(15,2),
-  `productType` TINYINT DEFAULT 1,
+  `account_no` VARCHAR(50) NOT NULL,
+  `transaction_unique_no` VARCHAR(50) NOT NULL UNIQUE,
+  `transaction_date` TIMESTAMP,
+  `transaction_time` TIMESTAMP,
+  `transaction_type` BOOLEAN,
+  `transaction_balance` DECIMAL(15,2),
+  `transaction_after_balance` DECIMAL(15,2),
+  `transaction_summary` VARCHAR(255),
+  `transaction_memo` VARCHAR(255),
+  `product_type` TINYINT DEFAULT 1,
   FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON DELETE CASCADE,
-  FOREIGN KEY (`accountNo`) REFERENCES `savings_contract`(`accountNo`) ON DELETE CASCADE
+  FOREIGN KEY (`account_no`) REFERENCES `savings_contract`(`account_no`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- user_refresh_token 테이블

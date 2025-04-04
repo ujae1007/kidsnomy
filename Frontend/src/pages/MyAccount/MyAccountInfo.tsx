@@ -1,49 +1,112 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './MyAccountInfo.module.css';
+import { apiCall } from '@/utils/api';
+
+interface AccountInfo {
+  user_name: string;
+  REC: {
+    accountNo: string;
+    accountBalance: number;
+  };
+}
+
+interface CloseAccountResponse {
+  status: string;
+  accountNo: string;
+  refundAccountNo: string;
+  accountBalance: number;
+}
 
 const MyAccountInfo: React.FC = () => {
   const navigate = useNavigate();
+  const [accountInfo, setAccountInfo] = useState<AccountInfo | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [isDeleting, setIsDeleting] = useState(false);
 
-  const handleDelete = () => {
-    // TODO: 계좌 삭제 로직 구현
-    console.log('계좌 삭제');
-    navigate('/account'); // 삭제 후 계좌 등록 페이지로 이동
+  useEffect(() => {
+    const fetchAccountInfo = async () => {
+      try {
+        const response = await apiCall<AccountInfo>('account/info', {
+          method: 'GET',
+          auth: true
+        });
+        setAccountInfo(response);
+      } catch (error) {
+        console.error('계좌 정보 조회 중 에러 발생:', error);
+        setError('계좌 정보를 불러오는데 실패했습니다.');
+      }
+    };
+
+    fetchAccountInfo();
+  }, []);
+
+  const handleDelete = async () => {
+    if (!accountInfo) return;
+    
+    if (!window.confirm('정말로 계좌를 해지하시겠습니까? 이 작업은 되돌릴 수 없습니다.')) {
+      return;
+    }
+
+    setIsDeleting(true);
+    try {
+      await apiCall<CloseAccountResponse>('account/delete', {
+        method: 'DELETE',
+        auth: true
+      });
+      alert('계좌가 정상적으로 해지되었습니다.');
+      navigate('/account');
+    } catch (error) {
+      console.error('계좌 삭제 중 에러 발생:', error);
+      alert('계좌 해지에 실패했습니다.');
+    } finally {
+      setIsDeleting(false);
+    }
   };
+
+  if (error) {
+    return (
+      <div className={styles.container}>
+        <h1 className={styles.title}>나의 계좌 정보</h1>
+        <div className={styles.errorMessage}>{error}</div>
+      </div>
+    );
+  }
+
+  if (!accountInfo) {
+    return (
+      <div className={styles.container}>
+        <h1 className={styles.title}>나의 계좌 정보</h1>
+        <div className={styles.loadingMessage}>로딩 중...</div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>나의 계좌 정보</h1>
       <div className={styles.content}>
-        {/* 계좌 정보 내용은 추후 구현 */}
         <div className={styles.accountCard}>
           <div className={styles.accountHeader}>
             <h2>계좌 상세</h2>
           </div>
           <div className={styles.accountDetails}>
             <div className={styles.detailItem}>
-              <span className={styles.label}>예금주</span>
-              <span className={styles.value}>홍길동</span>
-            </div>
-            <div className={styles.detailItem}>
               <span className={styles.label}>계좌번호</span>
-              <span className={styles.value}>123-456-789</span>
-            </div>
-            <div className={styles.detailItem}>
-              <span className={styles.label}>은행</span>
-              <span className={styles.value}>키즈노미 은행</span>
+              <span className={styles.value}>{accountInfo.REC.accountNo}</span>
             </div>
             <div className={styles.detailItem}>
               <span className={styles.label}>잔액</span>
-              <span className={styles.value}>50,000원</span>
+              <span className={styles.value}>{accountInfo.REC.accountBalance.toLocaleString()}원</span>
             </div>
           </div>
         </div>
         <button 
           className={styles.deleteButton}
           onClick={handleDelete}
+          disabled={isDeleting}
         >
-          삭제하기
+          {isDeleting ? '삭제 중...' : '삭제하기'}
         </button>
       </div>
     </div>

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './ParentBankProductsPage.module.css';
+import JobCard from '@/components/jobs/JobCard';
+import SearchBar from '@/components/jobs/SearchBar';
+import FilterButtons from '@/components/jobs/FilterButtons';
 
 interface BankProduct {
   id: number;
@@ -9,65 +12,125 @@ interface BankProduct {
   interestRate: number;
   period: number;
   type: 'deposit' | 'saving';
+  monthlyPayment?: number;
 }
 
 const ParentBankProductsPage: React.FC = () => {
   const navigate = useNavigate();
-  // 상태 관리
-  const [products, setProducts] = useState<BankProduct[]>([]);
-  const [selectedType, setSelectedType] = useState<'deposit' | 'saving'>('deposit');
-  
-  // 핸들러 함수들
-  const handleCreateProduct = () => {
-    navigate('/bank/products/create');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedFilter, setSelectedFilter] = useState('all');
+  const [products] = useState<BankProduct[]>([
+    {
+      id: 1,
+      name: '설 세배 용돈 모으기 통장',
+      description: '설날까지 용돈을 모아보아요',
+      interestRate: 10,
+      period: 12,
+      type: 'deposit',
+    },
+    {
+      id: 2,
+      name: '일주일에 3,000원 모으기',
+      description: '매주 조금씩 저축하는 습관을 길러요',
+      interestRate: 10,
+      period: 24,
+      type: 'saving',
+      monthlyPayment: 12000,
+    }
+  ]);
+
+  const handleSearchChange = (value: string) => {
+    setSearchTerm(value);
   };
-  
-  const handleProductClick = (productId: number) => {
-    // 상세 페이지로 이동
-    console.log('상품 클릭:', productId);
+
+  const handleFilterChange = (filter: string) => {
+    setSelectedFilter(filter);
   };
-  
+
+  const handleProductClick = (product: BankProduct) => {
+    if (product.type === 'deposit') {
+      navigate(`deposit/${product.id}`);
+    } else {
+      navigate(`saving/${product.id}`);
+    }
+  };
+
+  const handleCreateClick = () => {
+    navigate('create');
+  };
+
+  const filteredProducts = products.filter(product => {
+    // 검색어 필터링
+    if (searchTerm && !product.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+      return false;
+    }
+
+    // 상품 유형 필터링
+    switch (selectedFilter) {
+      case 'deposit':
+        return product.type === 'deposit';
+      case 'saving':
+        return product.type === 'saving';
+      case 'contracted':
+        // TODO: 계약된 상품 필터링 로직 추가
+        return true;
+      default:
+        return true;
+    }
+  }).sort((a, b) => {
+    // 최신순 정렬
+    if (selectedFilter === 'latest') {
+      return b.id - a.id;
+    }
+    return 0;
+  });
+
   return (
     <div className={styles.container}>
-      {/* 상단 탭 (예금/적금) */}
-      <div className={styles.tabContainer}>
-        <button 
-          className={`${styles.tabButton} ${selectedType === 'deposit' ? styles.active : ''}`}
-          onClick={() => setSelectedType('deposit')}
-        >
-          예금
-        </button>
-        <button 
-          className={`${styles.tabButton} ${selectedType === 'saving' ? styles.active : ''}`}
-          onClick={() => setSelectedType('saving')}
-        >
-          적금
-        </button>
-      </div>
-      
-      {/* 상품 생성 버튼 */}
+      <SearchBar 
+        searchTerm={searchTerm}
+        onSearchChange={handleSearchChange}
+      />
+
       <button 
         className={styles.createButton}
-        onClick={handleCreateProduct}
+        onClick={handleCreateClick}
       >
-        상품 생성
+        은행 상품 만들기
       </button>
       
-      {/* 상품 목록 */}
+      <FilterButtons
+        selectedFilter={selectedFilter}
+        onFilterChange={handleFilterChange}
+        type="products"
+      />
+
       <div className={styles.productList}>
-        {products.map(product => (
-          <div 
-            key={product.id} 
-            className={styles.productCard}
-            onClick={() => handleProductClick(product.id)}
+        {filteredProducts.map(product => (
+          <JobCard
+            key={product.id}
+            status={product.type === 'deposit' ? '예금' : '적금'}
+            title={product.name}
+            salary={product.type === 'deposit' ? product.period * 10000 : product.monthlyPayment || 0}
+            onMoreClick={() => handleProductClick(product)}
           >
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
             <div className={styles.productInfo}>
-              <span>이자율: {product.interestRate}%</span>
-              <span>기간: {product.period}개월</span>
+              <div className={styles.infoRow}>
+                <span className={styles.label}>이자율</span>
+                <span className={styles.value}>{product.interestRate}%</span>
+              </div>
+              <div className={styles.infoRow}>
+                <span className={styles.label}>기간</span>
+                <span className={styles.value}>{product.period}개월</span>
+              </div>
+              {product.type === 'saving' && (
+                <div className={styles.infoRow}>
+                  <span className={styles.label}>월 납입금</span>
+                  <span className={styles.value}>{product.monthlyPayment?.toLocaleString()}원</span>
+                </div>
+              )}
             </div>
-          </div>
+          </JobCard>
         ))}
       </div>
     </div>

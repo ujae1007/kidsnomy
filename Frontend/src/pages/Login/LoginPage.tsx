@@ -43,6 +43,7 @@ const LoginPage: React.FC = () => {
     email: '',
     password: '',
   });
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     // 이미 인증된 사용자는 홈으로 리디렉션
@@ -86,7 +87,7 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.loginForm}>
+      <div className={styles.form}>
         <h1 className={styles.title}>로그인</h1>
         
         {error && <div className={styles.errorMessage}>{error}</div>}
@@ -112,7 +113,7 @@ const LoginPage: React.FC = () => {
               <LockIcon />
             </div>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               value={loginData.password}
               onChange={handleInputChange}
@@ -120,10 +121,16 @@ const LoginPage: React.FC = () => {
               className={styles.input}
               required
             />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className={styles.passwordToggle}
+            >
+              {showPassword ? <EyeSlashIcon /> : <EyeIcon />}
+            </button>
           </div>
           
           <button 
-            type="submit" 
             className={styles.loginButton}
             disabled={loading}
           >
@@ -132,8 +139,8 @@ const LoginPage: React.FC = () => {
         </form>
         
         <div className={styles.signup}>
-          <p>계정이 없으신가요?</p>
-          <button onClick={handleSignupClick} className={styles.signupButton}>회원가입</button>
+          <span className={styles.signupText}>계정이 없으신가요?</span>
+          <button onClick={handleSignupClick} className={styles.signupButton}>회원가입하러가기</button>
         </div>
 
       </div>

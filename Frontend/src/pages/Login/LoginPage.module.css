@@ -27,9 +27,8 @@
 }
 
 .inputGroup {
-  margin-bottom: 24px;
   position: relative;
-  width: 90%;
+  margin-bottom: 16px;
 }
 
 .label {
@@ -82,17 +81,20 @@
 
 .passwordToggle {
   position: absolute;
-  right: 8px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  cursor: pointer;
-  color: #999;
-  font-size: 20px;
   background: none;
   border: none;
   padding: 0;
+  cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.passwordToggle:hover svg path {
+  stroke: #DB9999;
 }
 
 .passwordToggle svg {
@@ -118,32 +120,60 @@
   background-color: #d88a8f;
 }
 
-.signupLink {
-  margin-top: 20px;
+.signup {
+  margin-top: 32px;
   text-align: center;
-  color: #666;
-  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
 
 .signupText {
   color: #666;
+  font-size: 15px;
 }
 
 .signupButton {
-  margin-left: 4px;
   color: #666;
-  text-decoration: underline;
+  border: none;
+  background: none;
+  font-size: 15px;
   cursor: pointer;
+  position: relative;
+  padding: 0;
+}
+
+.signupButton::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background-color: #666;
   transition: all 0.2s ease;
 }
 
 .signupButton:hover {
   color: #E5979C;
-  transform: translateY(-1px);
+}
+
+.signupButton:hover::after {
+  background-color: #E5979C;
+  height: 2px;
 }
 
 .logoIcon {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 32px;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
 } 

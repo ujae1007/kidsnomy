@@ -3,14 +3,17 @@ package com.backend.kidsnomy.common.service;
 import com.backend.kidsnomy.common.exception.AuthenticationException;
 import com.backend.kidsnomy.user.entity.User;
 import com.backend.kidsnomy.user.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class UserKeyService {
 
     private final UserRepository userRepository;
+
+    // 수동 생성자
+    public UserKeyService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     /**
      * 사용자 이메일로 userKey를 조회합니다.

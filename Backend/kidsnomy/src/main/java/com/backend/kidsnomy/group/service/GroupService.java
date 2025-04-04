@@ -1,5 +1,6 @@
 package com.backend.kidsnomy.group.service;
 
+import com.backend.kidsnomy.group.dto.GroupListResponseDto;
 import com.backend.kidsnomy.group.dto.GroupParticipationRequestDto;
 import com.backend.kidsnomy.group.entity.GroupInfo;
 import com.backend.kidsnomy.group.entity.GroupMembership;
@@ -16,6 +17,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.security.SecureRandom;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class GroupService {
@@ -107,6 +110,28 @@ public class GroupService {
     }
     
     // 그룹 탈퇴
+    
+    // 본인이 가입한 그룹 목록 조회
+    @Transactional(readOnly = true)
+    public List<GroupListResponseDto> getMyGroups(HttpServletRequest request) {
+        String token = extractTokenFromRequest(request);
+        String email = jwtTokenProvider.getEmailFromToken(token);
+
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "사용자를 찾을 수 없습니다."));
+
+        List<GroupMembership> memberships = groupMembershipRepository.findByUserId(user.getId());
+
+        return memberships.stream()
+                .map(membership -> {
+                    GroupInfo groupInfo = groupInfoRepository.findById(membership.getGroupId())
+                            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "그룹 정보를 찾을 수 없습니다."));
+                    User owner = userRepository.findById(groupInfo.getOwnerId())
+                            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "그룹장의 정보를 찾을 수 없습니다."));
+                    return new GroupListResponseDto(groupInfo.getId(), groupInfo.getGroupCode(), owner.getName());
+                })
+                .collect(Collectors.toList());
+    }
 
 
 }

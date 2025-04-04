@@ -1,6 +1,22 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './ParentSignupPage.module.css';
+import { apiCall } from '@/utils/api';
+
+// API 응답 타입 정의
+interface VerificationResponse {
+  message: string;
+  success: boolean;
+}
+
+interface SignupResponse {
+  message: string;
+  success: boolean;
+  data?: {
+    accessToken?: string;
+    refreshToken?: string;
+  };
+}
 
 interface EmailVerificationModalProps {
   isOpen: boolean;
@@ -91,32 +107,29 @@ const ParentSignupPage = () => {
       alert('이메일을 입력해주세요.');
       return;
     }
-
+    
+    console.log('부모 회원가입 페이지: 이메일 인증 요청', formData.email);
+    
     try {
-      console.log('부모 회원가입 페이지: 이메일 인증 요청', formData.email);
+      const requestData = { email: formData.email };
+      console.log('요청 데이터:', JSON.stringify(requestData));
       
-      const response = await fetch('api/auth/verification', {
+      const response = await apiCall<VerificationResponse>('auth/verification', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify({
-          email: formData.email,
-        }),
+        body: JSON.stringify(requestData),
       });
+
+      console.log('부모 회원가입 페이지: 이메일 인증 요청 응답', response);
       
-      console.log('부모 회원가입 페이지: 이메일 인증 요청 응답 상태', response.status);
-      
-      if (response.ok) {
-        setIsVerificationModalOpen(true);
-        console.log('부모 회원가입 페이지: 인증 코드 발송 성공');
-      } else {
-        console.log('부모 회원가입 페이지: 인증 코드 발송 실패');
-        alert('인증 코드 발송에 실패했습니다. 다시 시도해주세요.');
-      }
+      setIsVerificationModalOpen(true);
+      alert('인증 코드가 이메일로 전송되었습니다.');
     } catch (error) {
-      console.error('부모 회원가입 페이지: 인증 코드 발송 에러', error);
-      alert('인증 코드 발송 중 오류가 발생했습니다.');
+      console.error('부모 회원가입 페이지: 이메일 인증 요청 실패', error);
+      alert((error as Error).message);
     }
   };
 
@@ -124,10 +137,11 @@ const ParentSignupPage = () => {
     try {
       console.log('부모 회원가입 페이지: 인증 코드 확인 시도', code);
       
-      const response = await fetch('api/auth/verification/email', {
+      const response = await apiCall<VerificationResponse>('auth/verification/email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify({
           email: formData.email,
@@ -135,18 +149,15 @@ const ParentSignupPage = () => {
         }),
       });
       
-      console.log('부모 회원가입 페이지: 인증 코드 확인 응답 상태', response.status);
+      console.log('부모 회원가입 페이지: 인증 코드 확인 응답', response);
       
-      const data = await response.text();
-      
-      if (response.ok) {
+      if (response.success) {
         console.log('부모 회원가입 페이지: 이메일 인증 성공');
         setIsEmailVerified(true);
         setVerificationMessage('이메일 인증이 완료되었습니다.');
         setVerificationStatus('success');
         setIsVerificationModalOpen(false);
       } else {
-        console.log('부모 회원가입 페이지: 이메일 인증 실패', data);
         setVerificationMessage('인증 코드가 일치하지 않습니다.');
         setVerificationStatus('error');
       }
@@ -185,25 +196,26 @@ const ParentSignupPage = () => {
         parent_email: null,
       };
       
-      const response = await fetch('api/auth/signup/parent', {
+      const response = await apiCall<SignupResponse>('auth/signup/parent', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(signupData),
       });
-      
-      console.log('부모 회원가입 페이지: 회원가입 응답 상태', response.status);
-      
-      if (response.ok) {
+
+      console.log('부모 회원가입 페이지: 회원가입 응답', response);
+
+      if (response.success) {
         alert('회원가입이 완료되었습니다.');
         navigate('/login');
       } else {
-        alert('회원가입에 실패했습니다.');
+        alert(response.message || '회원가입에 실패했습니다.');
       }
     } catch (error) {
-      console.error('부모 회원가입 페이지: 회원가입 에러', error);
-      alert('회원가입 중 오류가 발생했습니다.');
+      console.error('부모 회원가입 페이지: 회원가입 실패', error);
+      alert('회원가입 처리 중 오류가 발생했습니다.');
     }
   };
 

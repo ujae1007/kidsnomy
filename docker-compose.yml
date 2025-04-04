@@ -23,10 +23,16 @@ services:
     volumes:
       # - ./Frontend/test/my-test-app:/app # 코드 변경 사항을 컨테이너 내부에 즉시 반영
       - /app/node_modules # 로컬 node_modules와 분리하여 충돌 방지
+<<<<<<< HEAD
       - /home/ubuntu/kidsnomy/certs:/etc/letsencrypt:ro          # 인증서 및 키
       # - ./Frontend/build:/app/build:rw
     depends_on:
       - java-app
+=======
+      - ./Frontend/build:/app/build:rw
+    environment:
+      NODE_OPTIONS: '--max-old-space-size=8192'
+>>>>>>> develop
 
   java-app:
     build:

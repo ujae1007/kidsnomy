@@ -17,58 +17,12 @@ interface Schedule {
 }
 
 interface WeeklyCalendarProps {
-  // 나중에 일정 데이터를 받아올 props 추가 예정
+  contracts: Schedule[];
 }
 
-const WeeklyCalendar: React.FC<WeeklyCalendarProps> = () => {
+const WeeklyCalendar: React.FC<WeeklyCalendarProps> = ({ contracts }) => {
   const days = ['월', '화', '수', '목', '금', '토', '일'];
   
-  // 더미 데이터
-  const dummySchedules: Schedule[] = [
-    {
-      user_id: 1,
-      user_name: "홍길동",
-      start_day: new Date().toISOString(),
-      end_day: new Date(new Date().setDate(new Date().getDate() + 2)).toISOString(),
-      title: "문안인사드리기",
-      content: "행사 포스터 제작",
-      salary: 50000,
-      is_permanent: false,
-      reward_text: "추가 보너스 지급 가능",
-      status: 2,
-      contract_id: 2,
-      contractor_name: "김철수"
-    },
-    {
-      user_id: 2,
-      user_name: "이영희",
-      start_day: new Date(new Date().setDate(new Date().getDate() + 1)).toISOString(),
-      end_day: new Date(new Date().setDate(new Date().getDate() + 3)).toISOString(),
-      title: "백덤블링 하기",
-      content: "버그 수정 및 기능 개선",
-      salary: 80000,
-      is_permanent: true,
-      reward_text: "장기 계약 가능",
-      status: 2,
-      contract_id: 3,
-      contractor_name: "박지민"
-    },
-    {
-      user_id: 3,
-      user_name: "김민수",
-      start_day: new Date().toISOString(),
-      end_day: new Date().toISOString(),
-      title: "설거지",
-      content: "신규 브랜드 로고 제작",
-      salary: 30000,
-      is_permanent: false,
-      reward_text: "",
-      status: 3,
-      contract_id: 4,
-      contractor_name: "최수진"
-    }
-  ];
-
   // 일정의 시작 요일 인덱스 구하기
   const getStartDayIndex = (schedule: Schedule) => {
     const startDate = new Date(schedule.start_day);
@@ -112,7 +66,7 @@ const WeeklyCalendar: React.FC<WeeklyCalendarProps> = () => {
           
           {/* 일정 영역 */}
           <div className={styles.scheduleRow}>
-            {dummySchedules
+            {contracts
               .filter(schedule => schedule.status > 1)
               .filter(isScheduleInCurrentWeek)
               .map(schedule => {

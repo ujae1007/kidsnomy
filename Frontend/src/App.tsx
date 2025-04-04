@@ -18,6 +18,10 @@ import AccountDetailPage from './pages/AccountDetail/AccountDetailPage';
 import ParentJobListPage from '@/pages/ParentJobList/ParentJobListPage';
 import ParentJobCreatePage from '@/pages/ParentJobCreate/ParentJobCreatePage';
 import JobDetailPage from '@/pages/JobDetail/JobDetailPage';
+import ParentBankProductsPage from '@/pages/ParentBankProducts/ParentBankProductsPage';
+import CreateBankProductsPage from '@/pages/CreateBankProducts/CreateBankProductsPage';
+import ChildBankProductsPage from '@/pages/ChildBankProducts/ChildBankProductsPage';
+import ChildJobListPage from '@/pages/ChildJobList/ChildJobListPage';
 
 
 const SendMoneyCompletePage = () => {
@@ -48,16 +52,22 @@ const App: React.FC = () => {
           <Route path="/home" element={<HomePage />} />
           <Route path="/work" element={<div>Coming Soon: Work Page</div>} />
           <Route path="/bank" element={<div>Coming Soon: Bank Page</div>} />
+          <Route path="/bank/products" element={<ParentBankProductsPage />} />
+          <Route path="/bank/products/create" element={<CreateBankProductsPage />} />
+          <Route path="/child/bank/products" element={<ChildBankProductsPage />} />
           <Route path="/group" element={<GroupPage />} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="/account/send" element={<SendMoneyPage />} />
           <Route path="/myaccount" element={<MyAccountInfo />} />
           <Route path="/account/detail" element={<AccountDetailPage />} />
-          <Route path="/account/send/complete" element={<SendMoneyCompletePage />} />
           <Route path="/parent/jobs" element={<ParentJobListPage />} />
           <Route path="/parent/jobs/create" element={<ParentJobCreatePage />} />
+          <Route path="/child/jobs" element={<ChildJobListPage />} />
           <Route path="/jobs/:jobId" element={<JobDetailPage />} />
         </Route>
+        
+        {/* Result pages - without layout */}
+        <Route path="/account/send/complete" element={<SendMoneyCompletePage />} />
       </Routes>
     </Router>
   );

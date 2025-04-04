@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
+import JobInputField from '@/components/jobs/JobInputField';
+import ChatbotButton from '@/components/jobs/ChatbotButton';
+import styles from './ParentJobCreatePage.module.css';
 
 interface JobCreateData {
   groupId: number;
@@ -19,7 +22,7 @@ const ParentJobCreatePage: React.FC = () => {
   const { accessToken, isAuthenticated, isParent } = useSelector((state: RootState) => state.auth);
   
   const [formData, setFormData] = useState<JobCreateData>({
-    groupId: 1, // 임시 그룹 ID
+    groupId: 1,
     title: '',
     content: '',
     salary: 0,
@@ -34,20 +37,6 @@ const ParentJobCreatePage: React.FC = () => {
   
   useEffect(() => {
     console.log('📝 일자리 생성 페이지 마운트');
-    
-    // 권한 체크
-    if (!isAuthenticated) {
-      console.log('❌ 인증되지 않은 사용자');
-      navigate('/login');
-      return;
-    }
-    
-    if (!isParent) {
-      console.log('❌ 부모 계정이 아님');
-      setError('부모 계정만 접근할 수 있습니다.');
-      return;
-    }
-    
     return () => {
       console.log('📝 일자리 생성 페이지 언마운트');
     };
@@ -73,20 +62,16 @@ const ParentJobCreatePage: React.FC = () => {
     console.log('📝 일자리 생성 시도:', formData);
     
     try {
-      const response = await fetch('https://j12b207.p.ssafy.io/api/work/create', {
+      const response = await fetch('/api/work/create', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
       
-      console.log(`🔄 일자리 생성 응답 상태: ${response.status}`);
-      
       if (!response.ok) {
         const errorText = await response.text();
-        console.error('❌ 일자리 생성 실패:', errorText);
         throw new Error(errorText || '일자리 생성에 실패했습니다.');
       }
       
@@ -101,104 +86,81 @@ const ParentJobCreatePage: React.FC = () => {
   };
   
   return (
-    <div>
-      <h1>일자리 만들기</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>일자리 만들기</h1>
       
-      {error && <div style={{ color: 'red' }}>{error}</div>}
+      {error && <div className={styles.error}>{error}</div>}
       
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            제목
-            <input
-              type="text"
-              name="title"
-              value={formData.title}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-        </div>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <JobInputField
+          label="제목"
+          name="title"
+          value={formData.title}
+          onChange={handleInputChange}
+          required
+        />
         
-        <div>
-          <label>
-            상세내용
-            <textarea
-              name="content"
-              value={formData.content}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-        </div>
+        <JobInputField
+          label="상세내용"
+          name="content"
+          value={formData.content}
+          type="textarea"
+          onChange={handleInputChange}
+          required
+        />
         
-        <div>
-          <label>
-            급여
-            <input
-              type="number"
-              name="salary"
-              value={formData.salary}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-        </div>
+        <JobInputField
+          label="급여"
+          name="salary"
+          value={formData.salary}
+          type="number"
+          onChange={handleInputChange}
+          required
+        />
         
-        <div>
-          <label>
-            추가 보상
-            <input
-              type="text"
-              name="rewardText"
-              value={formData.rewardText}
-              onChange={handleInputChange}
-            />
-          </label>
-        </div>
+        <JobInputField
+          label="루틴 여부"
+          name="isPermanent"
+          value={formData.isPermanent ? 'true' : 'false'}
+          type="checkbox"
+          onChange={handleInputChange}
+        />
         
-        <div>
-          <label>
-            루틴 여부
-            <input
-              type="checkbox"
-              name="isPermanent"
-              checked={formData.isPermanent}
-              onChange={handleInputChange}
-            />
-          </label>
-        </div>
+        <JobInputField
+          label="시작일"
+          name="startAt"
+          value={formData.startAt}
+          type="date"
+          onChange={handleInputChange}
+          required
+        />
         
-        <div>
-          <label>
-            시작일
-            <input
-              type="date"
-              name="startAt"
-              value={formData.startAt}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-        </div>
+        <JobInputField
+          label="종료일"
+          name="endAt"
+          value={formData.endAt}
+          type="date"
+          onChange={handleInputChange}
+          required
+        />
+
+        <JobInputField
+          label="추가 보상 (선택사항)"
+          name="rewardText"
+          value={formData.rewardText || ''}
+          onChange={handleInputChange}
+        />
         
-        <div>
-          <label>
-            종료일
-            <input
-              type="date"
-              name="endAt"
-              value={formData.endAt}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-        </div>
-        
-        <button type="submit" disabled={loading}>
+        <button 
+          type="submit" 
+          disabled={loading}
+          className={styles.submitButton}
+        >
           {loading ? '생성 중...' : '만들기'}
         </button>
       </form>
+
+      <ChatbotButton />
     </div>
   );
 };

@@ -10,7 +10,10 @@ from collections import defaultdict
 
 from classifiaction import CategoryClassifier
 
+
 load_dotenv()
+
+BASE_PATH = os.path.dirname(os.path.realpath(__file__))
 
 CATEGORIES = ['교육', '의료', '취미', '식비', '카페/간식', '쇼핑', '문구', '미용', '문화', '도서', '생활', '교통']
 
@@ -33,73 +36,134 @@ classifier = CategoryClassifier()
     }
 }
 
+{
+	"weekExpense":{
+			"week1":(int),
+			"week2":(int),
+			"week3":(int),
+			"week4":(int),
+			"week5":(int),
+	},
+	"userAverageExpense":{
+			"myExpense":(int),               
+			"averageExpense":(int)
+	},
+	"totalExpense":{
+	     "교육":(int),
+	     "의료":(int),
+	     "취미":(int),
+	     "식비":(int),
+	     "카페/간식":(int),
+	     "쇼핑":(int),
+	     "문구":(int),
+	     "미용":(int),
+	     "문화":(int),
+	     "도서":(int),
+	     "생활":(int),
+	     "교통":(int)
+	  }
+}
+
 class ExpenseStatics:
-    def __init__(self, save_path):
+    def __init__(self, weekly_transactions: Dict[str, List[Dict]], save_path: str=""):
         if save_path:
-            full_save_path = os.path.join(BASE_PATH, save_path + ".json")
-
-            # 입력한 저장 파일 경로가 있으면 불러오기
-            if os.path.exists(full_save_path):
-                with open(full_save_path, 'r', encoding='UTF-8') as load_file:
-                    category_map = json.load(load_file)
-                print("카테고리 파일을 불러왔습니다.")
-        pass
-    
-    def convert_category(self):
-        pass
-
-    def week_category_expense(self, weekly_transactions: Dict[str, List[Dict]]):
-        """
-        카테고리별 총 소비액 계산하는 함수
-        input: data[json] => store->상호명, address->가게주소, price->지출액, category->카카오맵카테고리, predicted_category->재분류된 카테고리
-        output: res[json] => category->카테고리 expense->총소비액
-        """
-        res = []
-        total_data = defaultdict(int)
-
+            self.full_save_path = os.path.join(BASE_PATH, save_path + ".json")
+        
+        self.weekly_transactions = weekly_transactions
+        self.week_stores_data = defaultdict(list)
         for week, transactions in weekly_transactions.items():
             for transaction in transactions:
-                transaction["transactionBalance"]
-                transaction["transactionSummary"]
+                expense = transaction["transactionBalance"]
+                store, address = transaction["transactionSummary"].split(',')
+                self.week_stores_data[week].append(((store, address), expense))
 
 
-        for item in range(len(data)):
-            total_data[data[item]['predicted_category']] += data[item]['price']
+    def category_expense(self):
+        """
+        카테고리별 총 소비액 계산하는 함수
+        input: data[json] => store->상호명, address->가게주소, expense->지출액, category->카카오맵카테고리, predicted_category->재분류된 카테고리
+        output: res[json] => category->카테고리 expense->총소비액
+        """
 
-        for category in total_data:
-            res.append({'category':category, 'expense':total_data[category]})
+        week_expense = [0] * 5
+        category_total_expense = defaultdict(int)
 
-        return res
+        for i, (week, stores_data_list) in enumerate(self.week_stores_data.items()):
+            sum_expense = 0
+            for stores_data, expense in stores_data_list:
+                # 5주차(이번주)만 카테고리 재분류
+                if week == "week5":
+                    print(stores_data)
+                    new_category = classifier.get_category([stores_data])
+                    for _, new_cate in new_category.items():
+                        category_total_expense[new_cate] += expense
+                sum_expense += expense
+            week_expense[i] = sum_expense
 
-    def total_week_expense():
-        pass
+        return week_expense, category_total_expense
 
-
-    # 통계 자료 -> 5주차 합계
-    # 이번주 카테고리별 합계
+    
 
 if __name__ == "__main__":
-    res1 = category_expense()
-    print(res1)
+    from pprint import pprint
 
+    test_transactions = {
+    "week1": [
+        {
+            "transactionDate": "20250330",
+            "transactionType": 1,
+            "transactionBalance": 250000.00,
+            "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1"
+        },
+        {
+            "transactionDate": "20250330",
+            "transactionType": 1,
+            "transactionBalance": 250000.00,
+            "transactionSummary": "더벙커게임존, 대전 유성구 대학로 34"
+        }
+    ],
+    "week2": [
+        {
+            "transactionDate": "20250330",
+            "transactionType": 1,
+            "transactionBalance": 250000.00,
+            "transactionSummary": "설빙 유성온천점, 대전 유성구 대학로 14"
+        },
+        {
+            "transactionDate": "20250330",
+            "transactionType": 1,
+            "transactionBalance": 250000.00,
+            "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1"
+        }
+    ],
+    "week3": [],
+    "week4": [
+      {
+        "transactionDate": "20250330",
+        "transactionType": 1,
+        "transactionBalance": 250000.00,
+        "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1"
+      },
+    ],
+    "week5": [
+        {
+            "transactionDate": "20250330",
+            "transactionType": 1,
+            "transactionBalance": 250000.00,
+            "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1"
+        },
+        {
+            "transactionDate": "20250330",
+            "transactionType": 1,
+            "transactionBalance": 250000.00,
+            "transactionSummary": "더벙커게임존, 대전 유성구 대학로 34"
+        }
+    ]
+    }
+    statics = ExpenseStatics(test_transactions)
 
-
-
-def category_expense():
-    """
-    카테고리별 총 지출금액 계산하는 통합 함수
-    input: 전처리된 Account_log DB 데이터 -> db_data_preprocessing 함수 결과물
-
-    output: 총 지출 금액 데이터
-    """
-
-    data = []
-    place_name = "왕가탕후루 충장로점"
-    road_address_name = "광주 동구 충장로3가 41-1"
-    price = 3500
-    searched_category = search_kakao_map(place_name, road_address_name)
-    predicted_category = category_classification(searched_category)
-    data.append({'store': place_name, 'address': road_address_name, 'price': price, 'category': searched_category,
-                'predicted_category': predicted_category})
-    res = total_expense(data)
-    return res
+    week_expense, category_total_expense = statics.category_expense()
+    print("week_expense")
+    pprint(week_expense)
+    print("category_total")
+    pprint(category_total_expense)

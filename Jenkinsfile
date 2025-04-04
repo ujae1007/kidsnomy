@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clean Workspace') {
             steps {
-                deleteDir()
+                cleanWs()
             }
         }
 

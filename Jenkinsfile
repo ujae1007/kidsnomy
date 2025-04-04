@@ -18,6 +18,23 @@ pipeline {
                                                url: 'https://lab.ssafy.com/s12-fintech-finance-sub1/S12P21B207.git']]])
             }
         }
+        
+        stage('Copy Env Files') {
+            steps {
+                withCredentials([
+                    file(credentialsId: 'env-rag-report', variable: 'ENV_RAG'),
+                    file(credentialsId: 'env-java-application-properties', variable: 'ENV_JAVA')
+                ]) {
+                    sh '''
+                        echo "📦 Copying env-rag-report to project root..."
+                        cp "$ENV_RAG" "$WORKSPACE/.env"
+
+                        echo "📦 Copying application-env.properties to Java resources..."
+                        cp "$ENV_JAVA" "$WORKSPACE/S12P21B207/Backend/kidsnomy/src/main/resources/application-env.properties"
+                    '''
+                }
+            }
+        }
 
         stage('Stop Existing Containers') {
             steps {

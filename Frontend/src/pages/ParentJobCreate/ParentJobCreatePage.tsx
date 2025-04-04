@@ -22,14 +22,14 @@ const ParentJobCreatePage: React.FC = () => {
   const { accessToken, isAuthenticated, isParent } = useSelector((state: RootState) => state.auth);
   
   const [formData, setFormData] = useState<JobCreateData>({
-    groupId: 1,
     title: '',
     content: '',
     salary: 0,
     rewardText: '',
-    isPermanent: false,
     startAt: '',
-    endAt: ''
+    endAt: '',
+    isPermanent: false,
+    groupId: 1
   });
   
   const [error, setError] = useState<string | null>(null);
@@ -43,15 +43,21 @@ const ParentJobCreatePage: React.FC = () => {
   }, [isAuthenticated, isParent, navigate]);
   
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    console.log('📝 입력 필드 변경:', { name, value });
+    const { name, value } = e.target;
     
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === 'number' ? Number(value) : 
-              type === 'checkbox' ? (e.target as HTMLInputElement).checked : 
-              value
-    }));
+    if (name === 'salary') {
+      // 숫자만 입력 가능하도록
+      const numericValue = value.replace(/[^0-9]/g, '');
+      setFormData(prev => ({
+        ...prev,
+        [name]: numericValue ? parseInt(numericValue) : 0
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
   };
   
   const handleSubmit = async (e: React.FormEvent) => {
@@ -114,16 +120,16 @@ const ParentJobCreatePage: React.FC = () => {
           label="급여"
           name="salary"
           value={formData.salary}
-          type="number"
+          type="text"
+          inputMode="numeric"
           onChange={handleInputChange}
           required
         />
         
         <JobInputField
-          label="루틴 여부"
-          name="isPermanent"
-          value={formData.isPermanent ? 'true' : 'false'}
-          type="checkbox"
+          label="추가 보상 (선택사항)"
+          name="rewardText"
+          value={formData.rewardText || ''}
           onChange={handleInputChange}
         />
         
@@ -145,12 +151,20 @@ const ParentJobCreatePage: React.FC = () => {
           required
         />
 
-        <JobInputField
-          label="추가 보상 (선택사항)"
-          name="rewardText"
-          value={formData.rewardText || ''}
-          onChange={handleInputChange}
-        />
+        <div className={styles.formGroup}>
+          <label>
+            <input
+              type="checkbox"
+              name="isPermanent"
+              checked={formData.isPermanent}
+              onChange={(e) => setFormData(prev => ({
+                ...prev,
+                isPermanent: e.target.checked
+              }))}
+            />
+            상시 일자리
+          </label>
+        </div>
         
         <button 
           type="submit" 

@@ -62,7 +62,15 @@ const AccountPage: React.FC = () => {
   };
 
   const handleResultConfirm = () => {
-    navigate('/home');
+    if (isSuccess) {
+      navigate('/home');
+    } else {
+      setShowResult(false);
+      setFormData({
+        accountPassword: '',
+        confirmAccountPassword: ''
+      });
+    }
   };
 
   if (showResult) {
@@ -70,7 +78,7 @@ const AccountPage: React.FC = () => {
       <ResultPage
         title={isSuccess ? RESULT_MESSAGES.REGISTER_PRODUCT.title : '계좌 등록 실패'}
         description={isSuccess ? RESULT_MESSAGES.REGISTER_PRODUCT.description : errorMessage}
-        buttonText={RESULT_MESSAGES.REGISTER_PRODUCT.buttonText}
+        buttonText={isSuccess ? '홈으로 가기' : '다시 시도하기'}
         onButtonClick={handleResultConfirm}
       />
     );

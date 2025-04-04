@@ -10,10 +10,10 @@ public class BasicAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Column(name = "user_id", nullable = false)
-    private Integer userId;
+    private Long userId;
 
     @Column(name = "account_no", nullable = false, unique = true)
     private String accountNo;
@@ -32,7 +32,7 @@ public class BasicAccount {
     }
 
     // 전체 필드 생성자
-    public BasicAccount(Integer id, Integer userId, String accountNo, Integer accountPassword,
+    public BasicAccount(Long id, Long userId, String accountNo, Integer accountPassword,
                         BigDecimal balance, LocalDateTime createdAt) {
         this.id = id;
         this.userId = userId;
@@ -48,19 +48,19 @@ public class BasicAccount {
     }
 
     // Getter / Setter
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 

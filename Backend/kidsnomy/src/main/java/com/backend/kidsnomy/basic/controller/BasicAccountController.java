@@ -31,7 +31,7 @@ public class BasicAccountController {
     }
 
     // 계좌 조회 API
-    @GetMapping("/check")
+    @PostMapping("/check")
     public ResponseEntity<AccountCheckResponseDto> retrieveAccount(
             HttpServletRequest request,
             @Valid @RequestBody AccountCheckRequestDto requestDto) {

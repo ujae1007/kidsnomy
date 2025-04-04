@@ -58,15 +58,19 @@ CREATE TABLE `basic_product` (
   `account_type_unique_no` VARCHAR(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- 기본 상품 정보 삽입
+INSERT INTO `basic_product` (`account_type_unique_no`)
+VALUES ('999-1-ac6833c1ba1542');
+
 -- account_log 테이블
 CREATE TABLE `account_log` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `user_id` INT NOT NULL,
   `account_no` VARCHAR(50) NOT NULL,
-  `transaction_name` VARCHAR(70),
+  `transaction_account_no` VARCHAR(70),
   `transaction_unique_no` VARCHAR(50) NOT NULL UNIQUE,
-  `transaction_date` TIMESTAMP,
-  `transaction_time` TIMESTAMP,
+  `transaction_date` VARCHAR(20),
+  `transaction_time` VARCHAR(20),
   `transaction_type` TINYINT,
   `transaction_balance` DECIMAL(15,2),
   `transaction_after_balance` DECIMAL(15,2),
@@ -177,8 +181,8 @@ CREATE TABLE `deposit_log` (
   `user_id` INT NOT NULL,
   `account_no` VARCHAR(50) NOT NULL,
   `transaction_unique_no` VARCHAR(50) NOT NULL UNIQUE,
-  `transaction_date` TIMESTAMP,
-  `transaction_time` TIMESTAMP,
+  `transaction_date` VARCHAR(20),
+  `transaction_time` VARCHAR(20),
   `transaction_type` BOOLEAN,
   `transaction_balance` DECIMAL(15,2),
   `transaction_after_balance` DECIMAL(15,2),
@@ -195,8 +199,8 @@ CREATE TABLE `savings_log` (
   `user_id` INT NOT NULL,
   `account_no` VARCHAR(50) NOT NULL,
   `transaction_unique_no` VARCHAR(50) NOT NULL UNIQUE,
-  `transaction_date` TIMESTAMP,
-  `transaction_time` TIMESTAMP,
+  `transaction_date` VARCHAR(20),
+  `transaction_time` VARCHAR(20),
   `transaction_type` BOOLEAN,
   `transaction_balance` DECIMAL(15,2),
   `transaction_after_balance` DECIMAL(15,2),

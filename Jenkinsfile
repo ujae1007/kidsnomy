@@ -18,7 +18,7 @@ pipeline {
                                                url: 'https://lab.ssafy.com/s12-fintech-finance-sub1/S12P21B207.git']]])
             }
         }
-        
+
         stage('Copy Env Files') {
             steps {
                 withCredentials([
@@ -30,7 +30,7 @@ pipeline {
                         cp "$ENV_RAG" "$WORKSPACE/.env"
 
                         echo "📦 Copying application-env.properties to Java resources..."
-                        cp "$ENV_JAVA" "$WORKSPACE/S12P21B207/Backend/kidsnomy/src/main/resources/application-env.properties"
+                        cp "$ENV_JAVA" "$WORKSPACE/Backend/kidsnomy/src/main/resources/application-env.properties"
                     '''
                 }
             }

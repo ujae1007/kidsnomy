@@ -1,0 +1,204 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  margin-bottom: 80px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.formGroup label {
+  font-weight: 500;
+  color: #333;
+}
+
+.formGroup .value {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #F5F5F5;
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.buttonWrapper {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contractButton,
+.deleteButton {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contractButton {
+  background-color: #E08585;
+  color: white;
+}
+
+.contractButton:hover {
+  background-color: #D07575;
+}
+
+.deleteButton {
+  background-color: #E08585;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #D07575;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+
+  .content {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .formGroup {
+    width: 100%;
+  }
+
+  .formGroup .value {
+    width: 100%;
+  }
+
+  .contractButton,
+  .deleteButton {
+    width: 100%;
+  }
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.description {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.infoCard, .featuresCard, .benefitsCard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.infoCard h2, .featuresCard h2, .benefitsCard h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.value {
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.featuresList, .benefitsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.featuresList li, .benefitsList li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.featuresList li::before, .benefitsList li::before {
+  content: '•';
+  position: absolute;
+  left: 0.5rem;
+  color: #E8A9A9;
+}
+
+@media (min-width: 768px) {
+  .infoSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .infoCard {
+    grid-column: 1 / -1;
+  }
+
+  .actionSection {
+    position: static;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 2rem;
+  }
+} 

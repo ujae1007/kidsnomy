@@ -77,6 +77,7 @@ const ParentJobListPage: React.FC = () => {
   };
   
   const handleJobClick = (jobId: number) => {
+    console.log(`🔍 일자리 상세 보기 이동 (jobId: ${jobId})`);
     navigate(`/jobs/${jobId}`);
   };
   

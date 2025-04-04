@@ -1,16 +1,24 @@
 /* 스타일 초기화 */
 .container {
-  padding: 1.5rem 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  min-height: 100vh;
 }
 
 .header {
-  margin-bottom: 2rem;
+  margin-bottom: 24px;
 }
 
 .title {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #333333;
 }
 
 .status {
@@ -23,26 +31,33 @@
 }
 
 .infoSection {
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .infoRow {
   display: flex;
-  padding: 1rem;
-  background-color: #F5F2F2;
-  border-radius: 8px;
-  margin-bottom: 0.5rem;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .label {
-  flex: 1;
-  font-weight: 500;
-  color: #333;
+  font-size: 14px;
+  color: #666666;
 }
 
 .value {
-  flex: 2;
-  color: #333;
+  font-size: 16px;
+  color: #333333;
+}
+
+.dateInput {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #333333;
+  padding: 0;
 }
 
 .contentSection {
@@ -56,29 +71,110 @@
 }
 
 .content {
-  padding: 1rem;
-  background-color: #F5F2F2;
-  border-radius: 8px;
-  white-space: pre-line;
-  line-height: 1.5;
-}
-
-.buttonContainer {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  margin-bottom: 80px;
+  font-size: 16px;
+  color: #333333;
+  line-height: 1.5;
+  white-space: pre-wrap;
 }
 
-.buttonContainer button {
-  padding: 0.75rem 2rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  background-color: #E08585;
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.formGroup label {
+  font-weight: 500;
   color: #333;
 }
 
-.buttonContainer button:hover {
-  background-color: #d67373;
+.formGroup .value {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #F5F5F5;
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.buttonWrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background-color: #E8A5A5;
+  color: white;
+}
+
+.button:hover {
+  background-color: #D07575;
+}
+
+.secondaryButton {
+  background-color: #F5F5F5;
+  color: #666666;
+}
+
+.secondaryButton:hover {
+  background-color: #EEEEEE;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666666;
+}
+
+.error {
+  color: #E8A5A5;
+  text-align: center;
+  padding: 20px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+
+  .content {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .formGroup {
+    width: 100%;
+  }
+
+  .formGroup .value {
+    width: 100%;
+  }
+
+  .buttonWrapper {
+    width: 100%;
+    padding: 0 1rem;
+  }
 } 

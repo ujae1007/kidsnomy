@@ -62,10 +62,11 @@ const ParentJobCreatePage: React.FC = () => {
     console.log('📝 일자리 생성 시도:', formData);
     
     try {
-      const response = await fetch('/api/work/create', {
+      const response = await fetch('http://localhost:8080/api/work/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`
         },
         body: JSON.stringify(formData),
       });

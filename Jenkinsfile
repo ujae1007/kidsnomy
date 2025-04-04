@@ -26,10 +26,16 @@ pipeline {
                     file(credentialsId: 'env-java-application-properties', variable: 'ENV_JAVA')
                 ]) {
                     sh '''
-                        echo "📦 Copying env-rag-report to project root..."
-                        cp "$ENV_RAG" "$WORKSPACE/.env"
+                        echo "📦 Setting permissions for existing env files..."
+                        chmod +w "$WORKSPACE/.env" || true
+                        chmod +w "$WORKSPACE/Backend/kidsnomy/src/main/resources/application-env.properties" || true
 
-                        echo "📦 Copying application-env.properties to Java resources..."
+                        echo "🗑️ Removing old env files..."
+                        rm -f "$WORKSPACE/.env"
+                        rm -f "$WORKSPACE/Backend/kidsnomy/src/main/resources/application-env.properties"
+
+                        echo "📦 Copying new env files..."
+                        cp "$ENV_RAG" "$WORKSPACE/.env"
                         cp "$ENV_JAVA" "$WORKSPACE/Backend/kidsnomy/src/main/resources/application-env.properties"
                     '''
                 }

@@ -9,6 +9,7 @@ import com.backend.kidsnomy.basic.service.BasicAccountService;
 import com.backend.kidsnomy.jwt.JwtTokenProvider;
 import com.backend.kidsnomy.report.dto.ReportRequestDto;
 import com.backend.kidsnomy.report.dto.TransactionSummaryDto;
+import com.backend.kidsnomy.user.entity.User;
 import com.backend.kidsnomy.user.repository.UserRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,6 +19,8 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -48,23 +51,23 @@ public class ReportService {
         this.basicAccountService = basicAccountService;
         this.restTemplate = restTemplate;
     }
-
-    public void sendWeeklyTransactionReport(HttpServletRequest request) {
-        // 1. 사용자 이메일 및 계좌 번호 조회
+    
+    // 리포트 생성
+    public Map<String, Object> sendWeeklyTransactionReport(HttpServletRequest request) {
         String token = jwtTokenProvider.resolveAccessToken(request);
         String email = jwtTokenProvider.getEmailFromToken(token);
-        Long userId = userRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("사용자를 찾을 수 없습니다."))
-                .getId();
+
+        var user = userRepository.findByEmail(email)
+            .orElseThrow(() -> new RuntimeException("사용자를 찾을 수 없습니다."));
+
+        Long userId = user.getId();
         List<BasicAccount> accounts = basicAccountRepository.findByUserId(userId);
-        if (accounts.isEmpty()) {
-            throw new RuntimeException("사용자 계좌가 없습니다.");
-        }
+        if (accounts.isEmpty()) throw new RuntimeException("사용자 계좌가 없습니다.");
+
         String accountNo = accounts.get(0).getAccountNo();
 
-     // ✅ 2. 외부 API 호출 (기존 코드 대신 아래 코드 사용)
         LocalDate today = LocalDate.now();
-        LocalDate startDate = today.minusWeeks(4); // 5주치 시작일
+        LocalDate startDate = today.minusWeeks(4);
         LocalDate endDate = today;
 
         basicAccountService.getAccountLog(
@@ -73,12 +76,10 @@ public class ReportService {
                 accountNo,
                 startDate.format(DateTimeFormatter.ofPattern("yyyyMMdd")),
                 endDate.format(DateTimeFormatter.ofPattern("yyyyMMdd")),
-                "A",        // 전체 거래내역
-                "DESC"      // 최신순
+                "A", "DESC"
             )
         );
 
-        // 3. 저장된 데이터 기반 주차별 리포트 생성
         List<AccountLog> logs = accountLogRepository.findAllByAccountNo(accountNo);
         Map<String, List<TransactionSummaryDto>> weeklyMap = new LinkedHashMap<>();
         LocalDate monday = today.with(DayOfWeek.MONDAY);
@@ -90,12 +91,10 @@ public class ReportService {
             List<TransactionSummaryDto> weeklyList = new ArrayList<>();
 
             for (AccountLog log : logs) {
-                // 1. 문자열을 날짜로 변환 (비교용)
                 LocalDate txDate = LocalDate.parse(log.getTransactionDate(), DateTimeFormatter.ofPattern("yyyyMMdd"));
-
                 if (!txDate.isBefore(weekStart) && !txDate.isAfter(weekEnd)) {
                     TransactionSummaryDto dto = new TransactionSummaryDto();
-                    dto.setTransactionDate(log.getTransactionDate());  // 그대로 "20250403"
+                    dto.setTransactionDate(log.getTransactionDate());
                     dto.setTransactionType(log.getTransactionType());
                     dto.setTransactionBalance(log.getTransactionBalance());
                     dto.setTransactionSummary(log.getTransactionSummary());
@@ -106,21 +105,80 @@ public class ReportService {
             weeklyMap.put(key, weeklyList);
         }
 
-        // 4. FastAPI에 전송
         ReportRequestDto reportDto = new ReportRequestDto(accountNo, weeklyMap);
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
 
+        // ✅ FastAPI 전송 전 JSON 출력
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             String json = objectMapper.writeValueAsString(reportDto);
-            System.out.println("\n📦 FastAPI 전송 내용 확인:");
+            System.out.println("\n📦 FastAPI 전송 JSON 확인 ===============================");
             System.out.println(json);
+            System.out.println("=======================================================\n");
         } catch (JsonProcessingException e) {
-            System.out.println("⚠️ JSON 변환 오류: " + e.getMessage());
+            System.out.println("⚠️ JSON 직렬화 오류: " + e.getMessage());
         }
 
-//        HttpEntity<ReportRequestDto> requestEntity = new HttpEntity<>(reportDto, headers);
-//        restTemplate.postForObject(reportUrl, requestEntity, Void.class);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity<ReportRequestDto> requestEntity = new HttpEntity<>(reportDto, headers);
+
+        Map<String, Object> fastApiResponse;
+        try {
+            fastApiResponse = restTemplate.postForObject(reportUrl, requestEntity, Map.class);
+        } catch (Exception e) {
+            // 개발용 mock 응답
+            Map<String, Object> weekExpense = Map.of(
+                "week1", 0, "week2", 0, "week3", 0, "week4", 0, "week5", 0
+            );
+            Map<String, Object> response = new HashMap<>();
+            response.put("weekExpense", weekExpense);
+            response.put("totalExpense", 0);
+
+            fastApiResponse = new HashMap<>();
+            fastApiResponse.put("response", response);
+        }
+
+        // 평균 출금/입금 비율 계산
+        BigDecimal avgRate = calculateAverageWithdrawalRate(user.getAge(), user.getGender());
+
+        // 결과에 추가
+        fastApiResponse.put("averageWithdrawalRate", avgRate);
+
+        return fastApiResponse;
     }
+
+    
+    // 동 성별, 동 나이대 애들 입,출금 평균
+    private BigDecimal calculateAverageWithdrawalRate(int age, String gender) {
+        List<User> users = userRepository.findAllByAgeAndGenderAndIsParent(age, gender, false);
+
+        BigDecimal totalRatio = BigDecimal.ZERO;
+        int count = 0;
+
+        for (User user : users) {
+            List<BasicAccount> accounts = basicAccountRepository.findByUserId(user.getId());
+            BigDecimal withdrawSum = BigDecimal.ZERO;
+            BigDecimal depositSum = BigDecimal.ZERO;
+
+            for (BasicAccount acc : accounts) {
+                List<AccountLog> logs = accountLogRepository.findAllByAccountNo(acc.getAccountNo());
+                for (AccountLog log : logs) {
+                    if (log.getTransactionType() == 1) {
+                        withdrawSum = withdrawSum.add(log.getTransactionBalance());
+                    } else if (log.getTransactionType() == 0) {
+                        depositSum = depositSum.add(log.getTransactionBalance());
+                    }
+                }
+            }
+
+            if (depositSum.compareTo(BigDecimal.ZERO) > 0) {
+                totalRatio = totalRatio.add(withdrawSum.divide(depositSum, 4, RoundingMode.HALF_UP));
+                count++;
+            }
+        }
+
+        return count > 0 ? totalRatio.divide(BigDecimal.valueOf(count), 4, RoundingMode.HALF_UP) : BigDecimal.ZERO;
+    }
+
+
 }

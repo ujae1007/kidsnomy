@@ -5,6 +5,7 @@ import { RootState } from '@/store';
 import JobInputField from '@/components/jobs/JobInputField';
 import ChatbotButton from '@/components/jobs/ChatbotButton';
 import styles from './ParentJobCreatePage.module.css';
+import { apiCall } from '@/utils/api';
 
 interface JobCreateData {
   groupId: number;
@@ -20,7 +21,16 @@ interface JobCreateData {
 const ParentJobCreatePage: React.FC = () => {
   const navigate = useNavigate();
   const { accessToken, isAuthenticated, isParent } = useSelector((state: RootState) => state.auth);
+  const selectedGroupId = useSelector((state: RootState) => state.group.selectedGroupId);
   
+  useEffect(() => {
+    if (!selectedGroupId) {
+      alert('그룹을 먼저 선택해주세요.');
+      navigate('/group');
+      return;
+    }
+  }, [selectedGroupId, navigate]);
+
   const [formData, setFormData] = useState<JobCreateData>({
     title: '',
     content: '',
@@ -29,8 +39,16 @@ const ParentJobCreatePage: React.FC = () => {
     startAt: '',
     endAt: '',
     isPermanent: false,
-    groupId: 1
+    groupId: selectedGroupId || 0
   });
+
+  // 그룹 ID가 변경될 때마다 formData 업데이트
+  useEffect(() => {
+    setFormData(prev => ({
+      ...prev,
+      groupId: selectedGroupId || 0
+    }));
+  }, [selectedGroupId]);
   
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -41,6 +59,14 @@ const ParentJobCreatePage: React.FC = () => {
       console.log('📝 일자리 생성 페이지 언마운트');
     };
   }, [isAuthenticated, isParent, navigate]);
+  
+  useEffect(() => {
+    console.log('현재 상태:', {
+      isParent,
+      selectedGroupId,
+      accessToken: !!accessToken
+    });
+  }, [isParent, selectedGroupId, accessToken]);
   
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -68,19 +94,14 @@ const ParentJobCreatePage: React.FC = () => {
     console.log('📝 일자리 생성 시도:', formData);
     
     try {
-      const response = await fetch('http://localhost:8080/api/work/create', {
+      await apiCall('work/create', {
         method: 'POST',
+        auth: true,
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${accessToken}`
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formData)
       });
-      
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(errorText || '일자리 생성에 실패했습니다.');
-      }
       
       console.log('✅ 일자리 생성 성공');
       navigate('/parent/jobs');

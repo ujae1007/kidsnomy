@@ -53,7 +53,7 @@ const JobDetailPage: React.FC = () => {
       setError(null);
       
       try {
-        const data = await apiCall<Job>(`work/detail/${jobId}`, {
+        const data = await apiCall<Job>(`work/check/detail/${jobId}`, {
           method: 'GET',
           auth: true
         });

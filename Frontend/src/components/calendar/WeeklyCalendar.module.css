@@ -42,9 +42,9 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 0.5rem;
-  min-height: 200px;
+  min-height: 12px;
   position: relative;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
 }
 
 .scheduleItem {
@@ -105,23 +105,24 @@
 
 .actionButton {
   width: 100%;
-  padding: 1rem;
-  border-radius: 12px;
+  padding: 0.75rem;
+  border-radius: 8px;
   border: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
-  text-align: center;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: left;
+  height: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 2px 0;
 }
 
 .primaryButton {
-  background: #FFE5E5;
-  color: #FF9EAA;
+  background: rgba(255, 229, 229, 0.9);
+  color: #2D3436;
 }
 
 .primaryButton:hover {
@@ -131,8 +132,8 @@
 }
 
 .secondaryButton {
-  background: #FFF3D4;
-  color: #FFB800;
+  background: rgba(255, 243, 212, 0.9);
+  color: #2D3436;
 }
 
 .secondaryButton:hover {
@@ -142,8 +143,8 @@
 }
 
 .tertiaryButton {
-  background: #E5F7FF;
-  color: #00A3FF;
+  background: rgba(229, 247, 255, 0.9);
+  color: #2D3436;
 }
 
 .tertiaryButton:hover {

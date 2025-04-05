@@ -27,8 +27,7 @@ interface Job {
 const JobDetailPage: React.FC = () => {
   const { jobId } = useParams<{ jobId: string }>();
   const navigate = useNavigate();
-  const { accessToken, isAuthenticated } = useSelector((state: RootState) => state.auth);
-  const isParent = true;  // 부모 버전을 보기 위해 true로 변경
+  const { accessToken, isAuthenticated, isParent } = useSelector((state: RootState) => state.auth);
   
   const [job, setJob] = useState<Job | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -54,29 +53,15 @@ const JobDetailPage: React.FC = () => {
       setError(null);
       
       try {
-        // 임시 데이터 사용
-        const mockData: Job = {
-          jobId: Number(jobId),
-          groupId: 1,
-          groupCode: "GROUP1",
-          employerId: 1,
-          employeeId: null,  // 계약 전 상태이므로 null로 변경
-          employerName: "김부모",
-          employeeName: null,  // 계약 전 상태이므로 null로 변경
-          title: "방 청소하기",
-          content: "방 청소를 깨끗하게 해주세요. 책상 정리도 함께 부탁드립니다.",
-          salary: 5000,
-          rewardText: "용돈 5000원 + 간식",
-          isPermanent: false,
-          startAt: "2024-03-15",
-          endAt: "2024-03-16",
-          status: 1  // 계약 전 상태로 변경
-        };
+        const data = await apiCall<Job>(`work/detail/${jobId}`, {
+          method: 'GET',
+          auth: true
+        });
         
-        console.log('✅ 임시 데이터 로드 성공:', mockData);
-        setJob(mockData);
+        console.log('✅ 일자리 상세 정보 조회 성공:', data);
+        setJob(data);
       } catch (error) {
-        console.error('❌ 데이터 로드 중 에러 발생:', error);
+        console.error('❌ 일자리 상세 정보 조회 중 에러 발생:', error);
         setError((error as Error).message);
       } finally {
         setLoading(false);
@@ -317,37 +302,39 @@ const JobDetailPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.content}>
+      <div className={styles.contentSection}>
         <h1 className={styles.title}>일자리 상세보기</h1>
         
-        <div className={styles.formGroup}>
-          <label>제목</label>
-          <div className={styles.value}>{job.title}</div>
-        </div>
-
-        <div className={styles.formGroup}>
-          <label>날짜</label>
-          <div className={styles.value}>
-            {formatDate(job.startAt)}-{formatDate(job.endAt)}
+        <div className={styles.infoSection}>
+          <div className={styles.infoRow}>
+            <span className={styles.label}>제목</span>
+            <span className={styles.value}>{job.title}</span>
           </div>
-        </div>
 
-        <div className={styles.formGroup}>
-          <label>상세내용</label>
-          <div className={styles.value}>{job.content}</div>
-        </div>
-
-        <div className={styles.formGroup}>
-          <label>급여</label>
-          <div className={styles.value}>{job.salary.toLocaleString()}원</div>
-        </div>
-
-        {job.rewardText && (
-          <div className={styles.formGroup}>
-            <label>추가보상</label>
-            <div className={styles.value}>{job.rewardText}</div>
+          <div className={styles.infoRow}>
+            <span className={styles.label}>날짜</span>
+            <span className={styles.value}>
+              {formatDate(job.startAt)}-{formatDate(job.endAt)}
+            </span>
           </div>
-        )}
+
+          <div className={styles.infoRow}>
+            <span className={styles.label}>상세내용</span>
+            <span className={styles.value}>{job.content}</span>
+          </div>
+
+          <div className={styles.infoRow}>
+            <span className={styles.label}>급여</span>
+            <span className={styles.value}>{job.salary.toLocaleString()}원</span>
+          </div>
+
+          {job.rewardText && (
+            <div className={styles.infoRow}>
+              <span className={styles.label}>추가보상</span>
+              <span className={styles.value}>{job.rewardText}</span>
+            </div>
+          )}
+        </div>
       </div>
 
       <div className={styles.buttonWrapper}>

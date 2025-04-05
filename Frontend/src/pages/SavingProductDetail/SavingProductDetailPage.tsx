@@ -13,6 +13,7 @@ interface SavingProduct {
   monthlyPayment: number;
   features: string[];
   benefits: string[];
+  status: number; // 1: 계약전, 2: 계약후, 3: 만기완료
 }
 
 const SavingProductDetailPage: React.FC = () => {
@@ -52,7 +53,8 @@ const SavingProductDetailPage: React.FC = () => {
             '높은 이자율 10%',
             '매월 정기 저축 시 추가 혜택',
             '저축 목표 달성 시 특별 보너스'
-          ]
+          ],
+          status: 1 // 임시 상태 설정
         });
         console.log('Product data loaded successfully');
       } catch (error) {
@@ -79,6 +81,54 @@ const SavingProductDetailPage: React.FC = () => {
     console.log('Delete button clicked');
     // TODO: 삭제 API 호출
     console.log('삭제하기');
+  };
+
+  const handleReceive = () => {
+    console.log('Receive button clicked');
+    // TODO: 원금과 이자받기 API 호출
+    console.log('원금과 이자받기');
+  };
+
+  const renderButton = () => {
+    if (!product) return null;
+
+    if (!isParent) {
+      // 자녀인 경우
+      switch (product.status) {
+        case 1:
+          return (
+            <button className={styles.contractButton} onClick={handleContract}>
+              계약하기
+            </button>
+          );
+        case 2:
+          return <div className={styles.statusMessage}>계약한 상품입니다</div>;
+        case 3:
+          return (
+            <button className={styles.contractButton} onClick={handleReceive}>
+              원금과 이자받기
+            </button>
+          );
+        default:
+          return null;
+      }
+    } else {
+      // 부모인 경우
+      switch (product.status) {
+        case 1:
+          return (
+            <button className={styles.deleteButton} onClick={handleDelete}>
+              삭제하기
+            </button>
+          );
+        case 2:
+          return <div className={styles.statusMessage}>계약이 된 상품입니다</div>;
+        case 3:
+          return <div className={styles.statusMessage}>만기된 상품입니다</div>;
+        default:
+          return null;
+      }
+    }
   };
 
   if (isLoading) {
@@ -130,22 +180,7 @@ const SavingProductDetailPage: React.FC = () => {
         </div>
 
         <div className={styles.buttonWrapper}>
-          {!isParent && (
-            <button 
-              className={styles.contractButton}
-              onClick={handleContract}
-            >
-              계약하기
-            </button>
-          )}
-          {isParent && (
-            <button 
-              className={styles.deleteButton}
-              onClick={handleDelete}
-            >
-              삭제하기
-            </button>
-          )}
+          {renderButton()}
         </div>
       </div>
 

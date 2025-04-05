@@ -52,7 +52,7 @@ const ParentJobListPage: React.FC = () => {
     
     try {
       console.log('📊 부모 일자리 조회 데이터 로딩 시작');
-      const data = await apiCall<Job[]>(`work/parent/check/${groupId}`, {
+      const data = await apiCall<Job[]>(`work/parent/check/429453`, {
         method: 'GET',
         auth: true,
       });

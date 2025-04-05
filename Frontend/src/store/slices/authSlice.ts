@@ -14,7 +14,8 @@ const initialState: AuthState = {
   isAuthenticated: false,
   userRole: null,
   userId: null,
-  isParent: null,
+  isParent: false,
+  groupId: null,
   loading: false,
   error: null,
 };
@@ -188,7 +189,8 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
       state.userRole = null;
       state.userId = null;
-      state.isParent = null;
+      state.isParent = false;
+      state.groupId = null;
       state.loading = false;
       state.error = null;
     },
@@ -211,7 +213,8 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
       state.userRole = null;
       state.userId = null;
-      state.isParent = null;
+      state.isParent = false;
+      state.groupId = null;
       state.loading = false;
       state.error = null;
     },
@@ -234,6 +237,7 @@ const authSlice = createSlice({
         state.isAuthenticated = true;
         state.email = action.payload.email;
         state.isParent = action.payload.isParent;
+        state.groupId = action.payload.groupId;
       })
       .addCase(loginUser.rejected, (state, action) => {
         console.error('❌ 로그인 실패 - Redux 상태 업데이트', action.payload);
@@ -257,6 +261,7 @@ const authSlice = createSlice({
         }
         state.isAuthenticated = true;
         state.email = action.payload.email;
+        state.groupId = action.payload.groupId;
       })
       .addCase(reissueToken.rejected, (state, action) => {
         console.error('❌ 토큰 재발급 실패 - Redux 상태 업데이트', action.payload);
@@ -268,7 +273,8 @@ const authSlice = createSlice({
         state.userRole = null;
         state.userId = null;
         state.email = null;
-        state.isParent = null;
+        state.isParent = false;
+        state.groupId = null;
       });
   },
 });

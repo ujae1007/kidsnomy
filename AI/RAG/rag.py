@@ -96,7 +96,7 @@ class RAG_Chatbot:
 
         # 텍스트 파일 로드
         loader = DirectoryLoader(self.folder_path, glob="./*.txt")
-        documents = loader.load()
+        documents = loader.load()[:1]
 
         # 텍스트 분할
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)

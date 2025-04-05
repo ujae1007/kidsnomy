@@ -8,7 +8,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from collections import defaultdict
 
-from classifiaction import CategoryClassifier
+from .classifiaction import CategoryClassifier
 
 
 load_dotenv()
@@ -18,51 +18,6 @@ BASE_PATH = os.path.dirname(os.path.realpath(__file__))
 CATEGORIES = ['교육', '의료', '취미', '식비', '카페/간식', '쇼핑', '문구', '미용', '문화', '도서', '생활', '교통']
 
 classifier = CategoryClassifier()
-
-{
-  "accountNo": "9996499778380668",
-  "weeklyTransactions": {
-    "week1": [],
-    "week2": [],
-    "week3": [],
-    "week4": [
-      {
-        "transactionDate": "20250330",
-        "transactionType": 1,
-        "transactionBalance": 250000.00,
-        "transactionSummary": "(수시입출금) : 입금"
-      },
-    ]
-    }
-}
-
-{
-	"weekExpense":{
-			"week1":(int),
-			"week2":(int),
-			"week3":(int),
-			"week4":(int),
-			"week5":(int),
-	},
-	"userAverageExpense":{
-			"myExpense":(int),               
-			"averageExpense":(int)
-	},
-	"totalExpense":{
-	     "교육":(int),
-	     "의료":(int),
-	     "취미":(int),
-	     "식비":(int),
-	     "카페/간식":(int),
-	     "쇼핑":(int),
-	     "문구":(int),
-	     "미용":(int),
-	     "문화":(int),
-	     "도서":(int),
-	     "생활":(int),
-	     "교통":(int)
-	  }
-}
 
 class ExpenseStatics:
     def __init__(self, weekly_transactions: Dict[str, List[Dict]], save_path: str=""):

@@ -14,6 +14,7 @@ async def chat(message: str) -> str:
 # api/report/finance
 @app.post("api/report/finance")
 async def chat(data: str) -> str:
+    print("data값:", data)
     weekly_transactions = data["weeklyTransactions"]
 
     expense_statics = report.ExpenseStatics(weekly_transactions)
@@ -34,5 +35,5 @@ async def chat(data: str) -> str:
         },
         "totalExpense": category_total_expense,
     }
-
+    print("return 값: ", return_data)
     return {"response": return_data}

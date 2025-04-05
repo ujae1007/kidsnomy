@@ -2,6 +2,9 @@ package com.backend.kidsnomy.report.controller;
 
 import com.backend.kidsnomy.report.service.ReportService;
 import jakarta.servlet.http.HttpServletRequest;
+
+import java.util.Map;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,8 +19,9 @@ public class ReportController {
     }
 
     @PostMapping("/finance")
-    public ResponseEntity<String> sendReport(HttpServletRequest request) {
-        reportService.sendWeeklyTransactionReport(request);
-        return ResponseEntity.ok("리포트 전송 완료");
+    public ResponseEntity<Map<String, Object>> sendReport(HttpServletRequest request) {
+        Map<String, Object> result = reportService.sendWeeklyTransactionReport(request);
+        return ResponseEntity.ok(result);
     }
+
 }

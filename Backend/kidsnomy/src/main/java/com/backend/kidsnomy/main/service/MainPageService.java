@@ -1,5 +1,6 @@
 package com.backend.kidsnomy.main.service;
 
+import com.backend.kidsnomy.basic.service.BasicAccountService;
 import com.backend.kidsnomy.main.dto.*;
 import com.backend.kidsnomy.main.entity.*;
 import com.backend.kidsnomy.main.repository.*;
@@ -20,6 +21,7 @@ public class MainPageService {
     private final DepositContractRepositoryMain depositContractRepository;
     private final SavingsRepositoryMain savingsRepository;
     private final SavingsContractRepositoryMain savingsContractRepository;
+    private final BasicAccountService basicAccountService;
 
     public MainPageService(UserRepository userRepository,
                            BasicAccountRepositorMain accountRepository,
@@ -27,7 +29,8 @@ public class MainPageService {
                            DepositRepositoryMain depositRepository,
                            DepositContractRepositoryMain depositContractRepository,
                            SavingsRepositoryMain savingsRepository,
-                           SavingsContractRepositoryMain savingsContractRepository) {
+                           SavingsContractRepositoryMain savingsContractRepository,
+                           BasicAccountService basicAccountService) {
         this.userRepository = userRepository;
         this.accountRepository = accountRepository;
         this.jobRepository = jobRepository;
@@ -35,6 +38,7 @@ public class MainPageService {
         this.depositContractRepository = depositContractRepository;
         this.savingsRepository = savingsRepository;
         this.savingsContractRepository = savingsContractRepository;
+        this.basicAccountService = basicAccountService;
     }
 
     public MainPageResponseDto getMainPageInfo(String email, Long groupId) {
@@ -43,17 +47,19 @@ public class MainPageService {
         Long userId = user.getId();
         boolean isParent = user.getIsParent();
 
-        // 1. 계좌 정보
+        // 계좌 정보 - 먼저 외부 API로 잔액 최신화
+        basicAccountService.refreshBalance(userId);
+
         AccountDto account = accountRepository.findByUserId(userId)
                 .map(this::toAccountDto)
                 .orElse(null);
 
-        // 2. 일자리: 부모 → 생성한 일자리, 아이 → 계약한 일자리
+        // 일자리
         List<JobDto> jobs = isParent
                 ? jobRepository.findByEmployerIdAndGroupId(userId, groupId).stream().map(this::toJobDto).collect(Collectors.toList())
                 : jobRepository.findByEmployeeIdAndGroupId(userId, groupId).stream().map(this::toJobDto).collect(Collectors.toList());
 
-        // 3. 예금: 부모 → 생성한 예금 상품, 아이 → 계약한 예금 상품
+        // 예금
         List<DepositDto> deposits = isParent
                 ? depositRepository.findByUserIdAndGroupId(userId, groupId).stream().map(this::toDepositDto).collect(Collectors.toList())
                 : List.of();
@@ -62,7 +68,7 @@ public class MainPageService {
                 ? List.of()
                 : depositContractRepository.findByUserIdAndGroupId(userId, groupId).stream().map(this::toDepositContractDto).collect(Collectors.toList());
 
-        // 4. 적금: 부모 → 생성한 적금 상품, 아이 → 계약한 적금 상품
+        // 적금
         List<SavingsDto> savings = isParent
                 ? savingsRepository.findByUserIdAndGroupId(userId, groupId).stream().map(this::toSavingsDto).collect(Collectors.toList())
                 : List.of();
@@ -71,7 +77,7 @@ public class MainPageService {
                 ? List.of()
                 : savingsContractRepository.findByUserIdAndGroupId(userId, groupId).stream().map(this::toSavingsContractDto).collect(Collectors.toList());
 
-        // 5. 응답 객체 생성
+        // 응답 객체 생성
         MainPageResponseDto response = new MainPageResponseDto();
         response.setAccount(account);
         response.setJobs(jobs);
@@ -82,8 +88,6 @@ public class MainPageService {
 
         return response;
     }
-
-    // ===== DTO 변환 메서드 =====
 
     private AccountDto toAccountDto(BasicAccountEntity entity) {
         return new AccountDto(

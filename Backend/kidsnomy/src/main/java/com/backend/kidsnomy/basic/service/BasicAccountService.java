@@ -331,5 +331,42 @@ public class BasicAccountService {
         }
     }
 
+    // 계좌 잔액 최신화
+    public void refreshBalance(Long userId) {
+    	List<BasicAccount> accounts = basicAccountRepository.findByUserId(userId);
+    	if (accounts.isEmpty()) {
+    	    throw new AccountNotFoundException("사용자의 계좌가 존재하지 않습니다.");
+    	}
+    	BasicAccount account = accounts.get(0);
+
+        String email = userRepository.findById(userId)
+            .orElseThrow(() -> new RuntimeException("사용자 없음")).getEmail();
+
+        String userKey = userKeyService.getUserKeyByEmail(email);
+        String apiUrl = baseUrl + "/ssafy/api/v1/edu/demandDeposit/inquireDemandDepositAccount";
+
+        Map<String, Object> header = ApiUtils.createApiRequestHeader("inquireDemandDepositAccount", apiKey, userKey);
+        Map<String, Object> requestBody = new HashMap<>();
+        requestBody.put("Header", header);
+        requestBody.put("accountNo", account.getAccountNo());
+
+        try {
+            HttpEntity<Map<String, Object>> httpEntity = ApiUtils.createHttpEntity(requestBody, userKey);
+            Map<String, Object> response = restTemplate.postForObject(apiUrl, httpEntity, Map.class);
+
+            if (response == null || !response.containsKey("REC")) {
+                throw new AccountNotFoundException("계좌 조회 응답이 올바르지 않습니다.");
+            }
+
+            Map<String, Object> rec = (Map<String, Object>) response.get("REC");
+            BigDecimal apiBalance = new BigDecimal(Optional.ofNullable(rec.get("accountBalance")).orElse("0").toString());
+
+            account.setBalance(apiBalance);
+            basicAccountRepository.save(account);
+
+        } catch (Exception e) {
+            throw new AccountNotFoundException("계좌 잔액 최신화 실패: " + e.getMessage());
+        }
+    }
 
 }

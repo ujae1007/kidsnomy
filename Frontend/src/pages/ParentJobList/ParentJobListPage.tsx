@@ -28,7 +28,7 @@ const STATUS_LABELS: Record<number, string> = {
 
 const ParentJobListPage: React.FC = () => {
   const navigate = useNavigate();
-  const { groupId } = useSelector((state: RootState) => state.auth);
+  const selectedGroupId = useSelector((state: RootState) => state.group.selectedGroupId);
   
   // 상태 관리
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -45,6 +45,14 @@ const ParentJobListPage: React.FC = () => {
     setSearchTerm(value);
   };
   
+  useEffect(() => {
+    if (!selectedGroupId) {
+      alert('그룹을 먼저 선택해주세요.');
+      navigate('/group');
+      return;
+    }
+  }, [selectedGroupId, navigate]);
+  
   // 일자리 데이터 가져오기
   const fetchJobs = async () => {
     setLoading(true);
@@ -52,7 +60,7 @@ const ParentJobListPage: React.FC = () => {
     
     try {
       console.log('📊 부모 일자리 조회 데이터 로딩 시작');
-      const data = await apiCall<Job[]>(`work/parent/check/429453`, {
+      const data = await apiCall<Job[]>(`work/parent/check/${selectedGroupId}`, {
         method: 'GET',
         auth: true,
       });
@@ -99,7 +107,7 @@ const ParentJobListPage: React.FC = () => {
   
   useEffect(() => {
     fetchJobs();
-  }, [groupId]);
+  }, [selectedGroupId]);
   
   useEffect(() => {
     let result = [...jobs];

@@ -50,6 +50,7 @@
 
 .jobContent {
   flex: 1;
+  margin: 0 1rem;
 }
 
 .jobTitle {
@@ -60,26 +61,26 @@
 }
 
 .jobSalary {
-  font-size: 16px;
-  color: #914F4F;
+  color: #666;
+  font-size: 0.9rem;
   margin: 0;
 }
 
 .menuButton {
   background: none;
   border: none;
-  padding: 8px;
+  padding: 0.5rem;
   cursor: pointer;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  color: #666;
 }
 
 .menuButton svg {
-  width: 20px;
-  height: 20px;
-  fill: #666;
+  width: 24px;
+  height: 24px;
+}
+
+.menuButton:hover {
+  color: #333;
 }
 
 .loading {
@@ -93,4 +94,20 @@
   padding: 32px;
   color: #666;
   font-size: 14px;
+}
+
+.retryButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.retryButton:hover {
+  background-color: #0056b3;
 } 

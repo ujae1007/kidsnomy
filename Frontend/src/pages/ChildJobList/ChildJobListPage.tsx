@@ -5,6 +5,7 @@ import { RootState } from '@/store';
 import SearchBar from '@/components/jobs/SearchBar';
 import FilterButtons from '@/components/jobs/FilterButtons';
 import styles from './ChildJobListPage.module.css';
+import { apiCall } from '@/utils/api';
 
 // 일자리 데이터 타입 정의
 interface Job {
@@ -35,79 +36,79 @@ const STATUS_LABELS: Record<number, string> = {
 const ChildJobListPage: React.FC = () => {
   const navigate = useNavigate();
   const { accessToken, isAuthenticated, isParent } = useSelector((state: RootState) => state.auth);
+  const selectedGroupId = useSelector((state: RootState) => state.group.selectedGroupId);
   
   // 상태 관리
   const [jobs, setJobs] = useState<Job[]>([]);
   const [filteredJobs, setFilteredJobs] = useState<Job[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [isContractedView, setIsContractedView] = useState<boolean>(false);
   
   // 검색 및 필터링 상태
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedStatus, setSelectedStatus] = useState<number | null>(null);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
-  
-  // 그룹 ID는 추후 동적으로 가져오거나 사용자 선택으로 변경 가능
-  const groupId = 1; // 예시 그룹 ID
+
+  // 그룹 선택 여부 확인
+  useEffect(() => {
+    if (!selectedGroupId) {
+      alert('그룹을 먼저 선택해주세요.');
+      navigate('/group');
+      return;
+    }
+  }, [selectedGroupId, navigate]);
   
   // 일자리 데이터 가져오기
   const fetchJobs = async () => {
+    if (!selectedGroupId || !accessToken) {
+      return;
+    }
+
     setLoading(true);
     setError(null);
     
     try {
-      console.log('📊 자녀 일자리 조회 데이터 로딩 시작');
+      const endpoint = isContractedView 
+        ? `/work/child/contracted/${selectedGroupId}`
+        : `/work/child/check/${selectedGroupId}`;
+
+      console.log(`📊 자녀 일자리 조회 시작 (${endpoint})`);
       
-      // 임시 데이터로 대체
-      const mockData: Job[] = [
-        {
-          jobId: 1,
-          groupId: 1,
-          employerId: 1,
-          employeeId: null,
-          employerName: "김부모",
-          employeeName: null,
-          title: "방 청소하기",
-          content: "방 청소 부탁해요",
-          salary: 5000,
-          rewardText: "용돈 5000원",
-          isPermanent: false,
-          startAt: "2024-02-15T00:00:00",
-          endAt: "2024-02-16T00:00:00",
-          status: 1
-        },
-        {
-          jobId: 2,
-          groupId: 1,
-          employerId: 1,
-          employeeId: null,
-          employerName: "이부모",
-          employeeName: null,
-          title: "설거지하기",
-          content: "설거지 해주세요",
-          salary: 3000,
-          rewardText: "용돈 3000원",
-          isPermanent: false,
-          startAt: "2024-02-15T00:00:00",
-          endAt: "2024-02-17T00:00:00",
-          status: 2
+      const response = await apiCall<Job[]>(endpoint, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json'
         }
-      ];
-      
-      setJobs(mockData);
-      setFilteredJobs(mockData);
-    } catch (error) {
+      });
+
+      console.log('받아온 일자리 목록:', response);
+      setJobs(response || []);
+      setFilteredJobs(response || []);
+    } catch (error: any) {
       console.error('❌ 자녀 일자리 조회 중 에러 발생:', error);
-      setError((error as Error).message);
+      if (error.status === 403) {
+        if (isParent) {
+          setError('자녀만 이용할 수 있는 기능입니다.');
+        } else {
+          setError('본인이 속한 그룹이 아닙니다.');
+        }
+      } else {
+        setError('일자리 목록을 불러오는데 실패했습니다.');
+      }
+      // 에러 발생 시 빈 배열로 설정
+      setJobs([]);
+      setFilteredJobs([]);
     } finally {
       setLoading(false);
     }
   };
   
-  // 컴포넌트 마운트 시 데이터 가져오기
+  // 컴포넌트 마운트 시와 필터 변경 시 데이터 가져오기
   useEffect(() => {
     fetchJobs();
-  }, []);
+  }, [selectedGroupId, accessToken, isContractedView]);
   
   // 검색어 변경 처리
   const handleSearchChange = (value: string) => {
@@ -118,6 +119,8 @@ const ChildJobListPage: React.FC = () => {
   const handleStatusFilterChange = (filter: string) => {
     if (filter === 'latest') {
       setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    } else if (filter === 'contracted') {
+      setIsContractedView(!isContractedView);
     } else {
       setSelectedStatus(filter === 'all' ? null : Number(filter));
     }
@@ -160,58 +163,73 @@ const ChildJobListPage: React.FC = () => {
     
     setFilteredJobs(result);
   }, [jobs, searchTerm, selectedStatus, sortOrder]);
-  
+
   return (
     <div className={styles.container}>
-      {error && <div className={styles.error}>{error}</div>}
+      {/* 검색 및 필터 영역 - 항상 표시 */}
+      <div className={styles.controlsContainer}>
+        <SearchBar 
+          searchTerm={searchTerm}
+          onSearchChange={handleSearchChange}
+        />
+        
+        <FilterButtons
+          selectedFilter={isContractedView ? 'contracted' : (selectedStatus?.toString() || 'all')}
+          onFilterChange={handleStatusFilterChange}
+          type="jobs"
+        />
+      </div>
       
-      {!error && (
-        <>
-          {/* 검색 및 필터 영역 */}
-          <div className={styles.controlsContainer}>
-            <SearchBar 
-              searchTerm={searchTerm}
-              onSearchChange={handleSearchChange}
-            />
-            
-            <FilterButtons
-              selectedFilter={selectedStatus?.toString() || 'all'}
-              onFilterChange={handleStatusFilterChange}
-              type="jobs"
-            />
-          </div>
-          
-          {/* 일자리 목록 */}
-          <div className={styles.jobList}>
-            {loading ? (
-              <div className={styles.loading}>로딩 중...</div>
-            ) : filteredJobs.length > 0 ? (
-              filteredJobs.map(job => (
-                <div 
-                  key={job.jobId} 
-                  onClick={() => handleJobClick(job.jobId)}
-                  className={styles.jobCard}
-                >
-                  <div className={styles.jobStatus}>
-                    {STATUS_LABELS[job.status] || '알 수 없음'}
-                  </div>
-                  <div className={styles.jobContent}>
-                    <h3 className={styles.jobTitle}>{job.title}</h3>
-                    <p className={styles.jobSalary}>{job.salary.toLocaleString()}원</p>
-                  </div>
-                  <button className={styles.menuButton}>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
-                    </svg>
-                  </button>
-                </div>
-              ))
-            ) : (
-              <div className={styles.noJobs}>해당하는 일자리가 없습니다.</div>
-            )}
-          </div>
-        </>
+      {/* 에러 메시지 */}
+      {error && (
+        <div className={styles.error}>
+          <p>{error}</p>
+          <button 
+            className={styles.retryButton}
+            onClick={fetchJobs}
+          >
+            다시 시도
+          </button>
+        </div>
       )}
+      
+      {/* 일자리 목록 */}
+      <div className={styles.jobList}>
+        {loading ? (
+          <div className={styles.loading}>로딩 중...</div>
+        ) : filteredJobs.length > 0 ? (
+          filteredJobs.map(job => (
+            <div 
+              key={job.jobId} 
+              onClick={() => handleJobClick(job.jobId)}
+              className={styles.jobCard}
+            >
+              <div className={styles.jobStatus}>
+                {STATUS_LABELS[job.status] || '알 수 없음'}
+              </div>
+              <div className={styles.jobContent}>
+                <h3 className={styles.jobTitle}>{job.title}</h3>
+                <p className={styles.jobSalary}>{job.salary.toLocaleString()}원</p>
+              </div>
+              <button 
+                className={styles.menuButton}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleJobClick(job.jobId);
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                </svg>
+              </button>
+            </div>
+          ))
+        ) : (
+          <div className={styles.noJobs}>
+            {error ? '일자리 목록을 불러올 수 없습니다.' : '해당하는 일자리가 없습니다.'}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

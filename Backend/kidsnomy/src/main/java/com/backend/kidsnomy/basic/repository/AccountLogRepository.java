@@ -13,6 +13,6 @@ public interface AccountLogRepository extends JpaRepository<AccountLog, Integer>
 	
 	List<AccountLog> findAllByAccountNo(String accountNo);
 	
-	List<AccountLog> findByAccountNoOrderByTransactionDateDesc(String accountNo);
+	List<AccountLog> findByAccountNoOrderByTransactionDateDescTransactionTimeDesc(String accountNo);
 
 }

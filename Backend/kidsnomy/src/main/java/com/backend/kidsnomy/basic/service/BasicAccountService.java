@@ -386,21 +386,26 @@ public class BasicAccountService {
     // 계좌 상세 조회
     public AccountDetailResponseDto getMyAccountDetail(String email) {
         // 1. 유저 조회
-    	Optional<User> optionalUser = userRepository.findByEmail(email);
-    	if (!optionalUser.isPresent()) {
-    	    throw new UserNotFoundException("사용자를 찾을 수 없습니다.");
-    	}
-    	User user = optionalUser.get();
+        User user = userRepository.findByEmail(email)
+            .orElseThrow(() -> new UserNotFoundException("사용자를 찾을 수 없습니다."));
 
-        // 2. 계좌 조회 (리스트로 받아서 첫 번째 계좌 사용)
+        // 2. 계좌 조회
         List<BasicAccount> accounts = basicAccountRepository.findByUserId(user.getId());
         if (accounts.isEmpty()) {
             throw new AccountNotFoundException("사용자의 계좌가 존재하지 않습니다.");
         }
         BasicAccount account = accounts.get(0);
 
-        // 3. 거래내역 조회
-        List<AccountLog> logs = accountLogRepository.findByAccountNoOrderByTransactionDateDesc(account.getAccountNo());
+        // 3. 외부 API 호출해서 거래내역 최신화 시도 (저장만 함, 리턴은 안 씀)
+        try {
+            getAccountLogByEmail(email); // 이 내부에서 DB 저장 처리만 하고 끝냄
+        } catch (Exception e) {
+            // API 실패해도 무시하고 기존 DB에서 보여주도록
+            System.out.println("외부 거래내역 최신화 실패: " + e.getMessage());
+        }
+
+        // 4. 이제 우리 DB에서 무조건 조회해서 보여줌
+        List<AccountLog> logs = accountLogRepository.findByAccountNoOrderByTransactionDateDescTransactionTimeDesc(account.getAccountNo());
         List<AccountTransactionResponseDto.TransactionDetail> transactions = new ArrayList<>();
 
         for (AccountLog log : logs) {
@@ -420,7 +425,7 @@ public class BasicAccountService {
             ));
         }
 
-        // 4. 응답 DTO 조립 (비밀번호 제거됨)
+        // 5. 응답 조립
         return new AccountDetailResponseDto(
             account.getAccountNo(),
             account.getBalance(),
@@ -428,6 +433,8 @@ public class BasicAccountService {
             transactions
         );
     }
+
+
 
 
     
@@ -453,12 +460,28 @@ public class BasicAccountService {
     private AccountTransactionResponseDto getAccountLogInternal(BasicAccount account, AccountTransactionRequestDto requestDto, String email) {
         String userKey = userKeyService.getUserKeyByEmail(email);
 
-        // 날짜 자동 세팅
+        // ✅ 날짜 자동 세팅
         if (requestDto.getStartDate() == null || requestDto.getStartDate().isBlank()) {
-            requestDto.setStartDate(account.getCreatedAt().toLocalDate().format(DateTimeFormatter.ofPattern("yyyyMMdd")));
+            String startDate = account.getCreatedAt().toLocalDate().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+            requestDto.setStartDate(startDate);
+        } else {
+            requestDto.setStartDate(requestDto.getStartDate().replaceAll("-", ""));
         }
+
         if (requestDto.getEndDate() == null || requestDto.getEndDate().isBlank()) {
-            requestDto.setEndDate(LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")));
+            String endDate = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+            requestDto.setEndDate(endDate);
+        } else {
+            requestDto.setEndDate(requestDto.getEndDate().replaceAll("-", ""));
+        }
+        // ✅ 거래유형 기본값 "A"
+        if (requestDto.getTransactionType() == null || requestDto.getTransactionType().isBlank()) {
+            requestDto.setTransactionType("A");
+        }
+
+        // ✅ 정렬방식 기본값 "DESC"
+        if (requestDto.getOrderByType() == null || requestDto.getOrderByType().isBlank()) {
+            requestDto.setOrderByType("DESC");
         }
 
         String apiUrl = baseUrl + "/ssafy/api/v1/edu/demandDeposit/inquireTransactionHistoryList";

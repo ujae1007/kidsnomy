@@ -1,8 +1,6 @@
 services:
   react-app:
-    build:
-      context: ./Frontend
-      dockerfile: Dockerfile
+    image: kwon0528/b207-react-app:latest
     container_name: react-app
     ports:
       - "80:80"
@@ -15,10 +13,7 @@ services:
 
 
   java-app:
-    build:
-      context: ./Backend/kidsnomy
-      dockerfile: Dockerfile.test
-    # image: openjdk:17-jdk-alpine
+    image: kwon0528/b207-java-app:latest
     container_name: java-app
     volumes:
       # - ./Backend/kidsnomy:/app
@@ -35,17 +30,14 @@ services:
       SPRING_DATASOURCE_PASSWORD: ssafy
   
   fastapi-app:
-    build: 
-      context: ./AI
-      dockerfile: Dockerfile.test
+    image: kwon0528/b207-fastapi-app:latest
     # ports:
     #   - "8000:8000"
     depends_on:
       - java-app
 
   mysql:
-    image: mysql:8.0.40
-    container_name: mysql-db
+    image: kwon0528/b207-mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: ssafy
       MYSQL_DATABASE: kidsnomy

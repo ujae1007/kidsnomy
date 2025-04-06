@@ -12,4 +12,7 @@ public interface AccountLogRepository extends JpaRepository<AccountLog, Integer>
 	boolean existsByTransactionUniqueNo(String transactionUniqueNo);
 	
 	List<AccountLog> findAllByAccountNo(String accountNo);
+	
+	List<AccountLog> findByAccountNoOrderByTransactionDateDesc(String accountNo);
+
 }

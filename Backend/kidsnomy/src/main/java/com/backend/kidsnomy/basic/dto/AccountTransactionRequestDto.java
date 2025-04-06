@@ -7,10 +7,8 @@ public class AccountTransactionRequestDto {
     @NotBlank(message = "계좌번호는 필수입니다")
     private String accountNo;
 
-    @NotBlank(message = "조회 시작일자는 필수입니다")
     private String startDate;
 
-    @NotBlank(message = "조회 종료일자는 필수입니다")
     private String endDate;
 
     private String transactionType = "A"; // 기본: 전체

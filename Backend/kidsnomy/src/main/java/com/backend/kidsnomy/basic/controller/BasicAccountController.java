@@ -2,6 +2,8 @@ package com.backend.kidsnomy.basic.controller;
 
 import com.backend.kidsnomy.basic.dto.*;
 import com.backend.kidsnomy.basic.service.BasicAccountService;
+import com.backend.kidsnomy.common.exception.AuthenticationException;
+import com.backend.kidsnomy.jwt.JwtTokenProvider;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -14,10 +16,12 @@ import org.springframework.web.bind.annotation.*;
 public class BasicAccountController {
 
     private final BasicAccountService basicAccountService;
+    private final JwtTokenProvider jwtTokenProvider;
 
     // 수동 생성자
-    public BasicAccountController(BasicAccountService basicAccountService) {
+    public BasicAccountController(BasicAccountService basicAccountService, JwtTokenProvider jwtTokenProvider) {
         this.basicAccountService = basicAccountService;
+        this.jwtTokenProvider = jwtTokenProvider; 
     }
 
     // 계좌 생성 API
@@ -59,4 +63,18 @@ public class BasicAccountController {
         AccountTransactionResponseDto response = basicAccountService.getAccountLog(request, requestDto);
         return ResponseEntity.ok(response);
     }
+
+    // 계좌 셍세 조회 API
+    @GetMapping("/detail")
+    public ResponseEntity<AccountDetailResponseDto> getMyAccountDetail(HttpServletRequest request) {
+        String token = jwtTokenProvider.resolveAccessToken(request);
+        if (token == null || !jwtTokenProvider.validateToken(token)) {
+            throw new AuthenticationException("유효하지 않은 토큰입니다.");
+        }
+
+        String email = jwtTokenProvider.getEmailFromToken(token);
+        AccountDetailResponseDto response = basicAccountService.getMyAccountDetail(email);
+        return ResponseEntity.ok(response);
+    }
+
 }

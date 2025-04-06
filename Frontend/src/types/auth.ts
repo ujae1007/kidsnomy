@@ -6,6 +6,7 @@ export interface AuthState {
   userRole: string | null;
   userId: string | null;
   isParent: boolean | null;
+  groupId: number | null;
   loading: boolean;
   error: string | null;
 }
@@ -20,8 +21,11 @@ export interface LoginResponse {
   refreshToken: string;
   email: string;
   isParent: boolean;
-  userId: string;
-  message: string;
+  userRole: string;
+  userId: number;
+  groupId: number;
+  success?: boolean;
+  message?: string;
 }
 
 export interface TokenPayload {

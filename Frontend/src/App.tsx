@@ -25,7 +25,7 @@ import ChildJobListPage from '@/pages/ChildJobList/ChildJobListPage';
 import DepositProductDetailPage from '@/pages/DepositProductDetail/DepositProductDetailPage';
 import SavingProductDetailPage from '@/pages/SavingProductDetail/SavingProductDetailPage';
 import { useSelector } from 'react-redux';
-import { RootState } from '@/store/store';
+import { RootState } from '@/store';
 
 const SendMoneyCompletePage = () => {
   const navigate = useNavigate();

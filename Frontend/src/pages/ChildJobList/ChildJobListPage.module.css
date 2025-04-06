@@ -93,4 +93,15 @@
   padding: 32px;
   color: #666;
   font-size: 14px;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
 } 

@@ -302,44 +302,41 @@ const JobDetailPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.contentSection}>
-        <h1 className={styles.title}>일자리 상세보기</h1>
+      <div className={styles.content}>
+        <h1 className={styles.title}>{job.title}</h1>
         
-        <div className={styles.infoSection}>
-          <div className={styles.infoRow}>
-            <span className={styles.label}>제목</span>
-            <span className={styles.value}>{job.title}</span>
-          </div>
+        <div className={styles.formGroup}>
+          <label>시작일</label>
+          <div className={styles.value}>{formatDate(job.startAt)}</div>
+        </div>
 
-          <div className={styles.infoRow}>
-            <span className={styles.label}>날짜</span>
-            <span className={styles.value}>
-              {formatDate(job.startAt)}-{formatDate(job.endAt)}
-            </span>
-          </div>
+        <div className={styles.formGroup}>
+          <label>종료일</label>
+          <div className={styles.value}>{formatDate(job.endAt)}</div>
+        </div>
 
-          <div className={styles.infoRow}>
-            <span className={styles.label}>상세내용</span>
-            <span className={styles.value}>{job.content}</span>
-          </div>
+        <div className={styles.formGroup}>
+          <label>내용</label>
+          <div className={styles.value}>{job.content}</div>
+        </div>
 
-          <div className={styles.infoRow}>
-            <span className={styles.label}>급여</span>
-            <span className={styles.value}>{job.salary.toLocaleString()}원</span>
-          </div>
+        <div className={styles.formGroup}>
+          <label>용돈</label>
+          <div className={styles.value}>{job.salary.toLocaleString()}원</div>
+        </div>
 
-          {job.rewardText && (
-            <div className={styles.infoRow}>
-              <span className={styles.label}>추가보상</span>
-              <span className={styles.value}>{job.rewardText}</span>
-            </div>
-          )}
+        {job.rewardText && (
+          <div className={styles.formGroup}>
+            <label>추가 보상</label>
+            <div className={styles.value}>{job.rewardText}</div>
+          </div>
+        )}
+
+        <div className={styles.buttonWrapper}>
+          {renderActionButton()}
         </div>
       </div>
-
-      <div className={styles.buttonWrapper}>
-        {renderActionButton()}
-      </div>
+      
       <JobCompleteConfirmModal
         isOpen={isCompleteModalOpen}
         onConfirm={handleConfirmComplete}

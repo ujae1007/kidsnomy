@@ -7,6 +7,7 @@ import numpy as np
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from collections import defaultdict
+from pydantic import BaseModel
 
 from .classifiaction import CategoryClassifier
 
@@ -15,23 +16,38 @@ load_dotenv()
 
 BASE_PATH = os.path.dirname(os.path.realpath(__file__))
 
-CATEGORIES = ['교육', '의료', '취미', '식비', '카페/간식', '쇼핑', '문구', '미용', '문화', '도서', '생활', '교통']
+CATEGORIES = [
+    "교육",
+    "의료",
+    "취미",
+    "식비",
+    "카페/간식",
+    "쇼핑",
+    "문구",
+    "미용",
+    "문화",
+    "도서",
+    "생활",
+    "교통",
+]
+
 
 classifier = CategoryClassifier()
 
+
 class ExpenseStatics:
-    def __init__(self, weekly_transactions: Dict[str, List[Dict]], save_path: str=""):
+    def __init__(self, weekly_transactions: dict, save_path: str = ""):
         if save_path:
             self.full_save_path = os.path.join(BASE_PATH, save_path + ".json")
-        
+
+        print(weekly_transactions)
         self.weekly_transactions = weekly_transactions
         self.week_stores_data = defaultdict(list)
         for week, transactions in weekly_transactions.items():
             for transaction in transactions:
-                expense = transaction["transactionBalance"]
-                store, address = transaction["transactionSummary"].split(',')
+                expense = transaction.transactionBalance
+                store, address = transaction.transactionSummary.split(",")
                 self.week_stores_data[week].append(((store, address), expense))
-
 
     def category_expense(self):
         """
@@ -57,63 +73,69 @@ class ExpenseStatics:
 
         return week_expense, category_total_expense
 
-    
 
 if __name__ == "__main__":
     from pprint import pprint
 
     test_transactions = {
-    "week1": [
-        {
-            "transactionDate": "20250330",
-            "transactionType": 1,
-            "transactionBalance": 250000.00,
-            "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1"
-        },
-        {
-            "transactionDate": "20250330",
-            "transactionType": 1,
-            "transactionBalance": 250000.00,
-            "transactionSummary": "더벙커게임존, 대전 유성구 대학로 34"
-        }
-    ],
-    "week2": [
-        {
-            "transactionDate": "20250330",
-            "transactionType": 1,
-            "transactionBalance": 250000.00,
-            "transactionSummary": "설빙 유성온천점, 대전 유성구 대학로 14"
-        },
-        {
-            "transactionDate": "20250330",
-            "transactionType": 1,
-            "transactionBalance": 250000.00,
-            "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1"
-        }
-    ],
-    "week3": [],
-    "week4": [
-      {
-        "transactionDate": "20250330",
-        "transactionType": 1,
-        "transactionBalance": 250000.00,
-        "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1"
-      },
-    ],
-    "week5": [
-        {
-            "transactionDate": "20250330",
-            "transactionType": 1,
-            "transactionBalance": 250000.00,
-            "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1"
-        },
-        {
-            "transactionDate": "20250330",
-            "transactionType": 1,
-            "transactionBalance": 250000.00,
-            "transactionSummary": "더벙커게임존, 대전 유성구 대학로 34"
-        }
-    ]
+        "week1": [
+            {
+                "transactionDate": "20250330",
+                "transactionType": 1,
+                "transactionBalance": 250000.00,
+                "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1",
+            },
+            {
+                "transactionDate": "20250330",
+                "transactionType": 1,
+                "transactionBalance": 250000.00,
+                "transactionSummary": "더벙커게임존, 대전 유성구 대학로 34",
+            },
+        ],
+        "week2": [
+            {
+                "transactionDate": "20250330",
+                "transactionType": 1,
+                "transactionBalance": 250000.00,
+                "transactionSummary": "설빙 유성온천점, 대전 유성구 대학로 14",
+            },
+            {
+                "transactionDate": "20250330",
+                "transactionType": 1,
+                "transactionBalance": 250000.00,
+                "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1",
+            },
+        ],
+        "week3": [
+            {
+                "transactionDate": "20250330",
+                "transactionType": 1,
+                "transactionBalance": 250000.00,
+                "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1",
+            },
+        ],
+        "week4": [
+            {
+                "transactionDate": "20250330",
+                "transactionType": 1,
+                "transactionBalance": 250000.00,
+                "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1",
+            },
+        ],
+        "week5": [
+            {
+                "transactionDate": "20250330",
+                "transactionType": 1,
+                "transactionBalance": 250000.00,
+                "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1",
+            },
+            {
+                "transactionDate": "20250330",
+                "transactionType": 1,
+                "transactionBalance": 250000.00,
+                "transactionSummary": "더벙커게임존, 대전 유성구 대학로 34",
+            },
+        ],
     }
     statics = ExpenseStatics(test_transactions)
 

@@ -1,4 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from typing import List, Dict, Optional
+from collections import defaultdict
 
 from rag_func.rag import RAG_Chatbot
 from report_func.report import ExpenseStatics
@@ -7,38 +10,96 @@ chatbot = RAG_Chatbot()
 app = FastAPI()
 
 
+# Pydantic 모델 정의 (입력 데이터)
+class Transaction(BaseModel):
+    transactionDate: str
+    transactionType: int  # 1: 입금, 2: 출금
+    transactionBalance: float
+    transactionSummary: str
+
+
+class InputData(BaseModel):
+    week1: List[Transaction]
+    week2: List[Transaction]
+    week3: List[Transaction]
+    week4: List[Transaction]
+    week5: List[Transaction]
+
+
+# class InputData(BaseModel):
+#     weeklyTransactions: WeeklyTransactions
+
+
+# Pydantic 모델 정의 (출력 데이터)
+class WeekExpense(BaseModel):
+    week1: float = 0.0
+    week2: float = 0.0
+    week3: float = 0.0
+    week4: float = 0.0
+    week5: float = 0.0
+
+
+class TotalExpense(BaseModel):
+    교육: float = 0.0
+    의료: float = 0.0
+    취미: float = 0.0
+    식비: float = 0.0
+    카페_간식: float = 0.0
+    쇼핑: float = 0.0
+    문구: float = 0.0
+    미용: float = 0.0
+    문화: float = 0.0
+    도서: float = 0.0
+    생활: float = 0.0
+    교통: float = 0.0
+
+
+class OutputData(BaseModel):
+    weekExpense: WeekExpense
+    totalExpense: TotalExpense
+
+
 @app.post("/api/chat")
 async def chat(message: str) -> str:
     print("chat data:", message)
     response = chatbot.get_chat(message)
     print("chat response:", response)
-    return {"response": response}
+    return response
 
 
-# api/report/finance
-@app.post("api/report/finance")
-async def chat(data: str) -> str:
-    print("data값:", data)
-    weekly_transactions = data["weeklyTransactions"]
+# FastAPI 엔드포인트
+@app.post("/api/report/finance", response_model=OutputData)
+async def generate_finance_report(data: InputData):
+    """
+    주간 거래 내역을 받아 주간 지출 및 카테고리별 총 지출을 계산합니다.
 
-    expense_statics = ExpenseStatics(weekly_transactions)
+    Args:
+        data: 입력 데이터 (InputData 모델).
+
+    Returns:
+        주간 지출 및 카테고리별 총 지출 (OutputData 모델).
+    """
+
+    print("Received data:", data)
+
+    expense_statics = ExpenseStatics(dict(data))
+
     week_expense, category_total_expense = expense_statics.category_expense()
-    print(week_expense, category_total_expense)
-    # week_expense
-    # [500000.0, 500000.0, 250000.0, 500000.0, 0]
-    # category_total
-    # defaultdict(<class 'int'>, {'카페/간식': 250000.0, '취미': 250000.0})
 
-    return_data = {
-        "weekExpense": {
-            "week1": week_expense[0],
-            "week2": week_expense[1],
-            "week3": week_expense[2],
-            "week4": week_expense[3],
-            "week5": week_expense[4],
-        },
-        "totalExpense": category_total_expense,
-    }
+    print("Category total expense:", week_expense)
+    print("Category total expense:", category_total_expense)
 
-    print("return 값: ", return_data)
-    return {"response": return_data}
+    # defaultdict를 Pydantic 모델로 변환
+    week_expense_data = WeekExpense(
+        week1=week_expense[0],
+        week2=week_expense[1],
+        week3=week_expense[2],
+        week4=week_expense[3],
+        week5=week_expense[4],
+    )
+    total_expense_data = TotalExpense(**category_total_expense)
+
+    print("Week expense data:", week_expense_data)
+    print("Total expense data:", total_expense_data)
+
+    return OutputData(weekExpense=week_expense_data, totalExpense=total_expense_data)

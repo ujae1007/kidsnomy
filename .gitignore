@@ -3,6 +3,7 @@
 
 # kobert model
 kobert_category/
+chroma/
 
 application-env.properties
 

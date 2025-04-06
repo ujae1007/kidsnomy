@@ -13,17 +13,30 @@ load_dotenv()
 BASE_PATH = os.path.dirname(os.path.realpath(__file__))
 
 # 카테고리 목록과 매핑
-CATEGORIES = ['교육', '의료', '취미', '식비', '카페/간식', '쇼핑', '문구', '미용', '문화', '도서', '생활', '교통']
+CATEGORIES = [
+    "교육",
+    "의료",
+    "취미",
+    "식비",
+    "카페_간식",
+    "쇼핑",
+    "문구",
+    "미용",
+    "문화",
+    "도서",
+    "생활",
+    "교통",
+]
 ID2CATEGORY = {i: cat for i, cat in enumerate(CATEGORIES)}
 
-# kakao api 검색 관련 변수수
-KAKAO_API_KEY = os.getenv('KAKAO_API')
+# kakao api 검색 관련 변수
+KAKAO_API_KEY = os.getenv("KAKAO_API")
 KAKAO_URL = "https://dapi.kakao.com/v2/local/search/keyword.json"
 
 
 class CategoryClassifier:
 
-    def __init__(self, model_path: str="kobert_category"):
+    def __init__(self, model_path: str = "kobert_category"):
         """분류기의 초기화
 
         Args:
@@ -34,7 +47,6 @@ class CategoryClassifier:
         full_model_path = os.path.join(BASE_PATH, model_path)
         self.tokenizer = AutoTokenizer.from_pretrained(full_model_path)
         self.model = AutoModelForSequenceClassification.from_pretrained(full_model_path)
-
 
     def _search_kakao_map(self, store: str, address: str) -> str:
         """도로명 주소로 카카오맵 검색 후, 해당 가게의 카테고리 들고오기
@@ -49,29 +61,27 @@ class CategoryClassifier:
             str: 카테고리
         """
 
-        headers = {
-            "Authorization": f"KakaoAK {KAKAO_API_KEY}"
-        }
+        headers = {"Authorization": f"KakaoAK {KAKAO_API_KEY}"}
         for page in range(1, 46):
             params = {
                 "query": address,
                 # "x": "127.09761630337", # 송파구
                 # "y": "37.51232891786",
                 "radius": 20000,
-                "page": page
+                "page": page,
             }
 
             response = requests.get(KAKAO_URL, headers=headers, params=params)
             if response.status_code == 200:
                 data = response.json()["documents"]
                 for item in range(len(data)):
-                    print(data[item]['place_name'])
-                    if data[item]['place_name'] == store:
-                        return data[item]['category_name']
+                    print(data[item]["place_name"])
+                    if data[item]["place_name"] == store:
+                        return data[item]["category_name"]
             else:
                 print(f"Error {response.status_code}: {response.text}")
                 continue
-        
+
         print(f"{store}, {address}를 찾지 못했습니다.")
         return ""
 
@@ -86,9 +96,15 @@ class CategoryClassifier:
         """
 
         # 입력 텍스트를 토큰화
-        encodings = self.tokenizer(kakao_category, padding="max_length", truncation=True, max_length=64, return_tensors="pt")
+        encodings = self.tokenizer(
+            kakao_category,
+            padding="max_length",
+            truncation=True,
+            max_length=64,
+            return_tensors="pt",
+        )
 
-        encodings['token_type_ids'] = torch.zeros_like(encodings['input_ids'])
+        encodings["token_type_ids"] = torch.zeros_like(encodings["input_ids"])
 
         # 예측 수행
         with torch.no_grad():
@@ -102,8 +118,10 @@ class CategoryClassifier:
         predicted_category = ID2CATEGORY[prediction]
 
         return predicted_category
-    
-    def get_category(self, stores_data: List[Tuple[str, str]], save_path: str="") -> Dict[str, str]:
+
+    def get_category(
+        self, stores_data: List[Tuple[str, str]], save_path: str = ""
+    ) -> Dict[str, str]:
         """stores의 가게명과 주소를 기반으로 재분류된 카테고리를 반환합니다.
 
         Args:
@@ -121,10 +139,9 @@ class CategoryClassifier:
 
             # 입력한 저장 파일 경로가 있으면 불러오기
             if os.path.exists(full_save_path):
-                with open(full_save_path, 'r', encoding='UTF-8') as load_file:
+                with open(full_save_path, "r", encoding="UTF-8") as load_file:
                     category_map = json.load(load_file)
                 print("카테고리 파일을 불러왔습니다.")
-
 
         # 입력 받은 가게 정보를 기반으로 카테고리 재분류
         print("카테고리 재분류 중...")
@@ -142,14 +159,15 @@ class CategoryClassifier:
                 continue
 
             category_map[kakao_category] = new_category
-        
+
         # 카테고리 저장
         if save_path:
-            with open(full_save_path, 'w', encoding='UTF-8') as save_file:
+            with open(full_save_path, "w", encoding="UTF-8") as save_file:
                 json.dump(category_map, save_file, indent=4, ensure_ascii=False)
             print(f"카테고리 파일이 저장되었습니다. ({full_save_path})")
 
         return category_map
+
 
 if __name__ == "__main__":
     from pprint import pprint

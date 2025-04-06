@@ -1,5 +1,6 @@
 python-dotenv
 langchain
+accelerate
 openai
 nltk
 sentence-transformers
@@ -9,5 +10,6 @@ langchain-community
 langchain_community
 unstructured
 
+# faiss-gpu
 fastapi
 uvicorn

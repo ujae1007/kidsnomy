@@ -24,6 +24,8 @@ import ChildBankProductsPage from '@/pages/ChildBankProducts/ChildBankProductsPa
 import ChildJobListPage from '@/pages/ChildJobList/ChildJobListPage';
 import DepositProductDetailPage from '@/pages/DepositProductDetail/DepositProductDetailPage';
 import SavingProductDetailPage from '@/pages/SavingProductDetail/SavingProductDetailPage';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store/store';
 
 const SendMoneyCompletePage = () => {
   const navigate = useNavigate();
@@ -33,6 +35,8 @@ const SendMoneyCompletePage = () => {
 };
 
 const App: React.FC = () => {
+  const selectedGroupId = useSelector((state: RootState) => state.group.selectedGroupId);
+
   return (
     <Router>
       <Routes>

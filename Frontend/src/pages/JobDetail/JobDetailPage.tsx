@@ -224,9 +224,39 @@ const JobDetailPage: React.FC = () => {
     setIsCompleteModalOpen(true);
   };
 
-  const handleConfirmComplete = () => {
-    // TODO: API 호출로 상태 변경
-    setIsCompleteModalOpen(false);
+  const handleConfirmComplete = async () => {
+    console.log(`🏁 일자리 완료 요청 시도 (jobId: ${jobId})`);
+    
+    try {
+      const response = await apiCall(`work/child/complete/${jobId}`, {
+        method: 'PUT',
+        auth: true
+      });
+      
+      console.log('✅ 일자리 완료 요청 성공');
+      alert('일자리 완료 요청이 정상적으로 처리되었습니다.');
+      setIsCompleteModalOpen(false);
+      window.location.reload();
+    } catch (error) {
+      console.error('❌ 일자리 완료 요청 중 에러 발생:', error);
+      
+      // 에러 메시지 처리
+      const errorMessage = (error as any).message;
+      if (errorMessage.includes('사용자를 찾을 수 없습니다.')) {
+        alert('사용자를 찾을 수 없습니다.');
+      } else if (errorMessage.includes('자녀만 완료 요청을 할 수 있습니다.')) {
+        alert('자녀만 완료 요청을 할 수 있습니다.');
+      } else if (errorMessage.includes('본인이 계약한 일자리가 아닙니다.')) {
+        alert('본인이 계약한 일자리가 아닙니다.');
+      } else if (errorMessage.includes('진행 중인 일자리만 완료 요청이 가능합니다.')) {
+        alert('진행 중인 일자리만 완료 요청이 가능합니다.');
+      } else if (errorMessage.includes('일자리를 찾을 수 없습니다.')) {
+        alert('일자리를 찾을 수 없습니다.');
+      } else {
+        alert('일자리 완료 요청 중 오류가 발생했습니다.');
+      }
+      setIsCompleteModalOpen(false);
+    }
   };
 
   const handleCancelComplete = () => {

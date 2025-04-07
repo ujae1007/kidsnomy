@@ -11,6 +11,13 @@ public class TransactionSummaryDto {
     // 생성자, Getter, Setter
     public TransactionSummaryDto() {}
 
+    public TransactionSummaryDto(String transactionDate, int transactionType, BigDecimal transactionBalance, String transactionSummary) {
+        this.transactionDate = transactionDate;
+        this.transactionType = transactionType;
+        this.transactionBalance = transactionBalance;
+        this.transactionSummary = transactionSummary;
+    }
+
     public String getTransactionDate() {
         return transactionDate;
     }

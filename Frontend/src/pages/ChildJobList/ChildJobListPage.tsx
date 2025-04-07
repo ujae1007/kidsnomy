@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/store';
+import { setAvailableJobs, setContractedJobs } from '../../store/slices/jobSlice';
 import SearchBar from '@/components/jobs/SearchBar';
 import FilterButtons from '@/components/jobs/FilterButtons';
 import styles from './ChildJobListPage.module.css';
@@ -35,12 +36,12 @@ const STATUS_LABELS: Record<number, string> = {
 
 const ChildJobListPage: React.FC = () => {
   const navigate = useNavigate();
-  const { accessToken, isAuthenticated, isParent } = useSelector((state: RootState) => state.auth);
+  const dispatch = useDispatch();
+  const { accessToken, isAuthenticated } = useSelector((state: RootState) => state.auth);
   const selectedGroupId = useSelector((state: RootState) => state.group.selectedGroupId);
+  const { availableJobs, contractedJobs } = useSelector((state: RootState) => state.job);
   
   // 상태 관리
-  const [jobs, setJobs] = useState<Job[]>([]);
-  const [filteredJobs, setFilteredJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [isContractedView, setIsContractedView] = useState<boolean>(false);
@@ -49,6 +50,7 @@ const ChildJobListPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedStatus, setSelectedStatus] = useState<number | null>(null);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
+  const [filteredJobs, setFilteredJobs] = useState<Job[]>([]);
 
   // 그룹 선택 여부 확인
   useEffect(() => {
@@ -84,21 +86,21 @@ const ChildJobListPage: React.FC = () => {
       });
 
       console.log('받아온 일자리 목록:', response);
-      setJobs(response || []);
+      
+      if (isContractedView) {
+        dispatch(setContractedJobs(response || []));
+      } else {
+        dispatch(setAvailableJobs(response || []));
+      }
+      
       setFilteredJobs(response || []);
     } catch (error: any) {
       console.error('❌ 자녀 일자리 조회 중 에러 발생:', error);
       if (error.status === 403) {
-        if (isParent) {
-          setError('자녀만 이용할 수 있는 기능입니다.');
-        } else {
-          setError('본인이 속한 그룹이 아닙니다.');
-        }
+        setError('접근 권한이 없습니다.');
       } else {
         setError('일자리 목록을 불러오는데 실패했습니다.');
       }
-      // 에러 발생 시 빈 배열로 설정
-      setJobs([]);
       setFilteredJobs([]);
     } finally {
       setLoading(false);
@@ -107,8 +109,10 @@ const ChildJobListPage: React.FC = () => {
   
   // 컴포넌트 마운트 시와 필터 변경 시 데이터 가져오기
   useEffect(() => {
-    fetchJobs();
-  }, [selectedGroupId, accessToken, isContractedView]);
+    if (isAuthenticated && selectedGroupId) {
+      fetchJobs();
+    }
+  }, [selectedGroupId, accessToken, isContractedView, isAuthenticated]);
   
   // 검색어 변경 처리
   const handleSearchChange = (value: string) => {
@@ -134,7 +138,8 @@ const ChildJobListPage: React.FC = () => {
   
   // 검색 및 필터링 적용
   useEffect(() => {
-    let result = [...jobs];
+    const currentJobs = isContractedView ? contractedJobs : availableJobs;
+    let result = [...currentJobs];
     
     // 검색어 필터링
     if (searchTerm) {
@@ -162,7 +167,7 @@ const ChildJobListPage: React.FC = () => {
     });
     
     setFilteredJobs(result);
-  }, [jobs, searchTerm, selectedStatus, sortOrder]);
+  }, [availableJobs, contractedJobs, searchTerm, selectedStatus, sortOrder, isContractedView]);
 
   return (
     <div className={styles.container}>

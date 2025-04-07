@@ -179,6 +179,4 @@ public class ReportService {
 
         return count > 0 ? totalRatio.divide(BigDecimal.valueOf(count), 4, RoundingMode.HALF_UP) : BigDecimal.ZERO;
     }
-
-
 }

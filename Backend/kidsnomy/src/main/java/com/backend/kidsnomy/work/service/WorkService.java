@@ -125,7 +125,7 @@ public class WorkService {
         workRepository.delete(work);
     }
 
- // (부모) 본인이 그룹 내에서 생성한 일자리 조회
+    // (부모) 본인이 그룹 내에서 생성한 일자리 조회
     @Transactional(readOnly = true)
     public List<ParentWorkListResponseDto> getParentWorkList(Long groupId, HttpServletRequest request) {
         String token = extractTokenFromRequest(request);
@@ -157,7 +157,7 @@ public class WorkService {
     }
 
     
- // (자녀) 계약 안 된 일자리 전체 조회
+    // (자녀) 계약 안 된 일자리 전체 조회
     @Transactional(readOnly = true)
     public List<ChildWorkListResponseDto> getUncontractedWorks(Long groupId, HttpServletRequest request) {
         String token = extractTokenFromRequest(request);
@@ -175,6 +175,35 @@ public class WorkService {
         }
 
         List<Work> works = workRepository.findAllByGroupIdAndEmployeeIdIsNull(groupId);
+        return works.stream()
+                .map(work -> {
+                    User employer = userRepository.findById(work.getEmployerId()).orElse(null);
+                    User employee = work.getEmployeeId() != null ? userRepository.findById(work.getEmployeeId()).orElse(null) : null;
+                    return ChildWorkListResponseDto.fromEntity(work, employer, employee);
+                })
+                .toList();
+    }
+    
+    // (자녀) 계약 여부 상관없이 모든 일자리 전체 조회
+    @Transactional(readOnly = true)
+    public List<ChildWorkListResponseDto> getAllWorks(Long groupId, HttpServletRequest request) {
+        String token = extractTokenFromRequest(request);
+        String email = jwtTokenProvider.getEmailFromToken(token);
+
+        User child = userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "사용자를 찾을 수 없습니다."));
+
+        if (child.getIsParent() != null && child.getIsParent()) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "자녀만 이용할 수 있는 기능입니다.");
+        }
+
+        if (!groupMembershipRepository.existsByUserIdAndGroupId(child.getId(), groupId)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "본인이 속한 그룹이 아닙니다.");
+        }
+
+        // 모든 일자리 조회 (계약 여부 관계없이)
+        List<Work> works = workRepository.findAllByGroupId(groupId);
+
         return works.stream()
                 .map(work -> {
                     User employer = userRepository.findById(work.getEmployerId()).orElse(null);
@@ -217,7 +246,7 @@ public class WorkService {
         workRepository.save(work);
     }
     
- // (자녀) 본인이 계약한 일자리 조회
+    // (자녀) 본인이 계약한 일자리 조회
     @Transactional(readOnly = true)
     public List<ChildContractedWorkResponseDto> getContractedWorkList(Long groupId, HttpServletRequest request) {
         String token = extractTokenFromRequest(request);

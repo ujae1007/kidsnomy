@@ -25,4 +25,7 @@ public interface WorkRepository extends JpaRepository<Work, Long> {
 
     // 스케쥴러 처리를 위함
     List<Work> findAllByEndAtBefore(LocalDateTime now);
+    
+    // 그룹 내 모든 일자리 조회를 위함
+    List<Work> findAllByGroupId(Long groupId);
 }

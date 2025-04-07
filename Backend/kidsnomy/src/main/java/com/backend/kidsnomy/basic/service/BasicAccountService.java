@@ -330,6 +330,4 @@ public class BasicAccountService {
             throw new AccountException("거래내역 조회 실패: " + e.getMessage());
         }
     }
-
-
 }

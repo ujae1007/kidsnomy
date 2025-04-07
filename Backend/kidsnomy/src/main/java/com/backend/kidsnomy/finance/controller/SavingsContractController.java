@@ -2,7 +2,7 @@ package com.backend.kidsnomy.finance.controller;
 
 import com.backend.kidsnomy.finance.dto.ApiResponseDto;
 import com.backend.kidsnomy.finance.dto.SavingsContractRequestDto;
-import com.backend.kidsnomy.finance.service.SavingsContractService;
+import com.backend.kidsnomy.finance.service.contract.SavingsContractService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

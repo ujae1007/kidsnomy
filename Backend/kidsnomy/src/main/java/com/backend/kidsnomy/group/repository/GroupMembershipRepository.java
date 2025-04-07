@@ -24,4 +24,10 @@ public interface GroupMembershipRepository extends JpaRepository<GroupMembership
 	
 	// 내가 가입한 그룹 목록 조회
 	List<GroupMembership> findByUserId(Long userId); // 단일 결과 반환
+
+    // 다중 조회 (사용자가 여러 그룹에 속할 수 있는 경우)
+    List<GroupMembership> findAllByUserId(Long userId);
+
+    // 그룹 내 모든 멤버 조회
+    List<GroupMembership> findByGroupId(Long groupId);
 }

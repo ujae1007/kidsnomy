@@ -3,7 +3,7 @@ FROM kwon0528/b207-fastapi-app:0.0.1
 WORKDIR /app
 
 # # requirements.txt 복사 및 종속성 설치
-# COPY . .
+COPY . .
 # RUN apt-get update && apt-get install -y --no-install-recommends libmagic1
 # RUN pip install --no-cache-dir -r requirements.txt
 # RUN pip install torch torchvision torchaudio

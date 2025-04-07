@@ -1,32 +1,54 @@
 package com.backend.kidsnomy.common.exception;
 
+import com.backend.kidsnomy.common.dto.ErrorResponse;
+import com.backend.kidsnomy.common.enums.ErrorCode;
 import com.backend.kidsnomy.finance.exception.NoBasicAccountException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.net.URI;
-
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
+    // 기존 Spring 예외 처리
     @ExceptionHandler(ResponseStatusException.class)
-    public ResponseEntity<String> handleResponseStatusException(ResponseStatusException ex) {
-        return ResponseEntity.status(ex.getStatusCode())
-                .body("{\"error\": \"" + ex.getReason() + "\"}");
+    public ResponseEntity<ErrorResponse> handleResponseStatusException(ResponseStatusException ex) {
+        ErrorResponse response = new ErrorResponse(
+                ErrorCode.INVALID_REQUEST,
+                ex.getReason() != null ? ex.getReason() : "요청 처리 실패"
+        );
+        return ResponseEntity.status(ex.getStatusCode()).body(response);
     }
 
+    // 커스텀 예외 처리
     @ExceptionHandler(NoBasicAccountException.class)
     public ResponseEntity<ErrorResponse> handleNoBasicAccount(NoBasicAccountException ex) {
-        ErrorResponse errorResponse = ErrorResponse.builder(ex, HttpStatus.BAD_REQUEST, ex.getMessage())
-                .type(URI.create("https://example.com/errors/no-basic-account")) // 에러 타입 URI (선택 사항)
-                .title("No Basic Account Found") // 제목 (선택 사항)
-                .detail(ex.getMessage()) // 상세 메시지
-                .build();
+        ErrorResponse response = new ErrorResponse(
+                ErrorCode.NO_BASIC_ACCOUNT,
+                ex.getMessage()
+        );
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+    }
 
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+    // 외부 API 예외 처리
+    @ExceptionHandler(ExternalApiException.class)
+    public ResponseEntity<ErrorResponse> handleExternalApiException(ExternalApiException ex) {
+        ErrorResponse response = new ErrorResponse(
+                ex.getErrorCode(),
+                ex.getMessage()
+        );
+        return ResponseEntity.status(ex.getErrorCode().getStatus()).body(response);
+    }
+
+    // 그 외 모든 예외 처리
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponse> handleAllExceptions(Exception ex) {
+        ErrorResponse response = new ErrorResponse(
+                ErrorCode.INTERNAL_SERVER_ERROR,
+                "서버 내부 오류가 발생했습니다: " + ex.getMessage()
+        );
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
     }
 }

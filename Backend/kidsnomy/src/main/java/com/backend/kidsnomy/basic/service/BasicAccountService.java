@@ -3,11 +3,7 @@ package com.backend.kidsnomy.basic.service;
 import com.backend.kidsnomy.basic.dto.*;
 import com.backend.kidsnomy.basic.entity.AccountLog;
 import com.backend.kidsnomy.basic.entity.BasicAccount;
-import com.backend.kidsnomy.basic.exception.AccountCloseException;
-import com.backend.kidsnomy.basic.exception.AccountCreationException;
-import com.backend.kidsnomy.basic.exception.AccountException;
-import com.backend.kidsnomy.basic.exception.AccountNotFoundException;
-import com.backend.kidsnomy.basic.exception.UserNotFoundException;
+import com.backend.kidsnomy.basic.exception.*;
 import com.backend.kidsnomy.basic.repository.AccountLogRepository;
 import com.backend.kidsnomy.basic.repository.BasicAccountRepository;
 import com.backend.kidsnomy.common.exception.AuthenticationException;
@@ -269,6 +265,7 @@ public class BasicAccountService {
         }
 
         String apiUrl = baseUrl + "/ssafy/api/v1/edu/demandDeposit/inquireTransactionHistoryList";
+
         Map<String, Object> header = ApiUtils.createApiRequestHeader("inquireTransactionHistoryList", apiKey, userKey);
 
         Map<String, Object> body = new HashMap<>();
@@ -308,6 +305,7 @@ public class BasicAccountService {
                 );
 
                 result.add(dto);
+               
 
                 // ✅ 저장되어 있으면 저장은 하지 않고 넘어감
                 if (accountLogRepository.existsByTransactionUniqueNo(transactionUniqueNo)) {
@@ -382,7 +380,7 @@ public class BasicAccountService {
             throw new AccountNotFoundException("계좌 잔액 최신화 실패: " + e.getMessage());
         }
     }
-    
+
     // 계좌 상세 조회
     public AccountDetailResponseDto getMyAccountDetail(String email) {
         // 1. 유저 조회
@@ -437,7 +435,7 @@ public class BasicAccountService {
 
 
 
-    
+
     public AccountTransactionResponseDto getAccountLogByEmail(String email) {
         // 유저 & 계좌 조회
         User user = userRepository.findByEmail(email)
@@ -447,7 +445,7 @@ public class BasicAccountService {
             throw new AccountNotFoundException("사용자의 계좌가 존재하지 않습니다.");
         }
         BasicAccount account = accounts.get(0); // 첫 번째 계좌 사용
-        
+
         // 기본 요청 정보 세팅
         AccountTransactionRequestDto requestDto = new AccountTransactionRequestDto();
         requestDto.setAccountNo(account.getAccountNo());
@@ -456,7 +454,7 @@ public class BasicAccountService {
 
         return getAccountLogInternal(account, requestDto, email);
     }
-    
+
     private AccountTransactionResponseDto getAccountLogInternal(BasicAccount account, AccountTransactionRequestDto requestDto, String email) {
         String userKey = userKeyService.getUserKeyByEmail(email);
 
@@ -554,5 +552,6 @@ public class BasicAccountService {
             throw new AccountException("거래내역 조회 실패: " + e.getMessage());
         }
     }
+
 
 }

@@ -30,9 +30,9 @@ services:
       SPRING_DATASOURCE_PASSWORD: ssafy
   
   fastapi-app:
-    # image: kwon0528/b207-fastapi-app:latest
-    build: 
-      context: ./AI
+    image: kwon0528/b207-fastapi-app:latest
+    # build: 
+    #   context: ./AI
     container_name: fastapi-app
     # entrypoint: uvicorn server:app --port 8000 --host 0.0.0.0 --reload
     ports:

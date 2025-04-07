@@ -32,7 +32,7 @@ public class DepositContract {
     @Column(name = "account_no", nullable = false, unique = true)
     private String accountNo;
 
-    @Column(precision = 15, scale = 2)
+    @Column(name = "balancedeposit", precision = 15, scale = 2)
     private BigDecimal balance; // 초기 납입 금액 (초기 잔고)
 
     @Column(name = "total_volume", precision = 15, scale = 2)

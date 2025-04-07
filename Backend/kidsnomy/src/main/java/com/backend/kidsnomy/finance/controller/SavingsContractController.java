@@ -20,7 +20,7 @@ public class SavingsContractController {
     // 적금 계좌 생성 API
     @PostMapping("/contract/{productId}")
     public ResponseEntity<ApiResponseDto> createSavingsContract(
-            @PathVariable Long productId,
+            @PathVariable("productId") Long productId,
             @RequestBody SavingsContractRequestDto requestDto,
             HttpServletRequest request) {
 

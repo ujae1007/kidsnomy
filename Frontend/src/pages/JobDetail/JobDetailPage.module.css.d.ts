@@ -1,12 +1,12 @@
 declare const styles: {
   readonly container: string;
   readonly title: string;
-  readonly subTitle: string;
-  readonly statusTag: string;
-  readonly section: string;
-  readonly sectionTitle: string;
-  readonly sectionContent: string;
-  readonly buttonsContainer: string;
+  readonly contentSection: string;
+  readonly infoSection: string;
+  readonly infoRow: string;
+  readonly label: string;
+  readonly value: string;
+  readonly buttonWrapper: string;
   readonly button: string;
   readonly primaryButton: string;
   readonly warningButton: string;

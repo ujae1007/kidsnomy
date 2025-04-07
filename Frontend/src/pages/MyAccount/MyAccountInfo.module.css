@@ -1,37 +1,44 @@
 .container {
   width: 100%;
-  max-width: 350px;
-  margin: 0 auto;
-  padding: 1rem;
+  min-height: 100vh;
+  background-color: #F8F9FA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
 }
 
 .title {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 1.5rem;
-  color: #1A0D0D;
+  margin-bottom: 2rem;
+  color: #333;
 }
 
 .content {
-  width: 100%;
+  width: 90%;
+  max-width: 500px;
 }
 
 .accountCard {
-  background-color: #F5F5F5;
-  border-radius: 12px;
+  background-color: white;
+  border-radius: 16px;
   padding: 1.5rem;
-  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .accountHeader {
   margin-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
 }
 
 .accountHeader h2 {
-  font-size: 1.2rem;
-  color: #826B6B;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
 }
 
 .accountDetails {
@@ -45,22 +52,30 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(130, 107, 107, 0.1);
-}
-
-.detailItem:last-child {
-  border-bottom: none;
 }
 
 .label {
-  color: #826B6B;
-  font-size: 1rem;
+  color: #666;
+  font-size: 0.9rem;
 }
 
 .value {
-  color: #826B6B;
+  color: #333;
   font-weight: 500;
   font-size: 1rem;
+}
+
+.errorMessage {
+  color: #ff4d4f;
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.loadingMessage {
+  text-align: center;
+  color: #666;
+  margin: 1rem 0;
 }
 
 .deleteButton {

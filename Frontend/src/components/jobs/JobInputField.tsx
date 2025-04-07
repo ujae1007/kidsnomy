@@ -9,6 +9,7 @@ interface JobInputFieldProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   required?: boolean;
   isReadOnly?: boolean;
+  inputMode?: string;
 }
 
 const JobInputField: React.FC<JobInputFieldProps> = ({

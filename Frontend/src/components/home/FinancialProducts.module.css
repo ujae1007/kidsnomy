@@ -1,20 +1,23 @@
 .container {
   width: 100%;
-  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
   overflow: hidden;
   position: relative;
 }
 
 .carousel {
   display: flex;
-  gap: 1rem;
-  padding: 0.5rem;
+  width: 100%;
+  padding: 1rem 0;
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;  /* Firefox */
   -ms-overflow-style: none;  /* IE and Edge */
+  gap: 1.5rem;  /* 카드 사이 간격 */
 }
 
 .carousel::-webkit-scrollbar {
@@ -22,8 +25,8 @@
 }
 
 .productCard {
-  flex: 0 0 calc(100% - 2rem);  /* 한 번에 하나의 카드만 보이도록 */
-  scroll-snap-align: center;     /* 중앙 정렬로 변경 */
+  flex: 0 0 calc(100% - 5rem);
+  scroll-snap-align: center;
   background: #FFE5E5;
   border-radius: 20px;
   padding: 1.5rem;
@@ -32,6 +35,7 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  margin: 0 3rem;
 }
 
 .productCard:hover {

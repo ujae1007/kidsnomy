@@ -133,27 +133,69 @@
 
 .groupItem {
   display: flex;
-  width: 100%;
-  height: 56px;
-  padding: 8px 16px;
   justify-content: space-between;
   align-items: center;
-  background-color: #F7F2F2;
+  padding: 1rem;
+  background-color: white;
   border-radius: 8px;
-  box-sizing: border-box;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.groupInfo {
+  flex: 1;
 }
 
 .groupName {
-  color: #826B6B;
+  display: block;
   font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.groupCode {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.groupActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.selectButton {
+  padding: 0.5rem 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.selectButton:hover {
+  background-color: #45a049;
+}
+
+.selectButton[disabled] {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 
 .deleteButton {
   padding: 0.5rem 1rem;
+  background-color: #ff4d4f;
+  color: white;
   border: none;
-  border-radius: 8px;
-  background-color: #F5D7D7;
-  color: #826B6B;
-  font-size: 0.9rem;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.deleteButton:hover {
+  background-color: #ff7875;
 } 

@@ -68,8 +68,6 @@ const Header: React.FC = () => {
       {/* Sliding Menu */}
       <div className={`${styles.menuDrawer} ${isMenuOpen ? styles.open : ''}`}>
         <nav className={styles.menuList}>
-          <button className={styles.menuItem}>이름</button>
-          <button className={styles.menuItem}>아이디</button>
           <button className={styles.menuItem} onClick={() => handleNavigation('/group')}>그룹 관리</button>
           <button className={styles.menuItem} onClick={() => handleNavigation('/account')}>계좌 등록</button>
           <button className={styles.menuItem} onClick={handleLogout}>로그아웃</button>

@@ -1,7 +1,6 @@
 .container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
 .loading {
@@ -11,79 +10,94 @@
 }
 
 .card {
-  background: linear-gradient(135deg, #FF9EAA 0%, #FFD93D 100%);
+  background: white;
   border-radius: 16px;
   padding: 1.5rem;
-  color: #2D3436;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-.card:focus-visible {
-  box-shadow: 0 0 0 3px rgba(255, 158, 170, 0.5);
-}
-
-.cardHeader {
+.noAccount {
+  background: linear-gradient(135deg, #FFB6B6 0%, #FFE08C 100%);
+  min-height: 200px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.noAccountMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #2D3436;
+}
+
+.noAccountMessage h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.noAccountMessage p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.registerButton {
+  background-color: white;
+  color: #2D3436;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+}
+
+.registerButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .chipIcon {
-  margin-bottom: 1.5rem;
-  color: #2D3436;
-  opacity: 0.9;
-}
-
-.cardInfo {
-  flex-grow: 1;
-  margin: 0 1rem;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  color: #914F4F;
 }
 
 .cardTitle {
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #2D3436;
   margin-bottom: 1rem;
+  margin-top: 3rem;
 }
 
 .balance {
   font-size: 2rem;
   font-weight: bold;
+  color: #2D3436;
   margin-bottom: 1rem;
+}
+
+.accountNumber {
+  font-size: 1rem;
+  color: #95A5A6;
 }
 
 .mastercard {
   position: absolute;
-  top: 1rem;
-  right: -1rem;
-  width: 120px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mastercard img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.accountNumber {
-  font-size: 1.25rem;
-  letter-spacing: 2px;
-  margin-bottom: 1.5rem;
-  opacity: 0.9;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 60px;
+  height: auto;
 }
 
 .accountDetails {
@@ -129,6 +143,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 10;
+  margin-top: 1rem;
 }
 
 .sendButton:hover {

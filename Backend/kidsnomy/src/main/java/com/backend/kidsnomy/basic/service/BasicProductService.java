@@ -10,6 +10,7 @@ import com.backend.kidsnomy.common.exception.AuthenticationException;
 import com.backend.kidsnomy.common.service.UserKeyService;
 import com.backend.kidsnomy.common.util.ApiUtils;
 
+import com.backend.kidsnomy.user.repository.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -25,21 +26,23 @@ import java.util.Objects;
 public class BasicProductService {
 
     private final BasicProductRepository basicProductRepository;
+    private final UserRepository userRepository;
     private final RestTemplate restTemplate;
     private final JwtTokenProvider jwtTokenProvider;
     private final UserKeyService userKeyService;
-
     private final String apiKey;
     private final String baseUrl;
 
     public BasicProductService(
             BasicProductRepository basicProductRepository,
+            UserRepository userRepository,
             RestTemplate restTemplate,
             JwtTokenProvider jwtTokenProvider,
             UserKeyService userKeyService,
             @Value("${ssafy.api.apiKey}") String apiKey,
             @Value("${ssafy.api.base-url}") String baseUrl) {
         this.basicProductRepository = basicProductRepository;
+        this.userRepository = userRepository;
         this.restTemplate = restTemplate;
         this.jwtTokenProvider = jwtTokenProvider;
         this.userKeyService = userKeyService;
@@ -51,28 +54,32 @@ public class BasicProductService {
      * 수시입출금 상품 생성
      */
     public BasicProductResponseDto createProduct(HttpServletRequest request, BasicProductRequestDto requestDto) {
-        // 1. 사용자 인증 및 이메일 추출
+        // 사용자 인증 및 이메일 추출
         String token = jwtTokenProvider.resolveAccessToken(request);
         if (token == null || !jwtTokenProvider.validateToken(token)) {
             throw new AuthenticationException("유효하지 않은 토큰입니다.");
         }
+        // 이메일 → userId 추출
         String email = jwtTokenProvider.getEmailFromToken(token);
+        Long userId = userRepository.findByEmail(email)
+                .orElseThrow(() -> new AuthenticationException("해당 이메일을 가진 사용자를 찾을 수 없습니다."))
+                .getId();
 
-        // 2. 이메일로 userKey 조회
+        // 이메일로 userKey 조회
         String userKey = userKeyService.getUserKeyByEmail(email);
 
-        // 3. 기존 상품 존재 시 리턴
-        if (basicProductRepository.count() > 0) {
-            BasicProduct product = basicProductRepository.findAll().get(0);
-            return new BasicProductResponseDto(
-                    product.getAccountTypeUniqueNo(),
-                    requestDto.getAccountName(),
-                    requestDto.getAccountDescription(),
-                    requestDto.getBankCode()
-            );
-        }
+        // 기존 상품 존재 시 리턴 - 고정값 사용 (상품은 무조건 존재)
+//        if (basicProductRepository.count() > 0) {
+//            BasicProduct product = basicProductRepository.findAll().get(0);
+//            return new BasicProductResponseDto(
+//                    product.getAccountTypeUniqueNo(),
+//                    requestDto.getAccountName(),
+//                    requestDto.getAccountDescription(),
+//                    requestDto.getBankCode()
+//            );
+//        }
 
-        // 4. SSAFY API 요청 준비
+        // SSAFY API 요청 준비
         String apiUrl = baseUrl + "/ssafy/api/v1/edu/demandDeposit/createDemandDeposit";
 
         Map<String, Object> requestBody = new HashMap<>();

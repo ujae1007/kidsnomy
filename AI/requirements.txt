@@ -1,0 +1,15 @@
+python-dotenv
+langchain
+accelerate
+openai
+nltk
+sentence-transformers
+chromadb
+langchain-huggingface
+langchain-community
+langchain_community
+unstructured
+
+# faiss-gpu
+fastapi
+uvicorn

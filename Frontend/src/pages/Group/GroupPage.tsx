@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from './GroupPage.module.css';
-import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import { apiCall } from '@/utils/api';
+import { setSelectedGroupId } from '@/store/slices/groupSlice';
 
 interface Group {
   groupId: number;
@@ -21,20 +22,37 @@ interface CreateGroupResponse {
 
 const GroupPage: React.FC = () => {
   const navigate = useNavigate();
-  const { isParent } = useSelector((state: RootState) => state.auth);
+  const dispatch = useDispatch();
+  const { isParent, accessToken } = useSelector((state: RootState) => state.auth);
+  const selectedGroupId = useSelector((state: RootState) => state.group.selectedGroupId);
   const [searchQuery, setSearchQuery] = useState('');
   const [groups, setGroups] = useState<Group[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Redux store의 현재 상태를 콘솔에 출력
+  useEffect(() => {
+    console.log('현재 선택된 그룹 ID:', selectedGroupId);
+  }, [selectedGroupId]);
+
   // 그룹 목록 조회
   useEffect(() => {
     const fetchGroups = async () => {
+      if (!accessToken) {
+        setError('로그인이 필요합니다.');
+        setIsLoading(false);
+        return;
+      }
+
       try {
-        const response = await apiCall<Group[]>('group/check', {
+        const response = await apiCall<Group[]>('/group/check', {
           method: 'GET',
-          auth: true
+          headers: {
+            'Authorization': `Bearer ${accessToken}`,
+            'Content-Type': 'application/json'
+          }
         });
+        console.log('받아온 그룹 목록:', response);
         setGroups(response);
       } catch (error) {
         console.error('그룹 목록 조회 중 에러 발생:', error);
@@ -45,7 +63,25 @@ const GroupPage: React.FC = () => {
     };
 
     fetchGroups();
-  }, []);
+  }, [accessToken]);
+
+  const handleSelectGroup = (groupId: number) => {
+    console.log('그룹 선택 시도:', groupId);
+    
+    try {
+      dispatch(setSelectedGroupId(groupId));
+      console.log('그룹 선택 완료. 저장된 groupId:', groupId);
+      
+      // 선택한 그룹의 정보 찾기
+      const selectedGroup = groups.find(group => group.groupId === groupId);
+      if (selectedGroup) {
+        alert(`그룹이 선택되었습니다.\n그룹 이름: ${selectedGroup.ownerName}\n그룹 코드: ${selectedGroup.groupCode}`);
+      }
+    } catch (error) {
+      console.error('그룹 선택 중 에러 발생:', error);
+      alert('그룹 선택 중 오류가 발생했습니다.');
+    }
+  };
 
   const handleSearch = async () => {
     if (!searchQuery.trim()) {
@@ -53,27 +89,37 @@ const GroupPage: React.FC = () => {
       return;
     }
 
+    if (!accessToken) {
+      alert('로그인이 필요합니다.');
+      return;
+    }
+
     try {
-      await apiCall('group/participation', {
+      await apiCall('/group/participation', {
         method: 'POST',
-        auth: true,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`
+        },
         body: JSON.stringify({
           groupCode: searchQuery.trim()
         })
       });
       
-      // 성공적으로 그룹 참여가 완료된 경우
       alert('그룹 참여가 완료되었습니다.');
       setSearchQuery(''); // 입력 필드 초기화
       
       // 그룹 목록 새로고침
-      const updatedGroups = await apiCall<Group[]>('group/check', {
+      const updatedGroups = await apiCall<Group[]>('/group/check', {
         method: 'GET',
-        auth: true
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        }
       });
       setGroups(updatedGroups);
       
     } catch (error: any) {
+      console.error('그룹 참여 에러:', error);
       if (error.status === 404) {
         alert('해당 그룹이 존재하지 않습니다.');
       } else if (error.status === 409) {
@@ -81,41 +127,54 @@ const GroupPage: React.FC = () => {
       } else {
         alert('그룹 참여 중 오류가 발생했습니다.');
       }
-      console.error('그룹 참여 에러:', error);
     }
   };
 
   const handleCreateGroup = async () => {
+    if (!accessToken) {
+      alert('로그인이 필요합니다.');
+      return;
+    }
+
     try {
-      const response = await apiCall<CreateGroupResponse>('group/create', {
+      const response = await apiCall<CreateGroupResponse>('/group/create', {
         method: 'POST',
-        auth: true
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        }
       });
       
-      // 성공적으로 그룹이 생성된 경우
       alert(`그룹이 생성되었습니다.\n그룹 코드: ${response.groupCode}`);
       
       // 그룹 목록 새로고침
-      const updatedGroups = await apiCall<Group[]>('group/check', {
+      const updatedGroups = await apiCall<Group[]>('/group/check', {
         method: 'GET',
-        auth: true
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        }
       });
       setGroups(updatedGroups);
     } catch (error: any) {
-      // 403 에러인 경우
+      console.error('그룹 생성 에러:', error);
       if (error.status === 403) {
         alert('부모 사용자만 그룹을 생성할 수 있습니다.');
       } else {
-        // 기타 에러
         alert('그룹 생성 중 오류가 발생했습니다.');
       }
-      console.error('그룹 생성 에러:', error);
     }
   };
 
   const handleDeleteGroup = (groupId: string) => {
     // TODO: 그룹 삭제 로직 구현
     console.log('그룹 삭제:', groupId);
+  };
+
+  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // 숫자만 입력 가능하도록 처리
+    if (/^\d*$/.test(value)) {
+      setSearchQuery(value);
+    }
   };
 
   return (
@@ -147,9 +206,10 @@ const GroupPage: React.FC = () => {
             <input
               type="text"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={handleSearchInputChange}
               placeholder="그룹코드를 입력해주세요."
               className={styles.searchInput}
+              maxLength={6}
             />
           </div>
           <button 
@@ -173,14 +233,24 @@ const GroupPage: React.FC = () => {
           ) : (
             groups.map((group) => (
               <div key={group.groupId} className={styles.groupItem}>
-                <span className={styles.groupName}>{group.ownerName}</span>
-                <span className={styles.groupCode}>그룹코드: {group.groupCode}</span>
-                <button
-                  className={styles.deleteButton}
-                  onClick={() => handleDeleteGroup(group.groupId.toString())}
-                >
-                  삭제
-                </button>
+                <div className={styles.groupInfo}>
+                  <span className={styles.groupName}>{group.ownerName}</span>
+                  <span className={styles.groupCode}>그룹코드: {group.groupCode}</span>
+                </div>
+                <div className={styles.groupActions}>
+                  <button
+                    className={styles.selectButton}
+                    onClick={() => handleSelectGroup(group.groupId)}
+                  >
+                    {selectedGroupId === group.groupId ? '선택됨' : '선택'}
+                  </button>
+                  <button
+                    className={styles.deleteButton}
+                    onClick={() => handleDeleteGroup(group.groupId.toString())}
+                  >
+                    삭제
+                  </button>
+                </div>
               </div>
             ))
           )}

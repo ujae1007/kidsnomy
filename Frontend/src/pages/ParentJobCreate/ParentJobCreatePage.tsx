@@ -5,6 +5,7 @@ import { RootState } from '@/store';
 import JobInputField from '@/components/jobs/JobInputField';
 import ChatbotButton from '@/components/jobs/ChatbotButton';
 import styles from './ParentJobCreatePage.module.css';
+import { apiCall } from '@/utils/api';
 
 interface JobCreateData {
   groupId: number;
@@ -20,17 +21,34 @@ interface JobCreateData {
 const ParentJobCreatePage: React.FC = () => {
   const navigate = useNavigate();
   const { accessToken, isAuthenticated, isParent } = useSelector((state: RootState) => state.auth);
+  const selectedGroupId = useSelector((state: RootState) => state.group.selectedGroupId);
   
+  useEffect(() => {
+    if (!selectedGroupId) {
+      alert('그룹을 먼저 선택해주세요.');
+      navigate('/group');
+      return;
+    }
+  }, [selectedGroupId, navigate]);
+
   const [formData, setFormData] = useState<JobCreateData>({
-    groupId: 1,
     title: '',
     content: '',
     salary: 0,
     rewardText: '',
-    isPermanent: false,
     startAt: '',
-    endAt: ''
+    endAt: '',
+    isPermanent: false,
+    groupId: selectedGroupId || 0
   });
+
+  // 그룹 ID가 변경될 때마다 formData 업데이트
+  useEffect(() => {
+    setFormData(prev => ({
+      ...prev,
+      groupId: selectedGroupId || 0
+    }));
+  }, [selectedGroupId]);
   
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
@@ -42,16 +60,30 @@ const ParentJobCreatePage: React.FC = () => {
     };
   }, [isAuthenticated, isParent, navigate]);
   
+  useEffect(() => {
+    console.log('현재 상태:', {
+      isParent,
+      selectedGroupId,
+      accessToken: !!accessToken
+    });
+  }, [isParent, selectedGroupId, accessToken]);
+  
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-    console.log('📝 입력 필드 변경:', { name, value });
+    const { name, value } = e.target;
     
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === 'number' ? Number(value) : 
-              type === 'checkbox' ? (e.target as HTMLInputElement).checked : 
-              value
-    }));
+    if (name === 'salary') {
+      // 숫자만 입력 가능하도록
+      const numericValue = value.replace(/[^0-9]/g, '');
+      setFormData(prev => ({
+        ...prev,
+        [name]: numericValue ? parseInt(numericValue) : 0
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
   };
   
   const handleSubmit = async (e: React.FormEvent) => {
@@ -62,19 +94,14 @@ const ParentJobCreatePage: React.FC = () => {
     console.log('📝 일자리 생성 시도:', formData);
     
     try {
-      const response = await fetch('http://localhost:8080/api/work/create', {
+      await apiCall('work/create', {
         method: 'POST',
+        auth: true,
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${accessToken}`
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formData)
       });
-      
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(errorText || '일자리 생성에 실패했습니다.');
-      }
       
       console.log('✅ 일자리 생성 성공');
       navigate('/parent/jobs');
@@ -114,16 +141,16 @@ const ParentJobCreatePage: React.FC = () => {
           label="급여"
           name="salary"
           value={formData.salary}
-          type="number"
+          type="text"
+          inputMode="numeric"
           onChange={handleInputChange}
           required
         />
         
         <JobInputField
-          label="루틴 여부"
-          name="isPermanent"
-          value={formData.isPermanent ? 'true' : 'false'}
-          type="checkbox"
+          label="추가 보상 (선택사항)"
+          name="rewardText"
+          value={formData.rewardText || ''}
           onChange={handleInputChange}
         />
         
@@ -145,12 +172,20 @@ const ParentJobCreatePage: React.FC = () => {
           required
         />
 
-        <JobInputField
-          label="추가 보상 (선택사항)"
-          name="rewardText"
-          value={formData.rewardText || ''}
-          onChange={handleInputChange}
-        />
+        <div className={styles.formGroup}>
+          <label>
+            <input
+              type="checkbox"
+              name="isPermanent"
+              checked={formData.isPermanent}
+              onChange={(e) => setFormData(prev => ({
+                ...prev,
+                isPermanent: e.target.checked
+              }))}
+            />
+            상시 일자리
+          </label>
+        </div>
         
         <button 
           type="submit" 

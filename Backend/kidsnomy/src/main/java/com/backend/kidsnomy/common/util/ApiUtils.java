@@ -28,7 +28,7 @@ public class ApiUtils {
         header.put("apiServiceCode", apiName);
         header.put("institutionTransactionUniqueNo", transactionUniqueNo);
         header.put("apiKey", apiKey);
-        header.put("userKey", userKey); // ✅ userKey 추가
+//        header.put("userKey", userKey); // ✅ userKey 추가
         return header;
     }
 

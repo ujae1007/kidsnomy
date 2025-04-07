@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/chatbot")
+@RequestMapping("/api/chat")
 public class ChatController {
 
     private final ChatService chatService;
@@ -19,6 +19,7 @@ public class ChatController {
     @PostMapping
     public ResponseEntity<ChatResponseDto> chat(@RequestBody ChatRequestDto request) {
         ChatResponseDto response = chatService.sendMessageToFastApi(request);
+        System.out.println(response);
         return ResponseEntity.ok(response);
     }
 }

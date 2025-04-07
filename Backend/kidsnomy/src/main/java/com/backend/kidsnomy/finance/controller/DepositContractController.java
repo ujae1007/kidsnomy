@@ -2,7 +2,7 @@ package com.backend.kidsnomy.finance.controller;
 
 import com.backend.kidsnomy.finance.dto.ApiResponseDto;
 import com.backend.kidsnomy.finance.dto.DepositContractRequestDto;
-import com.backend.kidsnomy.finance.service.DepositContractService;
+import com.backend.kidsnomy.finance.service.contract.DepositContractService;
 
 import jakarta.servlet.http.HttpServletRequest;
 

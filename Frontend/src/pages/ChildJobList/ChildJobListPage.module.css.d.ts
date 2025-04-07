@@ -11,8 +11,10 @@ declare const styles: {
   readonly menuButton: string;
   readonly loading: string;
   readonly noJobs: string;
-  readonly section: string;
-  readonly sectionTitle: string;
+  readonly jobContent: string;
+  readonly jobSalary: string;
+  readonly menuButton: string;
+  readonly retryButton: string;
 };
 
 export default styles; 

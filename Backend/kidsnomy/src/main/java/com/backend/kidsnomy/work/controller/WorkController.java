@@ -89,5 +89,23 @@ public class WorkController {
         workService.requestJobCompletion(jobId, request);
         return ResponseEntity.ok("일자리 완료 요청이 정상적으로 처리되었습니다.");
     }
+    
+    // 9. (부모) 업무 수행 완료 승인
+    @PostMapping("/parent/complete/{jobId}")
+    public ResponseEntity<String> completeJobByParent(@PathVariable("jobId") Long jobId,
+                                                      HttpServletRequest request) {
+        workService.completeJobByParent(jobId, request);
+        return ResponseEntity.ok("일자리가 최종 완료 처리되었습니다.");
+    }
+    
+    // 10. (자녀) 그룹 내 모든 일자리 조회
+    @GetMapping("/child/allcheck/{groupId}")
+    public ResponseEntity<List<ChildWorkListResponseDto>> getAllWorksByChild(
+            @PathVariable("groupId") Long groupId,
+            HttpServletRequest request
+    ) {
+        List<ChildWorkListResponseDto> works = workService.getAllWorks(groupId, request);
+        return ResponseEntity.ok(works);
+    }
 
 }

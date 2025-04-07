@@ -13,9 +13,9 @@ const initialState: AuthState = {
   email: localStorage.getItem('email'),
   isAuthenticated: !!localStorage.getItem('accessToken'),
   userRole: localStorage.getItem('userRole'),
-  userId: localStorage.getItem('userId') ? Number(localStorage.getItem('userId')) : null,
+  userId: localStorage.getItem('userId') ? parseInt(localStorage.getItem('userId') || '0', 10) : null,
   isParent: localStorage.getItem('isParent') === 'true',
-  groupId: localStorage.getItem('groupId') ? Number(localStorage.getItem('groupId')) : null,
+  groupId: localStorage.getItem('groupId') ? parseInt(localStorage.getItem('groupId') || '0', 10) : null,
   loading: false,
   error: null,
 };
@@ -256,11 +256,11 @@ const authSlice = createSlice({
         // localStorage에 상태 저장
         localStorage.setItem('accessToken', action.payload.accessToken);
         localStorage.setItem('refreshToken', action.payload.refreshToken);
-        localStorage.setItem('email', action.payload.email);
-        localStorage.setItem('userRole', action.payload.userRole);
-        localStorage.setItem('userId', String(action.payload.userId));
+        localStorage.setItem('email', action.payload.email || '');
+        localStorage.setItem('userRole', action.payload.userRole || '');
+        localStorage.setItem('userId', action.payload.userId ? action.payload.userId.toString() : '');
         localStorage.setItem('isParent', String(action.payload.isParent));
-        localStorage.setItem('groupId', String(action.payload.groupId));
+        localStorage.setItem('groupId', action.payload.groupId ? action.payload.groupId.toString() : '');
 
         console.log('📦 Redux 상태 업데이트 완료:', {
           isAuthenticated: true,

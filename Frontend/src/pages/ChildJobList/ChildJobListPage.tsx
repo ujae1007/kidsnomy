@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/store';
+import { setAvailableJobs, setContractedJobs } from '../../store/slices/jobSlice';
 import SearchBar from '@/components/jobs/SearchBar';
 import FilterButtons from '@/components/jobs/FilterButtons';
 import styles from './ChildJobListPage.module.css';
@@ -37,38 +38,34 @@ const STATUS_LABELS: Record<number, string> = {
 
 const ChildJobListPage: React.FC = () => {
   const navigate = useNavigate();
-  const auth = useSelector((state: RootState) => state.auth);
-  console.log('🔍 Redux Auth State:', auth);  // 전체 auth 상태 로깅
+  const dispatch = useDispatch();
+  const { accessToken, isAuthenticated } = useSelector((state: RootState) => state.auth);
+  const selectedGroupId = useSelector((state: RootState) => state.group.selectedGroupId);
+  const { availableJobs, contractedJobs } = useSelector((state: RootState) => state.job);
   
   // 상태 관리
-  const [availableJobs, setAvailableJobs] = useState<Job[]>([]);
-  const [contractedJobs, setContractedJobs] = useState<Job[]>([]);
-  const [filteredJobs, setFilteredJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [isContractedView, setIsContractedView] = useState<boolean>(false);
   
   // 검색 및 필터링 상태
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedStatus, setSelectedStatus] = useState<number | null>(null);
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
+  const [filteredJobs, setFilteredJobs] = useState<Job[]>([]);
+
+  // 그룹 선택 여부 확인
+  useEffect(() => {
+    if (!selectedGroupId) {
+      alert('그룹을 먼저 선택해주세요.');
+      navigate('/group');
+      return;
+    }
+  }, [selectedGroupId, navigate]);
   
   // 일자리 데이터 가져오기
   const fetchJobs = async () => {
-    console.log('🚀 자녀 일자리 목록 조회 시작', { 
-      isAuthenticated: auth.isAuthenticated,
-      groupId: auth.groupId,
-      hasToken: !!auth.accessToken
-    });
-
-    if (!auth.isAuthenticated || !auth.accessToken) {
-      console.log('❌ 인증되지 않은 상태');
-      setError('로그인이 필요합니다.');
-      return;
-    }
-
-    if (!auth.groupId) {
-      console.log('❌ 그룹 ID가 없음');
-      setError('그룹이 선택되지 않았습니다.');
+    if (!selectedGroupId || !accessToken) {
       return;
     }
 
@@ -76,61 +73,48 @@ const ChildJobListPage: React.FC = () => {
     setError(null);
     
     try {
-      // 1. 계약되지 않은 전체 일자리 조회
-      const availableJobsUrl = `work/child/check/${auth.groupId}`;
-      console.log('📡 사용 가능한 일자리 조회 시작:', {
-        url: availableJobsUrl,
-        groupId: auth.groupId
-      });
-      
-      const availableJobsData = await apiCall<Job[]>(availableJobsUrl, {
-        method: 'GET',
-        auth: true
-      });
-      
-      console.log('✅ 사용 가능한 일자리 조회 성공:', {
-        count: availableJobsData?.length,
-        jobs: availableJobsData
-      });
-      
-      setAvailableJobs(availableJobsData);
-      setFilteredJobs(availableJobsData);
+      const endpoint = isContractedView 
+        ? `/work/child/contracted/${selectedGroupId}`
+        : `/work/child/check/${selectedGroupId}`;
 
-      // 2. 계약된 일자리 조회
-      const contractedJobsUrl = `work/child/contracted/${auth.groupId}`;
-      console.log('📡 계약된 일자리 조회 시작:', {
-        url: contractedJobsUrl,
-        groupId: auth.groupId
-      });
+      console.log(`📊 자녀 일자리 조회 시작 (${endpoint})`);
       
-      const contractedJobsData = await apiCall<Job[]>(contractedJobsUrl, {
+      const response = await apiCall<Job[]>(endpoint, {
         method: 'GET',
-        auth: true
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json'
+        }
       });
-      
-      console.log('✅ 계약된 일자리 조회 성공:', {
-        count: contractedJobsData?.length,
-        jobs: contractedJobsData
-      });
-      
-      setContractedJobs(contractedJobsData);
 
+      console.log('받아온 일자리 목록:', response);
+      
+      if (isContractedView) {
+        dispatch(setContractedJobs(response || []));
+      } else {
+        dispatch(setAvailableJobs(response || []));
+      }
+      
+      setFilteredJobs(response || []);
     } catch (error: any) {
-      console.error('❌ 일자리 목록 조회 실패:', error);
+      console.error('❌ 자녀 일자리 조회 중 에러 발생:', error);
       if (error.status === 403) {
         setError('접근 권한이 없습니다.');
       } else {
         setError('일자리 목록을 불러오는데 실패했습니다.');
       }
+      setFilteredJobs([]);
     } finally {
       setLoading(false);
     }
   };
   
-  // 컴포넌트 마운트 시 데이터 가져오기
+  // 컴포넌트 마운트 시와 필터 변경 시 데이터 가져오기
   useEffect(() => {
-    fetchJobs();
-  }, [auth.groupId, auth.isAuthenticated]);
+    if (isAuthenticated && selectedGroupId) {
+      fetchJobs();
+    }
+  }, [selectedGroupId, accessToken, isContractedView, isAuthenticated]);
   
   // 검색어 변경 처리
   const handleSearchChange = (value: string) => {
@@ -142,25 +126,23 @@ const ChildJobListPage: React.FC = () => {
     if (filter === 'latest') {
       setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
     } else if (filter === 'contracted') {
-      navigate('/childjobbutton');
-      return;
+      setIsContractedView(!isContractedView);
     } else {
       setSelectedStatus(filter === 'all' ? null : Number(filter));
     }
   };
   
-  // 일자리 상세보기로 이동
+  // 일자리 상세 페이지로 이동
   const handleJobClick = (jobId: number) => {
-    console.log('🔍 일자리 상세 보기 이동 (jobId:', jobId, ')');
+    console.log(`🔍 일자리 상세 보기 이동 (jobId: ${jobId})`);
     navigate(`/jobs/${jobId}`);
   };
   
   // 검색 및 필터링 적용
   useEffect(() => {
-    // 모든 일자리를 하나의 배열로 합치기
-    const allJobs = [...availableJobs, ...contractedJobs];
-    let filtered = [...allJobs];
-
+    const currentJobs = isContractedView ? contractedJobs : availableJobs;
+    let result = [...currentJobs];
+    
     // 검색어 필터링
     if (searchTerm) {
       const lowerSearchTerm = searchTerm.toLowerCase();
@@ -183,18 +165,13 @@ const ChildJobListPage: React.FC = () => {
         ? dateA.getTime() - dateB.getTime() 
         : dateB.getTime() - dateA.getTime();
     });
-
-    setFilteredJobs(filtered);
-  }, [searchTerm, availableJobs, contractedJobs, selectedStatus, sortOrder]);
-
-  const handleMoreClick = (jobId: number) => {
-    // 메뉴 처리 로직
-    console.log('More clicked for job:', jobId);
-  };
+    
+    setFilteredJobs(result);
+  }, [availableJobs, contractedJobs, searchTerm, selectedStatus, sortOrder, isContractedView]);
 
   return (
     <div className={styles.container}>
-      {/* 검색 및 필터 영역 */}
+      {/* 검색 및 필터 영역 - 항상 표시 */}
       <div className={styles.controlsContainer}>
         <SearchBar 
           searchTerm={searchTerm}
@@ -202,40 +179,62 @@ const ChildJobListPage: React.FC = () => {
         />
         
         <FilterButtons
-          selectedFilter={selectedStatus?.toString() || 'all'}
+          selectedFilter={isContractedView ? 'contracted' : (selectedStatus?.toString() || 'all')}
           onFilterChange={handleStatusFilterChange}
           type="jobs"
         />
       </div>
-
-      {error && <div className={styles.error}>{error}</div>}
+      
+      {/* 에러 메시지 */}
+      {error && (
+        <div className={styles.error}>
+          <p>{error}</p>
+          <button 
+            className={styles.retryButton}
+            onClick={fetchJobs}
+          >
+            다시 시도
+          </button>
+        </div>
+      )}
       
       {/* 일자리 목록 */}
-      {loading ? (
-        <div className={styles.loading}>로딩 중...</div>
-      ) : (
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>일자리 목록</h2>
-          {filteredJobs.length > 0 ? (
-            <div className={styles.jobList}>
-              {filteredJobs.map((job) => (
-                <JobCard
-                  key={job.jobId}
-                  status={STATUS_LABELS[job.status]}
-                  title={job.title}
-                  salary={job.salary}
-                  onMoreClick={() => handleJobClick(job.jobId)}
-                  onClick={() => handleJobClick(job.jobId)}
-                />
-              ))}
+      <div className={styles.jobList}>
+        {loading ? (
+          <div className={styles.loading}>로딩 중...</div>
+        ) : filteredJobs.length > 0 ? (
+          filteredJobs.map(job => (
+            <div 
+              key={job.jobId} 
+              onClick={() => handleJobClick(job.jobId)}
+              className={styles.jobCard}
+            >
+              <div className={styles.jobStatus}>
+                {STATUS_LABELS[job.status] || '알 수 없음'}
+              </div>
+              <div className={styles.jobContent}>
+                <h3 className={styles.jobTitle}>{job.title}</h3>
+                <p className={styles.jobSalary}>{job.salary.toLocaleString()}원</p>
+              </div>
+              <button 
+                className={styles.menuButton}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleJobClick(job.jobId);
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                </svg>
+              </button>
             </div>
-          ) : (
-            <div className={styles.noJobs}>
-              {searchTerm ? '검색 결과가 없습니다.' : '일자리가 없습니다.'}
-            </div>
-          )}
-        </section>
-      )}
+          ))
+        ) : (
+          <div className={styles.noJobs}>
+            {error ? '일자리 목록을 불러올 수 없습니다.' : '해당하는 일자리가 없습니다.'}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Body, Request
 from pydantic import BaseModel
 from typing import List, Dict, Optional
 from collections import defaultdict
@@ -19,11 +19,8 @@ class Transaction(BaseModel):
 
 
 class InputData(BaseModel):
-    week1: List[Transaction]
-    week2: List[Transaction]
-    week3: List[Transaction]
-    week4: List[Transaction]
-    week5: List[Transaction]
+    accountNo: str
+    weeklyTransactions: Dict[str, List[Transaction]]
 
 
 # class InputData(BaseModel):
@@ -58,12 +55,14 @@ class OutputData(BaseModel):
     weekExpense: WeekExpense
     totalExpense: TotalExpense
 
+class ChatRequest(BaseModel):
+    message: str
 
 @app.post("/api/chat")
-async def chat(message: str) -> str:
-    print("chat data:", message)
-    response = chatbot.get_chat(message)
-    print("chat response:", response)
+async def chat(request: ChatRequest = Body(...)) -> str:
+    print("✅ chat data:", request.message)
+    response = chatbot.get_chat(request.message)
+    print(response)
     return response
 
 
@@ -80,14 +79,14 @@ async def generate_finance_report(data: InputData):
         주간 지출 및 카테고리별 총 지출 (OutputData 모델).
     """
 
-    print("Received data:", data)
+    print("Received data:", data,"\n")
 
-    expense_statics = ExpenseStatics(dict(data))
+    expense_statics = ExpenseStatics(data.weeklyTransactions)
 
     week_expense, category_total_expense = expense_statics.category_expense()
 
-    print("Category total expense:", week_expense)
-    print("Category total expense:", category_total_expense)
+    print("Category total expense:", week_expense, "\n")
+    print("Category total expense:", category_total_expense, "\n")
 
     # defaultdict를 Pydantic 모델로 변환
     week_expense_data = WeekExpense(
@@ -99,7 +98,7 @@ async def generate_finance_report(data: InputData):
     )
     total_expense_data = TotalExpense(**category_total_expense)
 
-    print("Week expense data:", week_expense_data)
-    print("Total expense data:", total_expense_data)
+    print("Week expense data:", week_expense_data, "\n")
+    print("Total expense data:", total_expense_data, "\n")
 
     return OutputData(weekExpense=week_expense_data, totalExpense=total_expense_data)

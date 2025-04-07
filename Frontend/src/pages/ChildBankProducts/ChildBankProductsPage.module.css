@@ -40,10 +40,10 @@
 }
 
 .productList {
-  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .productCard {
@@ -74,17 +74,17 @@
 }
 
 .productInfo {
-  margin-top: 0.5rem;
-  padding: 0.75rem;
-  background-color: #F5F2F2;
-  border-radius: 8px;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  border-radius: 12px;
 }
 
 .infoRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .infoRow:last-child {
@@ -92,14 +92,61 @@
 }
 
 .label {
+  font-size: 1.2rem;
   color: #666;
-  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .value {
+  font-size: 1.3rem;
   color: #333;
+  font-weight: 600;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #E8A5A5;
+  color: white;
+  border-radius: 20px;
+  font-size: 1.1rem;
   font-weight: 500;
-  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .productList {
+    gap: 1.2rem;
+  }
+
+  .productInfo {
+    padding: 0.8rem;
+  }
+
+  .label {
+    font-size: 1.1rem;
+  }
+
+  .value {
+    font-size: 1.2rem;
+  }
+
+  .statusBadge {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
 }
 
 /* 태블릿 이상 화면에서만 그리드 적용 */

@@ -6,6 +6,7 @@ import SearchBar from '@/components/jobs/SearchBar';
 import FilterButtons from '@/components/jobs/FilterButtons';
 import styles from './ChildJobListPage.module.css';
 import { apiCall } from '@/utils/api';
+import JobCard from '@/components/jobs/JobCard';
 
 // 일자리 데이터 타입 정의
 interface Job {
@@ -30,6 +31,7 @@ interface Job {
 const STATUS_LABELS: Record<number, string> = {
   1: '계약전',
   2: '계약후',
+  3: '승인대기',
   4: '최종완료'
 };
 
@@ -139,6 +141,9 @@ const ChildJobListPage: React.FC = () => {
   const handleStatusFilterChange = (filter: string) => {
     if (filter === 'latest') {
       setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    } else if (filter === 'contracted') {
+      navigate('/childjobbutton');
+      return;
     } else {
       setSelectedStatus(filter === 'all' ? null : Number(filter));
     }
@@ -152,36 +157,41 @@ const ChildJobListPage: React.FC = () => {
   
   // 검색 및 필터링 적용
   useEffect(() => {
-    let result = [...availableJobs];
-    
+    // 모든 일자리를 하나의 배열로 합치기
+    const allJobs = [...availableJobs, ...contractedJobs];
+    let filtered = [...allJobs];
+
     // 검색어 필터링
     if (searchTerm) {
       const lowerSearchTerm = searchTerm.toLowerCase();
-      result = result.filter(
-        job => 
-          job.title.toLowerCase().includes(lowerSearchTerm) || 
-          job.employerName.toLowerCase().includes(lowerSearchTerm)
+      filtered = filtered.filter(job => 
+        job.title.toLowerCase().includes(lowerSearchTerm) ||
+        job.employerName.toLowerCase().includes(lowerSearchTerm)
       );
     }
-    
+
     // 상태 필터링
     if (selectedStatus !== null) {
-      result = result.filter(job => job.status === selectedStatus);
+      filtered = filtered.filter(job => job.status === selectedStatus);
     }
-    
-    // 날짜 기준 정렬 (endAt 기준)
-    result.sort((a, b) => {
-      const dateA = new Date(a.endAt.split('T')[0]);
-      const dateB = new Date(b.endAt.split('T')[0]);
-      
+
+    // 생성 시간 기준 정렬
+    filtered.sort((a, b) => {
+      const dateA = new Date(a.startAt);
+      const dateB = new Date(b.startAt);
       return sortOrder === 'asc' 
         ? dateA.getTime() - dateB.getTime() 
         : dateB.getTime() - dateA.getTime();
     });
-    
-    setFilteredJobs(result);
-  }, [availableJobs, searchTerm, selectedStatus, sortOrder]);
-  
+
+    setFilteredJobs(filtered);
+  }, [searchTerm, availableJobs, contractedJobs, selectedStatus, sortOrder]);
+
+  const handleMoreClick = (jobId: number) => {
+    // 메뉴 처리 로직
+    console.log('More clicked for job:', jobId);
+  };
+
   return (
     <div className={styles.container}>
       {/* 검색 및 필터 영역 */}
@@ -204,87 +214,27 @@ const ChildJobListPage: React.FC = () => {
       {loading ? (
         <div className={styles.loading}>로딩 중...</div>
       ) : (
-        <>
-          {/* 진행 중인 일자리 섹션 */}
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>진행 중인 일자리</h2>
-            {contractedJobs.length > 0 ? (
-              <div className={styles.jobList}>
-                {contractedJobs.map((job) => (
-                  <div 
-                    key={job.jobId} 
-                    className={styles.jobCard}
-                    onClick={() => {
-                      console.log('카드 클릭됨:', job.jobId);
-                      handleJobClick(job.jobId);
-                    }}
-                  >
-                    <span className={styles.jobStatus}>진행 중</span>
-                    <div className={styles.jobContent}>
-                      <h3 className={styles.jobTitle}>{job.title}</h3>
-                      <p className={styles.jobSalary}>{job.salary.toLocaleString()}원</p>
-                    </div>
-                    <button 
-                      className={styles.menuButton}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        console.log('메뉴 버튼 클릭됨');
-                        // 메뉴 처리 로직
-                      }}
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                        <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
-                      </svg>
-                    </button>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className={styles.noJobs}>진행 중인 일자리가 없습니다.</div>
-            )}
-          </section>
-
-          {/* 새로운 일자리 섹션 */}
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>새로운 일자리</h2>
-            {filteredJobs.length > 0 ? (
-              <div className={styles.jobList}>
-                {filteredJobs.map((job) => (
-                  <div 
-                    key={job.jobId} 
-                    className={styles.jobCard}
-                    onClick={() => {
-                      console.log('카드 클릭됨:', job.jobId);
-                      handleJobClick(job.jobId);
-                    }}
-                  >
-                    <span className={styles.jobStatus}>신규</span>
-                    <div className={styles.jobContent}>
-                      <h3 className={styles.jobTitle}>{job.title}</h3>
-                      <p className={styles.jobSalary}>{job.salary.toLocaleString()}원</p>
-                    </div>
-                    <button 
-                      className={styles.menuButton}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        console.log('메뉴 버튼 클릭됨');
-                        // 메뉴 처리 로직
-                      }}
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                        <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
-                      </svg>
-                    </button>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className={styles.noJobs}>새로운 일자리가 없습니다.</div>
-            )}
-          </section>
-        </>
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>일자리 목록</h2>
+          {filteredJobs.length > 0 ? (
+            <div className={styles.jobList}>
+              {filteredJobs.map((job) => (
+                <JobCard
+                  key={job.jobId}
+                  status={STATUS_LABELS[job.status]}
+                  title={job.title}
+                  salary={job.salary}
+                  onMoreClick={() => handleJobClick(job.jobId)}
+                  onClick={() => handleJobClick(job.jobId)}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className={styles.noJobs}>
+              {searchTerm ? '검색 결과가 없습니다.' : '일자리가 없습니다.'}
+            </div>
+          )}
+        </section>
       )}
     </div>
   );

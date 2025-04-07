@@ -39,7 +39,8 @@ const ChildJobListPage: React.FC = () => {
   const selectedGroupId = useSelector((state: RootState) => state.group.selectedGroupId);
   
   // 상태 관리
-  const [jobs, setJobs] = useState<Job[]>([]);
+  const [availableJobs, setAvailableJobs] = useState<Job[]>([]);
+  const [contractedJobs, setContractedJobs] = useState<Job[]>([]);
   const [filteredJobs, setFilteredJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -126,15 +127,15 @@ const ChildJobListPage: React.FC = () => {
     }
   };
   
-  // 일자리 상세 페이지로 이동
+  // 일자리 상세보기로 이동
   const handleJobClick = (jobId: number) => {
-    console.log(`🔍 일자리 상세 보기 이동 (jobId: ${jobId})`);
+    console.log('🔍 일자리 상세 보기 이동 (jobId:', jobId, ')');
     navigate(`/jobs/${jobId}`);
   };
   
   // 검색 및 필터링 적용
   useEffect(() => {
-    let result = [...jobs];
+    let result = [...availableJobs];
     
     // 검색어 필터링
     if (searchTerm) {

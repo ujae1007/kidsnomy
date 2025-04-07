@@ -224,9 +224,39 @@ const JobDetailPage: React.FC = () => {
     setIsCompleteModalOpen(true);
   };
 
-  const handleConfirmComplete = () => {
-    // TODO: API 호출로 상태 변경
-    setIsCompleteModalOpen(false);
+  const handleConfirmComplete = async () => {
+    console.log(`🏁 일자리 완료 요청 시도 (jobId: ${jobId})`);
+    
+    try {
+      const response = await apiCall(`work/child/complete/${jobId}`, {
+        method: 'PUT',
+        auth: true
+      });
+      
+      console.log('✅ 일자리 완료 요청 성공');
+      alert('일자리 완료 요청이 정상적으로 처리되었습니다.');
+      setIsCompleteModalOpen(false);
+      window.location.reload();
+    } catch (error) {
+      console.error('❌ 일자리 완료 요청 중 에러 발생:', error);
+      
+      // 에러 메시지 처리
+      const errorMessage = (error as any).message;
+      if (errorMessage.includes('사용자를 찾을 수 없습니다.')) {
+        alert('사용자를 찾을 수 없습니다.');
+      } else if (errorMessage.includes('자녀만 완료 요청을 할 수 있습니다.')) {
+        alert('자녀만 완료 요청을 할 수 있습니다.');
+      } else if (errorMessage.includes('본인이 계약한 일자리가 아닙니다.')) {
+        alert('본인이 계약한 일자리가 아닙니다.');
+      } else if (errorMessage.includes('진행 중인 일자리만 완료 요청이 가능합니다.')) {
+        alert('진행 중인 일자리만 완료 요청이 가능합니다.');
+      } else if (errorMessage.includes('일자리를 찾을 수 없습니다.')) {
+        alert('일자리를 찾을 수 없습니다.');
+      } else {
+        alert('일자리 완료 요청 중 오류가 발생했습니다.');
+      }
+      setIsCompleteModalOpen(false);
+    }
   };
 
   const handleCancelComplete = () => {
@@ -302,44 +332,41 @@ const JobDetailPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.contentSection}>
-        <h1 className={styles.title}>일자리 상세보기</h1>
+      <div className={styles.content}>
+        <h1 className={styles.title}>{job.title}</h1>
         
-        <div className={styles.infoSection}>
-          <div className={styles.infoRow}>
-            <span className={styles.label}>제목</span>
-            <span className={styles.value}>{job.title}</span>
-          </div>
+        <div className={styles.formGroup}>
+          <label>시작일</label>
+          <div className={styles.value}>{formatDate(job.startAt)}</div>
+        </div>
 
-          <div className={styles.infoRow}>
-            <span className={styles.label}>날짜</span>
-            <span className={styles.value}>
-              {formatDate(job.startAt)}-{formatDate(job.endAt)}
-            </span>
-          </div>
+        <div className={styles.formGroup}>
+          <label>종료일</label>
+          <div className={styles.value}>{formatDate(job.endAt)}</div>
+        </div>
 
-          <div className={styles.infoRow}>
-            <span className={styles.label}>상세내용</span>
-            <span className={styles.value}>{job.content}</span>
-          </div>
+        <div className={styles.formGroup}>
+          <label>내용</label>
+          <div className={styles.value}>{job.content}</div>
+        </div>
 
-          <div className={styles.infoRow}>
-            <span className={styles.label}>급여</span>
-            <span className={styles.value}>{job.salary.toLocaleString()}원</span>
-          </div>
+        <div className={styles.formGroup}>
+          <label>용돈</label>
+          <div className={styles.value}>{job.salary.toLocaleString()}원</div>
+        </div>
 
-          {job.rewardText && (
-            <div className={styles.infoRow}>
-              <span className={styles.label}>추가보상</span>
-              <span className={styles.value}>{job.rewardText}</span>
-            </div>
-          )}
+        {job.rewardText && (
+          <div className={styles.formGroup}>
+            <label>추가 보상</label>
+            <div className={styles.value}>{job.rewardText}</div>
+          </div>
+        )}
+
+        <div className={styles.buttonWrapper}>
+          {renderActionButton()}
         </div>
       </div>
-
-      <div className={styles.buttonWrapper}>
-        {renderActionButton()}
-      </div>
+      
       <JobCompleteConfirmModal
         isOpen={isCompleteModalOpen}
         onConfirm={handleConfirmComplete}

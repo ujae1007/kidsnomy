@@ -43,6 +43,14 @@ else
     echo "Error building react-app"
 fi
 
+REACT_APP_IMAGE_LATEST="${IMAGE_NAME_PREFIX}-react-app:latest"
+docker build -t "${REACT_APP_IMAGE_LATEST}" ./Frontend
+if [ $? -eq 0 ]; then
+    docker push "${REACT_APP_IMAGE_LATEST}"
+else
+    echo "Error building react-app"
+fi
+
 echo ""
 
 # java-app
@@ -51,6 +59,14 @@ JAVA_APP_IMAGE="${IMAGE_NAME_PREFIX}-java-app:${TAG}"
 docker build -t "${JAVA_APP_IMAGE}" ./Backend --build-arg SPRING_DATASOURCE_URL="${SPRING_DATASOURCE_URL}" --build-arg SPRING_DATASOURCE_USERNAME="${SPRING_DATASOURCE_USERNAME}" --build-arg SPRING_DATASOURCE_PASSWORD="${SPRING_DATASOURCE_PASSWORD}"
 if [ $? -eq 0 ]; then
     docker push "${JAVA_APP_IMAGE}"
+else
+    echo "Error building java-app"
+fi
+
+JAVA_APP_IMAGE_LATEST="${IMAGE_NAME_PREFIX}-java-app:latest"
+docker build -t "${JAVA_APP_IMAGE_LATEST}" ./Backend --build-arg SPRING_DATASOURCE_URL="${SPRING_DATASOURCE_URL}" --build-arg SPRING_DATASOURCE_USERNAME="${SPRING_DATASOURCE_USERNAME}" --build-arg SPRING_DATASOURCE_PASSWORD="${SPRING_DATASOURCE_PASSWORD}"
+if [ $? -eq 0 ]; then
+    docker push "${JAVA_APP_IMAGE_LATEST}"
 else
     echo "Error building java-app"
 fi
@@ -67,6 +83,14 @@ else
     echo "Error building fastapi-app"
 fi
 
+FASTAPI_APP_IMAGE_LATEST="${IMAGE_NAME_PREFIX}-fastapi-app:latest"
+docker build -t "${FASTAPI_APP_IMAGE_LATEST}" ./AI
+if [ $? -eq 0 ]; then
+    docker push "${FASTAPI_APP_IMAGE_LATEST}"
+else
+    echo "Error building fastapi-app"
+fi
+
 echo ""
 
 # mysql
@@ -75,6 +99,14 @@ MYSQL_IMAGE="${IMAGE_NAME_PREFIX}-mysql:${TAG}"
 docker build -t "${MYSQL_IMAGE}" ./DB --build-arg MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD}" --build-arg MYSQL_DATABASE="${MYSQL_DATABASE}" --build-arg MYSQL_USER="${MYSQL_USER}" --build-arg MYSQL_PASSWORD="${MYSQL_PASSWORD}"
 if [ $? -eq 0 ]; then
     docker push "${MYSQL_IMAGE}"
+else
+    echo "Error building mysql"
+fi
+
+MYSQL_IMAGE_LATEST="${IMAGE_NAME_PREFIX}-mysql:latest"
+docker build -t "${MYSQL_IMAGE_LATEST}" ./DB --build-arg MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD}" --build-arg MYSQL_DATABASE="${MYSQL_DATABASE}" --build-arg MYSQL_USER="${MYSQL_USER}" --build-arg MYSQL_PASSWORD="${MYSQL_PASSWORD}"
+if [ $? -eq 0 ]; then
+    docker push "${MYSQL_IMAGE_LATEST}"
 else
     echo "Error building mysql"
 fi

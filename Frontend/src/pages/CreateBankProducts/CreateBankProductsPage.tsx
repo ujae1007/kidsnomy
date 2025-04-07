@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
+import { apiCall } from '@/utils/api';
 import styles from './CreateBankProductsPage.module.css';
 
 interface ProductFormData {
@@ -13,8 +16,26 @@ interface ProductFormData {
   depositPaymentDate?: string;
 }
 
+interface DepositProductData {
+  groupId: number;
+  title: string;
+  content: string;
+  interestRate: number;
+  dueDate: number;
+}
+
 const CreateBankProductsPage: React.FC = () => {
   const navigate = useNavigate();
+  const selectedGroupId = useSelector((state: RootState) => state.group.selectedGroupId);
+  const [loading, setLoading] = useState(false);
+  
+  useEffect(() => {
+    if (!selectedGroupId) {
+      alert('그룹을 먼저 선택해주세요.');
+      navigate('/group');
+    }
+  }, [selectedGroupId, navigate]);
+
   const [formData, setFormData] = useState<ProductFormData>({
     type: 'deposit',
     name: '',
@@ -33,10 +54,77 @@ const CreateBankProductsPage: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('상품 생성:', formData);
-    navigate('/bank/products');
+    
+    if (formData.type === 'saving') {
+      alert('현재 적금 상품 생성은 지원하지 않습니다.');
+      return;
+    }
+
+    if (!selectedGroupId) {
+      alert('그룹을 선택해주세요.');
+      navigate('/group');
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      console.log('📝 예금 상품 생성 시도:', {
+        groupId: selectedGroupId,
+        title: formData.name,
+        content: formData.description,
+        interestRate: formData.interestRate,
+        dueDate: formData.period
+      });
+
+      const depositData: DepositProductData = {
+        groupId: selectedGroupId,
+        title: formData.name,
+        content: formData.description,
+        interestRate: Number(formData.interestRate),
+        dueDate: Number(formData.period)
+      };
+
+      await apiCall('finance/deposit/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        auth: true,
+        body: JSON.stringify(depositData)
+      });
+
+      console.log('✅ 예금 상품 생성 성공');
+      alert('예금 상품이 성공적으로 생성되었습니다.');
+      navigate('/bank/products');
+    } catch (error: any) {
+      console.error('❌ 예금 상품 생성 중 에러 발생:', error);
+      
+      // 에러 응답 상세 정보 로깅
+      if (error.response) {
+        try {
+          const errorData = await error.response.json();
+          console.error('상세 에러 정보:', errorData);
+          
+          if (error.response.status === 403) {
+            alert('본인이 속한 그룹이 아닙니다.');
+          } else if (error.response.status === 500) {
+            alert('서버 오류가 발생했습니다. 다시 시도해주세요.');
+          } else {
+            alert(errorData.message || '예금 상품 생성에 실패했습니다.');
+          }
+        } catch (parseError) {
+          console.error('에러 응답 파싱 실패:', parseError);
+          alert('예금 상품 생성에 실패했습니다.');
+        }
+      } else {
+        alert('네트워크 오류가 발생했습니다.');
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -65,6 +153,7 @@ const CreateBankProductsPage: React.FC = () => {
             onChange={handleInputChange}
             className={styles.input}
             placeholder="상품 제목을 입력해주세요"
+            required
           />
         </div>
 
@@ -79,6 +168,7 @@ const CreateBankProductsPage: React.FC = () => {
               className={styles.input}
               placeholder="이자율을 입력해주세요"
               step="0.1"
+              required
             />
             <span className={styles.unit}>%</span>
           </div>
@@ -92,6 +182,7 @@ const CreateBankProductsPage: React.FC = () => {
             onChange={handleInputChange}
             className={styles.textarea}
             placeholder="상세내용을 입력해주세요"
+            required
           />
         </div>
 
@@ -105,6 +196,7 @@ const CreateBankProductsPage: React.FC = () => {
               onChange={handleInputChange}
               className={styles.input}
               placeholder="만기일을 입력해주세요"
+              required
             />
             <span className={styles.unit}>주</span>
           </div>
@@ -144,8 +236,12 @@ const CreateBankProductsPage: React.FC = () => {
           </>
         )}
 
-        <button type="submit" className={styles.submitButton}>
-          만들기
+        <button 
+          type="submit" 
+          className={styles.submitButton}
+          disabled={loading}
+        >
+          {loading ? '생성 중...' : '만들기'}
         </button>
       </form>
     </div>

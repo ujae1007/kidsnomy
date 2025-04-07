@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './LoginPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '@/store/slices/authSlice';
+import { loginUser, setGroupId } from '@/store/slices/authSlice';
 import { RootState, AppDispatch } from '@/store';
+import { apiCall } from '@/utils/api';
 
 const EmailIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -73,6 +74,26 @@ const LoginPage: React.FC = () => {
       if (loginUser.fulfilled.match(resultAction)) {
         const userType = resultAction.payload.isParent ? '부모' : '자녀';
         console.log(`로그인 페이지: 로그인 성공 (${userType})`);
+
+        // 그룹 정보 가져오기
+        try {
+          const groupResponse = await apiCall<{ groupId: number }[]>('group/check', {
+            method: 'GET',
+            auth: true
+          });
+          
+          console.log('그룹 정보 조회 성공:', groupResponse);
+          
+          if (groupResponse && groupResponse.length > 0) {
+            // 첫 번째 그룹의 ID를 저장
+            localStorage.setItem('groupId', String(groupResponse[0].groupId));
+            // Redux 상태 업데이트
+            dispatch(setGroupId(groupResponse[0].groupId));
+          }
+        } catch (error) {
+          console.error('그룹 정보 조회 실패:', error);
+        }
+
         navigate('/home');
       }
     } catch (error) {

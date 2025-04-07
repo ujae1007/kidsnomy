@@ -8,14 +8,14 @@ const API_BASE_URL = 'http://localhost:8080';  // 개발 환경
 
 // 초기 상태 정의
 const initialState: AuthState = {
-  accessToken: null,
-  refreshToken: null,
-  email: null,
-  isAuthenticated: false,
-  userRole: null,
-  userId: null,
-  isParent: false,
-  groupId: null,
+  accessToken: localStorage.getItem('accessToken'),
+  refreshToken: localStorage.getItem('refreshToken'),
+  email: localStorage.getItem('email'),
+  isAuthenticated: !!localStorage.getItem('accessToken'),
+  userRole: localStorage.getItem('userRole'),
+  userId: localStorage.getItem('userId') ? parseInt(localStorage.getItem('userId') || '0', 10) : null,
+  isParent: localStorage.getItem('isParent') === 'true',
+  groupId: localStorage.getItem('groupId') ? parseInt(localStorage.getItem('groupId') || '0', 10) : null,
   loading: false,
   error: null,
 };
@@ -193,6 +193,14 @@ const authSlice = createSlice({
       state.groupId = null;
       state.loading = false;
       state.error = null;
+      
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('refreshToken');
+      localStorage.removeItem('email');
+      localStorage.removeItem('userRole');
+      localStorage.removeItem('userId');
+      localStorage.removeItem('isParent');
+      localStorage.removeItem('groupId');
     },
     setEmail: (state, action: PayloadAction<string>) => {
       state.email = action.payload;
@@ -204,6 +212,11 @@ const authSlice = createSlice({
       state.accessToken = action.payload.accessToken;
       state.refreshToken = action.payload.refreshToken;
       state.isAuthenticated = true;
+    },
+    setGroupId: (state, action: PayloadAction<number>) => {
+      console.log('🔄 그룹 ID 설정:', action.payload);
+      state.groupId = action.payload;
+      localStorage.setItem('groupId', String(action.payload));
     },
     clearAuth: (state) => {
       console.log('🔒 인증 정보 초기화');
@@ -228,16 +241,33 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(loginUser.fulfilled, (state, action: PayloadAction<LoginResponse>) => {
-        console.log('✅ 로그인 성공 - Redux 상태 업데이트');
+        console.log('✅ 로그인 성공 - Redux 상태 업데이트', action.payload);
         state.loading = false;
         state.accessToken = action.payload.accessToken;
         state.refreshToken = action.payload.refreshToken;
-        state.userRole = action.payload.isParent ? 'PARENT' : 'CHILD';
-        state.userId = (jwtDecode.jwtDecode(action.payload.accessToken) as any).sub;
+        state.userRole = action.payload.userRole;
+        state.userId = action.payload.userId;
         state.isAuthenticated = true;
         state.email = action.payload.email;
         state.isParent = action.payload.isParent;
         state.groupId = action.payload.groupId;
+        state.error = null;
+
+        // localStorage에 상태 저장
+        localStorage.setItem('accessToken', action.payload.accessToken);
+        localStorage.setItem('refreshToken', action.payload.refreshToken);
+        localStorage.setItem('email', action.payload.email || '');
+        localStorage.setItem('userRole', action.payload.userRole || '');
+        localStorage.setItem('userId', action.payload.userId ? action.payload.userId.toString() : '');
+        localStorage.setItem('isParent', String(action.payload.isParent));
+        localStorage.setItem('groupId', action.payload.groupId ? action.payload.groupId.toString() : '');
+
+        console.log('📦 Redux 상태 업데이트 완료:', {
+          isAuthenticated: true,
+          userRole: action.payload.userRole,
+          isParent: action.payload.isParent,
+          groupId: action.payload.groupId
+        });
       })
       .addCase(loginUser.rejected, (state, action) => {
         console.error('❌ 로그인 실패 - Redux 상태 업데이트', action.payload);
@@ -279,5 +309,5 @@ const authSlice = createSlice({
   },
 });
 
-export const { setEmail, clearEmail, setTokens, clearAuth } = authSlice.actions;
+export const { setEmail, clearEmail, setTokens, setGroupId, clearAuth } = authSlice.actions;
 export default authSlice.reducer; 

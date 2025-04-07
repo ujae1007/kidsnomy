@@ -30,7 +30,7 @@ public class DepositContractEntity {
     @Column(name = "account_no")
     private String accountNo;
 
-    @Column(name = "balance")
+    @Column(name = "balancedeposit")
     private BigDecimal balance;
 
     @Column(name = "total_volume")

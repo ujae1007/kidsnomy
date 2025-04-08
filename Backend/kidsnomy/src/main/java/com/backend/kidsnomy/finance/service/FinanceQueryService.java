@@ -1,6 +1,8 @@
 package com.backend.kidsnomy.finance.service;
 
 import com.backend.kidsnomy.finance.dto.FinanceProductResponseDto;
+import com.backend.kidsnomy.finance.dto.SavingsDetailDto;
+import com.backend.kidsnomy.finance.dto.DepositDetailDto;
 import com.backend.kidsnomy.finance.dto.FinanceContractResponseDto;
 import com.backend.kidsnomy.finance.entity.*;
 import com.backend.kidsnomy.finance.repository.*;
@@ -161,4 +163,41 @@ public class FinanceQueryService {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, "자녀 사용자만 접근할 수 있습니다.");
         }
     }
+    
+    // 예금 상품 상세 조회
+    public DepositDetailDto getDepositDetail(Long productId) {
+        Deposit deposit = depositRepository.findById(productId)
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "예금 상품을 찾을 수 없습니다."));
+
+        return new DepositDetailDto(
+            deposit.getId(),
+            deposit.getGroupId(),
+            deposit.getUserId(),
+            deposit.getTitle(),
+            deposit.getContent(),
+            deposit.getInterestRate(),
+            deposit.getDueDate(),
+            deposit.getProductType().intValue()
+        );
+    }
+
+    // 적금 상품 상세 조회
+    public SavingsDetailDto getSavingsDetail(Long productId) {
+        Savings savings = savingsRepository.findById(productId)
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "적금 상품을 찾을 수 없습니다."));
+
+        return new SavingsDetailDto(
+            savings.getId(),
+            savings.getGroupId(),
+            savings.getUserId(),
+            savings.getTitle(),
+            savings.getContent(),
+            savings.getInterestRate(),
+            savings.getDueDate(),
+            savings.getRateDate(),
+            savings.getPayDate(),
+            savings.getProductType()
+        );
+    }
+
 }

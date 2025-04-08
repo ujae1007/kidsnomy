@@ -73,7 +73,7 @@ const ChildJobListPage: React.FC = () => {
     try {
       const endpoint = isContractedView 
         ? `/work/child/contracted/${selectedGroupId}`
-        : `/work/child/check/${selectedGroupId}`;
+        : `/work/child/allcheck/${selectedGroupId}`;
 
       console.log(`📊 자녀 일자리 조회 시작 (${endpoint})`);
       

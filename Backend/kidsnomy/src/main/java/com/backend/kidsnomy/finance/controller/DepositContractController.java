@@ -2,7 +2,7 @@ package com.backend.kidsnomy.finance.controller;
 
 import com.backend.kidsnomy.finance.dto.ApiResponseDto;
 import com.backend.kidsnomy.finance.dto.DepositContractRequestDto;
-import com.backend.kidsnomy.finance.service.DepositContractService;
+import com.backend.kidsnomy.finance.service.contract.DepositContractService;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -22,7 +22,7 @@ public class DepositContractController {
     // 예금 계좌 생성 API
     @PostMapping("/contract/{productId}")
     public ResponseEntity<ApiResponseDto> createDepositContract(
-            @PathVariable Long productId,
+            @PathVariable("productId") Long productId,
             @RequestBody DepositContractRequestDto requestDto,
             HttpServletRequest request) {
 

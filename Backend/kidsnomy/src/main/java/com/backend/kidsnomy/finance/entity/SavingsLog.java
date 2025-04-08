@@ -17,10 +17,10 @@ public class SavingsLog {
     private String transactionUniqueNo;
 
     @Column(name = "transaction_date")
-    private LocalDateTime transactionDate;
+    private String transactionDate;
 
     @Column(name = "transaction_time")
-    private LocalDateTime transactionTime;
+    private String transactionTime;
 
     @Column(name = "transaction_type")
     private Boolean transactionType;
@@ -45,8 +45,8 @@ public class SavingsLog {
     // Getters
     public Integer getId() { return id; }
     public String getTransactionUniqueNo() { return transactionUniqueNo; }
-    public LocalDateTime getTransactionDate() { return transactionDate; }
-    public LocalDateTime getTransactionTime() { return transactionTime; }
+    public String getTransactionDate() { return transactionDate; }
+    public String getTransactionTime() { return transactionTime; }
     public Boolean getTransactionType() { return transactionType; }
     public BigDecimal getTransactionBalance() { return transactionBalance; }
     public BigDecimal getTransactionAfterBalance() { return transactionAfterBalance; }
@@ -57,8 +57,8 @@ public class SavingsLog {
     // Setters
     public void setId(Integer id) { this.id = id; }
     public void setTransactionUniqueNo(String transactionUniqueNo) { this.transactionUniqueNo = transactionUniqueNo; }
-    public void setTransactionDate(LocalDateTime transactionDate) { this.transactionDate = transactionDate; }
-    public void setTransactionTime(LocalDateTime transactionTime) { this.transactionTime = transactionTime; }
+    public void setTransactionDate(String transactionDate) { this.transactionDate = transactionDate; }
+    public void setTransactionTime(String transactionTime) { this.transactionTime = transactionTime; }
     public void setTransactionType(Boolean transactionType) { this.transactionType = transactionType; }
     public void setTransactionBalance(BigDecimal transactionBalance) { this.transactionBalance = transactionBalance; }
     public void setTransactionAfterBalance(BigDecimal transactionAfterBalance) { this.transactionAfterBalance = transactionAfterBalance; }

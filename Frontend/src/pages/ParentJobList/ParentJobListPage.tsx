@@ -33,7 +33,7 @@ const ParentJobListPage: React.FC = () => {
   
   // 상태 관리
   const [jobs, setJobs] = useState<Job[]>([]);
-  const [filteredJobs, setFilteredJobs] = useState<Job[]>([]);
+  const [displayJobs, setDisplayJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   
@@ -76,7 +76,7 @@ const ParentJobListPage: React.FC = () => {
       });
       
       setJobs(data);
-      setFilteredJobs(data);
+      setDisplayJobs(data);
     } catch (error) {
       console.error('❌ 부모 일자리 조회 중 에러 발생:', error);
       setError((error as Error).message);
@@ -129,7 +129,15 @@ const ParentJobListPage: React.FC = () => {
       return sortOrder === 'desc' ? b.jobId - a.jobId : a.jobId - b.jobId;
     });
     
-    setFilteredJobs(result);
+    // 필터링 결과가 없으면 전체 일자리를 보여줌
+    if (result.length === 0 && (searchTerm || selectedStatus !== null)) {
+      // 필터링 조건이 있는데 결과가 없으면 원래 데이터 표시
+      result = [...jobs].sort((a, b) => {
+        return sortOrder === 'desc' ? b.jobId - a.jobId : a.jobId - b.jobId;
+      });
+    }
+    
+    setDisplayJobs(result);
   }, [jobs, searchTerm, selectedStatus, sortOrder]);
   
   return (
@@ -151,8 +159,8 @@ const ParentJobListPage: React.FC = () => {
           <div className={styles.loading}>로딩 중...</div>
         ) : error ? (
           <div className={styles.error}>{error}</div>
-        ) : filteredJobs.length > 0 ? (
-          filteredJobs.map(job => (
+        ) : displayJobs.length > 0 ? (
+          displayJobs.map(job => (
             <JobCard
               key={job.jobId}
               status={STATUS_LABELS[job.status] || '알 수 없음'}
@@ -163,7 +171,7 @@ const ParentJobListPage: React.FC = () => {
             />
           ))
         ) : (
-          <div className={styles.noJobs}>해당하는 일자리가 없습니다.</div>
+          <div className={styles.noJobs}>일자리 정보가 없습니다.</div>
         )}
       </div>
 
@@ -172,4 +180,4 @@ const ParentJobListPage: React.FC = () => {
   );
 };
 
-export default ParentJobListPage; 
+export default ParentJobListPage;

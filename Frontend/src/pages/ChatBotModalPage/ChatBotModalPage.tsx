@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './ChatBotModalPage.module.css';
 import nomyImage from '@/assets/nomy.png';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '@/store';
+import { apiCall } from '@/utils/api';
+import { setChatbotOpen } from '@/store/slices/chatbotSlice'; // ✅ 추가
 
 interface ChatBotModalPageProps {
   onClose: () => void;
@@ -12,28 +16,65 @@ interface Message {
 }
 
 const ChatBotModalPage: React.FC<ChatBotModalPageProps> = ({ onClose }) => {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      type: 'bot',
+      content: '안녕하세요? 저는 노미라고 해요. 일자리 만들기에 대해 질문해 주세요.'
+    }
+  ]);
   const [inputMessage, setInputMessage] = useState('');
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const dispatch = useDispatch();
+  const accessToken = useSelector((state: RootState) => state.auth.accessToken);
+  const isOpen = useSelector((state: RootState) => state.chatbot.isOpen); // ✅ 추가
 
-  const handleSendMessage = () => {
-    if (!inputMessage.trim()) return;
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
-    // 사용자 메시지 추가
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  const handleClose = () => {
+    onClose();
+    dispatch(setChatbotOpen(false)); // ✅ 챗봇 모달 닫기 상태 변경
+  };
+
+  const handleSendMessage = async () => {
+    const trimmedMessage = inputMessage.trim();
+    if (!trimmedMessage) return;
+
     const newMessage: Message = {
       type: 'user',
-      content: inputMessage.trim()
+      content: trimmedMessage
     };
     setMessages(prev => [...prev, newMessage]);
     setInputMessage('');
 
-    // 임시 봇 응답
-    setTimeout(() => {
+    try {
+      const response = await apiCall<{ reply: string }>('/chat', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: [{ content: trimmedMessage }] })
+      });
+
       const botMessage: Message = {
         type: 'bot',
-        content: '현재 개발 중인 기능입니다. 잠시 후 다시 시도해주세요.'
+        content: response.response // 응답 구조에 따라 `response.reply`일 수도 있음
       };
       setMessages(prev => [...prev, botMessage]);
-    }, 1000);
+    } catch (error) {
+      console.error('API 요청 중 에러 발생:', error);
+      const errorMessage: Message = {
+        type: 'bot',
+        content: '오류가 발생했습니다. 다시 시도해 주세요.'
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -42,6 +83,8 @@ const ChatBotModalPage: React.FC<ChatBotModalPageProps> = ({ onClose }) => {
       handleSendMessage();
     }
   };
+
+  if (!isOpen) return null;
 
   return (
     <div className={styles.container}>
@@ -86,6 +129,7 @@ const ChatBotModalPage: React.FC<ChatBotModalPageProps> = ({ onClose }) => {
           </div>
         </div>
       ))}
+      <div ref={messagesEndRef} />
 
       <div className={styles.inputContainer}>
         <input

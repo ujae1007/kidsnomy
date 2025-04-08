@@ -1,7 +1,17 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node,react,java,python,venv,dotenv
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,react,java,python,venv,dotenv
 
+# kobert model
+kobert_category/
+chroma/
+
 application-env.properties
+
+docker-compose.override.yml
+
+*.sqlite3
+*.bin
+*.pickle
 
 *.pem
 
@@ -367,3 +377,9 @@ pyvenv.cfg
 pip-selfcheck.json
 
 # End of https://www.toptal.com/developers/gitignore/api/node,react,java,python,venv,dotenv
+.idea/
+
+# AI model Directory
+Data/Report/kobert_category/
+
+.dockerignore

@@ -1,31 +1,40 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
+import { configureStore } from '@reduxjs/toolkit';
+import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // 로컬 스토리지 사용
 import authReducer from './slices/authSlice';
+import groupReducer from './slices/groupSlice';
+import jobReducer from './slices/jobSlice';
 
 // Persist 설정
-const persistConfig = {
-  key: 'root',
+const authPersistConfig = {
+  key: 'auth',
   storage,
-  whitelist: ['auth'], // auth 상태만 localStorage에 저장
+  whitelist: ['accessToken', 'refreshToken', 'isAuthenticated', 'isParent']
 };
 
-const rootReducer = combineReducers({
-  auth: authReducer,
-  // 다른 reducer들 추가 가능
-});
+const groupPersistConfig = {
+  key: 'group',
+  storage,
+  whitelist: ['selectedGroupId']
+};
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const jobPersistConfig = {
+  key: 'job',
+  storage,
+  whitelist: ['availableJobs', 'contractedJobs']
+};
 
 // 스토어 생성
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: {
+    auth: persistReducer(authPersistConfig, authReducer),
+    group: persistReducer(groupPersistConfig, groupReducer),
+    job: persistReducer(jobPersistConfig, jobReducer)
+  },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
+      serializableCheck: false
+    })
 });
 
 export const persistor = persistStore(store);

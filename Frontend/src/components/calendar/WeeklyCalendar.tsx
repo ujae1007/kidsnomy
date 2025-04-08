@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './WeeklyCalendar.module.css';
 
 interface Schedule {
@@ -17,58 +18,79 @@ interface Schedule {
 }
 
 interface WeeklyCalendarProps {
-  // 나중에 일정 데이터를 받아올 props 추가 예정
+  contracts?: Schedule[];
 }
 
-const WeeklyCalendar: React.FC<WeeklyCalendarProps> = () => {
+// 현재 날짜 기준으로 이번 주의 날짜들을 얻기
+const getCurrentWeekDates = () => {
+  const today = new Date();
+  const monday = new Date(today);
+  monday.setDate(today.getDate() - today.getDay() + 1);
+  
+  const dates = [];
+  for (let i = 0; i < 7; i++) {
+    const date = new Date(monday);
+    date.setDate(monday.getDate() + i);
+    dates.push(date.toISOString().split('T')[0]);
+  }
+  return dates;
+};
+
+const weekDates = getCurrentWeekDates();
+
+// 더미 데이터
+const dummyData: Schedule[] = [
+  {
+    user_id: 1,
+    user_name: "김부모",
+    start_day: weekDates[0], // 월요일
+    end_day: weekDates[2],   // 수요일
+    title: "방 청소하기",
+    content: "방 청소와 정리정돈을 해주세요",
+    salary: 5000,
+    is_permanent: false,
+    reward_text: "용돈 5000원",
+    status: 2,  // 진행중
+    contract_id: 1,
+    contractor_name: "김자녀"
+  },
+  {
+    user_id: 1,
+    user_name: "김부모",
+    start_day: weekDates[3], // 목요일
+    end_day: weekDates[4],   // 금요일
+    title: "설거지 돕기",
+    content: "저녁 설거지를 도와주세요",
+    salary: 3000,
+    is_permanent: true,
+    reward_text: "용돈 3000원",
+    status: 3,  // 완료 대기
+    contract_id: 2,
+    contractor_name: "김자녀"
+  },
+  {
+    user_id: 1,
+    user_name: "김부모",
+    start_day: weekDates[5], // 토요일
+    end_day: weekDates[6],   // 일요일
+    title: "주말 공부하기",
+    content: "주말 동안 학교 숙제하기",
+    salary: 10000,
+    is_permanent: false,
+    reward_text: "용돈 10000원",
+    status: 4,  // 완료
+    contract_id: 3,
+    contractor_name: "김자녀"
+  }
+];
+
+const WeeklyCalendar: React.FC<WeeklyCalendarProps> = ({ contracts }) => {
+  const navigate = useNavigate();
+  // contracts가 비어있으면 더미 데이터 사용
+  const displayContracts = contracts?.length ? contracts : dummyData;
+  
   const days = ['월', '화', '수', '목', '금', '토', '일'];
   
-  // 더미 데이터
-  const dummySchedules: Schedule[] = [
-    {
-      user_id: 1,
-      user_name: "홍길동",
-      start_day: new Date().toISOString(),
-      end_day: new Date(new Date().setDate(new Date().getDate() + 2)).toISOString(),
-      title: "문안인사드리기",
-      content: "행사 포스터 제작",
-      salary: 50000,
-      is_permanent: false,
-      reward_text: "추가 보너스 지급 가능",
-      status: 2,
-      contract_id: 2,
-      contractor_name: "김철수"
-    },
-    {
-      user_id: 2,
-      user_name: "이영희",
-      start_day: new Date(new Date().setDate(new Date().getDate() + 1)).toISOString(),
-      end_day: new Date(new Date().setDate(new Date().getDate() + 3)).toISOString(),
-      title: "백덤블링 하기",
-      content: "버그 수정 및 기능 개선",
-      salary: 80000,
-      is_permanent: true,
-      reward_text: "장기 계약 가능",
-      status: 2,
-      contract_id: 3,
-      contractor_name: "박지민"
-    },
-    {
-      user_id: 3,
-      user_name: "김민수",
-      start_day: new Date().toISOString(),
-      end_day: new Date().toISOString(),
-      title: "설거지",
-      content: "신규 브랜드 로고 제작",
-      salary: 30000,
-      is_permanent: false,
-      reward_text: "",
-      status: 3,
-      contract_id: 4,
-      contractor_name: "최수진"
-    }
-  ];
-
   // 일정의 시작 요일 인덱스 구하기
   const getStartDayIndex = (schedule: Schedule) => {
     const startDate = new Date(schedule.start_day);
@@ -99,6 +121,10 @@ const WeeklyCalendar: React.FC<WeeklyCalendarProps> = () => {
     return startDate <= currentWeekSunday && endDate >= currentWeekMonday;
   };
   
+  const handleScheduleClick = (contractId: number) => {
+    navigate(`/jobs/${contractId}`);
+  };
+
   return (
     <div className={styles.calendarContainer}>
       <div className={styles.weekContainer}>
@@ -112,7 +138,7 @@ const WeeklyCalendar: React.FC<WeeklyCalendarProps> = () => {
           
           {/* 일정 영역 */}
           <div className={styles.scheduleRow}>
-            {dummySchedules
+            {displayContracts
               .filter(schedule => schedule.status > 1)
               .filter(isScheduleInCurrentWeek)
               .map(schedule => {
@@ -131,6 +157,7 @@ const WeeklyCalendar: React.FC<WeeklyCalendarProps> = () => {
                       styles.tertiaryButton
                     }`}
                     style={style}
+                    onClick={() => handleScheduleClick(schedule.contract_id)}
                   >
                     {schedule.title}
                   </button>

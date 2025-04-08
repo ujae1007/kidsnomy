@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
-import { useLogout } from '@/hooks/useAuth';
 import AccountInfo from '@/components/home/AccountInfo';
-import Calendar from '@/components/home/Calendar';
 import FinancialProducts from '@/components/home/FinancialProducts';
 import { apiCall } from '@/utils/api';
 import styles from './HomePage.module.css';
+import WeeklyCalendar from '@/components/calendar/WeeklyCalendar';
 
 interface AccountData {
   user_name: string;
@@ -58,8 +57,6 @@ interface FinancialProductsData {
 
 const HomePage: React.FC = () => {
   const auth = useAuth();
-  const { logoutUser } = useLogout();
-  
   const [accountData, setAccountData] = useState<AccountData | null>(null);
   const [contractData, setContractData] = useState<ContractData[]>([]);
   const [financialProductsData, setFinancialProductsData] = useState<FinancialProductsData | undefined>(undefined);
@@ -141,26 +138,15 @@ const HomePage: React.FC = () => {
     }
   }, [auth.isAuthenticated, auth.accessToken]);
 
-  // 금융 상품 데이터를 FinancialProducts 컴포넌트가 기대하는 형식으로 변환
   const formattedFinancialData = financialProductsData ? {
     contracts: financialProductsData.contracts.map(product => ({
       ...product,
-      contract_id: String(product.contract_id) // number를 string으로 변환
+      contract_id: String(product.contract_id)
     }))
   } : undefined;
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">홈</h1>
-        <button
-          onClick={logoutUser}
-          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
-        >
-          로그아웃
-        </button>
-      </div>
-      
+    <div className={styles.container}>
       {/* 계좌 정보 컴포넌트 */}
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-2">나의 통장</h2>
@@ -170,7 +156,7 @@ const HomePage: React.FC = () => {
       {/* 달력 컴포넌트 */}
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-2">일정</h2>
-        <Calendar contracts={contractData} />
+        <WeeklyCalendar contracts={contractData} />
       </div>
 
       {/* 금융 상품 컴포넌트 */}

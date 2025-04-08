@@ -2,10 +2,20 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { AuthState, LoginRequest, LoginResponse } from '@/types/auth';
 import * as jwtDecode from 'jwt-decode';
 
+// API 기본 URL 설정
+// const API_BASE_URL = 'http://localhost:8080';  // 개발 환경
+const API_BASE_URL = 'https://j12b207.p.ssafy.io';  // 배포 환경
+
 // 초기 상태 정의
 const initialState: AuthState = {
-  accessToken: null,
-  isAuthenticated: false,
+  accessToken: localStorage.getItem('accessToken'),
+  refreshToken: localStorage.getItem('refreshToken'),
+  email: localStorage.getItem('email'),
+  isAuthenticated: !!localStorage.getItem('accessToken'),
+  userRole: localStorage.getItem('userRole'),
+  userId: localStorage.getItem('userId') ? parseInt(localStorage.getItem('userId') || '0', 10) : null,
+  isParent: localStorage.getItem('isParent') === 'true',
+  groupId: localStorage.getItem('groupId') ? parseInt(localStorage.getItem('groupId') || '0', 10) : null,
   loading: false,
   error: null,
 };
@@ -20,10 +30,11 @@ export const loginUser = createAsyncThunk(
       console.log('🔑 로그인 요청 시작:', { email: credentials.email, passwordLength: credentials.password.length });
       console.time('⏱️ 로그인 요청 시간');
       
-      const response = await fetch('https://j12b207.p.ssafy.io/api/auth/login', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(credentials),
         credentials: 'include', // 쿠키 포함
@@ -45,7 +56,8 @@ export const loginUser = createAsyncThunk(
       const data: LoginResponse = await response.json();
       console.log('✅ 로그인 성공:', { 
         tokenReceived: !!data.accessToken,
-        tokenLength: data.accessToken?.length
+        tokenLength: data.accessToken?.length,
+        userType: data.isParent ? '부모' : '자녀'
       });
       
       // 토큰 정보 디코딩 및 로깅 (디버깅용)
@@ -57,7 +69,8 @@ export const loginUser = createAsyncThunk(
         console.log('🔐 받은 토큰 정보:', {
           subject: (decoded as any).sub,
           만료시간: expTime.toLocaleString(),
-          남은시간: `${timeLeft.toFixed(2)}분`
+          남은시간: `${timeLeft.toFixed(2)}분`,
+          사용자유형: data.isParent ? '부모' : '자녀'
         });
       } catch (error) {
         console.error('❌ 토큰 디코딩 실패:', error);
@@ -86,10 +99,11 @@ export const reissueToken = createAsyncThunk(
       console.log('🔄 토큰 재발급 요청 시작');
       console.time('⏱️ 토큰 재발급 요청 시간');
       
-      const response = await fetch('https://j12b207.p.ssafy.io/api/auth/reissue', {
+      const response = await fetch(`${API_BASE_URL}/api/auth/reissue`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${auth.accessToken}`,
+          'Accept': 'application/json'
         },
         credentials: 'include', // 쿠키를 포함하도록 설정
       });
@@ -108,20 +122,11 @@ export const reissueToken = createAsyncThunk(
         tokenReceived: !!data.accessToken,
         tokenLength: data.accessToken?.length
       });
-      
-      // 토큰 정보 디코딩 및 로깅 (디버깅용)
-      try {
-        const decoded = jwtDecode.jwtDecode(data.accessToken);
-        const expTime = new Date((decoded as any).exp * 1000);
-        const timeLeft = ((decoded as any).exp * 1000 - Date.now()) / 1000 / 60;
-        
-        console.log('🔐 갱신된 토큰 정보:', {
-          subject: (decoded as any).sub,
-          만료시간: expTime.toLocaleString(),
-          남은시간: `${timeLeft.toFixed(2)}분`
-        });
-      } catch (error) {
-        console.error('❌ 토큰 디코딩 실패:', error);
+
+      // isParent 필드가 없으면 기존 값 사용
+      if (data.isParent === undefined && auth.isParent !== null) {
+        console.log('ℹ️ 토큰 재발급 응답에 isParent 필드가 없어 기존 값을 유지합니다:', auth.isParent);
+        data.isParent = auth.isParent;
       }
       
       return data;
@@ -179,7 +184,51 @@ const authSlice = createSlice({
     logoutSuccess: (state) => {
       console.log('🚪 로그아웃 처리 중...');
       state.accessToken = null;
+      state.refreshToken = null;
+      state.email = null;
       state.isAuthenticated = false;
+      state.userRole = null;
+      state.userId = null;
+      state.isParent = false;
+      state.groupId = null;
+      state.loading = false;
+      state.error = null;
+      
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('refreshToken');
+      localStorage.removeItem('email');
+      localStorage.removeItem('userRole');
+      localStorage.removeItem('userId');
+      localStorage.removeItem('isParent');
+      localStorage.removeItem('groupId');
+    },
+    setEmail: (state, action: PayloadAction<string>) => {
+      state.email = action.payload;
+    },
+    clearEmail: (state) => {
+      state.email = null;
+    },
+    setTokens: (state, action: PayloadAction<{ accessToken: string; refreshToken: string }>) => {
+      state.accessToken = action.payload.accessToken;
+      state.refreshToken = action.payload.refreshToken;
+      state.isAuthenticated = true;
+    },
+    setGroupId: (state, action: PayloadAction<number>) => {
+      console.log('🔄 그룹 ID 설정:', action.payload);
+      state.groupId = action.payload;
+      localStorage.setItem('groupId', String(action.payload));
+    },
+    clearAuth: (state) => {
+      console.log('🔒 인증 정보 초기화');
+      state.accessToken = null;
+      state.refreshToken = null;
+      state.email = null;
+      state.isAuthenticated = false;
+      state.userRole = null;
+      state.userId = null;
+      state.isParent = false;
+      state.groupId = null;
+      state.loading = false;
       state.error = null;
     },
   },
@@ -192,10 +241,33 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(loginUser.fulfilled, (state, action: PayloadAction<LoginResponse>) => {
-        console.log('✅ 로그인 성공 - Redux 상태 업데이트');
+        console.log('✅ 로그인 성공 - Redux 상태 업데이트', action.payload);
         state.loading = false;
         state.accessToken = action.payload.accessToken;
+        state.refreshToken = action.payload.refreshToken;
+        state.userRole = action.payload.userRole;
+        state.userId = action.payload.userId;
         state.isAuthenticated = true;
+        state.email = action.payload.email;
+        state.isParent = action.payload.isParent;
+        state.groupId = action.payload.groupId;
+        state.error = null;
+
+        // localStorage에 상태 저장
+        localStorage.setItem('accessToken', action.payload.accessToken);
+        localStorage.setItem('refreshToken', action.payload.refreshToken);
+        localStorage.setItem('email', action.payload.email || '');
+        localStorage.setItem('userRole', action.payload.userRole || '');
+        localStorage.setItem('userId', action.payload.userId ? action.payload.userId.toString() : '');
+        localStorage.setItem('isParent', String(action.payload.isParent));
+        localStorage.setItem('groupId', action.payload.groupId ? action.payload.groupId.toString() : '');
+
+        console.log('📦 Redux 상태 업데이트 완료:', {
+          isAuthenticated: true,
+          userRole: action.payload.userRole,
+          isParent: action.payload.isParent,
+          groupId: action.payload.groupId
+        });
       })
       .addCase(loginUser.rejected, (state, action) => {
         console.error('❌ 로그인 실패 - Redux 상태 업데이트', action.payload);
@@ -211,7 +283,15 @@ const authSlice = createSlice({
         console.log('✅ 토큰 재발급 성공 - Redux 상태 업데이트');
         state.loading = false;
         state.accessToken = action.payload.accessToken;
+        state.refreshToken = action.payload.refreshToken;
+        // isParent 필드가 전달되었으면 업데이트, 아니면 기존 값 유지
+        if (action.payload.isParent !== undefined) {
+          state.userRole = action.payload.isParent ? 'PARENT' : 'CHILD';
+          state.isParent = action.payload.isParent;
+        }
         state.isAuthenticated = true;
+        state.email = action.payload.email;
+        state.groupId = action.payload.groupId;
       })
       .addCase(reissueToken.rejected, (state, action) => {
         console.error('❌ 토큰 재발급 실패 - Redux 상태 업데이트', action.payload);
@@ -219,8 +299,15 @@ const authSlice = createSlice({
         state.error = action.payload as string;
         state.isAuthenticated = false;
         state.accessToken = null;
+        state.refreshToken = null;
+        state.userRole = null;
+        state.userId = null;
+        state.email = null;
+        state.isParent = false;
+        state.groupId = null;
       });
   },
 });
 
+export const { setEmail, clearEmail, setTokens, setGroupId, clearAuth } = authSlice.actions;
 export default authSlice.reducer; 

@@ -1,6 +1,12 @@
 export interface AuthState {
   accessToken: string | null;
+  refreshToken: string | null;
+  email: string | null;
   isAuthenticated: boolean;
+  userRole: string | null;
+  userId: number | null;
+  isParent: boolean;
+  groupId: number | null;
   loading: boolean;
   error: string | null;
 }
@@ -12,6 +18,12 @@ export interface LoginRequest {
 
 export interface LoginResponse {
   accessToken: string;
+  refreshToken: string;
+  email: string;
+  userRole: string;
+  userId: number;
+  isParent: boolean;
+  groupId: number | null;
 }
 
 export interface TokenPayload {

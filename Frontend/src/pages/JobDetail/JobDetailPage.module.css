@@ -1,0 +1,181 @@
+/* 스타일 초기화 */
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.status {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #F5F2F2;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.infoRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  color: #666666;
+}
+
+.value {
+  font-size: 16px;
+  color: #333333;
+}
+
+.dateInput {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #333333;
+  padding: 0;
+}
+
+.contentSection {
+  margin-bottom: 2rem;
+}
+
+.contentTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-bottom: 80px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.formGroup label {
+  font-weight: 500;
+  color: #333;
+}
+
+.formGroup .value {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #F5F5F5;
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.buttonWrapper {
+  margin-top: 2rem;
+  padding: 0;
+  margin-left: -1rem;
+}
+
+.button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #E8A5A5;
+  color: white;
+}
+
+.button:hover {
+  background-color: #e57373;
+}
+
+.primaryButton {
+  background-color: #E8A5A5;
+  color: white;
+}
+
+.warningButton {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.secondaryButton {
+  background-color: #F5F5F5;
+  color: #666;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.error {
+  color: #e57373;
+  text-align: center;
+  padding: 1rem;
+  background-color: #ffebee;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+
+  .content {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .formGroup {
+    width: 100%;
+  }
+
+  .formGroup .value {
+    width: 100%;
+  }
+
+  .buttonWrapper {
+    margin-left: 0;
+    padding: 0;
+  }
+} 

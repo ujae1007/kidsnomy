@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './LoginPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '@/store/slices/authSlice';
+import { loginUser, setGroupId } from '@/store/slices/authSlice';
 import { RootState, AppDispatch } from '@/store';
+import { apiCall } from '@/utils/api';
 
 const EmailIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -37,19 +38,21 @@ const EyeSlashIcon = () => (
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
-  const { isAuthenticated, error, loading } = useSelector((state: RootState) => state.auth);
+  const { isAuthenticated, isParent, error, loading } = useSelector((state: RootState) => state.auth);
 
   const [loginData, setLoginData] = useState({
     email: '',
     password: '',
   });
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     // 이미 인증된 사용자는 홈으로 리디렉션
     if (isAuthenticated) {
+      console.log(`로그인 페이지: 인증된 사용자 (${isParent ? '부모' : '자녀'}) 홈으로 리디렉션`);
       navigate('/home');
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, isParent, navigate]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -69,7 +72,28 @@ const LoginPage: React.FC = () => {
       const resultAction = await dispatch(loginUser(loginData));
       
       if (loginUser.fulfilled.match(resultAction)) {
-        console.log('로그인 페이지: 로그인 성공');
+        const userType = resultAction.payload.isParent ? '부모' : '자녀';
+        console.log(`로그인 페이지: 로그인 성공 (${userType})`);
+
+        // 그룹 정보 가져오기
+        try {
+          const groupResponse = await apiCall<{ groupId: number }[]>('group/check', {
+            method: 'GET',
+            auth: true
+          });
+          
+          console.log('그룹 정보 조회 성공:', groupResponse);
+          
+          if (groupResponse && groupResponse.length > 0) {
+            // 첫 번째 그룹의 ID를 저장
+            localStorage.setItem('groupId', String(groupResponse[0].groupId));
+            // Redux 상태 업데이트
+            dispatch(setGroupId(groupResponse[0].groupId));
+          }
+        } catch (error) {
+          console.error('그룹 정보 조회 실패:', error);
+        }
+
         navigate('/home');
       }
     } catch (error) {
@@ -84,7 +108,7 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.loginForm}>
+      <div className={styles.form}>
         <h1 className={styles.title}>로그인</h1>
         
         {error && <div className={styles.errorMessage}>{error}</div>}
@@ -110,7 +134,7 @@ const LoginPage: React.FC = () => {
               <LockIcon />
             </div>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               value={loginData.password}
               onChange={handleInputChange}
@@ -118,10 +142,16 @@ const LoginPage: React.FC = () => {
               className={styles.input}
               required
             />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className={styles.passwordToggle}
+            >
+              {showPassword ? <EyeSlashIcon /> : <EyeIcon />}
+            </button>
           </div>
           
           <button 
-            type="submit" 
             className={styles.loginButton}
             disabled={loading}
           >
@@ -130,8 +160,8 @@ const LoginPage: React.FC = () => {
         </form>
         
         <div className={styles.signup}>
-          <p>계정이 없으신가요?</p>
-          <button onClick={handleSignupClick} className={styles.signupButton}>회원가입</button>
+          <span className={styles.signupText}>계정이 없으신가요?</span>
+          <button onClick={handleSignupClick} className={styles.signupButton}>회원가입하러가기</button>
         </div>
 
       </div>

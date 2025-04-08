@@ -1,0 +1,40 @@
+.container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+.accountName {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #000;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+  width: 100%;
+}
+
+.accountNumber {
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+  width: 100%;
+}
+
+.balance {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #000;
+  line-height: 1.2;
+  word-break: break-word;
+  width: 100%;
+} 

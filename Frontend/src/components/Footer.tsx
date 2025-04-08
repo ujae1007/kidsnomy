@@ -1,12 +1,30 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useAuth } from '@/hooks/useAuth';
 import styles from './Footer.module.css';
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const auth = useAuth();
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleWorkClick = () => {
+    if (auth.isParent) {
+      navigate('/parent/jobs');
+    } else {
+      navigate('/child/jobs');
+    }
+  };
+
+  const handleBankClick = () => {
+    if (auth.isParent) {
+      navigate('/bank/products');
+    } else {
+      navigate('/child/bank/products');
+    }
+  };
 
   return (
     <footer className={styles.footer}>
@@ -19,14 +37,14 @@ const Footer: React.FC = () => {
       </button>
       <button 
         className={`${styles.navButton} ${isActive('/work') ? styles.active : ''}`}
-        onClick={() => navigate('/work')}
+        onClick={handleWorkClick}
       >
         <WorkIcon />
         <span>일자리</span>
       </button>
       <button 
         className={`${styles.navButton} ${isActive('/bank') ? styles.active : ''}`}
-        onClick={() => navigate('/bank')}
+        onClick={handleBankClick}
       >
         <BankIcon />
         <span>은행</span>
@@ -49,8 +67,8 @@ const WorkIcon = () => (
 );
 
 const BankIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" viewBox="0 0 32 24" fill="none">
-    <path fillRule="evenodd" clipRule="evenodd" d="M2.1875 10H5.375V18H3.25C2.6632 18 2.1875 18.4477 2.1875 19C2.1875 19.5523 2.6632 20 3.25 20H28.75C29.3368 20 29.8125 19.5523 29.8125 19C29.8125 18.4477 29.3368 18 28.75 18H26.625V10H29.8125C30.2875 9.99955 30.7045 9.70241 30.8338 9.27223C30.9631 8.84205 30.7733 8.38335 30.369 8.14875L16.5565 0.14875C16.2152 -0.0487539 15.7848 -0.0487539 15.4435 0.14875L1.63102 8.14875C1.22667 8.38335 1.03689 8.84205 1.1662 9.27223C1.29551 9.70241 1.71249 9.99955 2.1875 10V10ZM7.5 10H11.75V18H7.5V10ZM18.125 10V18H13.875V10H18.125ZM24.5 18H20.25V10H24.5V18ZM16 2.17375L26.0592 8H5.94078L16 2.17375ZM31.9375 23C31.9375 23.5523 31.4618 24 30.875 24H1.125C0.538197 24 0.0625 23.5523 0.0625 23C0.0625 22.4477 0.538197 22 1.125 22H30.875C31.4618 22 31.9375 22.4477 31.9375 23V23Z" fill="currentColor"/>
+  <svg xmlns="http://www.w3.org/2000/svg" width="29" height="27" viewBox="0 0 29 27" fill="none">
+    <path fillRule="evenodd" clipRule="evenodd" d="M26.5312 4.65625H21.0625V3.5625C21.0625 1.75032 19.5934 0.28125 17.7812 0.28125H11.2188C9.40657 0.28125 7.9375 1.75032 7.9375 3.5625V4.65625H2.46875C1.26063 4.65625 0.28125 5.63563 0.28125 6.84375V24.3438C0.28125 25.5519 1.26063 26.5312 2.46875 26.5312H26.5312C27.7394 26.5312 28.7188 25.5519 28.7188 24.3438V6.84375C28.7188 5.63563 27.7394 4.65625 26.5312 4.65625ZM10.125 3.5625C10.125 2.95844 10.6147 2.46875 11.2188 2.46875H17.7812C18.3853 2.46875 18.875 2.95844 18.875 3.5625V4.65625H10.125V3.5625ZM26.5312 6.84375V12.5326C22.8395 14.5421 18.7032 15.5945 14.5 15.5938C10.297 15.5945 6.16074 14.5426 2.46875 12.534V6.84375H26.5312ZM26.5312 24.3438H2.46875V14.9977C6.21474 16.83 10.3299 17.7821 14.5 17.7812C18.6702 17.7813 22.7853 16.8288 26.5312 14.9963V24.3438ZM11.2188 12.3125C11.2188 11.7084 11.7084 11.2188 12.3125 11.2188H16.6875C17.2916 11.2188 17.7812 11.7084 17.7812 12.3125C17.7812 12.9166 17.2916 13.4062 16.6875 13.4062H12.3125C11.7084 13.4062 11.2188 12.9166 11.2188 12.3125Z" fill="currentColor"/>
   </svg>
 );
 

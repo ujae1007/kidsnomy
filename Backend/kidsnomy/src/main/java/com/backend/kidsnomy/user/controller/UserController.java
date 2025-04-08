@@ -1,7 +1,9 @@
 package com.backend.kidsnomy.user.controller;
 
 import com.backend.kidsnomy.jwt.JwtTokenProvider;
+import com.backend.kidsnomy.jwt.dto.LoginResponseDto;
 import com.backend.kidsnomy.jwt.dto.TokenDto;
+import com.backend.kidsnomy.user.dto.ApiResponseDto;
 import com.backend.kidsnomy.user.dto.EmailSendRequestDto;
 import com.backend.kidsnomy.user.dto.EmailVerificationDto;
 import com.backend.kidsnomy.user.dto.LoginRequestDto;
@@ -36,17 +38,24 @@ public class UserController {
             return ResponseEntity.ok("인증 코드가 전송되었습니다.");
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("서버 오류: " + e.getMessage());
         }
     }
 
     // 2. 인증 코드 검증
     @PostMapping("/verification/email")
-    public ResponseEntity<String> verifyEmailCode(@RequestBody EmailVerificationDto dto) {
+    public ResponseEntity<ApiResponseDto> verifyEmailCode(@RequestBody EmailVerificationDto dto) {
         boolean success = userService.verifyCode(dto);
+
         if (success) {
-            return ResponseEntity.ok("이메일 인증이 완료되었습니다.");
+            return ResponseEntity.ok(new ApiResponseDto(true, "이메일 인증이 완료되었습니다."));
         } else {
-            return ResponseEntity.badRequest().body("인증 코드가 일치하지 않습니다.");
+            return ResponseEntity
+                .badRequest()
+                .body(new ApiResponseDto(false, "인증 코드가 일치하지 않습니다."));
         }
     }
 
@@ -80,15 +89,17 @@ public class UserController {
     
     // 5. 로그인
     @PostMapping("/login")
-    public ResponseEntity<TokenDto> login(@RequestBody LoginRequestDto dto, HttpServletResponse response) {
-        TokenDto token = userService.login(dto, response);
+    public ResponseEntity<LoginResponseDto> login(@RequestBody LoginRequestDto dto, HttpServletResponse response) {
+        LoginResponseDto token = userService.login(dto, response);
         return ResponseEntity.ok(token);
     }
     
-    // 6. 토큰 reissue
+   
+ // 6. 토큰 reissue
     @PostMapping("/reissue")
     public ResponseEntity<TokenDto> reissue(
             HttpServletRequest request,
+            HttpServletResponse response,
             @CookieValue(name = "refreshToken", required = false) String refreshToken
     ) {
         String accessToken = jwtTokenProvider.resolveAccessToken(request);
@@ -97,9 +108,10 @@ public class UserController {
             return ResponseEntity.badRequest().build();
         }
 
-        TokenDto token = userService.reissue(accessToken, refreshToken);
+        TokenDto token = userService.reissue(accessToken, refreshToken, response);
         return ResponseEntity.ok(token);
     }
+
     
     // 7. 로그아웃
     @PostMapping("/logout")

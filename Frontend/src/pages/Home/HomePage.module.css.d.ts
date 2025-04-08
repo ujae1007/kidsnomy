@@ -15,6 +15,8 @@ declare const styles: {
   transactionList: string;
   actionButtons: string;
   actionButton: string;
+  error: string;
+  retryButton: string;
 };
 
 export default styles; 

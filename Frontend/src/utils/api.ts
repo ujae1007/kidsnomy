@@ -167,9 +167,35 @@ interface RequestOptions extends RequestInit {
   auth?: boolean;
 }
 
-export const apiCall = async <T>(url: string, options: RequestOptions = {}): Promise<T> => {
-  const { auth = false, ...fetchOptions } = options;
-  const headers = new Headers(fetchOptions.headers);
+interface ApiCallOptions {
+  url: string;
+  method?: string;
+  auth?: boolean;
+  data?: any;
+}
+
+export const apiCall = async <T>(urlOrOptions: string | ApiCallOptions, options: RequestOptions = {}): Promise<T> => {
+  let url: string;
+  let finalOptions: RequestOptions;
+
+  if (typeof urlOrOptions === 'string') {
+    url = urlOrOptions;
+    finalOptions = options;
+  } else {
+    url = urlOrOptions.url;
+    finalOptions = {
+      method: urlOrOptions.method || 'GET',
+      auth: urlOrOptions.auth,
+      body: urlOrOptions.data ? JSON.stringify(urlOrOptions.data) : undefined,
+      credentials: 'include',
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      })
+    };
+  }
+
+  const { auth = false, ...fetchOptions } = finalOptions;
+  const headers = new Headers(fetchOptions.headers || {});
   
   // CORS 디버깅을 위한 요청 정보 로깅
   console.log('🔍 API 요청 디버깅 정보:', {
@@ -177,7 +203,8 @@ export const apiCall = async <T>(url: string, options: RequestOptions = {}): Pro
     method: fetchOptions.method || 'GET',
     headers: Object.fromEntries(headers.entries()),
     credentials: fetchOptions.credentials,
-    mode: fetchOptions.mode || 'cors'
+    mode: fetchOptions.mode || 'cors',
+    auth: auth
   });
 
   // 인증 필요한 요청이라면 헤더에 토큰 추가
@@ -187,31 +214,19 @@ export const apiCall = async <T>(url: string, options: RequestOptions = {}): Pro
 
     if (accessToken) {
       headers.set('Authorization', `Bearer ${accessToken}`);
-      console.log('🔐 인증 토큰 헤더에 추가됨', { tokenLength: accessToken.length });
-      
-      try {
-        // 토큰 디코딩 정보 로깅 (디버깅용)
-        const decoded = jwtDecode.jwtDecode(accessToken);
-        const expTime = new Date((decoded as any).exp * 1000);
-        const timeLeft = ((decoded as any).exp * 1000 - Date.now()) / 1000 / 60;
-        console.log('🔐 토큰 정보:', {
-          subject: (decoded as any).sub,
-          만료시간: expTime.toLocaleString(),
-          남은시간: `${timeLeft.toFixed(2)}분`
-        });
-      } catch (error) {
-        console.error('❌ 토큰 디코딩 실패:', error);
-      }
+      console.log('🔐 인증 토큰 디버깅:', { 
+        tokenLength: accessToken.length,
+        tokenPreview: `${accessToken.substring(0, 10)}...${accessToken.substring(accessToken.length - 10)}`,
+        headers: Object.fromEntries(headers.entries()),
+        auth: auth,
+        url: url
+      });
     } else {
       console.warn('⚠️ 인증 토큰이 필요하지만 존재하지 않음');
+      throw new Error('인증 토큰이 필요하지만 존재하지 않습니다.');
     }
   }
 
-  // Content-Type 기본값 설정
-  if (!headers.has('Content-Type') && !fetchOptions.body) {
-    headers.set('Content-Type', 'application/json');
-  }
-  
   // URL에 기본 URL 추가 (상대 경로일 경우만)
   const fullUrl = url.startsWith('http') ? url : `${API_BASE_URL}/${url.startsWith('/') ? url.substring(1) : url}`;
   
@@ -220,8 +235,8 @@ export const apiCall = async <T>(url: string, options: RequestOptions = {}): Pro
     const response = await fetch(fullUrl, {
       ...fetchOptions,
       headers,
-      credentials: 'include', // 쿠키 포함
-      mode: 'cors', // CORS 모드 명시적 설정
+      credentials: 'include',
+      mode: 'cors'
     });
     console.timeEnd(`⏱️ API 요청 시간 - ${url}`);
     

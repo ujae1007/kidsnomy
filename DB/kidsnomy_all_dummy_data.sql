@@ -78,7 +78,7 @@ VALUES
 (2, 3, '적금 상품3', '적금 설명 3', 4.0, 12, 1, 15, 1);
 
 -- deposit_contract
-INSERT INTO `deposit_contract` (`group_id`, `user_id`, `product_id`, `start_day`, `end_day`, `account_no`, `balance`, `total_volume`)
+INSERT INTO `deposit_contract` (`group_id`, `user_id`, `product_id`, `start_day`, `end_day`, `account_no`, `balancedeposit`, `total_volume`)
 VALUES 
 (1, 1, 1, '2025-04-01 05:03:00', '2026-04-01 05:03:00', 'DPT2025001', 100000, 100000),
 (1, 2, 2, '2025-04-01 05:03:00', '2026-04-01 05:03:00', 'DPT2025002', 100000, 100000);

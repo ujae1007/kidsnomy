@@ -1,6 +1,8 @@
 .container {
+  padding: 1rem;
   width: 100%;
-  margin-bottom: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .loading {
@@ -10,22 +12,19 @@
 }
 
 .card {
-  background: white;
-  border-radius: 16px;
-  padding: 1.5rem;
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  border-radius: 15px;
+  padding: 2rem;
+  color: white;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .noAccount {
-  background: linear-gradient(135deg, #FFB6B6 0%, #FFE08C 100%);
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: linear-gradient(135deg, #34495e 0%, #95a5a6 100%);
   text-align: center;
-  padding: 2rem;
+  padding: 3rem 2rem;
 }
 
 .noAccountMessage {
@@ -33,63 +32,55 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  color: #2D3436;
 }
 
 .noAccountMessage h3 {
-  font-size: 1.5rem;
-  font-weight: bold;
   margin: 0;
+  font-size: 1.5rem;
 }
 
 .noAccountMessage p {
-  font-size: 1rem;
   margin: 0;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .registerButton {
   background-color: white;
-  color: #2D3436;
+  color: #2c3e50;
   border: none;
+  padding: 0.8rem 1.5rem;
   border-radius: 8px;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.2s;
   margin-top: 1rem;
 }
 
 .registerButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
 }
 
 .chipIcon {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  color: #914F4F;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .cardTitle {
   font-size: 1.2rem;
-  font-weight: 500;
-  color: #2D3436;
   margin-bottom: 1rem;
-  margin-top: 3rem;
+  font-weight: 500;
 }
 
 .balance {
   font-size: 2rem;
   font-weight: bold;
-  color: #2D3436;
   margin-bottom: 1rem;
 }
 
 .accountNumber {
-  font-size: 1rem;
-  color: #95A5A6;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 2px;
 }
 
 .mastercard {
@@ -97,6 +88,11 @@
   bottom: 1.5rem;
   right: 1.5rem;
   width: 60px;
+  height: auto;
+}
+
+.mastercard img {
+  width: 100%;
   height: auto;
 }
 
@@ -130,26 +126,27 @@
 }
 
 .sendButton {
-  width: 100%;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 8px;
-  background-color: #FF9EAA;
-  color: #2D3436;
-  font-size: 1rem;
-  font-weight: bold;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
-  z-index: 10;
-  margin-top: 1rem;
+  transition: all 0.2s;
 }
 
 .sendButton:hover {
-  background-color: #ff8696;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 /* 반응형 디자인 */

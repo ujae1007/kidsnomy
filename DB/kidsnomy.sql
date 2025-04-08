@@ -151,8 +151,9 @@ CREATE TABLE `deposit_contract` (
   `start_day` TIMESTAMP,
   `end_day` TIMESTAMP,
   `account_no` VARCHAR(50) NOT NULL UNIQUE,
-  `balance` DECIMAL(15,2) DEFAULT 0,
+  `balancedeposit` DECIMAL(15,2) DEFAULT 0,
   `total_volume` DECIMAL(15,2),
+  `status` TINYINT DEFAULT 0 COMMENT '0: 활성, 1: 해지',
   FOREIGN KEY (`group_id`) REFERENCES `group_info`(`id`) ON DELETE CASCADE,
   FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON DELETE CASCADE,
   FOREIGN KEY (`product_id`) REFERENCES `deposit`(`id`) ON DELETE CASCADE
@@ -170,6 +171,7 @@ CREATE TABLE `savings_contract` (
   `balance` DECIMAL(15,2) DEFAULT 0,
   `one_time_volume` DECIMAL(15,2),
   `rate_volume` DECIMAL(15,2) DEFAULT 0,
+  `status` TINYINT DEFAULT 0 COMMENT '0: 활성, 1: 해지',
   FOREIGN KEY (`group_id`) REFERENCES `group_info`(`id`) ON DELETE CASCADE,
   FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON DELETE CASCADE,
   FOREIGN KEY (`product_id`) REFERENCES `savings`(`id`) ON DELETE CASCADE

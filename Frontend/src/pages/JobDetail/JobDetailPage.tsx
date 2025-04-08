@@ -365,6 +365,18 @@ const JobDetailPage: React.FC = () => {
         <div className={styles.buttonWrapper}>
           {renderActionButton()}
         </div>
+
+        {isParent && job.status >= 2 && (
+          <div className={styles.warningMessage}>
+            계약이 완료되어 삭제하실 수 없습니다.
+          </div>
+        )}
+
+        {!isParent && job.status === 3 && (
+          <div className={styles.pendingMessage}>
+            승인 대기 중입니다.
+          </div>
+        )}
       </div>
       
       <JobCompleteConfirmModal

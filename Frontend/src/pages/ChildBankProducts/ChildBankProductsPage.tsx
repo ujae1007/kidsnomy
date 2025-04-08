@@ -101,6 +101,7 @@ const ChildBankProductsPage: React.FC = () => {
             status={product.type === 'deposit' ? '예금' : '적금'}
             title={product.name}
             salary={product.type === 'deposit' ? product.period * 10000 : product.monthlyPayment || 0}
+            onClick={() => handleProductClick(product)}
             onMoreClick={() => handleProductClick(product)}
           >
             <div className={styles.productInfo}>

@@ -36,16 +36,15 @@ public class SecurityConfig {
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(
-                    "/api/auth/**",
-                    "/api/group/**",
-                    "/api/work/**",
-                    "/api/finance/**",
-                    "/api/auto/**",
-                    "/api/basic/**",
-                    "/error",
-                    "/api/account/accountlog"
-            ).permitAll()
-                .requestMatchers("/api/account/**").authenticated() // 나머지 /api/account/** 경로는 인증 필요
+                    "/api/auth/verification/**",
+                    "/api/auth/login",
+                    "/api/auth/signup/**",
+                    "/api/auth/refresh",
+                    "/api/auth/logout",
+                    "/error"
+                ).permitAll()
+                .requestMatchers("/api/auth/main/**").authenticated()
+                .requestMatchers("/api/account/**").authenticated()
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)

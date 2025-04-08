@@ -58,11 +58,11 @@ const AccountPage: React.FC = () => {
     }
 
     try {
-      const response = await apiCall<AccountResponse>('/account/create', {
+      const response = await apiCall<AccountResponse>('account/create', {
         method: 'POST',
+        auth: true,
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${accessToken}`
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           accountPassword: parseInt(formData.accountPassword)

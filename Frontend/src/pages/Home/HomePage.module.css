@@ -152,4 +152,26 @@
 
 .actionButton:hover {
   background-color: #E9ECEF;
+}
+
+.error {
+  background-color: #fee2e2;
+  border: 1px solid #ef4444;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  color: #dc2626;
+}
+
+.retryButton {
+  background-color: #dc2626;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.retryButton:hover {
+  background-color: #b91c1c;
 } 

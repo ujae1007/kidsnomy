@@ -12,12 +12,11 @@ const FilterButtons: React.FC<FilterButtonsProps> = ({ selectedFilter, onFilterC
     { id: 'all', label: '전체 상품' },
     { id: 'deposit', label: '예금 상품' },
     { id: 'saving', label: '적금 상품' },
-    { id: 'contracted', label: '계약된 상품' },
     { id: 'latest', label: '최신순' },
   ] : [
     { id: 'all', label: '전체 일자리' },
-    { id: '2', label: '계약된 일자리' },
     { id: '4', label: '완료' },
+    { id: 'contracted', label: '계약 후' },
     { id: 'latest', label: '최신순' },
   ];
 

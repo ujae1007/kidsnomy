@@ -11,6 +11,8 @@ declare const styles: {
   readonly secondaryButton: string;
   readonly loading: string;
   readonly error: string;
+  readonly warningMessage: string;
+  readonly pendingMessage: string;
 };
 
 export default styles; 

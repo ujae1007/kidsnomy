@@ -141,7 +141,7 @@ const ChildJobListPage: React.FC = () => {
   // 검색 및 필터링 적용
   useEffect(() => {
     const currentJobs = isContractedView ? contractedJobs : availableJobs;
-    let result = [...currentJobs];
+    let filtered = [...currentJobs];
     
     // 검색어 필터링
     if (searchTerm) {
@@ -166,7 +166,7 @@ const ChildJobListPage: React.FC = () => {
         : dateB.getTime() - dateA.getTime();
     });
     
-    setFilteredJobs(result);
+    setFilteredJobs(filtered);
   }, [availableJobs, contractedJobs, searchTerm, selectedStatus, sortOrder, isContractedView]);
 
   return (

@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
+import { apiCall } from '@/utils/api';
 import styles from './ParentBankProductsPage.module.css';
 import JobCard from '@/components/jobs/JobCard';
 import SearchBar from '@/components/jobs/SearchBar';
@@ -15,36 +18,72 @@ interface BankProduct {
   monthlyPayment?: number;
 }
 
+interface ApiResponse {
+  data: BankProduct[];
+  status: string;
+  message: string;
+}
+
 const ParentBankProductsPage: React.FC = () => {
   const navigate = useNavigate();
+  const selectedGroupId = useSelector((state: RootState) => state.group.selectedGroupId);
+  const accessToken = useSelector((state: RootState) => state.auth.accessToken);
+  const [products, setProducts] = useState<BankProduct[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedFilter, setSelectedFilter] = useState('all');
-  const [products] = useState<BankProduct[]>([
-    {
-      id: 1,
-      name: '설 세배 용돈 모으기 통장',
-      description: '설날까지 용돈을 모아보아요',
-      interestRate: 10,
-      period: 12,
-      type: 'deposit',
-    },
-    {
-      id: 2,
-      name: '일주일에 3,000원 모으기',
-      description: '매주 조금씩 저축하는 습관을 길러요',
-      interestRate: 10,
-      period: 24,
-      type: 'saving',
-      monthlyPayment: 12000,
+  const [selectedFilter, setSelectedFilter] = useState<'all' | 'deposit' | 'saving'>('all');
+
+  const fetchProducts = async () => {
+    if (!selectedGroupId) {
+      console.log('No group ID selected');
+      return;
     }
-  ]);
+
+    setLoading(true);
+    setError(null);
+    
+    try {
+      console.log('Fetching products for group:', selectedGroupId);
+      const response = await apiCall<ApiResponse>(`finance/parent/check/${selectedGroupId}`, {
+        method: 'GET',
+        auth: true
+      });
+      
+      console.log('API Response:', response);
+      
+      if (response?.data) {
+        setProducts(response.data);
+      } else {
+        setError('No data received from server');
+      }
+    } catch (err: any) {
+      console.error('Error fetching products:', err);
+      if (err.response?.status === 403) {
+        setError('접근 권한이 없습니다.');
+      } else if (err.response?.status === 500) {
+        setError('서버 오류가 발생했습니다.');
+      } else {
+        setError('상품 목록을 불러오는데 실패했습니다.');
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    console.log('useEffect triggered with selectedGroupId:', selectedGroupId);
+    if (selectedGroupId) {
+      fetchProducts();
+    }
+  }, [selectedGroupId]);
 
   const handleSearchChange = (value: string) => {
     setSearchTerm(value);
   };
 
   const handleFilterChange = (filter: string) => {
-    setSelectedFilter(filter);
+    setSelectedFilter(filter as 'all' | 'deposit' | 'saving');
   };
 
   const handleProductClick = (product: BankProduct) => {
@@ -59,31 +98,28 @@ const ParentBankProductsPage: React.FC = () => {
     navigate('create');
   };
 
-  const filteredProducts = products.filter(product => {
-    // 검색어 필터링
-    if (searchTerm && !product.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-      return false;
-    }
+  const filteredProducts = products
+    .filter(product => {
+      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesFilter = selectedFilter === 'all' || product.type === selectedFilter;
+      return matchesSearch && matchesFilter;
+    })
+    .sort((a, b) => b.id - a.id);  // Always sort by latest first
 
-    // 상품 유형 필터링
-    switch (selectedFilter) {
-      case 'deposit':
-        return product.type === 'deposit';
-      case 'saving':
-        return product.type === 'saving';
-      case 'contracted':
-        // TODO: 계약된 상품 필터링 로직 추가
-        return true;
-      default:
-        return true;
-    }
-  }).sort((a, b) => {
-    // 최신순 정렬
-    if (selectedFilter === 'latest') {
-      return b.id - a.id;
-    }
-    return 0;
-  });
+  if (loading) {
+    return <div className={styles.container}>Loading...</div>;
+  }
+
+  if (error) {
+    return (
+      <div className={styles.container}>
+        <div className={styles.error}>
+          {error}
+          <button onClick={fetchProducts}>다시 시도</button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.container}>

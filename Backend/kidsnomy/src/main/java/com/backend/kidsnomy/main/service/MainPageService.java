@@ -48,16 +48,27 @@ public class MainPageService {
         boolean isParent = user.getIsParent();
 
         // 계좌 정보 - 먼저 외부 API로 잔액 최신화
-        basicAccountService.refreshBalance(userId);
+        try {
+            basicAccountService.refreshBalance(userId);
+        } catch (Exception e) {
+            System.out.println("계좌 잔액 최신화 실패: " + e.getMessage());
+            // 실패해도 계속 진행
+        }
 
         AccountDto account = accountRepository.findByUserId(userId)
                 .map(this::toAccountDto)
                 .orElse(null);
 
         // 일자리
-        List<JobDto> jobs = isParent
-                ? jobRepository.findByEmployerIdAndGroupId(userId, groupId).stream().map(this::toJobDto).collect(Collectors.toList())
-                : jobRepository.findByEmployeeIdAndGroupId(userId, groupId).stream().map(this::toJobDto).collect(Collectors.toList());
+        List<JobDto> jobs;
+        try {
+            jobs = isParent
+                    ? jobRepository.findByEmployerIdAndGroupId(userId, groupId).stream().map(this::toJobDto).collect(Collectors.toList())
+                    : jobRepository.findByEmployeeIdAndGroupId(userId, groupId).stream().map(this::toJobDto).collect(Collectors.toList());
+        } catch (Exception e) {
+            System.out.println("일자리 조회 실패: " + e.getMessage());
+            jobs = List.of(); // 빈 리스트 반환
+        }
 
         // 예금
         List<DepositDto> deposits = isParent

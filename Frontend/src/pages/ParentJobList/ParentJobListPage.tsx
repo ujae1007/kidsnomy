@@ -79,9 +79,15 @@ const ParentJobListPage: React.FC = () => {
       
       setJobs(data);
       setFilteredJobs(data);
-    } catch (error) {
-      console.error('❌ 부모 일자리 조회 중 에러 발생:', error);
-      setError((error as Error).message);
+    } catch (err) {
+      console.error('❌ 부모 일자리 조회 중 에러 발생:', err);
+      
+      const error = err as any;
+      if (error?.status === 403 || (error?.message && error.message.includes('403'))) {
+        setError('그룹을 생성하거나 선택해주세요.');
+      } else {
+        setError((err as Error).message);
+      }
     } finally {
       setLoading(false);
     }
@@ -152,7 +158,17 @@ const ParentJobListPage: React.FC = () => {
         {loading ? (
           <div className={styles.loading}>로딩 중...</div>
         ) : error ? (
-          <div className={styles.error}>{error}</div>
+          <div className={styles.errorContainer}>
+            <p className={styles.errorText}>{error}</p>
+            {error.includes('그룹') && (
+              <button 
+                className={styles.groupButton}
+                onClick={() => navigate('/group')}
+              >
+                그룹 생성하기
+              </button>
+            )}
+          </div>
         ) : filteredJobs.length > 0 ? (
           filteredJobs.map(job => (
             <JobCard

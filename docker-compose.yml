@@ -44,7 +44,10 @@ services:
       - java-app
 
   mysql:
-    image: kwon0528/b207-mysql:0.1.0
+    # image: kwon0528/b207-mysql:0.1.0
+    build: 
+      context: ./DB
+      dockerfile: Dockerfile
     environment:
       MYSQL_ROOT_PASSWORD: ssafy
       MYSQL_DATABASE: kidsnomy

@@ -60,7 +60,7 @@ pipeline {
             steps {
                 sh '''
                     set -e
-                    docker-compose pull
+                    docker-compose pull --no-cache
                     docker-compose up -d --build
                 '''
             }

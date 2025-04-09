@@ -50,7 +50,6 @@ const ParentBankProductsPage: React.FC = () => {
       console.log('Fetching products for group:', selectedGroupId);
       const response = await apiCall<ApiResponse>(`finance/parent/check/${selectedGroupId}`, {
         method: 'GET',
-        auth: true,
         headers: {
           'Authorization': `Bearer ${accessToken}`
         }
@@ -61,8 +60,8 @@ const ParentBankProductsPage: React.FC = () => {
       if (response?.data) {
         const validProducts = response.data.filter(product => 
           product && 
-          typeof product.name === 'string' && 
-          typeof product.type === 'string'
+          typeof product.title === 'string' && 
+          typeof product.productType === 'number'
         );
         console.log('Valid products:', validProducts);
         setProducts(validProducts);

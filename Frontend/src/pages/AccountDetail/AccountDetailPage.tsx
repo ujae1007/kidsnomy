@@ -30,6 +30,7 @@ interface AccountDetail {
 }
 
 const AccountDetailPage: React.FC = () => {
+  const navigate = useNavigate();
   const accessToken = useSelector((state: RootState) => state.auth.accessToken);
   const [accountData, setAccountData] = useState<AccountDetail>({
     name: '-',
@@ -96,7 +97,7 @@ const AccountDetailPage: React.FC = () => {
         >
           금융 리포트 보러가기
         </button>
-        <TransactionHistory />
+        <TransactionHistory/>
       </div>
     </div>
   );

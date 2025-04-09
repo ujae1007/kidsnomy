@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './AccountDetailPage.module.css';
 import AccountInfo from '../../components/AccountDetail/AccountInfo';
 import TransactionHistory from '../../components/AccountDetail/TransactionHistory';
@@ -95,7 +96,7 @@ const AccountDetailPage: React.FC = () => {
         >
           금융 리포트 보러가기
         </button>
-        <TransactionHistory transactions={accountData.transactions as unknown as Transaction[]} />
+        <TransactionHistory />
       </div>
     </div>
   );

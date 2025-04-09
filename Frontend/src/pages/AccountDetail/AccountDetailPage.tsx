@@ -92,7 +92,7 @@ const AccountDetailPage: React.FC = () => {
         <button className={styles.button}>
           금융 리포트 보러가기
         </button>
-        <TransactionHistory transactions={accountData.transactions as unknown as Transaction[]} />
+        <TransactionHistory/>
       </div>
     </div>
   );

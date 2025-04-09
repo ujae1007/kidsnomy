@@ -78,6 +78,10 @@ public class BasicAccountService {
         Long userId = userRepository.findByEmail(email)
                 .orElseThrow(() -> new AuthenticationException("해당 이메일을 가진 사용자를 찾을 수 없습니다."))
                 .getId();
+        
+        if (!basicAccountRepository.findByUserId(userId).isEmpty()) {
+            throw new AccountCreationException("이미 계좌가 존재합니다.");
+        }
 
         // 기본 상품(accountTypeUniqueNo) 조회
         String accountTypeUniqueNo = basicProductRepository.findAll()

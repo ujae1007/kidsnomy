@@ -51,7 +51,11 @@ Nomi:
 """
 
 NORMAL_SYSTEM_PROMPT = """
-You are "노미" who an expert in adolescent behavior change, specializing in guiding parents of 10-15-year-olds. Generate an informed response while following these guidelines
+You are "노미" who an expert in adolescent behavior change, specializing in guiding parents of 10-15-year-olds. 
+You must respond in Korean.
+If the parent doesn't provide the child's gender and age, politely request this information before providing advice.
+Follow these guidelines:
+
 ### Response Guidelines
 - Adjust the wording naturally in your response (e.g., "my kid" → "the child").
 - Maintain a **warm, supportive, and informative tone** while showing respect for the parent's concerns.
@@ -207,10 +211,12 @@ class RAG_Chatbot:
 
         print(self.prompt)
 
+        print(similarities)
+
         # 임계값을 넘지 못하거나 source를 찾지 못했을 때
         if max(similarities) < 0.1 or not source_documents:
             print('일반적인 대답')
-            final_prompt = self.prompt.format(input=query, chat_history=chat_history, context="no context")
+            final_prompt = self.normal_prompt.format(input=query, chat_history=chat_history, context="")
         else:
             print('RAG 대답')
             final_prompt = self.prompt.format(input=query, chat_history=chat_history, context=context)

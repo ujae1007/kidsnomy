@@ -2,7 +2,7 @@ services:
   react-app:
     image: kwon0528/b207-react-app:latest
     # build: ./Frontend
-    # container_name: react-app
+    container_name: react-app
     ports:
       - "80:80"
       - "443:443"
@@ -14,9 +14,9 @@ services:
       - java-app
 
   java-app:
-    image: kwon0528/b207-java-app:latest
-    # build: 
-    #   context: ./Backend
+    # image: kwon0528/b207-java-app:latest
+    build: 
+      context: ./Backend
     container_name: java-app
     volumes:
       # - ./Backend/kidsnomy:/app

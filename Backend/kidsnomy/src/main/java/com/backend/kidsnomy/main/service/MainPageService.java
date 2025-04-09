@@ -90,6 +90,7 @@ public class MainPageService {
 
         // 응답 객체 생성
         MainPageResponseDto response = new MainPageResponseDto();
+        response.setName(user.getName());
         response.setAccount(account);
         response.setJobs(jobs);
         response.setDeposits(deposits);

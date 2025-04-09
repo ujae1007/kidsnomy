@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Clean Workspace') {
-            steps {
-                deleteDir()
-            }
-        }
+    //     stage('Clean Workspace') {
+    //         steps {
+    //             deleteDir()
+    //         }
+    //     }
 
         stage('Checkout Code') {
             steps {
@@ -16,6 +16,29 @@ pipeline {
                           extensions: [],
                           userRemoteConfigs: [[credentialsId: 'gitlab-token',
                                                url: 'https://lab.ssafy.com/s12-fintech-finance-sub1/S12P21B207.git']]])
+            }
+        }
+
+        stage('Copy Env Files') {
+            steps {
+                withCredentials([
+                    file(credentialsId: 'env-rag-report', variable: 'ENV_RAG'),
+                    file(credentialsId: 'env-java-application-properties', variable: 'ENV_JAVA')
+                ]) {
+                    sh '''
+                        echo "📦 Setting permissions for existing env files..."
+                        chmod +w "$WORKSPACE/.env" || true
+                        chmod +w "$WORKSPACE/Backend/kidsnomy/src/main/resources/application-env.properties" || true
+
+                        echo "🗑️ Removing old env files..."
+                        rm -f "$WORKSPACE/.env"
+                        rm -f "$WORKSPACE/Backend/kidsnomy/src/main/resources/application-env.properties"
+
+                        echo "📦 Copying new env files..."
+                        cp "$ENV_RAG" "$WORKSPACE/.env"
+                        cp "$ENV_JAVA" "$WORKSPACE/Backend/kidsnomy/src/main/resources/application-env.properties"
+                    '''
+                }
             }
         }
 
@@ -37,8 +60,7 @@ pipeline {
             steps {
                 sh '''
                     set -e
-                    pwd
-                    ls -al ./nginx
+                    docker-compose pull
                     docker-compose up -d --build
                 '''
             }

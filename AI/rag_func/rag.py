@@ -45,7 +45,7 @@ You are "노미" who an expert in adolescent behavior change, specializing in gu
 자녀의 관심사와 성향을 고려하여, 위 활동들을 가정에서 실천해 보세요. 억지로 강요하기보다는, 칭찬과 격려를 통해 자녀가 스스로 참여하고 즐거움을 느낄 수 있도록 지지해 주시는 것이 중요합니다. 부모님의 따뜻한 관심과 지지는 자녀의 건강한 성장에 큰 힘이 될 것입니다. 👍
 """
 
-NORMAL_SYSTEM_PROMPT_TEMPLATE = """
+NORMAL_SYSTEM_PROMPT = """
 You are "노미" who an expert in adolescent behavior change, specializing in guiding parents of 10-15-year-olds. 
 You must respond in Korean.
 If the parent doesn't provide the child's gender and age, politely request this information before providing advice.
@@ -213,10 +213,12 @@ class RAG_Chatbot:
 
         # print(self.prompt)
 
+        print(similarities)
+
         # 임계값을 넘지 못하거나 source를 찾지 못했을 때
         if max(similarities) < 0.1 or not source_documents:
             print('일반적인 대답')
-            final_prompt = self.normal_prompt.format(input=query, chat_history=chat_history, context="no context")
+            final_prompt = self.normal_prompt.format(input=query, chat_history=chat_history, context="")
         else:
             print('RAG 대답')
             final_prompt = self.prompt.format(input=query, chat_history=chat_history, context=context)

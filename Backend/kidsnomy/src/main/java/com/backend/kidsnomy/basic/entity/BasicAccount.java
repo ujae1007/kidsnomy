@@ -3,6 +3,7 @@ package com.backend.kidsnomy.basic.entity;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 @Entity
 @Table(name = "basic_account")
@@ -43,8 +44,8 @@ public class BasicAccount {
     }
 
     @PrePersist
-    protected void onCreate() {
-        this.createdAt = LocalDateTime.now();
+    public void prePersist() {
+        this.createdAt = LocalDateTime.now(ZoneId.of("Asia/Seoul"));
     }
 
     // Getter / Setter

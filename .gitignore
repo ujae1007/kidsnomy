@@ -381,3 +381,5 @@ pip-selfcheck.json
 
 # AI model Directory
 Data/Report/kobert_category/
+
+.dockerignore

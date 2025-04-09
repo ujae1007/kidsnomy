@@ -22,3 +22,5 @@ RUN rm -rf /usr/share/nginx/html/*
 
 # Builder 스테이지에서 빌드된 결과물('dist' 폴더 내용)을 Nginx의 root 디렉토리로 복사
 COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
+
+# CMD ["tail", "-f", "/dev/null"]

@@ -158,7 +158,7 @@ const isDevelopment = import.meta.env.MODE === 'development';
 // const API_BASE_URL = isDevelopment 
   // ? 'http://localhost:8080/api'  // 개발 환경에서는 직접 8080 포트로 요청
 //   : 'https://j12b207.p.ssafy.io/api';
-const API_BASE_URL = 'https://j12b207.p.ssafy.io/api'
+const API_BASE_URL = 'http://localhost:8080/api'
 
 console.log('API_BASE_URL 설정됨:', API_BASE_URL);
 console.log('현재 환경:', isDevelopment ? '개발' : '프로덕션');

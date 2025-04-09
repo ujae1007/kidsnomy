@@ -1,31 +1,31 @@
 from dotenv import load_dotenv
 from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
+from langchain.prompts import PromptTemplate
 import os
 import nltk
 from langchain.document_loaders import DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import SentenceTransformerEmbeddings
 from langchain.vectorstores import Chroma, FAISS
-from langchain.chains import RetrievalQA
-from langchain.llms import OpenAI
 import argparse
+from langchain.memory import ConversationBufferMemory
 
 CURRENT_PATH = os.path.dirname(os.path.abspath(__file__))
 load_dotenv()
 
-
 SYSTEM_PROMPT = """
-You are "노미" who an expert in adolescent behavior change, specializing in guiding 10-15-year-olds. Use the provided documents to generate an informed response while following these guidelines:
+You are "노미" who an expert in adolescent behavior change, specializing in guiding parents of 10-15-year-olds. Use the provided documents to generate an informed response while following these guidelines:
 
-### **Response Guidelines**
+### Response Guidelines
 - Retrieve and utilize relevant information from the provided documents.
-- Adjust the wording naturally in your response (e.g., "my kid" → "the child").
+- Adjust the wording naturally in your response (e.g., "my kid" -> "the child").
 - Assess the child's current situation and suggest key areas for improvement.
-- Recommend **five** specific activities tailored to the child's interests and challenges.
-- Present each activity in the format: **"Activity Name / Description / Expected Benefits."**
+- Recommend **five** specific activities tailored to the child's interests and challenges, **providing guidance on how parents can facilitate these activities.**
+- Present each activity in the format: **"Activity Name / Description (with parental guidance) / Expected Benefits."**
 - Ensure the activities are practical and easy to implement in daily life.
-- Maintain a natural and supportive tone while showing respect.
+- Maintain a **warm, supportive, and informative tone** while showing respect for the parent's concerns.
 - **Respond in Korean.**
 
 ### Response Format
@@ -33,45 +33,49 @@ You are "노미" who an expert in adolescent behavior change, specializing in gu
 [문서 기반 분석 내용 요약]
 - (문서에서 참고한 내용 요약)
 
-[아이의 상황]
-- (아이의 현재 문제 또는 필요한 변화 방향)
+[자녀의 상황]
+- (자녀의 현재 문제 또는 필요한 변화 방향)
 
 추천 활동 5가지 
-활동명: 설거지
-설명: 가족을 돕는 작은 습관을 들이며 책임감을 기를 수 있음.
-기대 효과: 성취감 증가, 가족과의 관계 개선
+활동명: 함께 하는 설거지 시간 ✨ (부모님 가이드: 칭찬과 격려를 아끼지 마세요!)
+설명: 가족 식사 후에 자녀와 함께 설거지지를 하면서 책임감을 길러주세요. 부모님께서는 옆에서 칭찬과 격려를 통해 자녀가 성취감을 느끼도록 도와주시면 좋습니다. 😊
+기대 효과: 성취감 증가, 가족과의 긍정적인 상호작용 증진
 
-활동명: 방 정리
-설명: 자기 주변을 정리하는 습관을 통해 질서와 자기 관리 능력 향상.
-기대 효과: 집중력 향상, 자기주도적 태도 형성
-
-활동명: 독서
-설명: 관심 있는 주제의 책을 읽으며 사고력을 키우는 활동.
-기대 효과: 창의력 향상, 어휘력 증가
-
-활동명: 운동 (예: 줄넘기, 축구)
-설명: 신체 활동을 통해 에너지를 긍정적으로 발산.
-기대 효과: 스트레스 해소, 건강 증진
-
-활동명: 감정 일기 쓰기
-설명: 하루 동안 느낀 감정을 기록하며 자기 이해를 높이는 활동.
-기대 효과: 감정 조절 능력 향상, 정서적 안정
-
-3️결론 및 조언
-위 활동들을 아이의 관심사와 성향에 맞게 적용해 보세요. 무리하게 강요하기보다는 자연스럽게 습관이 형성될 수 있도록 도와주는 것이 중요합니다.
-
-### Question:
+결론 및 조언
+자녀의 관심사와 성향을 고려하여, 위 활동들을 가정에서 실천해 보세요. 억지로 강요하기보다는, 칭찬과 격려를 통해 자녀가 스스로 참여하고 즐거움을 느낄 수 있도록 지지해 주시는 것이 중요합니다. 부모님의 따뜻한 관심과 지지는 자녀의 건강한 성장에 큰 힘이 될 것입니다. 👍
 """
 
+NORMAL_SYSTEM_PROMPT_TEMPLATE = """
+You are "노미" who an expert in adolescent behavior change, specializing in guiding parents of 10-15-year-olds. 
+You must respond in Korean.
+If the parent doesn't provide the child's gender and age, politely request this information before providing advice.
+Follow these guidelines:
+
+### Response Guidelines
+- Adjust the wording naturally in your response (e.g., "my kid" -> "the child").
+- Assess the child's current situation and suggest key areas for improvement.
+- Recommend **five** specific activities tailored to the child's interests and challenges, **providing guidance on how parents can facilitate these activities.**
+- Present each activity in the format: **"Activity Name / Description (with parental guidance) / Expected Benefits."**
+- Ensure the activities are practical and easy to implement in daily life.
+- Maintain a **warm, supportive, and informative tone** while showing respect for the parent's concerns.
+
+### Chat History
+{chat_history}
+
+### Parent's Input
+{input}
+
+### Nomi's Response
+"""
 
 class RAG_Chatbot:
-    global system_prompt
-
     def __init__(
         self,
         embeddings_model_name="paraphrase-multilingual-mpnet-base-v2",
         folder_path="./data/crawled_data",
         vectordb_type="chroma",  # vectordb_type 파라미터 추가
+        max_tokens=1024,
+        openai_model_name="gpt-3.5-turbo-instruct"  # OpenAI 모델 이름 추가
     ):
         """class 초기화
 
@@ -89,7 +93,31 @@ class RAG_Chatbot:
         self.folder_path = os.path.join(CURRENT_PATH, folder_path)
         self.vectordb_type = vectordb_type.lower()  # 소문자로 통일
         self._make_vectordb()
+        self.chat_model = ChatOpenAI(model_name="gpt-4o")
+        self.llm = OpenAI(model_name=openai_model_name, max_tokens=max_tokens)  # OpenAI 모델 지정
+        self.memory = ConversationBufferMemory(memory_key="chat_history", k=5)  # 대화 기록 메모리 초기화
+        self.prompt = PromptTemplate(
+            input_variables=["chat_history", "input", "context"], template=SYSTEM_PROMPT
+        )
+        self.normal_prompt = PromptTemplate(
+            input_variables=["chat_history", "input", "context"], template=NORMAL_SYSTEM_PROMPT
+        )
+        
 
+    @staticmethod
+    def _update_prompt(prompt: str) -> str:
+        """프롬프트를 업데이트합니다.
+
+        Args:
+            prompt (str): 업데이트할 프롬프트.
+
+        Returns:
+            str: 업데이트된 프롬프트.
+        """
+        global SYSTEM_PROMPT
+        SYSTEM_PROMPT = prompt
+        return SYSTEM_PROMPT
+    
     def _make_vectordb(self, chunk_size: int = 500, chunk_overlap: int = 50):
         """VectorDB를 생성합니다.
 
@@ -166,24 +194,36 @@ class RAG_Chatbot:
                 f"Invalid vectordb_type: {self.vectordb_type}. Choose 'chroma' or 'faiss'."
             )
 
-    def get_chat(self, query: str, max_tokens: int = 1024) -> str:
-        """질의에 대한 답변을 생성합니다.
+    def get_chat(self, query: str) -> str:
+        # retriever = self.vectordb.as_retriever(search_kwargs={"k": 5})
+        docs_and_scores = self.vectordb.similarity_search_with_score(query, k=3)
+        source_documents = [doc.page_content for doc, _ in docs_and_scores]
+        similarities = [1 / (score + 1) for _, score in docs_and_scores]
+        context = "\n".join(source_documents) if source_documents else ""
 
-        Args:
-            query (str): 사용자 질의.
-            max_tokens (int, optional): 답변 최대 토큰 수. Defaults to 1024.
+        print("=== Memory Contents ===")
+        print(self.memory.load_memory_variables({}))
+        print("=======================")
 
-        Returns:
-            str: 생성된 답변.
-        """
-        retriever = self.vectordb.as_retriever(search_kwargs={"k": 5})
-        llm = OpenAI(max_tokens=max_tokens)
-        qa = RetrievalQA.from_chain_type(
-            llm=llm, chain_type="stuff", retriever=retriever
-        )
-        result = qa.run(SYSTEM_PROMPT + query)
+        print(similarities)
+
+        memory_variables = self.memory.load_memory_variables({})
+        chat_history = memory_variables.get("chat_history", "no caht")  # chat_history가 없을 경우 빈 문자열 사용
+        # print('chat_history', chat_history)
+
+        # print(self.prompt)
+
+        # 임계값을 넘지 못하거나 source를 찾지 못했을 때
+        if max(similarities) < 0.1 or not source_documents:
+            print('일반적인 대답')
+            final_prompt = self.normal_prompt.format(input=query, chat_history=chat_history, context="no context")
+        else:
+            print('RAG 대답')
+            final_prompt = self.prompt.format(input=query, chat_history=chat_history, context=context)
+        
+        result = self.chat_model.predict(final_prompt)
+        self.memory.save_context({"input": query}, {"output": result})  # 메모리 업데이트
         return result
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="RAG Chatbot with ChromaDB or FAISS")
@@ -217,112 +257,3 @@ if __name__ == "__main__":
         """
         answer = chatbot.get_chat(query)
         print(answer)
-
-
-
-{
-    
-  "accountNo": "9996499778380668",
-  "weeklyTransactions": {
-    "week1": [
-        {
-        "transactionDate": "20250330",
-        "transactionType": 1,
-        "transactionBalance": 250000.00,
-        "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1"
-        },
-        {
-        "transactionDate": "20250330",
-        "transactionType": 1,
-        "transactionBalance": 250000.00,
-        "transactionSummary": "더벙커게임존, 대전 유성구 대학로 34"
-        }
-    ],
-    "week2": [
-        {
-        "transactionDate": "20250330",
-        "transactionType": 1,
-        "transactionBalance": 250000.00,
-        "transactionSummary": "설빙 유성온천점, 대전 유성구 대학로 14"
-        },
-        {
-        "transactionDate": "20250330",
-        "transactionType": 1,
-        "transactionBalance": 250000.00,
-        "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1"
-        }
-    ],
-    "week3": [
-        {
-        "transactionDate": "20250330",
-        "transactionType": 1,
-        "transactionBalance": 250000.00,
-        "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1"
-        }
-    ],
-    "week4": [
-        {
-        "transactionDate": "20250330",
-        "transactionType": 1,
-        "transactionBalance": 250000.00,
-        "transactionSummary": "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1"
-        }
-    ],
-    "week5": [
-        {
-        "transactionDate": "20250403",
-        "transactionType": 1,
-        "transactionBalance": 100000000.00,
-        "transactionSummary": "(수시입출금) : 입금"
-        },
-        {
-        "transactionDate": "20250403",
-        "transactionType": 1,
-        "transactionBalance": 100000000.00,
-        "transactionSummary": "(수시입출금) : 입금"
-        },
-        {
-        "transactionDate": "20250403",
-        "transactionType": 1,
-        "transactionBalance": 100000000.00,
-        "transactionSummary": "(수시입출금) : 입금"
-        },
-        {
-        "transactionDate": "20250403",
-        "transactionType": 1,
-        "transactionBalance": 100000000.00,
-        "transactionSummary": "(수시입출금) : 입금"
-        },
-        {
-        "transactionDate": "20250403",
-        "transactionType": 2,
-        "transactionBalance": 50000000.00,
-        "transactionSummary": "(수시입출금) : 출금"
-        },
-        {
-        "transactionDate": "20250402",
-        "transactionType": 1,
-        "transactionBalance": 150000.00,
-        "transactionSummary": "(수시입출금) : 입금"
-        },
-        {
-        "transactionDate": "20250401",
-        "transactionType": 2,
-        "transactionBalance": 100000.00,
-        "transactionSummary": "(수시입출금) : 출금"
-        },
-        {
-        "transactionDate": "20250401",
-        "transactionType": 1,
-        "transactionBalance": 2000000.00,
-        "transactionSummary": "(수시입출금) : 입금"
-        },
-        {
-        "transactionDate": "20250331",
-        "transactionType": 2,
-        "transactionBalance": 700000.00,
-        "transactionSummary": "(수시입출금) : 출금"
-        }
-    ]
-}
-}

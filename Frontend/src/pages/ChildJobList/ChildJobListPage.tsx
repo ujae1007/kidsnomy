@@ -7,6 +7,7 @@ import SearchBar from '@/components/jobs/SearchBar';
 import FilterButtons from '@/components/jobs/FilterButtons';
 import styles from './ChildJobListPage.module.css';
 import { apiCall } from '@/utils/api';
+import JobCard from '@/components/jobs/JobCard';
 
 // 일자리 데이터 타입 정의
 interface Job {
@@ -31,6 +32,7 @@ interface Job {
 const STATUS_LABELS: Record<number, string> = {
   1: '계약전',
   2: '계약후',
+  3: '승인대기',
   4: '최종완료'
 };
 
@@ -139,34 +141,32 @@ const ChildJobListPage: React.FC = () => {
   // 검색 및 필터링 적용
   useEffect(() => {
     const currentJobs = isContractedView ? contractedJobs : availableJobs;
-    let result = [...currentJobs];
+    let filtered = [...currentJobs];
     
     // 검색어 필터링
     if (searchTerm) {
       const lowerSearchTerm = searchTerm.toLowerCase();
-      result = result.filter(
-        job => 
-          job.title.toLowerCase().includes(lowerSearchTerm) || 
-          job.employerName.toLowerCase().includes(lowerSearchTerm)
+      filtered = filtered.filter(job => 
+        job.title.toLowerCase().includes(lowerSearchTerm) ||
+        job.employerName.toLowerCase().includes(lowerSearchTerm)
       );
     }
-    
+
     // 상태 필터링
     if (selectedStatus !== null) {
-      result = result.filter(job => job.status === selectedStatus);
+      filtered = filtered.filter(job => job.status === selectedStatus);
     }
-    
-    // 날짜 기준 정렬 (endAt 기준)
-    result.sort((a, b) => {
-      const dateA = new Date(a.endAt.split('T')[0]);
-      const dateB = new Date(b.endAt.split('T')[0]);
-      
+
+    // 생성 시간 기준 정렬
+    filtered.sort((a, b) => {
+      const dateA = new Date(a.startAt);
+      const dateB = new Date(b.startAt);
       return sortOrder === 'asc' 
         ? dateA.getTime() - dateB.getTime() 
         : dateB.getTime() - dateA.getTime();
     });
     
-    setFilteredJobs(result);
+    setFilteredJobs(filtered);
   }, [availableJobs, contractedJobs, searchTerm, selectedStatus, sortOrder, isContractedView]);
 
   return (

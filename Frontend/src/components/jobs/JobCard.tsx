@@ -6,12 +6,18 @@ interface JobCardProps {
   title: string;
   salary: number;
   onMoreClick?: () => void;
+  onClick?: () => void;
   children?: React.ReactNode;
 }
 
-const JobCard: React.FC<JobCardProps> = ({ status, title, salary, onMoreClick, children }) => {
+const JobCard: React.FC<JobCardProps> = ({ status, title, salary, onMoreClick, onClick, children }) => {
   return (
-    <div className={styles.card}>
+    <div 
+      className={styles.card} 
+      onClick={onClick}
+      role="button"
+      tabIndex={0}
+    >
       <div className={styles.statusBadge}>
         {status}
       </div>
@@ -20,7 +26,13 @@ const JobCard: React.FC<JobCardProps> = ({ status, title, salary, onMoreClick, c
         <p className={styles.salary}>{salary.toLocaleString()}원</p>
         {children}
       </div>
-      <button className={styles.moreButton} onClick={onMoreClick}>
+      <button 
+        className={styles.moreButton} 
+        onClick={(e) => {
+          e.stopPropagation();
+          onClick?.();
+        }}
+      >
         ⋮
       </button>
     </div>

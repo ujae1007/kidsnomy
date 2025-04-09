@@ -32,4 +32,18 @@ public class UserKeyService {
 
         return userKey;
     }
+
+    // ID 기반 조회
+    public String getUserKeyById(Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new AuthenticationException("사용자를 찾을 수 없습니다."));
+        return validateUserKey(user);
+    }
+
+    private String validateUserKey(User user) {
+        if (user.getUserKey() == null || user.getUserKey().isEmpty()) {
+            throw new AuthenticationException("유효한 userKey가 없습니다.");
+        }
+        return user.getUserKey();
+    }
 }

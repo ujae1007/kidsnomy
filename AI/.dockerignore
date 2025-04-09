@@ -1,0 +1,9 @@
+.git
+.gitignore
+__pycache__
+*.pyc
+*.log
+rag_func/data/
+venv/
+!vectordb/
+!chromadb/

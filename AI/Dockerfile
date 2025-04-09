@@ -11,8 +11,8 @@ COPY . .
 # # NLTK 데이터 다운로드
 # RUN python -m nltk.downloader averaged_perceptron_tagger_eng -d /nltk_data
 
-# Vector DB 생성 및 저장
-RUN python rag_func/rag.py --build_db
+# # Vector DB 생성 및 저장
+# RUN python rag_func/rag.py --build_db
 
 # 애플리케이션 실행
 # CMD ["uvicorn", "server:app", "--port", "8000", "--host", "0.0.0.0", "--reload"]

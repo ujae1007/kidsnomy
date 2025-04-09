@@ -23,6 +23,7 @@ interface Job {
 const STATUS_LABELS: Record<number, string> = {
   1: '계약전',
   2: '계약후',
+  3: '승인대기',
   4: '최종완료'
 };
 
@@ -158,6 +159,7 @@ const ParentJobListPage: React.FC = () => {
               title={job.title}
               salary={job.salary}
               onMoreClick={() => handleJobClick(job.jobId)}
+              onClick={() => handleJobClick(job.jobId)}
             />
           ))
         ) : (

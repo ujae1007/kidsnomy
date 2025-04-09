@@ -68,17 +68,6 @@ public class BasicProductService {
         // 이메일로 userKey 조회
         String userKey = userKeyService.getUserKeyByEmail(email);
 
-        // 기존 상품 존재 시 리턴 - 고정값 사용 (상품은 무조건 존재)
-//        if (basicProductRepository.count() > 0) {
-//            BasicProduct product = basicProductRepository.findAll().get(0);
-//            return new BasicProductResponseDto(
-//                    product.getAccountTypeUniqueNo(),
-//                    requestDto.getAccountName(),
-//                    requestDto.getAccountDescription(),
-//                    requestDto.getBankCode()
-//            );
-//        }
-
         // SSAFY API 요청 준비
         String apiUrl = baseUrl + "/ssafy/api/v1/edu/demandDeposit/createDemandDeposit";
 

@@ -164,7 +164,7 @@ const ParentBankProductsPage: React.FC = () => {
       <div className={styles.productList}>
         {filteredProducts.map(product => (
           <JobCard
-            key={`${product.id}-${product.groupId}`}
+            key={product.id}
             status={product.productType === 0 ? '예금' : '적금'}
             title={product.title}
             salary={product.productType === 0 ? product.dueDate * 10000 : (product.payDate || 0) * 1000}

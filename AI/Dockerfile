@@ -1,5 +1,4 @@
 # 1단계: 빌드 환경 (ChromaDB 생성 및 종속성 설치)
-# FROM python:3.11-slim
 FROM kwon0528/b207-fastapi-app:0.0.1
 WORKDIR /app
 
@@ -16,6 +15,5 @@ COPY . .
 # RUN python rag_func/rag.py --build_db
 
 # 애플리케이션 실행
-
-# CMD ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
-ENTRYPOINT ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000"]
+# CMD ["uvicorn", "server:app", "--port", "8000", "--host", "0.0.0.0", "--reload"]
+ENTRYPOINT ["uvicorn", "server:app", "--port", "8000", "--host", "0.0.0.0", "--reload"]

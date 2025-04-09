@@ -10,12 +10,15 @@ import FilterButtons from '@/components/jobs/FilterButtons';
 
 interface BankProduct {
   id: number;
-  name: string;
-  description: string;
+  groupId: number;
+  userId: number;
+  title: string;
+  content: string;
   interestRate: number;
-  period: number;
-  type: 'deposit' | 'saving';
-  monthlyPayment?: number;
+  dueDate: number;
+  rateDate: number | null;
+  payDate: number | null;
+  productType: number; // 0: 예금, 1: 적금
 }
 
 interface ApiResponse {
@@ -47,7 +50,10 @@ const ParentBankProductsPage: React.FC = () => {
       console.log('Fetching products for group:', selectedGroupId);
       const response = await apiCall<ApiResponse>(`finance/parent/check/${selectedGroupId}`, {
         method: 'GET',
-        auth: true
+        auth: true,
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        }
       });
       
       console.log('API Response:', response);
@@ -93,7 +99,7 @@ const ParentBankProductsPage: React.FC = () => {
   };
 
   const handleProductClick = (product: BankProduct) => {
-    if (product.type === 'deposit') {
+    if (product.productType === 0) {
       navigate(`deposit/${product.id}`);
     } else {
       navigate(`saving/${product.id}`);
@@ -106,11 +112,17 @@ const ParentBankProductsPage: React.FC = () => {
 
   const filteredProducts = products
     .filter(product => {
-      if (!product || typeof product.name !== 'string') {
-        return false;
-      }
-      const matchesSearch = searchTerm ? product.name.toLowerCase().includes(searchTerm.toLowerCase()) : true;
-      const matchesFilter = selectedFilter === 'all' || product.type === selectedFilter;
+      // 수정된 부분: title 필드를 사용하고 searchTerm이 비어있을 때 처리
+      const matchesSearch = searchTerm ? 
+        product.title.toLowerCase().includes(searchTerm.toLowerCase()) : 
+        true;
+      
+      // 수정된 부분: productType에 따라 필터링 (0: 예금, 1: 적금)
+      const matchesFilter = 
+        selectedFilter === 'all' || 
+        (selectedFilter === 'deposit' && product.productType === 0) || 
+        (selectedFilter === 'saving' && product.productType === 1);
+      
       return matchesSearch && matchesFilter;
     })
     .sort((a, b) => b.id - a.id);
@@ -154,9 +166,9 @@ const ParentBankProductsPage: React.FC = () => {
         {filteredProducts.map(product => (
           <JobCard
             key={product.id}
-            status={product.type === 'deposit' ? '예금' : '적금'}
-            title={product.name}
-            salary={product.type === 'deposit' ? product.period * 10000 : product.monthlyPayment || 0}
+            status={product.productType === 0 ? '예금' : '적금'}
+            title={product.title}
+            salary={product.productType === 0 ? product.dueDate * 10000 : (product.payDate || 0) * 1000}
             onMoreClick={() => handleProductClick(product)}
           >
             <div className={styles.productInfo}>
@@ -166,14 +178,18 @@ const ParentBankProductsPage: React.FC = () => {
               </div>
               <div className={styles.infoRow}>
                 <span className={styles.label}>기간</span>
-                <span className={styles.value}>{product.period}개월</span>
+                <span className={styles.value}>{product.dueDate}개월</span>
               </div>
-              {product.type === 'saving' && (
+              {product.productType === 1 && (
                 <div className={styles.infoRow}>
-                  <span className={styles.label}>월 납입금</span>
-                  <span className={styles.value}>{product.monthlyPayment?.toLocaleString()}원</span>
+                  <span className={styles.label}>납입일</span>
+                  <span className={styles.value}>매월 {product.payDate}일</span>
                 </div>
               )}
+              <div className={styles.infoRow}>
+                <span className={styles.label}>설명</span>
+                <span className={styles.value}>{product.content}</span>
+              </div>
             </div>
           </JobCard>
         ))}
@@ -182,4 +198,5 @@ const ParentBankProductsPage: React.FC = () => {
   );
 };
 
-export default ParentBankProductsPage; 
+export default ParentBankProductsPage;
+

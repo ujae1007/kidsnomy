@@ -1,21 +1,22 @@
 services:
   react-app:
-    image: kwon0528/b207-react-app:0.1.0
+    # image: kwon0528/b207-react-app:latest
+    build: ./Frontend
     container_name: react-app
     ports:
       - "80:80"
       - "443:443"
+      - "5173:5173" # Vite 개발 서버 포트
     volumes:
       - /app/node_modules # 로컬 node_modules와 분리하여 충돌 방지
       - /home/ubuntu/kidsnomy/certs:/etc/letsencrypt:ro          # 인증서 및 키
     depends_on:
       - java-app
 
-
   java-app:
-    # image: kwon0528/b207-java-app:0.1.0
-    build: 
-      context: ./Backend
+    image: kwon0528/b207-java-app:latest
+    # build: 
+    #   context: ./Backend
     container_name: java-app
     volumes:
       # - ./Backend/kidsnomy:/app
@@ -32,19 +33,19 @@ services:
       SPRING_DATASOURCE_PASSWORD: ssafy
   
   fastapi-app:
-    # image: kwon0528/b207-fastapi-app:0.1.0
-    build: 
-      context: AI
+    image: kwon0528/b207-fastapi-app:latest
+    # build: 
+      # context: ./AI
+    container_name: fastapi-app
+    # entrypoint: uvicorn server:app --port 8000 --host 0.0.0.0 --reload
     ports:
       - "8000:8000"
-    # volumes:
-    #   - ./AI:/app
-    # entrypoint: ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000"]
     depends_on:
       - java-app
 
   mysql:
-    image: kwon0528/b207-mysql:0.1.0
+    image: kwon0528/b207-mysql:latest
+    container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: ssafy
       MYSQL_DATABASE: kidsnomy

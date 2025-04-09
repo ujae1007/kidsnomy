@@ -97,4 +97,18 @@ public class FinanceController {
         List<FinanceProductResponseDto> result = financeQueryService.getMyCreatedProducts(groupId, request);
         return ResponseEntity.ok(new ApiResponseDto("success", "부모가 만든 금융 상품 조회 성공", result));
     }
+    
+    // 예금 상품 상세 조회
+    @GetMapping("/deposit/{productId}")
+    public ResponseEntity<DepositDetailDto> getDepositDetail(@PathVariable("productId") Long productId) {
+        DepositDetailDto detail = financeQueryService.getDepositDetail(productId);
+        return ResponseEntity.ok(detail);
+    }
+    
+    // 적금 상품 상세 조회
+    @GetMapping("/savings/{productId}")
+    public ResponseEntity<SavingsDetailDto> getSavingsDetail(@PathVariable("productId") Long productId) {
+        SavingsDetailDto detail = financeQueryService.getSavingsDetail(productId);
+        return ResponseEntity.ok(detail);
+    }
 }

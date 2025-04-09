@@ -131,8 +131,8 @@ const JobDetailPage: React.FC = () => {
     }
     
     try {
-      console.log(`📤 API 요청: PUT /api/work/child/complete/${jobId}`);
-      const response = await fetch(`/api/work/child/complete/${jobId}`, {
+      console.log(`📤 API 요청: PUT /work/child/complete/${jobId}`);
+      const response = await fetch(`/work/child/complete/${jobId}`, {
         method: 'PUT',
         headers: {
           // 'Authorization': `Bearer ${accessToken}`,
@@ -197,26 +197,29 @@ const JobDetailPage: React.FC = () => {
     console.log(`✓ 일자리 승인 시도 (jobId: ${jobId})`);
     
     try {
-      const response = await fetch(`/api/work/approve/${jobId}`, {
-        method: 'PUT',
-        headers: {
-          // 'Authorization': `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-      });
+      const response = await apiCall<{ message: string }>(
+        `/work/parent/complete/${jobId}`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${accessToken}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
       
-      console.log(`🔄 일자리 승인 응답 상태: ${response.status}`);
-      
-      if (!response.ok) {
-        throw new Error('일자리 승인에 실패했습니다.');
-      }
-      
-      console.log('✅ 일자리 승인 성공');
+      console.log('✅ 일자리 승인 성공:', response);
+      alert('일자리가 승인되었습니다.');
       window.location.reload();
-    } catch (error) {
+    } catch (error: any) {
       console.error('❌ 일자리 승인 중 에러 발생:', error);
-      alert((error as Error).message);
+      if (error.status === 403) {
+        alert('부모만 승인할 수 있습니다.');
+      } else if (error.status === 404) {
+        alert('일자리를 찾을 수 없습니다.');
+      } else {
+        alert('일자리 승인에 실패했습니다.');
+      }
     }
   };
   

@@ -5,6 +5,9 @@ import java.util.List;
 import com.backend.kidsnomy.main.dto.*;
 
 public class MainPageResponseDto {
+	
+	private String name;
+	
     private AccountDto account;
     private List<JobDto> jobs;
     private List<DepositDto> deposits;
@@ -14,6 +17,9 @@ public class MainPageResponseDto {
 
     public MainPageResponseDto() {}
 
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    
     public AccountDto getAccount() { return account; }
     public List<JobDto> getJobs() { return jobs; }
     public List<DepositDto> getDeposits() { return deposits; }

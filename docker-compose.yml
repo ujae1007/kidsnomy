@@ -1,7 +1,7 @@
 services:
   react-app:
-    image: kwon0528/b207-react-app:latest
-    # build: ./Frontend
+    # image: kwon0528/b207-react-app:latest
+    build: ./Frontend
     container_name: react-app
     ports:
       - "80:80"

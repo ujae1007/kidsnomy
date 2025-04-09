@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './ChatBotModalPage.module.css';
 import nomyImage from '@/assets/nomy.png';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '@/store';
 import { apiCall } from '@/utils/api';
-import { setChatbotOpen } from '@/store/slices/chatbotSlice'; // ✅ 추가
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
+
+// ...
 
 interface ChatBotModalPageProps {
   onClose: () => void;
@@ -16,6 +17,7 @@ interface Message {
 }
 
 const ChatBotModalPage: React.FC<ChatBotModalPageProps> = ({ onClose }) => {
+  const accessToken = useSelector((state: RootState) => state.auth.accessToken);
   const [messages, setMessages] = useState<Message[]>([
     {
       type: 'bot',
@@ -24,9 +26,6 @@ const ChatBotModalPage: React.FC<ChatBotModalPageProps> = ({ onClose }) => {
   ]);
   const [inputMessage, setInputMessage] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const dispatch = useDispatch();
-  const accessToken = useSelector((state: RootState) => state.auth.accessToken);
-  const isOpen = useSelector((state: RootState) => state.chatbot.isOpen); // ✅ 추가
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -35,11 +34,6 @@ const ChatBotModalPage: React.FC<ChatBotModalPageProps> = ({ onClose }) => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
-
-  const handleClose = () => {
-    onClose();
-    dispatch(setChatbotOpen(false)); // ✅ 챗봇 모달 닫기 상태 변경
-  };
 
   const handleSendMessage = async () => {
     const trimmedMessage = inputMessage.trim();
@@ -56,15 +50,15 @@ const ChatBotModalPage: React.FC<ChatBotModalPageProps> = ({ onClose }) => {
       const response = await apiCall<{ reply: string }>('/chat', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${accessToken}`,
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`
         },
-        body: JSON.stringify({ message: [{ content: trimmedMessage }] })
+        body: JSON.stringify({ message: trimmedMessage })
       });
 
       const botMessage: Message = {
         type: 'bot',
-        content: response.response // 응답 구조에 따라 `response.reply`일 수도 있음
+        content: response.response
       };
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
@@ -83,8 +77,6 @@ const ChatBotModalPage: React.FC<ChatBotModalPageProps> = ({ onClose }) => {
       handleSendMessage();
     }
   };
-
-  if (!isOpen) return null;
 
   return (
     <div className={styles.container}>
@@ -123,9 +115,7 @@ const ChatBotModalPage: React.FC<ChatBotModalPageProps> = ({ onClose }) => {
           )}
           <div className={styles.messageBox}>
             {message.type === 'bot' && <div className={styles.name}>노미</div>}
-            <div className={styles.message}>
-              {message.content}
-            </div>
+            <div className={styles.message}>{message.content}</div>
           </div>
         </div>
       ))}
@@ -140,13 +130,13 @@ const ChatBotModalPage: React.FC<ChatBotModalPageProps> = ({ onClose }) => {
           onChange={(e) => setInputMessage(e.target.value)}
           onKeyPress={handleKeyPress}
         />
-        <button 
+        <button
           className={styles.sendButton}
           onClick={handleSendMessage}
           disabled={!inputMessage.trim()}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17" fill="none">
-            <path fillRule="evenodd" clipRule="evenodd" d="M17.5859 14.632L10.082 1.51406C9.86063 1.12048 9.44416 0.876918 8.99258 0.876918C8.541 0.876918 8.12453 1.12048 7.90312 1.51406L0.411719 14.6391C0.15766 15.0925 0.210749 15.6559 0.545047 16.0539C0.879346 16.452 1.42508 16.6016 1.91563 16.4297L8.98359 14.0078H8.99141H8.99844L16.0828 16.4297C16.575 16.6038 17.1235 16.4537 17.4584 16.0533C17.7933 15.6529 17.8442 15.0865 17.5859 14.6328V14.632ZM16.4922 15.2445L9.625 12.8953V8.375C9.625 8.02982 9.34518 7.75 9 7.75C8.65482 7.75 8.375 8.02982 8.375 8.375V12.8891L1.50938 15.2453L1.5 15.25L8.98906 2.125L16.5 15.25L16.4922 15.2445Z" fill="#8A5C5C"/>
+            <path fillRule="evenodd" clipRule="evenodd" d="..." fill="#8A5C5C" />
           </svg>
         </button>
       </div>
@@ -154,4 +144,4 @@ const ChatBotModalPage: React.FC<ChatBotModalPageProps> = ({ onClose }) => {
   );
 };
 
-export default ChatBotModalPage; 
+export default ChatBotModalPage;

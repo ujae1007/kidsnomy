@@ -4,7 +4,6 @@ import storage from 'redux-persist/lib/storage'; // 로컬 스토리지 사용
 import authReducer from './slices/authSlice';
 import groupReducer from './slices/groupSlice';
 import jobReducer from './slices/jobSlice';
-import chatbotReducer from './slices/chatbotSlice';
 
 // Persist 설정
 const authPersistConfig = {
@@ -30,8 +29,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     group: persistReducer(groupPersistConfig, groupReducer),
-    job: persistReducer(jobPersistConfig, jobReducer),
-    chatbot: chatbotReducer
+    job: persistReducer(jobPersistConfig, jobReducer)
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

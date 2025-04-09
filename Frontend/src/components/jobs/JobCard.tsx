@@ -4,7 +4,7 @@ import styles from './JobCard.module.css';
 interface JobCardProps {
   status: string;
   title: string;
-  salary: number;
+  salary?: number;
   isPermanent?: boolean;
   onMoreClick?: () => void;
   onClick?: () => void;
@@ -39,7 +39,7 @@ const JobCard: React.FC<JobCardProps> = ({
       </div>
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
-        <p className={styles.salary}>{salary.toLocaleString()}원</p>
+        {salary !== undefined && <p className={styles.salary}>{salary.toLocaleString()}원</p>}
         {children}
       </div>
       <button 

@@ -168,6 +168,7 @@ const ParentBankProductsPage: React.FC = () => {
             status={product.productType === 0 ? '예금' : '적금'}
             title={product.title}
             salary={product.productType === 0 ? product.dueDate * 10000 : (product.payDate || 0) * 1000}
+            onClick={() => handleProductClick(product)}
             onMoreClick={() => handleProductClick(product)}
           >
             <div className={styles.productInfo}>

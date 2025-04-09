@@ -17,6 +17,7 @@ interface Job {
   salary: number;
   status: number;
   employerName: string;
+  isPermanent: boolean;
 }
 
 // 상태값에 대한 레이블
@@ -70,7 +71,8 @@ const ParentJobListPage: React.FC = () => {
         jobCount: data.length, 
         jobs: data.map(job => ({ 
           title: job.title, 
-          status: job.status, 
+          status: job.status,
+          isPermanent: job.isPermanent, 
           employer: job.employerName 
         }))
       });
@@ -158,6 +160,7 @@ const ParentJobListPage: React.FC = () => {
               status={STATUS_LABELS[job.status] || '알 수 없음'}
               title={job.title}
               salary={job.salary}
+              isPermanent={job.isPermanent}
               onMoreClick={() => handleJobClick(job.jobId)}
               onClick={() => handleJobClick(job.jobId)}
             />

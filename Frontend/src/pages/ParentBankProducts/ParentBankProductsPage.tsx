@@ -53,7 +53,13 @@ const ParentBankProductsPage: React.FC = () => {
       console.log('API Response:', response);
       
       if (response?.data) {
-        setProducts(response.data);
+        const validProducts = response.data.filter(product => 
+          product && 
+          typeof product.name === 'string' && 
+          typeof product.type === 'string'
+        );
+        console.log('Valid products:', validProducts);
+        setProducts(validProducts);
       } else {
         setError('No data received from server');
       }
@@ -100,11 +106,14 @@ const ParentBankProductsPage: React.FC = () => {
 
   const filteredProducts = products
     .filter(product => {
-      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+      if (!product || typeof product.name !== 'string') {
+        return false;
+      }
+      const matchesSearch = searchTerm ? product.name.toLowerCase().includes(searchTerm.toLowerCase()) : true;
       const matchesFilter = selectedFilter === 'all' || product.type === selectedFilter;
       return matchesSearch && matchesFilter;
     })
-    .sort((a, b) => b.id - a.id);  // Always sort by latest first
+    .sort((a, b) => b.id - a.id);
 
   if (loading) {
     return <div className={styles.container}>Loading...</div>;

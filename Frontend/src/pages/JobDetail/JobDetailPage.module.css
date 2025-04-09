@@ -103,10 +103,21 @@
   color: #333;
 }
 
-.buttonWrapper {
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   margin-top: 2rem;
-  padding: 0;
-  margin-left: -1rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.875rem;
+  background-color: #E8A5A5;
+  color: white;
+  font-weight: 500;
 }
 
 .button {
@@ -117,12 +128,7 @@
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  background-color: #E8A5A5;
-  color: white;
-}
-
-.button:hover {
-  background-color: #e57373;
+  margin-bottom: 0.5rem;
 }
 
 .primaryButton {
@@ -131,7 +137,7 @@
 }
 
 .warningButton {
-  background-color: #ff6b6b;
+  background-color: #FF6B6B;
   color: white;
 }
 
@@ -196,7 +202,7 @@
     width: 100%;
   }
 
-  .buttonWrapper {
+  .buttonContainer {
     margin-left: 0;
     padding: 0;
   }

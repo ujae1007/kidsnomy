@@ -170,4 +170,18 @@
 
 .expense .scheduleAmount {
   color: #e74c3c;
+}
+
+.noSchedule {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+  text-align: center;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  margin: 0.5rem;
 } 

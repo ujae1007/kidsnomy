@@ -1,5 +1,5 @@
 .container {
-  padding: 1rem;
+  padding: 0;
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
@@ -19,6 +19,7 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 1rem;
 }
 
 .noAccount {
@@ -81,11 +82,12 @@
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.9);
   letter-spacing: 2px;
+  margin-bottom: 1.5rem;
 }
 
 .mastercard {
   position: absolute;
-  bottom: 1.5rem;
+  top: 1.5rem;
   right: 1.5rem;
   width: 60px;
   height: auto;
@@ -126,16 +128,17 @@
 }
 
 .sendButton {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  position: relative;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.4);
   color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  padding: 0.8rem;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s;
+  font-size: 1rem;
+  margin-top: 0;
 }
 
 .sendButton:hover {
@@ -151,6 +154,10 @@
 
 /* 반응형 디자인 */
 @media (min-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
   .card {
     width: 100%;
     max-width: 600px;

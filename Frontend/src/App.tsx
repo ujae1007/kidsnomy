@@ -27,6 +27,7 @@ import SavingProductDetailPage from '@/pages/SavingProductDetail/SavingProductDe
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import ChildJobButtonPage from '@/pages/ChildJobButton/ChildJobButtonPage';
+import FinanceReportPage from '@/pages/FinanceReport/FinanceReportPage';
 
 const SendMoneyCompletePage = () => {
   const navigate = useNavigate();
@@ -70,6 +71,7 @@ const App: React.FC = () => {
           <Route path="child/jobs" element={<ChildJobListPage />} />
           <Route path="childjobbutton" element={<ChildJobButtonPage />} />
           <Route path="jobs/:jobId" element={<JobDetailPage />} />
+          <Route path="financereport" element={<FinanceReportPage />} />
         </Route>
         
         {/* Result pages - without layout */}

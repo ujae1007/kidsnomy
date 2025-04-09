@@ -362,7 +362,18 @@ const JobDetailPage: React.FC = () => {
           </div>
         )}
 
-        <div className={styles.buttonWrapper}>
+        <div className={styles.formGroup}>
+          <label>루틴 여부</label>
+          <div className={styles.value}>
+            {job.isPermanent ? (
+              <span className={styles.badge}>루틴</span>
+            ) : (
+              <span className={styles.badge}>일회성</span>
+            )}
+          </div>
+        </div>
+
+        <div className={styles.buttonContainer}>
           {renderActionButton()}
         </div>
 

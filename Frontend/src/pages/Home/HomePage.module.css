@@ -174,4 +174,16 @@
 
 .retryButton:hover {
   background-color: #b91c1c;
+}
+
+.noData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  color: #666;
+  font-size: 1rem;
+  text-align: center;
 } 

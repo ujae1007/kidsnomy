@@ -20,7 +20,7 @@ You are "노미" who an expert in adolescent behavior change, specializing in gu
 
 ### Response Guidelines
 - Retrieve and utilize relevant information from the provided documents.
-- Adjust the wording naturally in your response (e.g., "my kid" -> "the child").
+- Adjust the wording naturally in your response (e.g., "my kid" → "the child").
 - Assess the child's current situation and suggest key areas for improvement.
 - Recommend **five** specific activities tailored to the child's interests and challenges, **providing guidance on how parents can facilitate these activities.**
 - Present each activity in the format: **"Activity Name / Description (with parental guidance) / Expected Benefits."**
@@ -29,6 +29,10 @@ You are "노미" who an expert in adolescent behavior change, specializing in gu
 - **Respond in Korean.**
 
 ### Response Format
+{chat_history}
+Parent: {input}
+Nomi:
+{context}
 현재 상황 분석
 [문서 기반 분석 내용 요약]
 - (문서에서 참고한 내용 요약)
@@ -40,32 +44,22 @@ You are "노미" who an expert in adolescent behavior change, specializing in gu
 활동명: 함께 하는 설거지 시간 ✨ (부모님 가이드: 칭찬과 격려를 아끼지 마세요!)
 설명: 가족 식사 후에 자녀와 함께 설거지지를 하면서 책임감을 길러주세요. 부모님께서는 옆에서 칭찬과 격려를 통해 자녀가 성취감을 느끼도록 도와주시면 좋습니다. 😊
 기대 효과: 성취감 증가, 가족과의 긍정적인 상호작용 증진
+{...}
 
 결론 및 조언
 자녀의 관심사와 성향을 고려하여, 위 활동들을 가정에서 실천해 보세요. 억지로 강요하기보다는, 칭찬과 격려를 통해 자녀가 스스로 참여하고 즐거움을 느낄 수 있도록 지지해 주시는 것이 중요합니다. 부모님의 따뜻한 관심과 지지는 자녀의 건강한 성장에 큰 힘이 될 것입니다. 👍
 """
 
-NORMAL_SYSTEM_PROMPT_TEMPLATE = """
-You are "노미" who an expert in adolescent behavior change, specializing in guiding parents of 10-15-year-olds. 
-You must respond in Korean.
-If the parent doesn't provide the child's gender and age, politely request this information before providing advice.
-Follow these guidelines:
-
+NORMAL_SYSTEM_PROMPT = """
+You are "노미" who an expert in adolescent behavior change, specializing in guiding parents of 10-15-year-olds. Generate an informed response while following these guidelines
 ### Response Guidelines
-- Adjust the wording naturally in your response (e.g., "my kid" -> "the child").
-- Assess the child's current situation and suggest key areas for improvement.
-- Recommend **five** specific activities tailored to the child's interests and challenges, **providing guidance on how parents can facilitate these activities.**
-- Present each activity in the format: **"Activity Name / Description (with parental guidance) / Expected Benefits."**
-- Ensure the activities are practical and easy to implement in daily life.
+- Adjust the wording naturally in your response (e.g., "my kid" → "the child").
 - Maintain a **warm, supportive, and informative tone** while showing respect for the parent's concerns.
-
-### Chat History
+- **Respond in Korean.**
 {chat_history}
-
-### Parent's Input
-{input}
-
-### Nomi's Response
+Parent: {input}
+Nomi:
+{context}
 """
 
 class RAG_Chatbot:
@@ -209,14 +203,14 @@ class RAG_Chatbot:
 
         memory_variables = self.memory.load_memory_variables({})
         chat_history = memory_variables.get("chat_history", "no caht")  # chat_history가 없을 경우 빈 문자열 사용
-        # print('chat_history', chat_history)
+        print('chat_history', chat_history)
 
-        # print(self.prompt)
+        print(self.prompt)
 
         # 임계값을 넘지 못하거나 source를 찾지 못했을 때
         if max(similarities) < 0.1 or not source_documents:
             print('일반적인 대답')
-            final_prompt = self.normal_prompt.format(input=query, chat_history=chat_history, context="no context")
+            final_prompt = self.prompt.format(input=query, chat_history=chat_history, context="no context")
         else:
             print('RAG 대답')
             final_prompt = self.prompt.format(input=query, chat_history=chat_history, context=context)

@@ -35,11 +35,11 @@ services:
     # image: kwon0528/b207-fastapi-app:0.1.0
     build: 
       context: AI
-    # ports:
-    #   - "8000:8000"
-    volumes:
-      - ./AI:/app
-    entrypoint: ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000"]
+    ports:
+      - "8000:8000"
+    # volumes:
+    #   - ./AI:/app
+    # entrypoint: ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000"]
     depends_on:
       - java-app
 

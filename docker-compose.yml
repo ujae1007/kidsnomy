@@ -1,7 +1,6 @@
 services:
   react-app:
-    image: kwon0528/b207-react-app:latest
-    # build: ./Frontend
+    image: kwon0528/b207-react-app:0.5.3
     container_name: react-app
     ports:
       - "80:80"
@@ -16,10 +15,7 @@ services:
     pull_policy: always
 
   java-app:
-    # image: kwon0528/b207-java-app:latest
-    build:
-      context: ./Backend
-    container_name: java-app
+    image: kwon0528/b207-java-app:0.5.3
     volumes:
       # - ./Backend/kidsnomy:/app
       - gradle-cache:/root/.gradle
@@ -36,11 +32,7 @@ services:
     pull_policy: always
   
   fastapi-app:
-    image: kwon0528/b207-fastapi-app:latest
-    # build: 
-    #   context: ./AI
-    # container_name: fastapi-app
-    # entrypoint: uvicorn server:app --port 8000 --host 0.0.0.0 --reload
+    image: kwon0528/b207-fastapi-app:5.0.11
     ports:
       - "8000:8000"
     depends_on:
@@ -48,10 +40,7 @@ services:
     pull_policy: always
 
   mysql:
-    image: kwon0528/b207-mysql:latest
-    # build:
-    #   context: ./DB
-    #   dockerfile: Dockerfile
+    image: kwon0528/b207-mysql:0.5.3
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: ssafy

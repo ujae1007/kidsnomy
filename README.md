@@ -197,7 +197,7 @@
 ## 5. 시스템 아키텍쳐
 
 ## 6. ERD
-<img src="/uploads/8a42b369535cb05dbb87150afa2648ba/image.png" width=2000 height=auto>
+<img src="/uploads/8a42b369535cb05dbb87150afa2648ba/image.png" width=1500 height=auto>
 
 ## 7. 시연 영상
 

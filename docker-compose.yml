@@ -53,6 +53,7 @@ services:
       - mysql-data:/var/lib/mysql
     pull_policy: always
 
+
 volumes:
   mysql-data:
   gradle-cache:

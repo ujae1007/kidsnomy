@@ -32,7 +32,7 @@ services:
     pull_policy: always
   
   fastapi-app:
-    image: kwon0528/b207-fastapi-app:5.0.11
+    image: kwon0528/b207-fastapi-app:0.5.11
     ports:
       - "8000:8000"
     depends_on:

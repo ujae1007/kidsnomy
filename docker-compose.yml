@@ -16,10 +16,10 @@ services:
     pull_policy: always
 
   java-app:
-    # image: kwon0528/b207-java-app:latest
-    build:
-      context: ./Backend
-    container_name: java-app
+    image: kwon0528/b207-java-app:latest
+    # build:
+    #   context: ./Backend
+    # container_name: java-app
     volumes:
       # - ./Backend/kidsnomy:/app
       - gradle-cache:/root/.gradle

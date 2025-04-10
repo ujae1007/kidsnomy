@@ -105,9 +105,15 @@ const ParentJobCreatePage: React.FC = () => {
       
       console.log('✅ 일자리 생성 성공');
       navigate('/parent/jobs');
-    } catch (error) {
-      console.error('❌ 일자리 생성 중 에러 발생:', error);
-      setError((error as Error).message);
+    } catch (err) {
+      console.error('❌ 일자리 생성 중 에러 발생:', err);
+      const error = err as any;
+      if (error?.status === 403 || (error?.message && error.message.includes('403'))) {
+        alert('그룹을 선택해 주세요.');
+        navigate('/group');
+      } else {
+        setError((err as Error).message);
+      }
     } finally {
       setLoading(false);
     }

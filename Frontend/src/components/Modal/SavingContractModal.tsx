@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
+import { apiCall } from '@/utils/api';
 import styles from './SavingContractModal.module.css';
 
 interface SavingContractModalProps {
@@ -23,24 +26,35 @@ const SavingContractModal: React.FC<SavingContractModalProps> = ({
 }) => {
   const [amount, setAmount] = useState('');
   const navigate = useNavigate();
+  const isParent = useSelector((state: RootState) => state.auth.is_Parent === "1");
+  const accessToken = useSelector((state: RootState) => state.auth.accessToken);
   
-  if (!isOpen) return null;
+  if (!isOpen || isParent) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // TODO: API 연동
-      console.log('적금 상품 계약 요청:', { productId, productName, amount });
-      
-      // 성공 시 ResultPage로 이동
-      navigate('/result', { 
-        state: { 
-          title: '계약이 성공하였어요',
-          description: '계약이 완료되었습니다.',
-          buttonText: '확인',
-          buttonLink: '/child/bank/products'
-        } 
+      const response = await apiCall('finance/savings/contract/' + productId, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ oneTimeVolume: parseInt(amount, 10) })
       });
+
+      if (response.status === 'success') {
+        navigate('/result', { 
+          state: { 
+            title: '계약이 성공하였어요',
+            description: '계약이 완료되었습니다.',
+            buttonText: '확인',
+            buttonLink: '/child/bank/products'
+          } 
+        });
+      } else {
+        console.error('계약 실패:', response.message);
+      }
     } catch (error) {
       console.error('계약 실패:', error);
     }

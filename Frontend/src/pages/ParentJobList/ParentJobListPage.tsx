@@ -17,6 +17,7 @@ interface Job {
   salary: number;
   status: number;
   employerName: string;
+  isPermanent: boolean;
 }
 
 // 상태값에 대한 레이블
@@ -70,16 +71,23 @@ const ParentJobListPage: React.FC = () => {
         jobCount: data.length, 
         jobs: data.map(job => ({ 
           title: job.title, 
-          status: job.status, 
+          status: job.status,
+          isPermanent: job.isPermanent, 
           employer: job.employerName 
         }))
       });
       
       setJobs(data);
       setDisplayJobs(data);
-    } catch (error) {
-      console.error('❌ 부모 일자리 조회 중 에러 발생:', error);
-      setError((error as Error).message);
+    } catch (err) {
+      console.error('❌ 부모 일자리 조회 중 에러 발생:', err);
+      
+      const error = err as any;
+      if (error?.status === 403 || (error?.message && error.message.includes('403'))) {
+        setError('그룹을 생성하거나 선택해주세요.');
+      } else {
+        setError((err as Error).message);
+      }
     } finally {
       setLoading(false);
     }
@@ -95,11 +103,7 @@ const ParentJobListPage: React.FC = () => {
   };
 
   const handleStatusFilterChange = (status: string) => {
-    if (status === 'latest') {
-      setSortOrder('desc');
-      setSelectedStatus(null);
-    } else if (status === 'oldest') {
-      setSortOrder('asc');
+    if (status === 'all') {
       setSelectedStatus(null);
     } else {
       setSelectedStatus(Number(status));
@@ -129,14 +133,6 @@ const ParentJobListPage: React.FC = () => {
       return sortOrder === 'desc' ? b.jobId - a.jobId : a.jobId - b.jobId;
     });
     
-    // 필터링 결과가 없으면 전체 일자리를 보여줌
-    if (result.length === 0 && (searchTerm || selectedStatus !== null)) {
-      // 필터링 조건이 있는데 결과가 없으면 원래 데이터 표시
-      result = [...jobs].sort((a, b) => {
-        return sortOrder === 'desc' ? b.jobId - a.jobId : a.jobId - b.jobId;
-      });
-    }
-    
     setDisplayJobs(result);
   }, [jobs, searchTerm, selectedStatus, sortOrder]);
   
@@ -150,15 +146,26 @@ const ParentJobListPage: React.FC = () => {
       <CreateJobButton onClick={handleCreateJob} />
       
       <FilterButtons
-        selectedFilter={selectedStatus?.toString() || (sortOrder === 'desc' ? 'latest' : 'oldest')}
+        selectedFilter={selectedStatus?.toString() || 'all'}
         onFilterChange={handleStatusFilterChange}
+        type="jobs"
       />
       
       <div className={styles.jobList}>
         {loading ? (
           <div className={styles.loading}>로딩 중...</div>
         ) : error ? (
-          <div className={styles.error}>{error}</div>
+          <div className={styles.error}>
+            <p>{error}</p>
+            {error.includes('그룹') && (
+              <button 
+                className={styles.error}
+                onClick={() => navigate('/group')}
+              >
+                그룹 생성하기
+              </button>
+            )}
+          </div>
         ) : displayJobs.length > 0 ? (
           displayJobs.map(job => (
             <JobCard
@@ -166,6 +173,7 @@ const ParentJobListPage: React.FC = () => {
               status={STATUS_LABELS[job.status] || '알 수 없음'}
               title={job.title}
               salary={job.salary}
+              isPermanent={job.isPermanent}
               onMoreClick={() => handleJobClick(job.jobId)}
               onClick={() => handleJobClick(job.jobId)}
             />

@@ -15,19 +15,20 @@ interface ExpenseBreakdownProps {
     도서: number;
     생활: number;
     교통: number;
+    total: number;
   };
 }
 
 const ExpenseBreakdown: React.FC<ExpenseBreakdownProps> = ({ totalExpense }) => {
-  // 총 지출액 계산
-  const total = Object.values(totalExpense).reduce((acc, curr) => acc + curr, 0);
+  // 총액을 제외한 카테고리별 지출만 필터링
+  const { total, ...categories } = totalExpense;
 
   // 각 카테고리별 비율 계산 및 정렬
-  const expenseItems = Object.entries(totalExpense)
+  const expenseItems = Object.entries(categories)
     .map(([category, amount]) => ({
       category,
       amount,
-      percentage: (amount / total) * 100
+      percentage: total > 0 ? (amount / total) * 100 : 0
     }))
     .sort((a, b) => b.amount - a.amount); // 금액이 큰 순서대로 정렬
 
@@ -48,6 +49,7 @@ const ExpenseBreakdown: React.FC<ExpenseBreakdownProps> = ({ totalExpense }) => 
                 className={styles.bar}
                 style={{ width: `${percentage}%` }}
               />
+              <span className={styles.percentage}>{percentage.toFixed(1)}%</span>
             </div>
           </div>
         ))}

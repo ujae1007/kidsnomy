@@ -11,10 +11,6 @@ interface ExpenseComparisonProps {
 const ExpenseComparison: React.FC<ExpenseComparisonProps> = ({ userAverageExpense }) => {
   const { myExpense, averageExpense } = userAverageExpense;
   
-  // 비율 계산
-  const myExpensePercentage = Math.round((myExpense / (myExpense + averageExpense)) * 100);
-  const averageExpensePercentage = Math.round((averageExpense / (myExpense + averageExpense)) * 100);
-
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>사용자 평균 소비 비율 비교</h3>
@@ -22,12 +18,12 @@ const ExpenseComparison: React.FC<ExpenseComparisonProps> = ({ userAverageExpens
       <div className={styles.comparisonContainer}>
         <div className={styles.expenseItem}>
           <span className={styles.label}>당신의 소비 비율</span>
-          <span className={styles.percentage}>{myExpensePercentage}%</span>
+          <span className={styles.percentage}>{myExpense.toFixed(1)}%</span>
           <div className={styles.barContainer}>
             <div 
               className={styles.bar} 
               style={{ 
-                width: '100%',
+                width: `${myExpense}%`,
                 backgroundColor: '#914F4F'
               }} 
             />
@@ -36,12 +32,12 @@ const ExpenseComparison: React.FC<ExpenseComparisonProps> = ({ userAverageExpens
 
         <div className={styles.expenseItem}>
           <span className={styles.label}>사용자의 평균 소비 비율</span>
-          <span className={styles.percentage}>{averageExpensePercentage}%</span>
+          <span className={styles.percentage}>{averageExpense.toFixed(1)}%</span>
           <div className={styles.barContainer}>
             <div 
               className={styles.bar} 
               style={{ 
-                width: `${(averageExpensePercentage / myExpensePercentage) * 100}%`,
+                width: `${averageExpense}%`,
                 backgroundColor: '#F8E6E6'
               }} 
             />

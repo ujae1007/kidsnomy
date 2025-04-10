@@ -80,30 +80,54 @@ public class ReportService {
             )
         );
 
-        List<AccountLog> logs = accountLogRepository.findAllByAccountNo(accountNo);
+//        List<AccountLog> logs = accountLogRepository.findAllByAccountNo(accountNo);
+//        Map<String, List<TransactionSummaryDto>> weeklyMap = new LinkedHashMap<>();
+//        LocalDate monday = today.with(DayOfWeek.MONDAY);
+//
+//        for (int i = 4; i >= 0; i--) {
+//            LocalDate weekStart = monday.minusWeeks(i);
+//            LocalDate weekEnd = weekStart.plusDays(6);
+//            String key = "week" + (5 - i);
+//            List<TransactionSummaryDto> weeklyList = new ArrayList<>();
+//
+//            for (AccountLog log : logs) {
+//                LocalDate txDate = LocalDate.parse(log.getTransactionDate(), DateTimeFormatter.ofPattern("yyyyMMdd"));
+//                if (!txDate.isBefore(weekStart) && !txDate.isAfter(weekEnd)) {
+//                    TransactionSummaryDto dto = new TransactionSummaryDto();
+//                    dto.setTransactionDate(log.getTransactionDate());
+//                    dto.setTransactionType(log.getTransactionType());
+//                    dto.setTransactionBalance(log.getTransactionBalance());
+//                    dto.setTransactionSummary(log.getTransactionSummary());
+//                    weeklyList.add(dto);
+//                }
+//            }
+//
+//            weeklyMap.put(key, weeklyList);
+//        }
+        
         Map<String, List<TransactionSummaryDto>> weeklyMap = new LinkedHashMap<>();
-        LocalDate monday = today.with(DayOfWeek.MONDAY);
 
-        for (int i = 4; i >= 0; i--) {
-            LocalDate weekStart = monday.minusWeeks(i);
-            LocalDate weekEnd = weekStart.plusDays(6);
-            String key = "week" + (5 - i);
-            List<TransactionSummaryDto> weeklyList = new ArrayList<>();
+        weeklyMap.put("week1", List.of(
+            new TransactionSummaryDto("20250330", 1, new BigDecimal("250000.00"), "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1"),
+            new TransactionSummaryDto("20250330", 1, new BigDecimal("250000.00"), "더벙커게임존, 대전 유성구 대학로 34")
+        ));
 
-            for (AccountLog log : logs) {
-                LocalDate txDate = LocalDate.parse(log.getTransactionDate(), DateTimeFormatter.ofPattern("yyyyMMdd"));
-                if (!txDate.isBefore(weekStart) && !txDate.isAfter(weekEnd)) {
-                    TransactionSummaryDto dto = new TransactionSummaryDto();
-                    dto.setTransactionDate(log.getTransactionDate());
-                    dto.setTransactionType(log.getTransactionType());
-                    dto.setTransactionBalance(log.getTransactionBalance());
-                    dto.setTransactionSummary(log.getTransactionSummary());
-                    weeklyList.add(dto);
-                }
-            }
+        weeklyMap.put("week2", List.of(
+            new TransactionSummaryDto("20250330", 1, new BigDecimal("250000.00"), "설빙 유성온천점, 대전 유성구 대학로 14"),
+            new TransactionSummaryDto("20250330", 1, new BigDecimal("250000.00"), "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1")
+        ));
 
-            weeklyMap.put(key, weeklyList);
-        }
+        weeklyMap.put("week3", List.of(
+            new TransactionSummaryDto("20250330", 1, new BigDecimal("250000.00"), "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1")
+        ));
+
+        weeklyMap.put("week4", List.of(
+            new TransactionSummaryDto("20250330", 1, new BigDecimal("250000.00"), "왕가탕후루 충장로점, 광주 동구 충장로3가 41-1")
+        ));
+
+        weeklyMap.put("week5", List.of(
+            new TransactionSummaryDto("20250330", 1, new BigDecimal("250000.00"), "더벙커게임존, 대전 유성구 대학로 34")
+        ));
 
         ReportRequestDto reportDto = new ReportRequestDto(accountNo, weeklyMap);
 

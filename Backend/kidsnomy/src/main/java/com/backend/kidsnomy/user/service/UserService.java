@@ -127,6 +127,7 @@ public class UserService {
     // 3. 부모 회원가입 처리
     @Transactional
     public void registerParent(SignUpParentRequestDto dto) {
+        System.out.println(dto.getEmail());
         // 1. 이메일 인증 여부 확인
         EmailVerification verification = emailVerificationRepository.findByEmail(dto.getEmail())
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "이메일 인증이 필요합니다."));

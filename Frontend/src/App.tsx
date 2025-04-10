@@ -27,6 +27,9 @@ import SavingProductDetailPage from '@/pages/SavingProductDetail/SavingProductDe
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import ChildJobButtonPage from '@/pages/ChildJobButton/ChildJobButtonPage';
+import FinanceReportPage from '@/pages/FinanceReport/FinanceReportPage';
+import DepositProductDetailChildPage from '@/pages/DepositProductDetailChild/DepositProductDetailChildPage';
+import SavingProductDetailChildPage from '@/pages/SavingProductDetailChild/SavingProductDetailChildPage';
 
 const SendMoneyCompletePage = () => {
   const navigate = useNavigate();
@@ -58,8 +61,8 @@ const App: React.FC = () => {
           <Route path="bank/products/deposit/:id" element={<DepositProductDetailPage />} />
           <Route path="bank/products/saving/:id" element={<SavingProductDetailPage />} />
           <Route path="child/bank/products" element={<ChildBankProductsPage />} />
-          <Route path="child/bank/products/deposit/:id" element={<DepositProductDetailPage />} />
-          <Route path="child/bank/products/saving/:id" element={<SavingProductDetailPage />} />
+          <Route path="child/bank/products/deposit/:id" element={<DepositProductDetailChildPage />} />
+          <Route path="child/bank/products/saving/:id" element={<SavingProductDetailChildPage />} />
           <Route path="group" element={<GroupPage />} />
           <Route path="account" element={<AccountPage />} />
           <Route path="account/send" element={<SendMoneyPage />} />
@@ -70,6 +73,7 @@ const App: React.FC = () => {
           <Route path="child/jobs" element={<ChildJobListPage />} />
           <Route path="childjobbutton" element={<ChildJobButtonPage />} />
           <Route path="jobs/:jobId" element={<JobDetailPage />} />
+          <Route path="financereport" element={<FinanceReportPage />} />
         </Route>
         
         {/* Result pages - without layout */}

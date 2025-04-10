@@ -58,7 +58,7 @@ const ChatBotModalPage: React.FC<ChatBotModalPageProps> = ({ onClose }) => {
 
       const botMessage: Message = {
         type: 'bot',
-        content: response.response
+        content: response.reply
       };
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
@@ -91,20 +91,6 @@ const ChatBotModalPage: React.FC<ChatBotModalPageProps> = ({ onClose }) => {
       <h1 className={styles.title}>
         키즈노미의 똑똑한 챗봇 '노미'를 소개합니다.
       </h1>
-
-      <div className={styles.chatBox}>
-        <div className={styles.profileImage}>
-          <img src={nomyImage} alt="노미 프로필" />
-        </div>
-        <div className={styles.messageBox}>
-          <div className={styles.name}>노미</div>
-          <div className={styles.message}>
-            안녕하세요? 저는 노미라고 해요.
-            일자리 만들기에 대해 질문해 주세요.
-            EX) 10세 아이에게 시키면 좋은 심부름 추천해줘
-          </div>
-        </div>
-      </div>
 
       {messages.map((message, index) => (
         <div key={index} className={`${styles.chatBox} ${message.type === 'user' ? styles.userChat : ''}`}>

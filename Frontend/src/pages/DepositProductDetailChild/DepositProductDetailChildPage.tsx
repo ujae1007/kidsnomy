@@ -25,7 +25,7 @@ const DepositProductDetailChildPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
 
-  console.log('Product ID:', id);
+  console.log('자녀용 예금 상세 페이지 - Product ID:', id);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -98,7 +98,7 @@ const DepositProductDetailChildPage: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>은행 상품 상세보기</h1>
+        <h1 className={styles.title}>은행 상품 상세보기 (자녀용)</h1>
         
         <div className={styles.formGroup}>
           <label>상품 종류</label>

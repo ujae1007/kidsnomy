@@ -94,8 +94,16 @@ const ParentBankProductsPage: React.FC = () => {
   };
 
   const handleFilterChange = (filter: string) => {
-    setSelectedFilter(filter as 'all' | 'deposit' | 'saving');
+    console.log('Filter changed to:', filter);
+    setSelectedFilter(prevFilter => {
+      console.log(`Setting filter from ${prevFilter} to ${filter}`);
+      return filter as 'all' | 'deposit' | 'saving';
+    });
   };
+
+  useEffect(() => {
+    console.log('Filter state changed:', selectedFilter);
+  }, [selectedFilter]);
 
   const handleProductClick = (product: BankProduct) => {
     if (product.productType === 0) {
@@ -109,22 +117,36 @@ const ParentBankProductsPage: React.FC = () => {
     navigate('create');
   };
 
-  const filteredProducts = products
-    .filter(product => {
-      // 수정된 부분: title 필드를 사용하고 searchTerm이 비어있을 때 처리
-      const matchesSearch = searchTerm ? 
-        product.title.toLowerCase().includes(searchTerm.toLowerCase()) : 
-        true;
-      
-      // 수정된 부분: productType에 따라 필터링 (0: 예금, 1: 적금)
-      const matchesFilter = 
-        selectedFilter === 'all' || 
-        (selectedFilter === 'deposit' && product.productType === 0) || 
-        (selectedFilter === 'saving' && product.productType === 1);
-      
-      return matchesSearch && matchesFilter;
-    })
-    .sort((a, b) => b.id - a.id);
+  const filteredProducts = React.useMemo(() => {
+    console.log('Recalculating filtered products with filter:', selectedFilter);
+    return products
+      .filter(product => {
+        const matchesSearch = searchTerm ? 
+          product.title?.toLowerCase().includes(searchTerm.toLowerCase()) : 
+          true;
+        
+        let matchesFilter;
+        if (selectedFilter === 'all') {
+          matchesFilter = true;
+        } else if (selectedFilter === 'deposit') {
+          matchesFilter = product.productType === 0;
+        } else if (selectedFilter === 'saving') {
+          matchesFilter = product.productType === 1;
+        } else {
+          matchesFilter = false;
+        }
+        
+        if (matchesFilter) {
+          console.log(`Matched - Product: ${product.title}, productType: ${product.productType}, filter: '${selectedFilter}'`);
+        }
+        
+        return matchesSearch && matchesFilter;
+      })
+      .sort((a, b) => b.id - a.id);
+  }, [products, searchTerm, selectedFilter]);
+
+  console.log('Filtered Products:', filteredProducts);
+  console.log('Selected Filter:', selectedFilter);
 
   if (loading) {
     return <div className={styles.container}>Loading...</div>;
@@ -160,14 +182,13 @@ const ParentBankProductsPage: React.FC = () => {
         onFilterChange={handleFilterChange}
         type="products"
       />
-
+      
       <div className={styles.productList}>
         {filteredProducts.map(product => (
           <JobCard
             key={product.id}
             status={product.productType === 0 ? '예금' : '적금'}
             title={product.title}
-            salary={product.productType === 0 ? product.dueDate * 10000 : (product.payDate || 0) * 1000}
             onClick={() => handleProductClick(product)}
             onMoreClick={() => handleProductClick(product)}
           >
@@ -178,7 +199,7 @@ const ParentBankProductsPage: React.FC = () => {
               </div>
               <div className={styles.infoRow}>
                 <span className={styles.label}>기간</span>
-                <span className={styles.value}>{product.dueDate}개월</span>
+                <span className={styles.value}>{product.dueDate}주</span>
               </div>
               {product.productType === 1 && (
                 <div className={styles.infoRow}>

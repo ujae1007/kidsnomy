@@ -189,7 +189,7 @@ const ParentJobCreatePage: React.FC = () => {
                 isPermanent: e.target.checked
               }))}
             />
-            상시 일자리
+            루틴 일자리
           </label>
         </div>
         

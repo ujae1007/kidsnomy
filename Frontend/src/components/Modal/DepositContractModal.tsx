@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
 import styles from './DepositContractModal.module.css';
+import { apiCall } from '@/utils/api';
 
 interface DepositContractModalProps {
   isOpen: boolean;
@@ -22,27 +25,59 @@ const DepositContractModal: React.FC<DepositContractModalProps> = ({
   productName,
 }) => {
   const [amount, setAmount] = useState('');
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
+  const accessToken = useSelector((state: RootState) => state.auth.accessToken);
   
   if (!isOpen) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
+    setIsSubmitting(true);
+    
     try {
-      // TODO: API 연동
-      console.log('예금 상품 계약 요청:', { productId, productName, amount });
+      console.log('예금 상품 계약 요청:', { productId, balance: parseInt(amount) });
+      
+      const response = await apiCall(`finance/deposit/contract/${productId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`
+        },
+        body: JSON.stringify({
+          balance: parseInt(amount)
+        })
+      });
+      
+      console.log('예금 상품 계약 응답:', response);
       
       // 성공 시 ResultPage로 이동
       navigate('/result', { 
         state: { 
           title: '계약이 성공하였어요',
-          description: '계약이 완료되었습니다.',
+          description: '예금 상품 계약이 완료되었습니다.',
           buttonText: '확인',
           buttonLink: '/child/bank/products'
         } 
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('계약 실패:', error);
+      
+      if (error.message && error.message.includes('수시입출금 계좌가 필요합니다')) {
+        setError('수시입출금 계좌가 필요합니다. 먼저 기본 계좌를 생성해주세요.');
+      } else if (error.message && error.message.includes('사용자의 그룹 정보')) {
+        setError('그룹 정보를 찾을 수 없습니다.');
+      } else if (error.message && error.message.includes('이미 해당 상품에 가입')) {
+        setError('이미 해당 상품에 가입하셨습니다.');
+      } else if (error.message && error.message.includes('예금 상품을 찾을 수 없습니다')) {
+        setError('예금 상품을 찾을 수 없습니다.');
+      } else {
+        setError('계약 처리 중 오류가 발생했습니다. 다시 시도해주세요.');
+      }
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -57,6 +92,8 @@ const DepositContractModal: React.FC<DepositContractModalProps> = ({
       <div className={styles.modalContent}>
         <h2>예치할 금액을 입력해 주세요</h2>
         <p>금액을 입력해 주세요.</p>
+        
+        {error && <div className={styles.errorMessage}>{error}</div>}
         
         <form onSubmit={handleSubmit}>
           <div className={styles.inputWrapper}>
@@ -75,8 +112,12 @@ const DepositContractModal: React.FC<DepositContractModalProps> = ({
             <span className={styles.wonSymbol}>₩</span>
           </div>
 
-          <button type="submit" className={styles.contractButton}>
-            계약하기
+          <button 
+            type="submit" 
+            className={styles.contractButton}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? '처리 중...' : '계약하기'}
           </button>
         </form>
       </div>

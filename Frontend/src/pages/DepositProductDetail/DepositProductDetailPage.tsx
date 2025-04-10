@@ -84,7 +84,7 @@ const DepositProductDetailPage: React.FC = () => {
         </div>
         
         <div className={styles.buttonWrapper}>
-          <div className={styles.statusMessage}>부모 계정에서는 계약할 수 없습니다</div>
+          <div className={styles.statusMessage}></div>
         </div>
       </div>
     </div>

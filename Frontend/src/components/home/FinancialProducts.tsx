@@ -66,7 +66,8 @@ const FinancialProducts: React.FC<FinancialProductsProps> = ({ data }) => {
   const handleCardClick = (product: Contract) => {
     if (product.total_volume) {
       navigate(`/bank/products/deposit/${product.contract_id}`);
-    } else if (product.rate_volume) {
+    } else if (product.rate_volume || product.one_time_volume) {
+      console.log('적금 상품 클릭:', product.contract_id);
       navigate(`/bank/products/saving/${product.contract_id}`);
     }
   };

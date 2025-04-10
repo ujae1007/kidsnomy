@@ -109,7 +109,7 @@ const HomePage: React.FC = () => {
 
   const fetchData = async () => {
     if (!selectedGroupId) {
-      setError('그룹이 선택되지 않았습니다.');
+      console.log('그룹이 선택되지 않았습니다. 데이터를 불러오지 않습니다.');
       return;
     }
 

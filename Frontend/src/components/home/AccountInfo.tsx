@@ -39,11 +39,6 @@ const AccountInfo: React.FC<AccountInfoProps> = ({ data = dummyData }) => {
     navigate('/account/detail');
   };
 
-  const handleSendMoney = (e: React.MouseEvent) => {
-    e.stopPropagation();  // 이벤트 전파 중지
-    navigate('/account/send');
-  };
-
   if (!data) {
     return (
       <div className={styles.container}>
@@ -89,7 +84,6 @@ const AccountInfo: React.FC<AccountInfoProps> = ({ data = dummyData }) => {
         <div className={styles.mastercard}>
           <img src={mastercardLogo} alt="Mastercard" />
         </div>
-        <button className={styles.sendButton} onClick={handleSendMoney}>송금하기</button>
       </div>
     </div>
   );

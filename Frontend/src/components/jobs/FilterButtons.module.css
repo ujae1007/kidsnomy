@@ -8,6 +8,7 @@
   -ms-overflow-style: none; /* IE and Edge */
   white-space: nowrap;
   width: 100%;
+  position: relative; /* 위치 설정을 위한 상대 위치 지정 */
 }
 
 .filterButtons::-webkit-scrollbar {
@@ -35,4 +36,15 @@
   color: white;
   border-color: #666666;
   font-weight: 600;
+}
+
+.filterDebug {
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+  font-size: 0.75rem;
+  color: #999;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2px 5px;
+  border-radius: 2px;
 } 

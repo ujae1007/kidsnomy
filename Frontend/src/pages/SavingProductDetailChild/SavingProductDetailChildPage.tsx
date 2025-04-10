@@ -28,7 +28,7 @@ const SavingProductDetailChildPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
 
-  console.log('Rendering SavingProductDetailChildPage with id:', id);
+  console.log('자녀용 적금 상세 페이지 - Rendering with id:', id);
 
   useEffect(() => {
     const fetchProduct = async () => {

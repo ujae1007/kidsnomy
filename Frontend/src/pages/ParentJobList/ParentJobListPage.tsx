@@ -103,11 +103,7 @@ const ParentJobListPage: React.FC = () => {
   };
 
   const handleStatusFilterChange = (status: string) => {
-    if (status === 'latest') {
-      setSortOrder('desc');
-      setSelectedStatus(null);
-    } else if (status === 'oldest') {
-      setSortOrder('asc');
+    if (status === 'all') {
       setSelectedStatus(null);
     } else {
       setSelectedStatus(Number(status));
@@ -137,14 +133,6 @@ const ParentJobListPage: React.FC = () => {
       return sortOrder === 'desc' ? b.jobId - a.jobId : a.jobId - b.jobId;
     });
     
-    // 필터링 결과가 없으면 전체 일자리를 보여줌
-    if (result.length === 0 && (searchTerm || selectedStatus !== null)) {
-      // 필터링 조건이 있는데 결과가 없으면 원래 데이터 표시
-      result = [...jobs].sort((a, b) => {
-        return sortOrder === 'desc' ? b.jobId - a.jobId : a.jobId - b.jobId;
-      });
-    }
-    
     setDisplayJobs(result);
   }, [jobs, searchTerm, selectedStatus, sortOrder]);
   
@@ -158,8 +146,9 @@ const ParentJobListPage: React.FC = () => {
       <CreateJobButton onClick={handleCreateJob} />
       
       <FilterButtons
-        selectedFilter={selectedStatus?.toString() || (sortOrder === 'desc' ? 'latest' : 'oldest')}
+        selectedFilter={selectedStatus?.toString() || 'all'}
         onFilterChange={handleStatusFilterChange}
+        type="jobs"
       />
       
       <div className={styles.jobList}>

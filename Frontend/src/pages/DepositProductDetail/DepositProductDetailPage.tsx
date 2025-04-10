@@ -3,11 +3,12 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import styles from './DepositProductDetailPage.module.css';
-import DepositContractModal from '@/components/Modal/DepositContractModal';
 import { apiCall } from '@/utils/api';
 
 interface DepositProduct {
   id: number;
+  groupId: number;
+  userId: number;
   title: string;
   content: string;
   interestRate: number;
@@ -18,14 +19,9 @@ interface DepositProduct {
 const DepositProductDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const isParent = useSelector((state: RootState) => state.auth.is_Parent === "1");
   const accessToken = useSelector((state: RootState) => state.auth.accessToken);
   const [product, setProduct] = useState<DepositProduct | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [showModal, setShowModal] = useState(false);
-
-  console.log('Auth State:', { isParent });
-  console.log('Product ID:', id);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -38,7 +34,7 @@ const DepositProductDetailPage: React.FC = () => {
           }
         });
         setProduct(response);
-        console.log('Product data loaded successfully');
+        console.log('Product data loaded successfully', response);
       } catch (error) {
         console.error('Error fetching product:', error);
       } finally {
@@ -48,51 +44,6 @@ const DepositProductDetailPage: React.FC = () => {
 
     fetchProduct();
   }, [id, accessToken]);
-
-  const handleContract = () => {
-    console.log('Contract button clicked, opening modal');
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    console.log('Closing modal');
-    setShowModal(false);
-  };
-
-  const handleDelete = () => {
-    console.log('Delete button clicked');
-    // TODO: 삭제 API 호출
-    console.log('삭제하기');
-  };
-
-  const handleReceive = () => {
-    console.log('Receive button clicked');
-    // TODO: 원금과 이자받기 API 호출
-    console.log('원금과 이자받기');
-  };
-
-  const renderButton = () => {
-    if (!product) return null;
-
-    console.log('Product Type:', product.productType);
-    console.log('Is Parent:', isParent);
-
-    if (!isParent) {
-      // 자녀인 경우
-      if (product.productType === 0 || product.productType === 1) {
-        console.log('Rendering Contract Button for Child');
-        return (
-          <button className={styles.contractButton} onClick={handleContract}>
-            계약하기
-          </button>
-        );
-      }
-      return <div className={styles.statusMessage}>계약한 상품입니다</div>;
-    } else {
-      // 부모인 경우
-      return <div className={styles.statusMessage}>부모 계정에서는 계약할 수 없습니다</div>;
-    }
-  };
 
   if (isLoading) {
     return <div>로딩 중...</div>;
@@ -131,18 +82,11 @@ const DepositProductDetailPage: React.FC = () => {
           <label>만기일</label>
           <div className={styles.value}>{product.dueDate}주</div>
         </div>
-
+        
         <div className={styles.buttonWrapper}>
-          {renderButton()}
+          <div className={styles.statusMessage}>부모 계정에서는 계약할 수 없습니다</div>
         </div>
       </div>
-
-      <DepositContractModal
-        isOpen={showModal}
-        onClose={handleCloseModal}
-        productId={product.id}
-        productName={product.title}
-      />
     </div>
   );
 };

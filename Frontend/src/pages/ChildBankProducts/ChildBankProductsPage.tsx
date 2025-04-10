@@ -69,11 +69,19 @@ const ChildBankProductsPage: React.FC = () => {
       alert('계약된 상품은 상세 페이지에 접근할 수 없습니다.');
       return;
     }
-    if (product.type === 'deposit') {
-      navigate(`deposit/${product.id}`);
+    
+    let targetPath = '';
+    
+    if (product.productType === 0) {
+      targetPath = `deposit/${product.id}`;
+      console.log('Navigating to child deposit product detail:', targetPath);
     } else {
-      navigate(`saving/${product.id}`);
+      targetPath = `saving/${product.id}`;
+      console.log('Navigating to child saving product detail:', targetPath);
     }
+    
+    // 절대 경로로 지정하여 명확하게 라우팅
+    navigate(targetPath);
   };
 
   const filteredProducts = products

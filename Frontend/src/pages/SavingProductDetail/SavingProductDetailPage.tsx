@@ -3,11 +3,12 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import styles from './SavingProductDetailPage.module.css';
-import SavingContractModal from '@/components/Modal/SavingContractModal';
 import { apiCall } from '@/utils/api';
 
 interface SavingProduct {
   id: number;
+  groupId: number;
+  userId: number;
   title: string;
   content: string;
   interestRate: number;
@@ -20,11 +21,9 @@ interface SavingProduct {
 const SavingProductDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const isParent = useSelector((state: RootState) => state.auth.is_Parent === "1");
   const accessToken = useSelector((state: RootState) => state.auth.accessToken);
   const [product, setProduct] = useState<SavingProduct | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -37,7 +36,7 @@ const SavingProductDetailPage: React.FC = () => {
           }
         });
         setProduct(response);
-        console.log('Product data loaded successfully');
+        console.log('Product data loaded successfully:', response);
       } catch (error) {
         console.error('Error fetching product:', error);
       } finally {
@@ -47,61 +46,6 @@ const SavingProductDetailPage: React.FC = () => {
 
     fetchProduct();
   }, [id, accessToken]);
-
-  const handleContract = () => {
-    console.log('Contract button clicked, opening modal');
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    console.log('Closing modal');
-    setShowModal(false);
-  };
-
-  const handleDelete = () => {
-    console.log('Delete button clicked');
-    // TODO: 삭제 API 호출
-    console.log('삭제하기');
-  };
-
-  const handleReceive = () => {
-    console.log('Receive button clicked');
-    // TODO: 원금과 이자받기 API 호출
-    console.log('원금과 이자받기');
-  };
-
-  const renderButton = () => {
-    if (!product) return null;
-
-    if (!isParent) {
-      // 자녀인 경우
-      switch (product.productType) {
-        case 1:
-          return (
-            <button className={styles.contractButton} onClick={handleContract}>
-              계약하기
-            </button>
-          );
-        case 2:
-          return <div className={styles.statusMessage}>계약한 상품입니다</div>;
-        case 3:
-          return (
-            <button className={styles.contractButton} onClick={handleReceive}>
-              원금과 이자받기
-            </button>
-          );
-        default:
-          return null;
-      }
-    } else {
-      // 부모인 경우
-      return (
-        <button className={styles.deleteButton} onClick={handleDelete}>
-          삭제하기
-        </button>
-      );
-    }
-  };
 
   if (isLoading) {
     return <div>로딩 중...</div>;
@@ -150,18 +94,11 @@ const SavingProductDetailPage: React.FC = () => {
           <label>적금 납입 주기</label>
           <div className={styles.value}>{product.payDate}일</div>
         </div>
-
+        
         <div className={styles.buttonWrapper}>
-          {renderButton()}
+          <div className={styles.statusMessage}>부모 계정에서는 계약할 수 없습니다</div>
         </div>
       </div>
-
-      <SavingContractModal
-        isOpen={showModal}
-        onClose={handleCloseModal}
-        productId={product.id}
-        productName={product.title}
-      />
     </div>
   );
 };

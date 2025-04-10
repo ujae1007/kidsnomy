@@ -4,33 +4,68 @@ import styles from './FilterButtons.module.css';
 interface FilterButtonsProps {
   selectedFilter: string;
   onFilterChange: (filter: string) => void;
-  type?: 'jobs' | 'products';
+  type: 'jobs' | 'products';
 }
 
-const FilterButtons: React.FC<FilterButtonsProps> = ({ selectedFilter, onFilterChange, type = 'jobs' }) => {
-  const filters = type === 'products' ? [
-    { id: 'all', label: '전체 상품' },
-    { id: 'deposit', label: '예금 상품' },
-    { id: 'saving', label: '적금 상품' },
-    { id: 'latest', label: '최신순' },
-  ] : [
-    { id: 'all', label: '전체 일자리' },
-    { id: '4', label: '완료' },
-    { id: 'contracted', label: '계약 후' },
-    { id: 'latest', label: '최신순' },
-  ];
-
-  return (
-    <div className={styles.filterContainer}>
-      {filters.map((filter) => (
+const FilterButtons: React.FC<FilterButtonsProps> = ({ selectedFilter, onFilterChange, type }) => {
+  if (type === 'jobs') {
+    return (
+      <div className={styles.filterButtons}>
         <button
-          key={filter.id}
-          className={`${styles.filterButton} ${selectedFilter === filter.id ? styles.active : ''}`}
-          onClick={() => onFilterChange(filter.id)}
+          className={`${styles.filterButton} ${selectedFilter === 'all' ? styles.active : ''}`}
+          onClick={() => onFilterChange('all')}
         >
-          {filter.label}
+          전체
         </button>
-      ))}
+        <button
+          className={`${styles.filterButton} ${selectedFilter === '1' ? styles.active : ''}`}
+          onClick={() => onFilterChange('1')}
+        >
+          계약전
+        </button>
+        <button
+          className={`${styles.filterButton} ${selectedFilter === '2' ? styles.active : ''}`}
+          onClick={() => onFilterChange('2')}
+        >
+          계약후
+        </button>
+        <button
+          className={`${styles.filterButton} ${selectedFilter === '3' ? styles.active : ''}`}
+          onClick={() => onFilterChange('3')}
+        >
+          승인대기
+        </button>
+        <button
+          className={`${styles.filterButton} ${selectedFilter === '4' ? styles.active : ''}`}
+          onClick={() => onFilterChange('4')}
+        >
+          최종완료
+        </button>
+      </div>
+    );
+  }
+
+  // products type일 경우의 기존 버튼들
+  return (
+    <div className={styles.filterButtons}>
+      <button
+        className={`${styles.filterButton} ${selectedFilter === 'all' ? styles.active : ''}`}
+        onClick={() => onFilterChange('all')}
+      >
+        전체 상품
+      </button>
+      <button
+        className={`${styles.filterButton} ${selectedFilter === 'deposit' ? styles.active : ''}`}
+        onClick={() => onFilterChange('deposit')}
+      >
+        예금 상품
+      </button>
+      <button
+        className={`${styles.filterButton} ${selectedFilter === 'saving' ? styles.active : ''}`}
+        onClick={() => onFilterChange('saving')}
+      >
+        적금 상품
+      </button>
     </div>
   );
 };

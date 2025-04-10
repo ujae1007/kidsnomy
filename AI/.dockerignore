@@ -3,7 +3,8 @@
 __pycache__
 *.pyc
 *.log
-rag_func/data/
+# rag_func/data/
 venv/
 !vectordb/
 !chromadb/
+test/

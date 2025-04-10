@@ -1,8 +1,10 @@
 # 1단계: 빌드 환경 (ChromaDB 생성 및 종속성 설치)
 FROM kwon0528/b207-fastapi-app:0.0.1
+# FROM python:3.10-slim
 WORKDIR /app
 
-# # requirements.txt 복사 및 종속성 설치
+# requirements.txt 복사 및 종속성 설치
+# COPY requirements.txt .
 COPY . .
 # RUN apt-get update && apt-get install -y --no-install-recommends libmagic1
 # RUN pip install --no-cache-dir -r requirements.txt

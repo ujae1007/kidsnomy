@@ -16,9 +16,9 @@ services:
     pull_policy: always
 
   java-app:
-    image: kwon0528/b207-java-app:latest
-    # build: 
-      # context: ./Backend
+    # image: kwon0528/b207-java-app:latest
+    build:
+      context: ./Backend
     container_name: java-app
     volumes:
       # - ./Backend/kidsnomy:/app
@@ -38,8 +38,8 @@ services:
   fastapi-app:
     image: kwon0528/b207-fastapi-app:latest
     # build: 
-      # context: ./AI
-    container_name: fastapi-app
+    #   context: ./AI
+    # container_name: fastapi-app
     # entrypoint: uvicorn server:app --port 8000 --host 0.0.0.0 --reload
     ports:
       - "8000:8000"

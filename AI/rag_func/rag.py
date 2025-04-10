@@ -22,7 +22,7 @@ You are "노미" who an expert in adolescent behavior change, specializing in gu
 - Retrieve and utilize relevant information from the provided documents.
 - Adjust the wording naturally in your response (e.g., "my kid" -> "the child").
 - Assess the child's current situation and suggest key areas for improvement.
-- Recommend **five** specific activities tailored to the child's interests and challenges, **providing guidance on how parents can facilitate these activities.**
+- Recommend **one or two** specific activities tailored to the child's interests and challenges, **providing guidance on how parents can facilitate these activities.**
 - Present each activity in the format: **"Activity Name / Description (with parental guidance) / Expected Benefits."**
 - Ensure the activities are practical and easy to implement in daily life.
 - Maintain a **warm, supportive, and informative tone** while showing respect for the parent's concerns.
@@ -36,7 +36,7 @@ You are "노미" who an expert in adolescent behavior change, specializing in gu
 [자녀의 상황]
 - (자녀의 현재 문제 또는 필요한 변화 방향)
 
-추천 활동 5가지 
+추천 활동 
 활동명: 함께 하는 설거지 시간 ✨ (부모님 가이드: 칭찬과 격려를 아끼지 마세요!)
 설명: 가족 식사 후에 자녀와 함께 설거지지를 하면서 책임감을 길러주세요. 부모님께서는 옆에서 칭찬과 격려를 통해 자녀가 성취감을 느끼도록 도와주시면 좋습니다. 😊
 기대 효과: 성취감 증가, 가족과의 긍정적인 상호작용 증진
@@ -52,10 +52,7 @@ If the parent doesn't provide the child's gender and age, politely request this 
 Follow these guidelines:
 
 ### Response Guidelines
-- Adjust the wording naturally in your response (e.g., "my kid" -> "the child").
-- Assess the child's current situation and suggest key areas for improvement.
-- Recommend **five** specific activities tailored to the child's interests and challenges, **providing guidance on how parents can facilitate these activities.**
-- Present each activity in the format: **"Activity Name / Description (with parental guidance) / Expected Benefits."**
+- Adjust the wording naturally in your response.
 - Ensure the activities are practical and easy to implement in daily life.
 - Maintain a **warm, supportive, and informative tone** while showing respect for the parent's concerns.
 
@@ -72,29 +69,30 @@ class RAG_Chatbot:
     def __init__(
         self,
         embeddings_model_name="paraphrase-multilingual-mpnet-base-v2",
-        folder_path="./data/crawled_data",
+        folder_path="/data/crawled_data",
         vectordb_type="chroma",  # vectordb_type 파라미터 추가
-        max_tokens=1024,
-        openai_model_name="gpt-3.5-turbo-instruct"  # OpenAI 모델 이름 추가
+        max_tokens=512,
+        openai_model_name="gpt-4o-mini"  # OpenAI 모델 이름 추가
     ):
         """class 초기화
 
         Args:
             embeddings_model_name (str, optional): 임베딩 모델 이름. Defaults to "paraphrase-multilingual-mpnet-base-v2".
-            folder_path (str, optional): RAG의 문서가 될 데이터. Defaults to "./data/crawled_data".
+            folder_path (str, optional): RAG의 문서가 될 데이터. Defaults to "/data/crawled_data".
             vectordb_type (str, optional): 사용할 VectorDB 유형 ("chroma" 또는 "faiss"). Defaults to "chroma".
         """
+
         self.embeddings = SentenceTransformerEmbeddings(
             model_name=embeddings_model_name
         )
 
         # 저장 경로는 DB 유형과 동일하게 설정
         self.persist_directory = os.path.join(CURRENT_PATH, vectordb_type)
-        self.folder_path = os.path.join(CURRENT_PATH, folder_path)
+        # self.folder_path = os.path.join(CURRENT_PATH, folder_path)
+        self.folder_path = "/app/rag_func/data/crawled_data"
         self.vectordb_type = vectordb_type.lower()  # 소문자로 통일
         self._make_vectordb()
-        self.chat_model = ChatOpenAI(model_name="gpt-4o")
-        self.llm = OpenAI(model_name=openai_model_name, max_tokens=max_tokens)  # OpenAI 모델 지정
+        self.chat_model = ChatOpenAI(model_name=openai_model_name, max_tokens=max_tokens)
         self.memory = ConversationBufferMemory(memory_key="chat_history", k=5)  # 대화 기록 메모리 초기화
         self.prompt = PromptTemplate(
             input_variables=["chat_history", "input", "context"], template=SYSTEM_PROMPT
@@ -102,7 +100,6 @@ class RAG_Chatbot:
         self.normal_prompt = PromptTemplate(
             input_variables=["chat_history", "input", "context"], template=NORMAL_SYSTEM_PROMPT
         )
-        
 
     @staticmethod
     def _update_prompt(prompt: str) -> str:
@@ -134,7 +131,7 @@ class RAG_Chatbot:
                 print(f"ChromaDB가 이미 존재합니다: {self.persist_directory}")
                 self.vectordb = Chroma(
                     persist_directory=self.persist_directory,
-                    embedding_function=self.embeddings,
+                    embedding_function=self.embeddings
                 )  # 존재하는 DB를 로드하고 반환
                 return
 
@@ -149,7 +146,7 @@ class RAG_Chatbot:
         nltk.download("averaged_perceptron_tagger_eng", download_dir="/nltk_data")
 
         # 텍스트 파일 로드
-        loader = DirectoryLoader(self.folder_path, glob="./*.txt")
+        loader = DirectoryLoader(self.folder_path, glob="./www.phwr.org_journal_view.html_doi=10.56786_2FPHWR.2022.15.47.2853.txt")
         documents = loader.load()
 
         # 텍스트 분할
@@ -159,7 +156,7 @@ class RAG_Chatbot:
         texts = text_splitter.split_documents(documents)
 
         self.vectordb = self._add_to_vectordb(
-            texts, self.embeddings, persist_directory=self.persist_directory
+            texts
         )
 
     def _add_to_vectordb(
@@ -170,8 +167,6 @@ class RAG_Chatbot:
 
         Args:
             texts (list): langchain Document 객체의 리스트.
-            embeddings (SentenceTransformerEmbeddings): 사용할 임베딩 모델.
-            persist_directory (str): VectorDB 데이터를 저장할 경로.
 
         Returns:
             Chroma | FAISS: VectorDB 인스턴스.
@@ -179,7 +174,9 @@ class RAG_Chatbot:
 
         if self.vectordb_type == "chroma":
             db = Chroma.from_documents(
-                texts, self.embeddings, persist_directory=self.persist_directory
+                texts,
+                self.embeddings,
+                persist_directory=self.persist_directory,
             )  # 초기 ChromaDB 생성
             db.persist()  # 데이터를 디스크에 저장
             return db

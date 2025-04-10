@@ -105,6 +105,7 @@ const HomePage: React.FC = () => {
   const [contractData, setContractData] = useState<any[]>([]);
   const [financialProductsData, setFinancialProductsData] = useState<any>(undefined);
   const [error, setError] = useState<string | null>(null);
+  const [hasData, setHasData] = useState<boolean>(false);
 
   const fetchData = async () => {
     if (!selectedGroupId) {
@@ -157,20 +158,21 @@ const HomePage: React.FC = () => {
 
       // 일자리 정보 변환 (jobs가 없는 경우 빈 배열 처리)
       const transformedJobs = (response.jobs || []).map(job => ({
-        user_id: job.employerId,
-        user_name: "사용자",
-        start_day: job.startAt.split('T')[0],
-        end_day: job.endAt.split('T')[0],
+        id: job.id,
+        groupId: job.groupId,
+        employerId: job.employerId,
+        employeeId: job.employeeId,
         title: job.title,
         content: job.content,
         salary: job.salary,
-        is_permanent: job.isPermanent === 1,
-        reward_text: job.rewardText,
+        isPermanent: job.isPermanent === 1,
+        rewardText: job.rewardText,
         status: job.status,
-        contract_id: job.id,
-        contractor_name: "계약자"
+        startAt: job.startAt,
+        endAt: job.endAt
       }));
       setContractData(transformedJobs);
+      setHasData(transformedJobs.length > 0);
 
       // 금융 상품 정보 변환 (deposits나 savings가 없는 경우 빈 배열 처리)
       const transformedProducts = [

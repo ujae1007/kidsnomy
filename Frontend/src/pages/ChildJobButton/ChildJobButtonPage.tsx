@@ -184,11 +184,6 @@ const ChildJobListPage: React.FC = () => {
     setFilteredJobs(filtered);
   }, [searchTerm, availableJobs, contractedJobs, selectedStatus, sortOrder]);
 
-  const handleMoreClick = (jobId: number) => {
-    // 메뉴 처리 로직
-    console.log('More clicked for job:', jobId);
-  };
-
   return (
     <div className={styles.container}>
       {/* 검색 및 필터 영역 */}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './AccountDetailPage.module.css';
 import AccountInfo from '../../components/AccountDetail/AccountInfo';
 import TransactionHistory from '../../components/AccountDetail/TransactionHistory';
@@ -29,6 +30,7 @@ interface AccountDetail {
 }
 
 const AccountDetailPage: React.FC = () => {
+  const navigate = useNavigate();
   const accessToken = useSelector((state: RootState) => state.auth.accessToken);
   const [accountData, setAccountData] = useState<AccountDetail>({
     name: '-',
@@ -89,7 +91,10 @@ const AccountDetailPage: React.FC = () => {
           accountNumber={accountData?.accountNo || '-'}
           balance={accountData?.balance || 0}
         />
-        <button className={styles.button}>
+        <button 
+          className={styles.button}
+          onClick={() => navigate('/financereport')}
+        >
           금융 리포트 보러가기
         </button>
         <TransactionHistory/>

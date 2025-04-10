@@ -50,7 +50,6 @@ const ParentBankProductsPage: React.FC = () => {
       console.log('Fetching products for group:', selectedGroupId);
       const response = await apiCall<ApiResponse>(`finance/parent/check/${selectedGroupId}`, {
         method: 'GET',
-        auth: true,
         headers: {
           'Authorization': `Bearer ${accessToken}`
         }
@@ -59,7 +58,13 @@ const ParentBankProductsPage: React.FC = () => {
       console.log('API Response:', response);
       
       if (response?.data) {
-        setProducts(response.data);
+        const validProducts = response.data.filter(product => 
+          product && 
+          typeof product.title === 'string' && 
+          typeof product.productType === 'number'
+        );
+        console.log('Valid products:', validProducts);
+        setProducts(validProducts);
       } else {
         setError('No data received from server');
       }
@@ -119,7 +124,7 @@ const ParentBankProductsPage: React.FC = () => {
       
       return matchesSearch && matchesFilter;
     })
-    .sort((a, b) => b.id - a.id);  // Always sort by latest first
+    .sort((a, b) => b.id - a.id);
 
   if (loading) {
     return <div className={styles.container}>Loading...</div>;
@@ -163,6 +168,7 @@ const ParentBankProductsPage: React.FC = () => {
             status={product.productType === 0 ? '예금' : '적금'}
             title={product.title}
             salary={product.productType === 0 ? product.dueDate * 10000 : (product.payDate || 0) * 1000}
+            onClick={() => handleProductClick(product)}
             onMoreClick={() => handleProductClick(product)}
           >
             <div className={styles.productInfo}>

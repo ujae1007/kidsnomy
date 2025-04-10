@@ -87,10 +87,6 @@ const AccountPage: React.FC = () => {
     }
   };
 
-  const handleAccountInfo = () => {
-    navigate('/myaccount');
-  };
-
   const handleResultConfirm = () => {
     if (isSuccess) {
       navigate('/home');
@@ -148,14 +144,6 @@ const AccountPage: React.FC = () => {
 
         <button type="submit" className={styles.submitButton}>
           계좌 등록하기
-        </button>
-
-        <button 
-          type="button" 
-          className={styles.infoButton}
-          onClick={handleAccountInfo}
-        >
-          나의 계좌 정보
         </button>
       </form>
     </div>

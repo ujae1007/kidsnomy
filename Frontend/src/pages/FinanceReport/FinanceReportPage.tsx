@@ -1,8 +1,37 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from './FinanceReportPage.module.css';
 import WeeklyExpenseChart from '@/components/financereport/WeeklyExpenseChart';
 import ExpenseComparison from '@/components/financereport/ExpenseComparison';
 import ExpenseBreakdown from '@/components/financereport/ExpenseBreakdown';
+import { RootState } from '@/store';
+import { apiCall } from '@/utils/api';
+import { reissueToken } from '@/store/slices/authSlice';
+
+interface FinanceApiResponse {
+  weekExpense: {
+    week1: number;
+    week2: number;
+    week3: number;
+    week4: number;
+    week5: number;
+  };
+  totalExpense: {
+    교육: number;
+    의료: number;
+    취미: number;
+    식비: number;
+    "카페/간식": number;
+    쇼핑: number;
+    문구: number;
+    미용: number;
+    문화: number;
+    도서: number;
+    생활: number;
+    교통: number;
+  };
+  averageWithdrawalRate: number;
+}
 
 interface FinanceReportData {
   weekExpense: {
@@ -11,6 +40,7 @@ interface FinanceReportData {
     week3: number;
     week4: number;
     week5: number;
+    weeklyChange: number;
   };
   userAverageExpense: {
     myExpense: number;
@@ -29,47 +59,109 @@ interface FinanceReportData {
     도서: number;
     생활: number;
     교통: number;
+    total: number;
   };
 }
 
-const FinanceReportPage: React.FC = () => {
+export default function FinanceReportPage() {
   const [reportData, setReportData] = useState<FinanceReportData | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const accessToken = useSelector((state: RootState) => state.auth.accessToken);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    // TODO: API 연동 시 실제 데이터로 교체
-    const dummyData: FinanceReportData = {
-      weekExpense: {
-        week1: 15000,
-        week2: 18000,
-        week3: 16000,
-        week4: 15000,
-        week5: 20000
-      },
-      userAverageExpense: {
-        myExpense: 40000,
-        averageExpense: 30000
-      },
-      totalExpense: {
-        교육: 50000,
-        의료: 10000,
-        취미: 30000,
-        식비: 100000,
-        "카페/간식": 25000,
-        쇼핑: 45000,
-        문구: 15000,
-        미용: 20000,
-        문화: 35000,
-        도서: 25000,
-        생활: 40000,
-        교통: 20000
+    const fetchReportData = async () => {
+      if (!accessToken) {
+        setError('로그인이 필요합니다.');
+        setIsLoading(false);
+        return;
+      }
+
+      try {
+        setIsLoading(true);
+        console.log('=== API 요청 시작 ===');
+        
+        const response = await apiCall<FinanceApiResponse>('report/finance', {
+          method: 'POST',
+          auth: true,
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
+        });
+
+        console.log('=== API 응답 전체 데이터 ===');
+        console.log(JSON.stringify(response, null, 2));
+
+        if (!response) {
+          throw new Error('응답이 비어있습니다');
+        }
+
+        if (!response.weekExpense || !response.totalExpense) {
+          throw new Error('응답 데이터 형식이 올바르지 않습니다');
+        }
+
+        // 데이터 변환
+        const transformedData: FinanceReportData = {
+          weekExpense: {
+            ...response.weekExpense,
+            weeklyChange: response.weekExpense.week4 !== 0 
+              ? ((response.weekExpense.week5 - response.weekExpense.week4) / response.weekExpense.week4) * 100 
+              : 0
+          },
+          userAverageExpense: {
+            myExpense: 100 - response.averageWithdrawalRate,
+            averageExpense: response.averageWithdrawalRate
+          },
+          totalExpense: {
+            ...response.totalExpense,
+            total: Object.values(response.totalExpense).reduce((sum, value) => sum + value, 0)
+          }
+        };
+
+        console.log('=== 변환된 데이터 ===');
+        console.log(JSON.stringify(transformedData, null, 2));
+
+        setReportData(transformedData);
+        setError(null);
+
+      } catch (err) {
+        console.error('=== API 호출 에러 ===');
+        console.error('에러 객체:', err);
+        
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError('금융 리포트 데이터를 불러오는데 실패했습니다.');
+        }
+      } finally {
+        setIsLoading(false);
       }
     };
 
-    setReportData(dummyData);
-  }, []);
+    fetchReportData();
+  }, [accessToken]);
+
+  if (isLoading) {
+    return (
+      <div className={styles.loadingContainer}>
+        <div className={styles.loadingSpinner}></div>
+        <p className={styles.loadingText}>금융 리포트를 불러오는 중입니다...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={styles.errorContainer}>
+        <p className={styles.errorText}>{error}</p>
+      </div>
+    );
+  }
 
   if (!reportData) {
-    return <div>Loading...</div>;
+    return <div className={styles.loading}>Loading...</div>;
   }
 
   return (
@@ -82,6 +174,4 @@ const FinanceReportPage: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default FinanceReportPage;
+}

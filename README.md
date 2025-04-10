@@ -1,6 +1,6 @@
 # :dollar: Kidsnomy - 체험형 금융 교육 플랫폼
 
-<img src="./Frontend\src\assets\kidsnomy_logo.png" width=300 height=auto>
+<img src="./Frontend/src/assets/kidsnomy_logo.png" width=300 height=auto>
 
 ## 목차
 [1. 서비스 소개](#1-서비스-소개)

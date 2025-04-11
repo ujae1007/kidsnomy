@@ -35,7 +35,7 @@
 | | | :black_square_button: Kotlin | :white_check_mark: FastAPI | |
 
 ## 프로젝트 기간
-> ✅ 25.02.13 ~ 25.04.11 (총 7주)
+> ✅ 25.02.24 ~ 25.04.11 (총 7주)
 
 ## 1. 서비스 소개
 ```

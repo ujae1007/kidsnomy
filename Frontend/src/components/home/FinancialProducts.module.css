@@ -10,14 +10,14 @@
 .carousel {
   display: flex;
   width: 100%;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;  /* Firefox */
   -ms-overflow-style: none;  /* IE and Edge */
-  gap: 1.5rem;  /* 카드 사이 간격 */
+  gap: 2rem;  /* 카드 사이 간격 증가 */
 }
 
 .carousel::-webkit-scrollbar {
@@ -25,102 +25,245 @@
 }
 
 .productCard {
-  flex: 0 0 calc(100% - 5rem);
+  flex: 0 0 calc(100% - 6rem);
   scroll-snap-align: center;
-  background: #FFE5E5;
-  border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: linear-gradient(135deg, #fcf9f0 0%, #f5efd8 100%);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   margin: 0 3rem;
+  border: 1px solid #ddd;
+  position: relative;
+}
+
+.productCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: #E8A5A5;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.productCard::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 15px;
+  height: 5px;
+  background: repeating-linear-gradient(90deg, #ddd, #ddd 10px, transparent 10px, transparent 20px);
 }
 
 .productCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.interestRate {
-  font-size: 1rem;
-  color: #2D3436;
-  margin-bottom: 0.5rem;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .balance {
   font-size: 2rem;
   font-weight: 700;
-  color: #2D3436;
-  margin: 1rem 0;
+  color: #333;
+  margin: 1.5rem 0 1rem;
+  font-family: 'Courier New', monospace;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.8rem;
 }
 
 .title {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #2D3436;
-  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #444;
+  margin: 1.5rem 0 0.5rem;
+  position: relative;
+}
+
+.title::before {
+  content: '통장명:';
+  font-size: 0.8rem;
+  color: #888;
+  position: absolute;
+  top: -18px;
+  left: 0;
 }
 
 .content {
   font-size: 0.9rem;
-  color: #636e72;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.8rem;
+  border-radius: 4px;
+  border-left: 3px solid #E8A5A5;
 }
 
 .additionalInfo {
-  font-size: 0.85rem;
-  color: #636e72;
-  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Courier New', monospace;
 }
 
-.infoGrid {
-  display: grid;
-  gap: 0.75rem;
+.bankLogo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #E8A5A5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.accountNumberRow {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  font-family: 'Courier New', monospace;
+}
+
+.accountNumber {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #555;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  border: 1px dashed #ccc;
+  font-family: 'Courier New', monospace;
+}
+
+.stampArea {
+  position: absolute;
+  bottom: 40px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  opacity: 0.2;
+  transform: rotate(-15deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #E8A5A5;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  color: #E8A5A5;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.emptyCard {
+  background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%) !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px dashed #E8A5A5 !important;
+}
+
+.emptyCard::before, .emptyCard::after {
+  display: none;
+}
+
+.emptyIcon {
+  margin: 1rem 0 2rem;
+  animation: pulse 2s infinite;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.emptyCard .title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #E8A5A5;
+  margin-bottom: 1rem;
+}
+
+.emptyCard .title::before {
+  display: none;
+}
+
+.emptyCard .content {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 2rem;
+  background: transparent;
+  border-left: none;
+  padding: 0;
+}
+
+.emptyAction {
+  background-color: #E8A5A5;
+  color: white;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(232, 165, 165, 0.3);
   margin-top: 1rem;
 }
 
-.infoItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-}
-
-.label {
-  color: #636e72;
-  font-size: 0.9rem;
-}
-
-.value {
-  font-weight: 500;
-  color: #2D3436;
-}
-
-.highlight {
-  color: #FF9EAA;
+.emptyAction:hover {
+  background-color: #d99393;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(232, 165, 165, 0.4);
 }
 
 .dots {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: #dfe6e9;
-  transition: background-color 0.2s ease;
+  background: #e0e0e0;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .dot.active {
-  background: #FF9EAA;
+  background: #E8A5A5;
+  transform: scale(1.2);
+  box-shadow: 0 0 6px rgba(232, 165, 165, 0.5);
 } 

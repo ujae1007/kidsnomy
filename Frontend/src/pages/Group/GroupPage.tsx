@@ -185,7 +185,7 @@ const GroupPage: React.FC = () => {
           onClick={() => navigate(-1)}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
-            <path fillRule="evenodd" clipRule="evenodd" d="M18 8C18 8.41421 17.6642 8.75 17.25 8.75H2.56031L8.03063 14.2194C8.32368 14.5124 8.32368 14.9876 8.03063 15.2806C7.73757 15.5737 7.26243 15.5737 6.96937 15.2806L0.219375 8.53063C0.0785422 8.38995 -0.000590086 8.19906 -0.000590086 8C-0.000590086 7.80094 0.0785422 7.61005 0.219375 7.46937L6.96937 0.719375C7.26243 0.426319 7.73757 0.426319 8.03063 0.719375C8.32368 1.01243 8.32368 1.48757 8.03063 1.78062L2.56031 7.25H17.25C17.6642 7.25 18 7.58579 18 8Z" fill="#1A0D0D"/>
+            <path fillRule="evenodd" clipRule="evenodd" d="M18 8C18 8.41421 17.6642 8.75 17.25 8.75H2.56031L8.03063 14.2194C8.32368 14.5124 8.32368 14.9876 8.03063 15.2806C7.73757 15.5737 7.26243 15.5737 6.96937 15.2806L0.219375 8.53063C0.0785422 8.38995 -0.000590086 8.19906 -0.000590086 8C-0.000590086 7.80094 0.0785422 7.61005 0.219375 7.46937L6.96937 0.719375C7.26243 0.426319 7.73757 0.426319 8.03063 0.719375C8.32368 1.01243 8.32368 1.48757 8.03063 1.78062L2.56031 7.25H17.25C17.6642 7.25 18 7.58579 18 8Z" fill="#E8A5A5"/>
           </svg>
         </button>
         <h1 className={styles.title}>그룹 관리</h1>
@@ -194,7 +194,7 @@ const GroupPage: React.FC = () => {
             className={styles.createButton}
             onClick={handleCreateGroup}
           >
-            그룹생성
+            그룹 생성
           </button>
         )}
       </div>
@@ -216,7 +216,7 @@ const GroupPage: React.FC = () => {
             className={styles.searchButton}
             onClick={handleSearch}
           >
-            추가
+            그룹 참여하기
           </button>
         </div>
       </div>
@@ -242,13 +242,13 @@ const GroupPage: React.FC = () => {
                     className={styles.selectButton}
                     onClick={() => handleSelectGroup(group.groupId)}
                   >
-                    {selectedGroupId === group.groupId ? '선택됨' : '선택'}
+                    {selectedGroupId === group.groupId ? '선택됨' : '선택하기'}
                   </button>
                   <button
                     className={styles.deleteButton}
                     onClick={() => handleDeleteGroup(group.groupId.toString())}
                   >
-                    삭제
+                    나가기
                   </button>
                 </div>
               </div>

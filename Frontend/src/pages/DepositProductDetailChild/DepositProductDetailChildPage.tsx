@@ -25,7 +25,7 @@ const DepositProductDetailChildPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
 
-  console.log('Product ID:', id);
+  console.log('자녀용 예금 상세 페이지 - Product ID:', id);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -49,6 +49,10 @@ const DepositProductDetailChildPage: React.FC = () => {
     fetchProduct();
   }, [id, accessToken]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleContract = () => {
     console.log('Contract button clicked, opening modal');
     setShowModal(true);
@@ -70,6 +74,10 @@ const DepositProductDetailChildPage: React.FC = () => {
     // TODO: 원금과 이자받기 API 호출
     console.log('원금과 이자받기');
   };
+  
+  const handleGoBack = () => {
+    navigate(-1);
+  };
 
   const renderButton = () => {
     if (!product) return null;
@@ -88,11 +96,23 @@ const DepositProductDetailChildPage: React.FC = () => {
   };
 
   if (isLoading) {
-    return <div>로딩 중...</div>;
+    return (
+      <div className={styles.loadingContainer}>
+        <div className={styles.loadingSpinner}></div>
+        <p>로딩 중...</p>
+      </div>
+    );
   }
 
   if (!product) {
-    return <div>상품을 찾을 수 없습니다.</div>;
+    return (
+      <div className={styles.errorContainer}>
+        <p>상품을 찾을 수 없습니다.</p>
+        <button className={styles.backButton} onClick={handleGoBack}>
+          돌아가기
+        </button>
+      </div>
+    );
   }
 
   return (
@@ -112,7 +132,9 @@ const DepositProductDetailChildPage: React.FC = () => {
 
         <div className={styles.formGroup}>
           <label>이자</label>
-          <div className={styles.value}>{product.interestRate}%</div>
+          <div className={styles.value}>
+            <span className={styles.highlight}>{product.interestRate}%</span>
+          </div>
         </div>
 
         <div className={styles.formGroup}>

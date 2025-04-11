@@ -1,6 +1,5 @@
 FROM mysql:latest
 
-
 # 스키마 파일 복사
 COPY kidsnomy.sql /docker-entrypoint-initdb.d/
 COPY kidsnomy_all_dummy_data.sql /docker-entrypoint-initdb.d/

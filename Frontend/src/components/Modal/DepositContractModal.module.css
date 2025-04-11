@@ -91,4 +91,14 @@
 
 .contractButton:hover {
   background-color: #D99393;
+}
+
+.errorMessage {
+  color: #ff0000;
+  background-color: rgba(255, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  text-align: center;
 } 

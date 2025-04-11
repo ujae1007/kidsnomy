@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './AccountInfo.module.css';
 import mastercardLogo from '../../assets/mastercard_logo.png';
@@ -32,16 +32,43 @@ const dummyData = {
   }
 };
 
+const formatAccountNumber = (accountNo: string) => {
+  // 계좌번호를 그룹으로 나눠서 표시 (예: 1234-5678-9012)
+  if (!accountNo) return '';
+  
+  // 4자리씩 나누기
+  const parts = [];
+  for (let i = 0; i < accountNo.length; i += 4) {
+    parts.push(accountNo.slice(i, i + 4));
+  }
+  return parts.join(' ');
+};
+
+const formatExpiryDate = (date: string) => {
+  const expiryDate = new Date(date);
+  const month = String(expiryDate.getMonth() + 1).padStart(2, '0');
+  const year = String(expiryDate.getFullYear()).slice(2);
+  return `${month}/${year}`;
+};
+
 const AccountInfo: React.FC<AccountInfoProps> = ({ data = dummyData }) => {
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 480);
+
+  // 화면 크기 변경 감지
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 480);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleCardClick = () => {
     navigate('/account/detail');
-  };
-
-  const handleSendMoney = (e: React.MouseEvent) => {
-    e.stopPropagation();  // 이벤트 전파 중지
-    navigate('/account/send');
   };
 
   if (!data) {
@@ -63,33 +90,52 @@ const AccountInfo: React.FC<AccountInfoProps> = ({ data = dummyData }) => {
     );
   }
 
+  // 계좌번호 전체를 표시 (모바일에서도 전체 표시)
+  const displayAccountNumber = formatAccountNumber(data.REC.accountNo);
+
   return (
     <div className={styles.container}>
-      <div className={styles.card} onClick={handleCardClick} style={{ cursor: 'pointer' }}>
-        <div className={styles.chipIcon}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="27" viewBox="0 0 35 27" fill="none">
-            <path d="M17.0287 16.3418C17.0287 18.4411 16.9415 20.1279 14.6797 21.4341" stroke="currentColor"/>
-            <path d="M17.1161 10.0098C17.0462 6.50309 16.9625 4.64219 18.7905 4.12024" stroke="currentColor"/>
-            <path d="M0.5 4.55468C0.5 2.62169 2.067 1.05469 4 1.05469H30.0574C31.9904 1.05469 33.5574 2.62169 33.5574 4.55469V22.0165C33.5574 23.9495 31.9904 25.5165 30.0574 25.5165H4C2.067 25.5165 0.5 23.9494 0.5 22.0165V4.55468Z" stroke="currentColor"/>
-            <path d="M4.02295 5.60938C4.02295 4.78095 4.69452 4.10938 5.52295 4.10938H28.534C29.3624 4.10938 30.034 4.78095 30.034 5.60938V19.9418C30.034 20.7703 29.3624 21.4418 28.534 21.4418H5.52295C4.69452 21.4418 4.02295 20.7703 4.02295 19.9418V5.60938Z" stroke="currentColor"/>
-            <path d="M4.02295 8.18359H12.4181V17.3683H4.02295V8.18359Z" stroke="currentColor"/>
-            <path d="M4.02295 13.2773H12.4181V17.3697H4.02295V13.2773Z" stroke="currentColor"/>
-            <path d="M11.7441 9.7207H22.3137M22.3137 15.8315H11.7441" stroke="currentColor"/>
-            <path d="M21.6392 13.2773H30.0343V17.3697H21.6392V13.2773Z" stroke="currentColor"/>
-            <path d="M21.6392 8.18359H30.0343V17.3683H21.6392V8.18359Z" stroke="currentColor"/>
-          </svg>
+      <div className={styles.card} onClick={handleCardClick}>
+        <div className={styles.cardBackground}></div>
+        
+        <div className={styles.bankName}>
+          <span>KIDSNOMY</span>
+          <span className={styles.bankType}>DEBIT</span>
         </div>
-        <div className={styles.cardTitle}>{data.user_name}의 통장</div>
+        
+        <div className={styles.chipContainer}>
+          <div className={styles.chipIcon}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 40 30" fill="none">
+              <path d="M3 5C3 3.34315 4.34315 2 6 2H34C35.6569 2 37 3.34315 37 5V25C37 26.6569 35.6569 28 34 28H6C4.34315 28 3 26.6569 3 25V5Z" fill="#F8F8F8" stroke="#E8A5A5" strokeWidth="1.5"/>
+              <path d="M10 9H8V21H10V9Z" fill="#E8A5A5"/>
+              <path d="M13 9H11V21H13V9Z" fill="#E8A5A5"/>
+              <path d="M18 9H16V21H18V9Z" fill="#E8A5A5"/>
+              <path d="M21 9H19V21H21V9Z" fill="#E8A5A5"/>
+              <path d="M26 9H24V21H26V9Z" fill="#E8A5A5"/>
+              <path d="M29 9H27V21H29V9Z" fill="#E8A5A5"/>
+              <path d="M32 9H30V21H32V9Z" fill="#E8A5A5"/>
+            </svg>
+          </div>
+        </div>
+        
+        <div className={styles.cardNumber}>
+          {displayAccountNumber}
+        </div>
+        
+        <div className={styles.cardholderInfo}>
+          <div className={styles.expiryDate}>
+            <span className={styles.expiryLabel}>VALID THRU</span>
+            <span>{formatExpiryDate(data.REC.accountExpiryDate)}</span>
+          </div>
+        </div>
+        
         <div className={styles.balance}>
           {data.REC.accountBalance.toLocaleString()} {data.REC.currency}
         </div>
-        <div className={styles.accountNumber}>
-          {data.REC.accountNo}
-        </div>
-        <div className={styles.mastercard}>
+        
+        <div className={styles.cardBrand}>
           <img src={mastercardLogo} alt="Mastercard" />
         </div>
-        <button className={styles.sendButton} onClick={handleSendMoney}>송금하기</button>
       </div>
     </div>
   );

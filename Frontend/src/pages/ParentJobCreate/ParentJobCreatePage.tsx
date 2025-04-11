@@ -6,6 +6,7 @@ import JobInputField from '@/components/jobs/JobInputField';
 import ChatbotButton from '@/components/jobs/ChatbotButton';
 import styles from './ParentJobCreatePage.module.css';
 import { apiCall } from '@/utils/api';
+import modalStyles from '@/components/Modal/JobCompleteConfirmModal.module.css';
 
 interface JobCreateData {
   groupId: number;
@@ -18,10 +19,62 @@ interface JobCreateData {
   endAt: string;
 }
 
+// 모달 컴포넌트 내장 (일자리 생성용 텍스트로 수정)
+interface ConfirmModalProps {
+  isOpen: boolean;
+  onConfirm: () => void;
+  onCancel: () => void;
+}
+
+const JobCreateConfirmModal: React.FC<ConfirmModalProps> = ({
+  isOpen,
+  onConfirm,
+  onCancel,
+}) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className={modalStyles.modalOverlay}>
+      <div className={modalStyles.modalContent}>
+        <h2 className={modalStyles.title}>일자리를 생성하시겠습니까?</h2>
+        
+        <div className={modalStyles.iconContainer}>
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#E8A5A5" strokeWidth="2"/>
+            <path d="M7 12L10 15L17 8" stroke="#E8A5A5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
+        
+        <p className={modalStyles.description}>
+          생성 후에는 자녀들이 해당 일자리에 지원할 수 있습니다.
+        </p>
+
+        <div className={modalStyles.buttonContainer}>
+          <button 
+            className={`${modalStyles.button} ${modalStyles.confirmButton}`}
+            onClick={onConfirm}
+          >
+            네
+          </button>
+          <button 
+            className={`${modalStyles.button} ${modalStyles.cancelButton}`}
+            onClick={onCancel}
+          >
+            아니요
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const ParentJobCreatePage: React.FC = () => {
   const navigate = useNavigate();
   const { accessToken, isAuthenticated, isParent } = useSelector((state: RootState) => state.auth);
   const selectedGroupId = useSelector((state: RootState) => state.group.selectedGroupId);
+  
+  // 모달 상태 추가
+  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
   
   useEffect(() => {
     if (!selectedGroupId) {
@@ -86,8 +139,21 @@ const ParentJobCreatePage: React.FC = () => {
     }
   };
   
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // 폼 유효성 검사
+    if (!formData.title || !formData.content || !formData.startAt || !formData.endAt) {
+      setError('모든 필수 항목을 입력해주세요.');
+      return;
+    }
+    
+    // 모달 표시
+    setIsConfirmModalOpen(true);
+  };
+  
+  // 모달에서 확인 버튼 클릭 시 실제 일자리 생성 처리
+  const handleConfirmCreate = async () => {
     setLoading(true);
     setError(null);
     
@@ -104,6 +170,7 @@ const ParentJobCreatePage: React.FC = () => {
       });
       
       console.log('✅ 일자리 생성 성공');
+      alert('일자리가 성공적으로 생성되었습니다.');
       navigate('/parent/jobs');
     } catch (err) {
       console.error('❌ 일자리 생성 중 에러 발생:', err);
@@ -116,7 +183,13 @@ const ParentJobCreatePage: React.FC = () => {
       }
     } finally {
       setLoading(false);
+      setIsConfirmModalOpen(false);
     }
+  };
+  
+  // 모달에서 취소 버튼 클릭 시 처리
+  const handleCancelCreate = () => {
+    setIsConfirmModalOpen(false);
   };
   
   return (
@@ -189,7 +262,7 @@ const ParentJobCreatePage: React.FC = () => {
                 isPermanent: e.target.checked
               }))}
             />
-            상시 일자리
+            루틴 일자리
           </label>
         </div>
         
@@ -201,8 +274,13 @@ const ParentJobCreatePage: React.FC = () => {
           {loading ? '생성 중...' : '만들기'}
         </button>
       </form>
-
-      <ChatbotButton />
+      
+      {/* 일자리 생성 확인 모달 */}
+      <JobCreateConfirmModal
+        isOpen={isConfirmModalOpen}
+        onConfirm={handleConfirmCreate}
+        onCancel={handleCancelCreate}
+      />
     </div>
   );
 };

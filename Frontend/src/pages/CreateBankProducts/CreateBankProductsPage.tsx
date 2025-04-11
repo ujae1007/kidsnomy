@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/store';
 import { apiCall } from '@/utils/api';
 import styles from './CreateBankProductsPage.module.css';
+import JobCompleteConfirmSuccessModal from '@/components/Modal/JobCompleteConfirmSuccessModal';
 
 interface ProductFormData {
   type: 'deposit' | 'saving';
@@ -11,8 +12,8 @@ interface ProductFormData {
   description: string;
   interestRate: number;
   period: number;
-  rateDate?: number;
-  payDate?: number;
+  rateDate: number;
+  payDate: number;
 }
 
 interface DepositProductData {
@@ -37,6 +38,8 @@ const CreateBankProductsPage: React.FC = () => {
   const navigate = useNavigate();
   const selectedGroupId = useSelector((state: RootState) => state.group.selectedGroupId);
   const [loading, setLoading] = useState(false);
+  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
+  const [productToCreate, setProductToCreate] = useState<DepositProductData | SavingProductData | null>(null);
   
   useEffect(() => {
     if (!selectedGroupId) {
@@ -51,12 +54,29 @@ const CreateBankProductsPage: React.FC = () => {
     description: '',
     interestRate: 0,
     period: 0,
-    rateDate: undefined,
-    payDate: undefined
+    rateDate: 0,
+    payDate: 0
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
+    
+    // 숫자 입력 필드인 경우 특별 처리
+    if (['interestRate', 'period', 'rateDate', 'payDate'].includes(name)) {
+      // 사용자가 새 숫자를 입력할 때 초기값 0을 대체
+      const currentValue = formData[name as keyof ProductFormData];
+      
+      // 현재 값이 0이고, 새로운 입력값이 있으면 0을 대체
+      if (currentValue === 0 && value !== '') {
+        setFormData(prev => ({
+          ...prev,
+          [name]: value.startsWith('0') ? value.slice(1) : value
+        }));
+        return;
+      }
+    }
+    
+    // 일반적인 입력 처리
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -72,77 +92,93 @@ const CreateBankProductsPage: React.FC = () => {
       return;
     }
 
+    // 값 유효성 검증
+    if (Number(formData.period) < 1) {
+      alert('만기일은 1주 이상이어야 합니다.');
+      return;
+    }
+
+    // 적금 유효성 검증
+    if (formData.type === 'saving') {
+      if (Number(formData.rateDate) < 1 || Number(formData.rateDate) > 31) {
+        alert('이자 지급일은 1일부터 31일 사이여야 합니다.');
+        return;
+      }
+      
+      if (Number(formData.payDate) < 1 || Number(formData.payDate) > 31) {
+        alert('적금 납입일은 1일부터 31일 사이여야 합니다.');
+        return;
+      }
+    }
+
+    // 상품 데이터 준비
+    if (formData.type === 'saving') {
+      const savingData: SavingProductData = {
+        groupId: selectedGroupId,
+        title: formData.name,
+        content: formData.description,
+        interestRate: Number(formData.interestRate),
+        dueDate: Number(formData.period),
+        rateDate: Number(formData.rateDate),
+        payDate: Number(formData.payDate)
+      };
+      
+      console.log('📝 적금 상품 데이터 준비:', savingData);
+      setProductToCreate(savingData);
+    } else {
+      const depositData: DepositProductData = {
+        groupId: selectedGroupId,
+        title: formData.name,
+        content: formData.description,
+        interestRate: Number(formData.interestRate),
+        dueDate: Number(formData.period)
+      };
+      
+      console.log('📝 예금 상품 데이터 준비:', depositData);
+      setProductToCreate(depositData);
+    }
+
+    // 확인 모달 열기
+    setIsConfirmModalOpen(true);
+  };
+
+  // 모달에서 확인 버튼 클릭 시 실제 상품 생성 처리
+  const handleConfirmCreate = async () => {
+    if (!productToCreate) return;
+    
     setLoading(true);
-
+    
     try {
-      if (formData.type === 'saving') {
-        if (!formData.rateDate || !formData.payDate) {
-          alert('이자 지급일과 적금 납입일을 입력해주세요.');
-          return;
-        }
-
-        console.log('📝 적금 상품 생성 시도:', {
-          groupId: selectedGroupId,
-          title: formData.name,
-          content: formData.description,
-          interestRate: formData.interestRate,
-          dueDate: formData.period,
-          rateDate: formData.rateDate,
-          payDate: formData.payDate
-        });
-
-        const savingData: SavingProductData = {
-          groupId: selectedGroupId,
-          title: formData.name,
-          content: formData.description,
-          interestRate: Number(formData.interestRate),
-          dueDate: Number(formData.period),
-          rateDate: Number(formData.rateDate),
-          payDate: Number(formData.payDate)
-        };
-
+      if ('rateDate' in productToCreate) {
+        // 적금 상품 생성
         await apiCall('finance/savings/create', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
           auth: true,
-          body: JSON.stringify(savingData)
+          body: JSON.stringify(productToCreate)
         });
 
         console.log('✅ 적금 상품 생성 성공');
         alert('적금 상품이 성공적으로 생성되었습니다.');
-        navigate('/bank/products');
       } else {
-        console.log('📝 예금 상품 생성 시도:', {
-          groupId: selectedGroupId,
-          title: formData.name,
-          content: formData.description,
-          interestRate: formData.interestRate,
-          dueDate: formData.period
-        });
-
-        const depositData: DepositProductData = {
-          groupId: selectedGroupId,
-          title: formData.name,
-          content: formData.description,
-          interestRate: Number(formData.interestRate),
-          dueDate: Number(formData.period)
-        };
-
+        // 예금 상품 생성
         await apiCall('finance/deposit/create', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
           auth: true,
-          body: JSON.stringify(depositData)
+          body: JSON.stringify(productToCreate)
         });
 
         console.log('✅ 예금 상품 생성 성공');
         alert('예금 상품이 성공적으로 생성되었습니다.');
-        navigate('/bank/products');
       }
+      
+      // 생성 후 상품 목록 페이지로 이동
+      navigate('/bank/products');
     } catch (error: any) {
       console.error('❌ 상품 생성 중 에러 발생:', error);
       
@@ -167,7 +203,14 @@ const CreateBankProductsPage: React.FC = () => {
       }
     } finally {
       setLoading(false);
+      setIsConfirmModalOpen(false);
     }
+  };
+
+  // 모달에서 취소 버튼 클릭 시 처리
+  const handleCancelCreate = () => {
+    setIsConfirmModalOpen(false);
+    setProductToCreate(null);
   };
 
   return (
@@ -239,6 +282,7 @@ const CreateBankProductsPage: React.FC = () => {
               onChange={handleInputChange}
               className={styles.input}
               placeholder="만기일을 입력해주세요"
+              min="1"
               required
             />
             <span className={styles.unit}>주</span>
@@ -249,11 +293,14 @@ const CreateBankProductsPage: React.FC = () => {
           <>
             <div className={styles.formGroup}>
               <label>이자 지급일</label>
+              <p className={styles.fieldDescription}>
+                매월 이자가 지급되는 날짜입니다. 1일부터 31일 사이로 설정하세요.
+              </p>
               <div className={styles.inputWithUnit}>
                 <input
                   type="number"
                   name="rateDate"
-                  value={formData.rateDate || ''}
+                  value={formData.rateDate}
                   onChange={handleInputChange}
                   className={styles.input}
                   placeholder="이자 지급일을 입력해주세요 (1-31)"
@@ -267,11 +314,14 @@ const CreateBankProductsPage: React.FC = () => {
 
             <div className={styles.formGroup}>
               <label>적금 납입일</label>
+              <p className={styles.fieldDescription}>
+                매월 적금을 납입해야 하는 날짜입니다. 1일부터 31일 사이로 설정하세요.
+              </p>
               <div className={styles.inputWithUnit}>
                 <input
                   type="number"
                   name="payDate"
-                  value={formData.payDate || ''}
+                  value={formData.payDate}
                   onChange={handleInputChange}
                   className={styles.input}
                   placeholder="적금 납입일을 입력해주세요 (1-31)"
@@ -293,6 +343,13 @@ const CreateBankProductsPage: React.FC = () => {
           {loading ? '생성 중...' : '만들기'}
         </button>
       </form>
+
+      {/* 상품 생성 확인 모달 */}
+      <JobCompleteConfirmSuccessModal
+        isOpen={isConfirmModalOpen}
+        onConfirm={handleConfirmCreate}
+        onCancel={handleCancelCreate}
+      />
     </div>
   );
 };

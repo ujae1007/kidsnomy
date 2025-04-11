@@ -3,16 +3,18 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 65px;
+  min-height: 65px;
   background-color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
   z-index: 1000;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  padding: 0 16px;
   overflow-x: hidden;
 }
 
@@ -27,9 +29,12 @@
   cursor: pointer;
   color: #2D3436;
   font-size: 0.75rem;
+  font-weight: 500;
   padding: 0.5rem;
   transition: all 0.2s ease;
   box-sizing: border-box;
+  width: 33.33%;
+  max-width: 100px;
   overflow-x: hidden;
   max-width: 100%;
   white-space: nowrap;
@@ -48,11 +53,14 @@
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: center;
+  display: block;
 }
 
 .navButton svg {
   width: 24px;
   height: 24px;
   max-width: 100%;
-  overflow-x: hidden;
+  flex-shrink: 0;
+  margin-bottom: 3px;
 } 

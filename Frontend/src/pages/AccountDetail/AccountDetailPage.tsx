@@ -87,7 +87,7 @@ const AccountDetailPage: React.FC = () => {
       />
       <div className={styles.content}>
         <AccountInfo
-          accountName={(accountData?.name || "이름 없음") + "-의 통장"}
+          accountName={(accountData?.name || "나") + "의 통장"}
           accountNumber={accountData?.accountNo || '-'}
           balance={accountData?.balance || 0}
         />

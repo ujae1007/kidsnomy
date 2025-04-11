@@ -12,8 +12,8 @@
   min-width: 700px;
   padding: 1rem;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(232, 165, 165, 0.15);
 }
 
 .scheduleGrid {
@@ -31,11 +31,13 @@
 }
 
 .dayHeader {
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
 .scheduleRow {
@@ -105,52 +107,80 @@
 
 .actionButton {
   width: 100%;
-  padding: 0.75rem;
-  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
   border: none;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
   text-align: left;
-  height: 60px;
+  height: auto;
+  min-height: 65px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 2px 0;
+  margin: 3px 0;
+  box-shadow: 0 2px 6px rgba(232, 165, 165, 0.15);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.actionButton::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  border-radius: 2px 0 0 2px;
 }
 
 .primaryButton {
-  background: rgba(255, 229, 229, 0.9);
+  background: rgba(255, 245, 245, 0.9);
   color: #2D3436;
+}
+
+.primaryButton::before {
+  background: #E8A5A5;
 }
 
 .primaryButton:hover {
-  background: #FFD5D5;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #FFE5E5;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(232, 165, 165, 0.25);
 }
 
 .secondaryButton {
-  background: rgba(255, 243, 212, 0.9);
+  background: rgba(243, 205, 205, 0.15);
   color: #2D3436;
+}
+
+.secondaryButton::before {
+  background: #F3CDCD;
 }
 
 .secondaryButton:hover {
-  background: #FFE9B0;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: rgba(243, 205, 205, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(232, 165, 165, 0.25);
 }
 
 .tertiaryButton {
-  background: rgba(229, 247, 255, 0.9);
+  background: rgba(255, 229, 229, 0.2);
   color: #2D3436;
 }
 
+.tertiaryButton::before {
+  background: #FFB6B6;
+}
+
 .tertiaryButton:hover {
-  background: #D5F0FF;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 229, 229, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(232, 165, 165, 0.25);
 }
 
 .fullWidthButton {
@@ -172,16 +202,56 @@
   color: #e74c3c;
 }
 
+.today {
+  background: rgba(255, 229, 229, 0.3);
+  border: 1px solid #FFE5E5;
+  position: relative;
+}
+
+.today::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #E8A5A5;
+  border-radius: 50%;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dayName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.dayDate {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.today .dayName {
+  color: #E8A5A5;
+}
+
+.today .dayDate {
+  color: #E8A5A5;
+}
+
 .noSchedule {
   grid-column: 1 / -1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
-  color: #666;
-  font-size: 0.9rem;
+  padding: 1.5rem;
+  color: #888;
+  font-size: 0.95rem;
   text-align: center;
-  background-color: #f8f8f8;
-  border-radius: 4px;
+  background-color: rgba(255, 245, 245, 0.5);
+  border-radius: 10px;
   margin: 0.5rem;
+  border: 1px dashed #F3CDCD;
 } 

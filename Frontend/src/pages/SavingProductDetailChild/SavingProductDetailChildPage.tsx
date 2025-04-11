@@ -28,7 +28,7 @@ const SavingProductDetailChildPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
 
-  console.log('Rendering SavingProductDetailChildPage with id:', id);
+  console.log('자녀용 적금 상세 페이지 - Rendering with id:', id);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -68,6 +68,10 @@ const SavingProductDetailChildPage: React.FC = () => {
     console.log('원금과 이자받기');
   };
 
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   const renderButton = () => {
     if (!product) return null;
 
@@ -93,17 +97,29 @@ const SavingProductDetailChildPage: React.FC = () => {
   };
 
   if (isLoading) {
-    return <div>로딩 중... (자녀용 페이지)</div>;
+    return (
+      <div className={styles.loadingContainer}>
+        <div className={styles.loadingSpinner}></div>
+        <p>로딩 중...</p>
+      </div>
+    );
   }
 
   if (!product) {
-    return <div>상품을 찾을 수 없습니다. (자녀용 페이지)</div>;
+    return (
+      <div className={styles.errorContainer}>
+        <p>상품을 찾을 수 없습니다.</p>
+        <button className={styles.backButton} onClick={handleGoBack}>
+          돌아가기
+        </button>
+      </div>
+    );
   }
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>은행 상품 상세보기 (자녀용)</h1>
+        <h1 className={styles.title}>은행 상품 상세보기</h1>
         
         <div className={styles.formGroup}>
           <label>상품 종류</label>
@@ -117,7 +133,9 @@ const SavingProductDetailChildPage: React.FC = () => {
 
         <div className={styles.formGroup}>
           <label>이자</label>
-          <div className={styles.value}>{product.interestRate}%</div>
+          <div className={styles.value}>
+            <span className={styles.highlight}>{product.interestRate}%</span>
+          </div>
         </div>
 
         <div className={styles.formGroup}>

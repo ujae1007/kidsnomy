@@ -98,6 +98,14 @@
   color: #999;
 }
 
+.fieldDescription {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.2rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
 /* 반응형 디자인 */
 @media (max-width: 768px) {
   .container {

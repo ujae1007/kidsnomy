@@ -26,6 +26,13 @@ const formatDate = (dateString: string) => {
   return `${date.getMonth() + 1}주 후`;
 };
 
+// 계좌번호 포맷팅 함수
+const formatAccountNumber = (accountId: string) => {
+  if (!accountId) return '000-000-000000';
+  // 실제 계좌번호 포맷팅 로직 (예: 000-000-000000)
+  return `${accountId.slice(0, 3)}-${accountId.slice(3, 6)}-${accountId.slice(6)}`;
+};
+
 const FinancialProducts: React.FC<FinancialProductsProps> = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -66,7 +73,8 @@ const FinancialProducts: React.FC<FinancialProductsProps> = ({ data }) => {
   const handleCardClick = (product: Contract) => {
     if (product.total_volume) {
       navigate(`/bank/products/deposit/${product.contract_id}`);
-    } else if (product.rate_volume) {
+    } else if (product.rate_volume || product.one_time_volume) {
+      console.log('적금 상품 클릭:', product.contract_id);
       navigate(`/bank/products/saving/${product.contract_id}`);
     }
   };
@@ -81,7 +89,7 @@ const FinancialProducts: React.FC<FinancialProductsProps> = ({ data }) => {
         {contracts.map(product => (
           <div 
             key={product.contract_id} 
-            className={styles.productCard}
+            className={`${styles.productCard} ${product.contract_id === "0" ? styles.emptyCard : ""}`}
             onClick={() => product.contract_id !== "0" && handleCardClick(product)}
             role="button"
             tabIndex={0}
@@ -93,6 +101,13 @@ const FinancialProducts: React.FC<FinancialProductsProps> = ({ data }) => {
           >
             {product.contract_id === "0" ? (
               <>
+                <div className={styles.emptyIcon}>
+                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#E8A5A5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 8V16" stroke="#E8A5A5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M8 12H16" stroke="#E8A5A5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
                 <div className={styles.title}>
                   {product.title}
                 </div>
@@ -102,24 +117,38 @@ const FinancialProducts: React.FC<FinancialProductsProps> = ({ data }) => {
               </>
             ) : (
               <>
-                <div className={styles.interestRate}>
-                  이자율 : {product.interest_rate}%
+                <div className={styles.bankLogo}>
+                  <span>BANK</span>
                 </div>
-                <div className={styles.balance}>
-                  모은 돈 : {product.balance.toLocaleString()}원
+                
+                <div className={styles.accountNumberRow}>
+                  <span className={styles.accountNumber}>
+                    {formatAccountNumber(product.account_id)}
+                  </span>
                 </div>
+                
                 <div className={styles.title}>
                   {product.title}
                 </div>
+                
                 <div className={styles.content}>
                   {product.content}
                 </div>
+                
+                <div className={styles.balance}>
+                  {product.balance.toLocaleString()}원
+                </div>
+                
                 <div className={styles.additionalInfo}>
                   <span>
                     {product.total_volume ? '목표 금액 저축' : 
                      product.rate_volume ? '정기 저축' : '금융상품'}
                   </span>
                   <span>만기일: {formatDate(product.end_day)}</span>
+                </div>
+                
+                <div className={styles.stampArea}>
+                  Verified
                 </div>
               </>
             )}

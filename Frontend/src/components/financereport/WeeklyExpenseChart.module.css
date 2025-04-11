@@ -1,29 +1,31 @@
 .container {
-  padding: 24px;
+  padding: 32px;
   background: white;
-  border-radius: 16px;
+  border-radius: 20px;
   border: 1px solid #E7EEF9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
 }
 
 .header {
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
   color: #333;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .subtitle {
-  font-size: 16px;
+  font-size: 18px;
   color: #666;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .percentage {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   display: block;
 }
@@ -40,8 +42,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 200px;
-  margin-top: 48px;
+  height: 280px;
+  margin-top: 60px;
 }
 
 .barGroup {
@@ -56,9 +58,9 @@
 .bar {
   width: 100%;
   background-color: #F8E6E6;
-  border-radius: 4px;
+  border-radius: 6px;
   position: absolute;
-  bottom: 32px;
+  bottom: 40px;
   transition: height 0.3s ease;
 }
 
@@ -69,19 +71,21 @@
 .label {
   position: absolute;
   bottom: 0;
-  font-size: 14px;
+  font-size: 16px;
   color: #914F4F;
   text-align: center;
   width: 100%;
   white-space: nowrap;
+  font-weight: bold;
 }
 
 .amountLabel {
   position: absolute;
-  bottom: calc(100% + 4px);
-  font-size: 12px;
+  bottom: calc(100% + 8px);
+  font-size: 14px;
   color: #666;
   text-align: center;
   width: 100%;
   white-space: nowrap;
+  font-weight: 500;
 } 

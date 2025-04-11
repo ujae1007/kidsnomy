@@ -4,23 +4,38 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  backdrop-filter: blur(3px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .modalContent {
   background-color: white;
-  padding: 2rem;
+  padding: 2rem 1.8rem;
   border-radius: 20px;
-  width: 90%;
-  max-width: 400px;
+  width: 85%;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .title {
@@ -29,11 +44,22 @@
   text-align: center;
   margin: 0;
   color: #333;
+  line-height: 1.3;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 50%;
+  background-color: #FFF5F5;
+  margin-bottom: 0.3rem;
 }
 
 .imageContainer {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,38 +71,130 @@
   object-fit: contain;
 }
 
+.description {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #333;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.5;
+  padding: 0 0.5rem;
+}
+
 .buttonContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   gap: 1rem;
   width: 100%;
+  margin-top: 0.3rem;
 }
 
 .button {
-  width: 100%;
-  padding: 1rem;
+  width: 48%;
+  padding: 0.8rem;
   border: none;
-  border-radius: 25px;
+  border-radius: 14px;
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .confirmButton {
   background-color: #E8A5A5;
   color: white;
+  box-shadow: 0 4px 10px rgba(232, 165, 165, 0.3);
 }
 
 .confirmButton:hover {
   background-color: #D07575;
+  transform: translateY(-2px);
 }
 
 .cancelButton {
   background-color: #F5F5F5;
   color: #666;
+  border: 1px solid #E0E0E0;
 }
 
 .cancelButton:hover {
   background-color: #EEEEEE;
+  transform: translateY(-2px);
+}
+
+/* 모바일 화면에 대한 반응형 스타일 */
+@media (max-width: 480px) {
+  .modalContent {
+    padding: 1.5rem 1.3rem;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 310px;
+    gap: 1.2rem;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+  }
+  
+  .iconContainer {
+    padding: 0.6rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  .iconContainer svg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .imageContainer {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    padding: 0 0.3rem;
+  }
+  
+  .buttonContainer {
+    gap: 0.7rem;
+  }
+  
+  .button {
+    padding: 0.7rem;
+    border-radius: 12px;
+    font-size: 1rem;
+  }
+}
+
+/* 아주 작은 화면에 대한 추가 스타일 */
+@media (max-width: 360px) {
+  .modalContent {
+    padding: 1.3rem 1rem;
+    max-width: 280px;
+    gap: 1rem;
+  }
+  
+  .title {
+    font-size: 1.1rem;
+  }
+  
+  .iconContainer {
+    padding: 0.5rem;
+  }
+  
+  .iconContainer svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+  }
+  
+  .button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
 } 

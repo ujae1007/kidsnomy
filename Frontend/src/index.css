@@ -25,6 +25,7 @@ body {
   overflow-x: hidden;
   word-wrap: break-word;
   word-break: break-word;
+  padding-bottom: 75px; /* 작아진 Footer 높이 + 여유 공간 */
 }
 
 #root {
@@ -34,4 +35,5 @@ body {
   max-width: 100%;
   word-wrap: break-word;
   word-break: break-word;
+  padding-bottom: 75px; /* 작아진 Footer 높이 + 여유 공간 */
 } 

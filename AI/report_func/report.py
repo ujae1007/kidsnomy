@@ -45,6 +45,9 @@ class ExpenseStatics:
         self.week_stores_data = defaultdict(list)
         for week, transactions in weekly_transactions.items():
             for transaction in transactions:
+                if transaction.transactionType == 1:
+                    print("입금 데이터 제외")
+                    continue
                 expense = transaction.transactionBalance
                 store, address = transaction.transactionSummary.split(",")
                 self.week_stores_data[week].append(((store, address), expense))

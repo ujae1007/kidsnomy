@@ -1,108 +1,230 @@
--- -- user 테이블
--- INSERT INTO `user` (`email`, `password`, `name`, `is_parent`, `user_key`, `age`, `gender`, `parent_email`)
--- VALUES 
--- ('user1@example.com', 'encrypted_pw', '권영자', False, '7c65c1e5-82e2-4662-b728-b4fa42485e3a', 36, 'Male', 'None'),
--- ('user2@example.com', 'encrypted_pw', '안성민', False, 'e443df78-9558-467f-9ba9-1faf7a024204', 42, 'Female', 'user1@example.com'),
--- ('user3@example.com', 'encrypted_pw', '박수빈', False, 'cca5a5a1-9e4d-4e3c-9846-d424c17c6279', 29, 'Female', 'None'),
--- ('user4@example.com', 'encrypted_pw', '백현준', False, '259f4329-e6f4-490b-9a16-4106cf6a659e', 47, 'Male', 'user1@example.com'),
--- ('user5@example.com', 'encrypted_pw', '서지후', True, '8f4ff31e-78de-4857-9487-ce1eaf19922a', 28, 'Male', 'None');
+USE kidsnomy;
 
--- -- group_info
--- INSERT INTO `group_info` (`group_code`, `owner_id`)
--- VALUES 
--- ('GRP12025', 1),
--- ('GRP22025', 2);
+-- 1. 사용자 (부모 1, 자녀 1)
+INSERT INTO `user` (email, password, name, is_parent, user_key, age, gender, parent_email)
+VALUES 
+('wjdtjd36@naver.com', '$2a$10$K/H7M049uNQhAs15f87dXeCCa5LAbVWHfr8l9qYpE9d9xb0kcHRvy', '마동석', TRUE, '832af8c7-4d4d-49fc-87e7-b63f4c768075', 37, 'Male', NULL),
+('wjdtjd36wksu1@naver.com', '$2a$10$xpigGC9vGPT78pIZfCB5w.9CNC1DhL3VWAvaQBNlBmw0EoemcGzqG', '마서석', FALSE, '36c00bf0-647c-4802-a31c-a85f8ee9f6b2', 12, 'Male', 'wjdtjd36@naver.com'),
+('wjdtjd36wksu2@naver.com', '$2a$10$OXLGcjaITY6i012jRhVe8eW/ZsmaO3/1Tkh8xjvqHnLXultWXsZPq', '마남석', FALSE, '97c49dd1-7a48-4e80-ada4-7d79d3f54312', 10, 'Female', 'wjdtjd36@naver.com'),
+('wjdtjd37@naver.com', '$2a$10$osltIu2q9qiJzFohzJIDsuIAofFfh3JI5iqDU4qGaai8NUFSbYxn6', '곽두팔', TRUE, '1dd91513-43d6-48fe-b3fa-61174ae1c14a', 35, 'Female', NULL),
+('wjdtjd37wksu1@naver.com', '$2a$10$/abxThkf.tUwP5QVvkKrPe82y3nFM9q2gRYRtT.2rWQkatuO/ptZi', '곽두칠', FALSE, '77bd6f42-3b7c-4da9-a508-ed760c430cf6', 14, 'Female', 'wjdtjd37@naver.com'),
+('wjdtjd37wksu2@naver.com', '$2a$10$84csWZ0yR4dSwch7Y0clP./jL1V1Mjk9RtdawSQtfKWIi0vs5nVCu', '곽두육', FALSE, 'd6384857-3081-427b-b6ec-25c955ca16f2', 12, 'Male', 'wjdtjd37@naver.com');
 
--- -- group_membership
--- INSERT INTO `group_membership` (`group_id`, `user_id`)
--- VALUES 
--- (1, 1), (1, 2), (1, 3),
--- (2, 1), (2, 2), (2, 3);
+-- 2. 이메일 인증
+INSERT INTO `email_verification` (email, verification_code, status)
+VALUES 
+('wjdtjd36@naver.com', 987036, TRUE),
+('wjdtjd37@naver.com', 689611, TRUE);
 
--- -- basic_account
--- INSERT INTO `basic_account` (`user_id`, `account_no`, `account_password`, `balance`, `created_at`)
--- VALUES 
--- (1, 'ACCT2025001', 1234, 40232.17, '2025-04-01 04:57:32'),
--- (2, 'ACCT2025002', 1234, 34734.76, '2025-04-01 04:57:32'),
--- (3, 'ACCT2025003', 1234, 20020.25, '2025-04-01 04:57:32'),
--- (4, 'ACCT2025004', 1234, 46389.85, '2025-04-01 04:57:32'),
--- (5, 'ACCT2025005', 1234, 49311.42, '2025-04-01 04:57:32');
+-- 3. 그룹 생성
+INSERT INTO `group_info` (group_code, owner_id)
+VALUES 
+('598813', 1),
+('165923', 4);
 
--- -- basic_product
--- INSERT INTO `basic_product` (`account_type_unique_no`)
--- VALUES ('BASIC-2025-001');
+-- 4. 그룹 멤버 등록 (부모 + 자녀)
+INSERT INTO `group_membership` (group_id, user_id)
+VALUES 
+(1, 1), -- 마동석 (부모)
+(2, 4), -- 곽두팔 (부모)
+(1, 2), -- 마서석
+(1, 3), -- 마남석
+(2, 5), -- 곽두칠
+(2, 6); -- 곽두육
 
--- -- account_log
--- INSERT INTO `account_log` (`user_id`, `account_no`, `transaction_account_no`, `transaction_unique_no`, `transaction_date`, `transaction_time`, `transaction_type`, `transaction_balance`, `transaction_after_balance`, `transaction_summary`, `transaction_memo`)
--- VALUES 
--- (1, 'ACCT2025001', '입금', 'TXN00001', '2025-04-01 04:57:32', '2025-04-01 04:57:32', 1, 10000, 40232.17, '테스트 입금', '입금 테스트'),
--- (2, 'ACCT2025002', '입금', 'TXN00002', '2025-04-01 04:57:32', '2025-04-01 04:57:32', 1, 10000, 34734.76, '테스트 입금', '입금 테스트'),
--- (3, 'ACCT2025003', '입금', 'TXN00003', '2025-04-01 04:57:32', '2025-04-01 04:57:32', 1, 10000, 20020.25, '테스트 입금', '입금 테스트'),
--- (4, 'ACCT2025004', '입금', 'TXN00004', '2025-04-01 04:57:32', '2025-04-01 04:57:32', 1, 10000, 46389.85, '테스트 입금', '입금 테스트'),
--- (5, 'ACCT2025005', '입금', 'TXN00005', '2025-04-01 04:57:32', '2025-04-01 04:57:32', 1, 10000, 49311.42, '테스트 입금', '입금 테스트');
+-- 5. 계좌 생성
+INSERT INTO `basic_account` (user_id, account_no, account_password, balance, created_at)
+VALUES 
+(1, '9998863781837488', 1234, 957800.00, '2025-04-09 14:51:37'),
+(2, '9998101172848513', 1234, 135000.00, '2025-04-09 14:51:54'),
+(3, '9994961935650930', 1234, 73300.00, '2025-04-09 14:52:09'),
+(4, '9993942423901017', 1234, 1325000.00, '2025-04-09 14:52:25'),
+(5, '9993734044352521', 1234, 217300.00, '2025-04-09 14:52:50'),
+(6, '9995492342162516', 1234, 117700.00, '2025-04-09 14:53:06');
 
--- -- email_verification
--- INSERT INTO `email_verification` (`email`, `verification_code`, `status`)
--- VALUES 
--- ('user1@example.com', 949574, True),
--- ('user2@example.com', 731140, False),
--- ('user3@example.com', 254100, True),
--- ('user4@example.com', 425213, False),
--- ('user5@example.com', 203560, True);
+-- 7. 거래 내역 로그
+-- Insert transaction logs for 마서석 (user_id 2)
+INSERT INTO `account_log` (
+  user_id, account_no, transaction_account_no, transaction_unique_no,
+  transaction_date, transaction_time, transaction_type, transaction_balance,
+  transaction_after_balance, transaction_summary, transaction_memo
+) VALUES
+-- Week 1
+(2, '9998101172848513', '987654321', 'TX20250330001',
+ '20250311', '143000', '2', 13000.00,
+ 750000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+(2, '9998101172848513', '987654321', 'TX20250330002',
+ '20250312', '183000', '2', 7500.00,
+ 500000.00, '더벙커게임존, 대전 유성구 대학로 34', '게임존 결제'),
+-- Week 2
+(2, '9998101172848513', '987654321', 'TX20250406001',
+ '20250317', '143000', '2', 2500.00,
+ 750000.00, '설빙 유성온천점, 대전 유성구 대학로 14', '카페 결제'),
+(2, '9998101172848513', '987654321', 'TX20250406002',
+ '20250320', '183000', '2', 6400.00,
+ 500000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+-- Week 3
+(2, '9998101172848513', '987654321', 'TX20250413001',
+ '20250329', '143000', '2', 5700.00,
+ 750000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+-- Week 4
+(2, '9998101172848513', '987654321', 'TX20250420001',
+ '20250331', '143000', '2', 2500.00,
+ 750000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+-- Week 5
+(2, '9998101172848513', '987654321', 'TX20250427001',
+ '20250407', '143000', '2', 15000.00,
+ 750000.00, '더벙커게임존, 대전 유성구 대학로 34', '게임존 결제'),
+(2, '9998101172848513', '987654321', 'TX20250427002',
+ '20250408', '183000', '2', 3400.00,
+ 500000.00, '설빙 유성온천점, 대전 유성구 대학로 14', '카페 결제'),
+(2, '9998101172848513', '987654321', 'TX20250427003',
+ '20250409', '203000', '2', 25000.00,
+ 250000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제');
 
--- -- job
--- INSERT INTO `job` (`group_id`, `employer_id`, `employee_id`, `title`, `content`, `salary`, `reward_text`, `is_permanent`, `start_at`, `end_at`, `status`)
--- VALUES 
--- (1, 5, 1, '일자리1', '일자리 내용 1', 2459.66, '사탕 한 봉지', 0, '2025-04-01 05:03:00', '2025-04-08 05:03:00', 3),
--- (1, 5, NULL, '일자리2', '일자리 내용 2', 1660.39, '사탕 한 봉지', 0, '2025-04-01 05:03:00', '2025-04-08 05:03:00', 3),
--- (2, 5, 3, '일자리3', '일자리 내용 3', 1201.4, '사탕 한 봉지', 0, '2025-04-01 05:03:00', '2025-04-08 05:03:00', 2),
--- (2, 5, NULL, '일자리4', '일자리 내용 4', 1632.39, '사탕 한 봉지', 0, '2025-04-01 05:03:00', '2025-04-08 05:03:00', 3),
--- (2, 5, 5, '일자리5', '일자리 내용 5', 2826.02, '사탕 한 봉지', 0, '2025-04-01 05:03:00', '2025-04-08 05:03:00', 3);
+-- Insert transaction logs for 마남석 (user_id 3)
+INSERT INTO `account_log` (
+  user_id, account_no, transaction_account_no, transaction_unique_no,
+  transaction_date, transaction_time, transaction_type, transaction_balance,
+  transaction_after_balance, transaction_summary, transaction_memo
+) VALUES
+-- Week 1
+(3, '9994961935650930', '987654322', 'TX20250330101',
+ '20250313', '143000', '2', 7800.00,
+ 750000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+(3, '9994961935650930', '987654322', 'TX20250330102',
+ '20250310', '183000', '2', 5700.00,
+ 500000.00, '더벙커게임존, 대전 유성구 대학로 34', '게임존 결제'),
+-- Week 2
+(3, '9994961935650930', '987654322', 'TX20250406101',
+ '20250322', '143000', '2', 8000.00,
+ 750000.00, '설빙 유성온천점, 대전 유성구 대학로 14', '카페 결제'),
+(3, '9994961935650930', '987654322', 'TX20250406102',
+ '20250321', '183000', '2', 6500.00,
+ 500000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+-- Week 3
+(3, '9994961935650930', '987654322', 'TX20250413101',
+ '20250324', '143000', '2', 250000.00,
+ 750000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+-- Week 4
+(3, '9994961935650930', '987654322', 'TX20250420101',
+ '20250405', '143000', '2', 4700.00,
+ 750000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+-- Week 5
+(3, '9994961935650930', '987654322', 'TX20250427101',
+ '20250408', '143000', '2', 25000.00,
+ 750000.00, '더벙커게임존, 대전 유성구 대학로 34', '게임존 결제'),
+(3, '9994961935650930', '987654322', 'TX20250427102',
+ '20250410', '183000', '2', 12800.00,
+ 500000.00, '설빙 유성온천점, 대전 유성구 대학로 14', '카페 결제'),
+(3, '9994961935650930', '987654322', 'TX20250427103',
+ '20250410', '203000', '2', 21500.00,
+ 250000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제');
 
--- -- status_mapping
--- INSERT INTO `status_mapping` (`status_info`)
--- VALUES ('계약전'), ('계약후'), ('승인대기'), ('최종완료');
+-- Insert transaction logs for 곽두칠 (user_id 5)
+INSERT INTO `account_log` (
+  user_id, account_no, transaction_account_no, transaction_unique_no,
+  transaction_date, transaction_time, transaction_type, transaction_balance,
+  transaction_after_balance, transaction_summary, transaction_memo
+) VALUES
+-- Week 1
+(5, '9993734044352521', '987654323', 'TX20250330201',
+ '20250310', '143000', '2', 2500.00,
+ 750000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+(5, '9993734044352521', '987654323', 'TX20250330202',
+ '20250315', '183000', '2', 5000.00,
+ 500000.00, '더벙커게임존, 대전 유성구 대학로 34', '게임존 결제'),
+-- Week 2
+(5, '9993734044352521', '987654323', 'TX20250406201',
+ '20250317', '143000', '2', 7500.00,
+ 750000.00, '설빙 유성온천점, 대전 유성구 대학로 14', '카페 결제'),
+(5, '9993734044352521', '987654323', 'TX20250406202',
+ '20250319', '183000', '2', 10000.00,
+ 500000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+-- Week 3
+(5, '9993734044352521', '987654323', 'TX20250413201',
+ '20250325', '143000', '2', 25000.00,
+ 750000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+-- Week 4
+(5, '9993734044352521', '987654323', 'TX20250420201',
+ '20250404', '143000', '2', 8000.00,
+ 750000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+-- Week 5
+(5, '9993734044352521', '987654323', 'TX20250427201',
+ '20250408', '143000', '2', 5000.00,
+ 750000.00, '더벙커게임존, 대전 유성구 대학로 34', '게임존 결제'),
+(5, '9993734044352521', '987654323', 'TX20250427202',
+ '20250410', '183000', '2', 12500.00,
+ 500000.00, '설빙 유성온천점, 대전 유성구 대학로 14', '카페 결제'),
+(5, '9993734044352521', '987654323', 'TX20250427203',
+ '20250411', '203000', '2', 10000.00,
+ 250000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제');
 
--- -- deposit
--- INSERT INTO `deposit` (`group_id`, `user_id`, `title`, `content`, `interest_rate`, `due_date`, `product_type`)
--- VALUES 
--- (1, 1, '정기예금 상품1', '정기예금 설명 1', 3.5, 12, 0),
--- (1, 2, '정기예금 상품2', '정기예금 설명 2', 3.5, 12, 0),
--- (1, 3, '정기예금 상품3', '정기예금 설명 3', 3.5, 12, 0);
+-- Insert transaction logs for 곽두육 (user_id 6)
+INSERT INTO `account_log` (
+  user_id, account_no, transaction_account_no, transaction_unique_no,
+  transaction_date, transaction_time, transaction_type, transaction_balance,
+  transaction_after_balance, transaction_summary, transaction_memo
+) VALUES
+-- Week 1
+(6, '9995492342162516', '987654324', 'TX20250330301',
+ '20250311', '143000', '2', 3500.00,
+ 750000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+(6, '9995492342162516', '987654324', 'TX20250330302',
+ '20250314', '183000', '2', 6600.00,
+ 500000.00, '더벙커게임존, 대전 유성구 대학로 34', '게임존 결제'),
+-- Week 2
+(6, '9995492342162516', '987654324', 'TX20250406301',
+ '20250319', '143000', '2', 4800.00,
+ 750000.00, '설빙 유성온천점, 대전 유성구 대학로 14', '카페 결제'),
+(6, '9995492342162516', '987654324', 'TX20250406302',
+ '20250321', '183000', '2', 30000.00,
+ 500000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+-- Week 3
+(6, '9995492342162516', '987654324', 'TX20250413301',
+ '20250328', '143000', '2', 250000.00,
+ 750000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+-- Week 4
+(6, '9995492342162516', '987654324', 'TX20250420301',
+ '20250402', '143000', '2', 6500.00,
+ 750000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제'),
+-- Week 5
+(6, '9995492342162516', '987654324', 'TX20250427301',
+ '20250408', '143000', '2', 7000.00,
+ 750000.00, '더벙커게임존, 대전 유성구 대학로 34', '게임존 결제'),
+(6, '9995492342162516', '987654324', 'TX20250427302',
+ '20250409', '183000', '2', 6800.00,
+ 500000.00, '설빙 유성온천점, 대전 유성구 대학로 14', '카페 결제'),
+(6, '9995492342162516', '987654324', 'TX20250427303',
+ '20250410', '203000', '2', 12300.00,
+ 250000.00, '왕가탕후루 충장로점, 광주 동구 충장로3가 41-1', '음식점 결제');
 
--- -- savings
--- INSERT INTO `savings` (`group_id`, `user_id`, `title`, `content`, `interest_rate`, `due_date`, `rate_date`, `pay_date`, `product_type`)
--- VALUES 
--- (2, 1, '적금 상품1', '적금 설명 1', 4.0, 12, 1, 15, 1),
--- (2, 2, '적금 상품2', '적금 설명 2', 4.0, 12, 1, 15, 1),
--- (2, 3, '적금 상품3', '적금 설명 3', 4.0, 12, 1, 15, 1);
+-- 8. 일자리 등록
+INSERT INTO `job` (
+  group_id, employer_id, employee_id, title, content, salary, reward_text,
+  is_permanent, start_at, end_at, status
+) VALUES
+-- 마동석 가족 (group_id=1, employer_id=1)
+(1, 1, NULL, '농구', '아빠랑 농구 1:1 헤서 이기기', 5000.00, '없음', 0, '2025-04-07 00:00:00', '2025-04-11 23:59:59', 1),
+(1, 1, NULL, '노래 창작', '노래 만들어서 영상 찍기!', 3000.00, '없음', 0, '2025-04-09 00:00:00', '2025-04-11 23:59:59', 1),
+(1, 1, NULL, '식사 준비', '엄마 아빠랑 호떡 만들어 먹기!', 3500.00, '없음', 0, '2025-04-09 00:00:00', '2025-04-13 23:59:59', 1),
+(1, 1, NULL, '가족 일기', '매일매일 가족 그림 일기 만들기~!', 2000.00, '없음', 0, '2025-04-09 00:00:00', '2025-04-21 23:59:59', 1),
+-- 곽두팔 가족 (group_id=2, employer_id=4)
+(2, 4, NULL, '책 읽기', '거실에 있는 책 3권 읽기', 2000.00, '없음', 0, '2025-04-09 00:00:00', '2025-05-09 23:59:59', 1),
+(2, 4, NULL, '자전거 타기', '자전거 타고 공원 한바퀴~!', 2000.00, '없음', 0, '2025-04-09 00:00:00', '2025-04-11 23:59:59', 1),
+(2, 4, NULL, '칭찬 모으기', '집안일 도와주고 칭찬 스티커 5개 모으기', 4500.00, '없음', 0, '2025-04-09 00:00:00', '2025-04-30 23:59:59', 1),
+(2, 4, NULL, '행복 일기 쓰기', '매일 좋았던 일 3가지 작성하기!', 2000.00, '없음', 0, '2025-04-09 00:00:00', '2025-04-16 23:59:59', 1);
 
--- -- deposit_contract
--- INSERT INTO `deposit_contract` (`group_id`, `user_id`, `product_id`, `start_day`, `end_day`, `account_no`, `balance`, `total_volume`)
--- VALUES 
--- (1, 1, 1, '2025-04-01 05:03:00', '2026-04-01 05:03:00', 'DPT2025001', 100000, 100000),
--- (1, 2, 2, '2025-04-01 05:03:00', '2026-04-01 05:03:00', 'DPT2025002', 100000, 100000);
+-- 9. 예금 상품
+INSERT INTO `deposit` (
+  group_id, user_id, title, content, interest_rate, due_date, product_type
+) VALUES (
+  1, 1, '저축 체감하기 예금', '예금 저축이 얼마나 큰 돈을 주는지 확인해봐!', 15.00, 4, 0
+);
 
--- -- savings_contract
--- INSERT INTO `savings_contract` (`group_id`, `user_id`, `product_id`, `start_day`, `end_day`, `account_no`, `balance`, `one_time_volume`, `rate_volume`)
--- VALUES 
--- (2, 1, 1, '2025-04-01 05:03:00', '2026-04-01 05:03:00', 'SVG2025001', 200000, 50000, 20000),
--- (2, 2, 2, '2025-04-01 05:03:00', '2026-04-01 05:03:00', 'SVG2025002', 200000, 50000, 20000);
-
--- -- deposit_log
--- INSERT INTO `deposit_log` (`user_id`, `account_no`, `transaction_unique_no`, `transaction_date`, `transaction_time`, `transaction_type`, `transaction_balance`, `transaction_after_balance`, `transaction_summary`, `transaction_memo`, `product_type`)
--- VALUES 
--- (1, 'DPT2025001', 'DLTXN00001', '2025-04-01 05:03:00', '2025-04-01 05:03:00', 1, 50000, 100000, '예금 입금', '첫 입금', 0),
--- (2, 'DPT2025002', 'DLTXN00002', '2025-04-01 05:03:00', '2025-04-01 05:03:00', 1, 50000, 100000, '예금 입금', '첫 입금', 0);
-
--- -- savings_log
--- INSERT INTO `savings_log` (`user_id`, `account_no`, `transaction_unique_no`, `transaction_date`, `transaction_time`, `transaction_type`, `transaction_balance`, `transaction_after_balance`, `transaction_summary`, `transaction_memo`, `product_type`)
--- VALUES 
--- (1, 'SVG2025001', 'SVTXN00001', '2025-04-01 05:03:00', '2025-04-01 05:03:00', 1, 50000, 200000, '적금 입금', '첫 적금', 1),
--- (2, 'SVG2025002', 'SVTXN00002', '2025-04-01 05:03:00', '2025-04-01 05:03:00', 1, 50000, 200000, '적금 입금', '첫 적금', 1);
-
--- -- user_refresh_token
--- INSERT INTO `user_refresh_token` (`user_id`, `refresh_token`, `created_at`, `expired_at`)
--- VALUES 
--- (1, '5c349dfed0a500a5a90e780e6a1b504d16324283aa9b8f36afdd2ebcd826a28b', '2025-04-01 05:03:00', '2025-04-02 05:03:00'),
--- (2, '8ee1caca033ef56c2f197a26f0cdfbd84ba3d1b75a97f9f39011f724fd70e579', '2025-04-01 05:03:00', '2025-04-02 05:03:00');
+-- 10. 적금 상품
+INSERT INTO `savings` (
+  group_id, user_id, title, content, interest_rate, due_date, rate_date, pay_date, product_type
+) VALUES (
+  1, 1, '매주 1000원 적금', '용돈을 매주 적금으로 모아보자!', 2.75, 4, 14, 5, 1
+);

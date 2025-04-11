@@ -104,9 +104,17 @@
 }
 
 .buttonContainer {
-  margin-top: 20px;
+  margin-top: 2rem;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.buttonContainer button {
+  width: 100%;
+  min-width: 120px;
 }
 
 .badge {
@@ -118,30 +126,105 @@
   font-size: 0.9rem;
 }
 
+/* 상태별 뱃지 색상 - 글로벌 클래스로 변경 */
+:global(.statusBadge1) {
+  background-color: #E0E0E0;
+  color: #757575;
+}
+
+:global(.statusBadge2) {
+  background-color: #BBDEFB;
+  color: #1976D2;
+}
+
+:global(.statusBadge3) {
+  background-color: #FFF9C4;
+  color: #FBC02D;
+}
+
+:global(.statusBadge4) {
+  background-color: #C8E6C9;
+  color: #4CAF50;
+}
+
+/* 루틴 여부에 따른 뱃지 색상 - 글로벌 클래스로 변경 */
+:global(.routineBadge) {
+  background-color: #E1BEE7;
+  color: #7B1FA2;
+}
+
+:global(.oneTimeBadge) {
+  background-color: #FFCCBC;
+  color: #E64A19;
+}
+
 .button {
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   border: none;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 500;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
   margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .primaryButton {
   background-color: #E8A5A5;
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.primaryButton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.primaryButton:hover::after {
+  transform: translateX(100%);
 }
 
 .warningButton {
   background-color: #FF6B6B;
   color: white;
+  border: 1px solid #FF5252;
+}
+
+.warningButton:hover {
+  background-color: #FF5252;
 }
 
 .secondaryButton {
   background-color: #F5F5F5;
   color: #666;
+  border: 1px solid #E0E0E0;
+}
+
+.secondaryButton:hover {
+  background-color: #EEEEEE;
 }
 
 .loading {
@@ -179,6 +262,61 @@
   font-size: 1rem;
   text-align: center;
   font-weight: 500;
+}
+
+@keyframes stampAppear {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(-45deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2) rotate(-25deg);
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(0.9) rotate(-15deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(-15deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes stampPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(-15deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05) rotate(-15deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(-15deg);
+  }
+}
+
+.completedStamp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  color: rgba(220, 53, 69, 0.9);
+  font-size: 4.5rem;
+  font-weight: bold;
+  border: 0.6rem double rgba(220, 53, 69, 0.9);
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  pointer-events: none;
+  z-index: 10;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+  background-color: rgba(255, 255, 255, 0.1);
+  animation: stampAppear 0.6s ease-out forwards, stampPulse 2s ease-in-out 0.7s infinite;
 }
 
 /* 반응형 디자인 */

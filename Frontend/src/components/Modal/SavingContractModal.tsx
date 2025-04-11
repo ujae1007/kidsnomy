@@ -34,7 +34,7 @@ const SavingContractModal: React.FC<SavingContractModalProps> = ({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await apiCall('finance/savings/contract/' + productId, {
+      const response = await apiCall<{status: string; message?: string}>('finance/savings/contract/' + productId, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${accessToken}`,

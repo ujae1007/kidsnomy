@@ -221,7 +221,7 @@
 |권기범(Infra&AI)| **팀장**<br>- Jira / Git 관리<br>- GitFlow 적용<br>**Infra**<br>- Docker 환경 구축 (image tag 방식 정의)<br>- Jenkins pipeline 구축<br>**AI**<br>- RAG 챗봇 구현<br>- BERT fine-tuning 보조<br>- FastAPI 기반 AI 서빙 서버 구축<br>**ETC.**<br>- Frontend 보조<br>- 영상 포트폴리오 제작 |
 |김민경(BE)| - 외부 API 고려한 금융상품 만기, 자동이체 트랜잭션 설계 <br> - API 호출 시 사용자 식별 및 인증 처리 <br> - 금융 상품, 계좌 및 거래 내역 기능 CRUD <br> - Spring을 통한 MySQL 스케쥴링 <br> - Kidsnomy 서비스와 외부 금융망 API 연동 <br> - 발표 및 PPT 총괄 <br> - Jira를 통한 협업 |
 |남우재(BE)| - spring security + jwt를 활용한 회원가입 및 인증/인가 구현 <br> - email 인증 처리 <br> - Spring을 통한 MySQL 스케쥴링 <br> - 사용자, 그룹, 일자리, 리포트 기능 CRUD <br> - Spring <-> Fast API 연동 <br> - Kidsnomy 서비스와 외부 금융망 API 연동 <br> - 발표 장표 제작 및 시연 <br> - Jira를 통한 협업|
-|이길호(FE)| - UI/UX 설계 <br> - FE 로직 설계 <br> - Redux Persist를 활용한 상태 관리 <br> - API Call 유틸 함수 설계 및 적용을 통한 API 연동 <br> - 순환 참조 문제 해결을 위한 store 구조 분할 설계 <br> - 페이지 라우팅 및 역할 기반 접근 제어 구현 <br> - 부모/자녀 구분 로직 처리 및 각 역할별 페이지 구현 <br> - Docker 환경 일부 구축 <br> - Spring API 디버깅 보조 <br> - 발표 자료 및 발표 보조
+|이길호(FE)| **협업**<br>- Jira를 통한 협업<br>- 발표 자료 제작 및 발표 보조<br> **Frontend**<br>- UI/UX 설계 총괄<br>- Redux Persist를 활용한 상태 관리<br>- API Call 유틸 함수 설계 및 적용을 통한 API 연동<br>- API 응답 데이터의 정제 및 시각화 로직을 총괄 설계<br>- 순환 참조 문제 해결을 위한 store 구조 분할 설계<br>- 페이지 라우팅 및 역할 기반 접근 제어 구현<br>- 부모/자녀 구분 로직 처리 및 각 역할별 페이지 구현<br> **ETC.**<br>- Docker 기반 개발 환경 일부 구축<br>- Spring API 디버깅 보조 |
 |이송민(FE)| - 피그마 목업 디자인 <br> - api 연결 보조 <br> - 발표 자료 제작 <br> - Jira를 통한 협업|
 |조다민(Infra&AI)| - koBERT 모델 파인튜닝을 통한 소비 리포트 가게 카테고리 분류 <br> - CI/CD 보조 <br> - Jira 관리 |
 

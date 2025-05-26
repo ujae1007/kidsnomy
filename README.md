@@ -198,22 +198,22 @@
 </table>
 
 ## 5. 시스템 아키텍쳐
-<img src="/uploads/a4756d1939ade94ff2587e42457d9bcd/Web_App_Reference_Architecture.png" width=750 height=auto>
+<img src="https://github.com/user-attachments/assets/fdd1839f-9fc9-494f-bc20-2dcbdddbbe34" width=750 height=auto>
 
 ## 6. ERD
-<img src="/uploads/8a42b369535cb05dbb87150afa2648ba/image.png" width=750 height=auto>
+<img src="https://github.com/user-attachments/assets/fdd1839f-9fc9-494f-bc20-2dcbdddbbe34" width=750 height=auto>
 
 ## 7. 시연 영상
 ### 1) 그룹 기능
-![그룹 기능 영상](/uploads/f7ebb93887c622345454836a7df02b84/ezgif-4c64dd1e24d14a.gif)
+![그룹 기능 영상](https://github.com/user-attachments/assets/d671b3b9-e962-4a4b-a652-9119d7a963fb)
 ### 2) 일자리 기능
-![일자리 기능 영상](/uploads/317409d5010c1b8ebb6d7f3987e80f76/ezgif-4da8dac1e0848a.gif)
+![일자리 기능 영상](https://github.com/user-attachments/assets/640636d8-e08a-4df7-ade5-2bcb73a53a74)
 ### 3) 챗봇 기능
-![챗봇 기능 영상](/uploads/fac520002743a27cefcf516fbc048dbf/ezgif-4c18fdb8be0545.gif)
+![챗봇 기능 영상](https://github.com/user-attachments/assets/18162e01-0db6-4aff-87de-953575b8ff02)
 ### 4) 금융 상품 기능
-![금융 상품 기능 영상](/uploads/f8c5065cd701dee53b467103499e37e3/ezgif-42a7e782f1e348.gif)
+![금융 상품 기능 영상](https://github.com/user-attachments/assets/e1d26241-7147-4aeb-b150-2d0650f5467a)
 ### 5) 금융 리포트 기능
-![금융 리포트 기능 영상](/uploads/97453c197cb3960615912049bc700a21/ezgif-4737831aeb3383.gif)
+![금융 리포트 기능 영상](https://github.com/user-attachments/assets/82a83a4e-9f35-48a7-afb3-6ec3e1abeaaa)
 
 ## 8. 팀 구성원 및 역할
 |이름|역할|
